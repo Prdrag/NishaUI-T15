@@ -1,0 +1,9 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="itemidcount.lua"/>
+	<Script file="talent.lua"/>
+	<Script file="tooltip.lua"/>
+	<Script file="ilvl.lua"/>
+	<Script file="tooltipicon.lua"/>
+	<Script file="reforge.lua"/>
+	<Script file="symbosis.lua"/>
+</Ui>
