@@ -34,16 +34,13 @@ SlashCmdList["ALI"] = function( gridsize )
 			ali:Hide()
 			Grid()
 			Ali = true
-			print( "Ali: ON" )
 		else
 			ali:Hide()
-			print( "Ali: OFF" )
 			Ali = false
 		end
 	else
 		ox = x
 		Grid()
 		Ali = true
-		print( "Ali: ON" )
 	end
 end

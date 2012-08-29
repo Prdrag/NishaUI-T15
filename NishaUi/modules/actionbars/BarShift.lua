@@ -25,7 +25,11 @@ bar:SetScript("OnEvent", function(self, event, ...)
 			if i ~= 1 then
 				button:ClearAllPoints()				
 				local previous = _G["StanceButton"..i-1]
-				button:Point("TOP", previous, "BOTTOM", 0, -T.buttonspacing)
+				if C["actionbar"].vertical_shapeshift then
+					button:Point("TOP", previous, "BOTTOM", 0, -T.buttonspacing)
+				else
+					button:Point("LEFT", previous, "RIGHT", T.buttonspacing, 0)
+				end
 			end
 			local _, name = GetShapeshiftFormInfo(i)
 			if name then

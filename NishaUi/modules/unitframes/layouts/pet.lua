@@ -8,10 +8,12 @@ if( C["unitframes"].enable ~= true ) then return end
 
 do
 	do
-		G.UnitFrames.Pet:SetBackdrop( nil )
-		G.UnitFrames.Pet:SetBackdropColor( 0, 0, 0 )
-		G.UnitFrames.Pet.shadow:Kill()
-		G.UnitFrames.Pet.panel:Kill()
+		if not T.lowversion then
+			G.UnitFrames.Pet:SetBackdrop( nil )
+			G.UnitFrames.Pet:SetBackdropColor( 0, 0, 0 )
+			G.UnitFrames.Pet.shadow:Kill()
+			G.UnitFrames.Pet.panel:Kill()
+		end
 	end
 
 --------------------------------------------------------------

@@ -14,18 +14,34 @@ FramePositions:SetScript( "OnEvent", function( self, event, addon )
 	G.UnitFrames.Pet:ClearAllPoints()
 	G.UnitFrames.Focus:ClearAllPoints()
 	G.UnitFrames.FocusTarget:ClearAllPoints()
-	if IsAddOnLoaded("NishaUi_Raid") then
-		G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -250 , 250 )
-		G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 250 , 250 )
-	elseif IsAddOnLoaded("NishaUi_Raid_Healing") then
-		G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
-		G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
-	end
+	if not T.lowversion then
+		if IsAddOnLoaded("NishaUi_Raid") then
+			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -250 , 250 )
+			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 250 , 250 )
+		elseif IsAddOnLoaded("NishaUi_Raid_Healing") then
+			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
+			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
+		end
 
-	G.UnitFrames.TargetTarget:SetPoint( "TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -49 )
-	G.UnitFrames.Pet:SetPoint( "TOPLEFT", G.UnitFrames.Player, "BOTTOMLEFT", 0, -49 )
-	G.UnitFrames.Focus:SetPoint( "TOP", UIParent, "BOTTOM", -450, 600 )
-	G.UnitFrames.FocusTarget:SetPoint( "TOP", G.UnitFrames.Focus, "BOTTOM", 0 , -43 )
+		G.UnitFrames.TargetTarget:SetPoint( "TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -49 )
+		G.UnitFrames.Pet:SetPoint( "TOPLEFT", G.UnitFrames.Player, "BOTTOMLEFT", 0, -49 )
+		G.UnitFrames.Focus:SetPoint( "TOP", UIParent, "BOTTOM", -450, 600 )
+		G.UnitFrames.FocusTarget:SetPoint( "TOP", G.UnitFrames.Focus, "BOTTOM", 0 , -43 )
+	else
+		if IsAddOnLoaded("NishaUi_Raid") then
+			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -130 , 270 )
+			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 130 , 270 )
+		elseif IsAddOnLoaded("NishaUi_Raid_Healing") then
+			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
+			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
+		end
+
+		G.UnitFrames.TargetTarget:SetPoint( "TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -49 )
+		G.UnitFrames.Pet:SetPoint( "TOPLEFT", G.UnitFrames.Player, "BOTTOMLEFT", 0, -49 )
+		G.UnitFrames.Focus:SetPoint( "TOP", UIParent, "BOTTOM", -450, 600 )
+		G.UnitFrames.FocusTarget:SetPoint( "TOP", G.UnitFrames.Focus, "BOTTOM", 0 , -43 )
+	end
+	
 
 	for i = 1, MAX_BOSS_FRAMES do
 		G.UnitFrames["Boss" .. i]:ClearAllPoints()

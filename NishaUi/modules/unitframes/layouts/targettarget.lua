@@ -8,10 +8,12 @@ if( C["unitframes"].enable ~= true ) then return end
 
 do
 	do
-		G.UnitFrames.TargetTarget:SetBackdrop( nil )
-		G.UnitFrames.TargetTarget:SetBackdropColor( 0, 0, 0 )
-		G.UnitFrames.TargetTarget.shadow:Kill()
-		G.UnitFrames.TargetTarget.panel:Kill()
+		if not T.lowversion then
+			G.UnitFrames.TargetTarget:SetBackdrop( nil )
+			G.UnitFrames.TargetTarget:SetBackdropColor( 0, 0, 0 )
+			G.UnitFrames.TargetTarget.shadow:Kill()
+			G.UnitFrames.TargetTarget.panel:Kill()
+		end
 	end
 
 --------------------------------------------------------------
@@ -85,6 +87,7 @@ do
 -- buffs, debuffs
 --------------------------------------------------------------
 	do
+	if not T.lowversion then
 		if( C["unitframes"].totdebuffs == true ) then
 			G.UnitFrames.TargetTarget.Debuffs:SetHeight( 25 )
 			G.UnitFrames.TargetTarget.Debuffs:SetWidth( 130 )
@@ -112,6 +115,7 @@ do
 				end
 			end
 		end
+	end
 	end
 
 	--------------------

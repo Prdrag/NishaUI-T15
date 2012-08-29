@@ -11,6 +11,9 @@ G.ActionBars.Bar1:SetTemplate("Transparent")
 
 G.ActionBars.Bar2:ClearAllPoints()
 G.ActionBars.Bar2:SetAllPoints( G.ActionBars.Bar1 )
+if T.lowversion then
+	TukuiBar2:SetAlpha(1)
+end
 
 G.ActionBars.Bar3:ClearAllPoints()
 G.ActionBars.Bar3:SetAllPoints( G.ActionBars.Bar1 )

@@ -8,11 +8,27 @@ local ST_NORMAL = 1
 local ST_FISHBAG = 2
 local ST_SPECIAL = 3
 local bag_bars = 0
-	
+
 local function BagsSlotUpdate( self, b )
+	local texture, count, locked = GetContainerItemInfo( b.bag, b.slot )
+	local clink = GetContainerItemLink( b.bag, b.slot )
+	local isQuestItem, questId = GetContainerItemQuestInfo( b.bag, b.slot )
+
 	local scount = _G[b.frame:GetName() .. "Count"]
 	scount:SetFont(unpack(T.Fonts.movers.setfont))
 	scount:Point( "BOTTOMRIGHT", 0, 2 )
+
+	if( clink ) then
+		b.name, _, b.rarity = GetItemInfo( clink )
+
+		if( not b.frame.lock and b.rarity and b.rarity > 1 and not ( isQuestItem or questId ) ) then
+			b.frame:SetBackdropBorderColor( GetItemQualityColor( b.rarity ) )
+		elseif( isQuestItem or questId ) then
+			b.frame:SetBackdropBorderColor( 1, 1, 0 )
+		end
+	else
+		b.name, b.rarity = nil, nil
+	end
 end
 hooksecurefunc( Stuffing, "SlotUpdate", BagsSlotUpdate )
 

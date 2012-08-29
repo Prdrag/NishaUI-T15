@@ -199,6 +199,7 @@ C["actionbar"] = {
 	["mainswap"] = false,
 	["micromenumouseover"] = true,
 	["micromenu"] = false,
+	["vertical_shapeshift"] = true,	
 }
 
 C["chat"] = {

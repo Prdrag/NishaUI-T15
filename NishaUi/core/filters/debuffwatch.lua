@@ -178,30 +178,30 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			-- Lord Rhyolith
 			--SpellName(98492),	-- Eruption
 			-- Alysrazor
-			SpellName(101296),	-- Fieroblast
-			SpellName(100723),	-- Gushing Wound
+			-- SpellName(101296),	-- Fieroblast
+			-- SpellName(100723),	-- Gushing Wound
 			SpellName(99389),	-- Imprinted
-			SpellName(101729),	-- Blazing Claw
+			-- SpellName(101729),	-- Blazing Claw
 			SpellName(100640),	-- Harsh Winds
 			SpellName(100555),	-- Smouldering Roots
 			-- Shannox
 			SpellName(99837),	-- Crystal Prison
 			SpellName(99937),	-- Jagged Tear
 			-- Baleroc
-			SpellName(99403),	-- Tormented
+			-- SpellName(99403),	-- Tormented
 			SpellName(99256),	-- Torment
 			SpellName(99252),	-- Blaze of Glory
 			SpellName(99516),	-- Countdown
 			-- Majordomo Staghelm
 			SpellName(98450),	-- Searing Seeds
-			SpellName(100210),	-- Burning Orb
+			-- SpellName(100210),	-- Burning Orb
 			-- Ragnaros
 			SpellName(99399),	-- Burning Wound
-			SpellName(100293),	-- Lava Wave
+			-- SpellName(100293),	-- Lava Wave
 			SpellName(98313),	-- Magma Blast
 			SpellName(100675),	-- Dreadflame
 			SpellName(99145),	-- Blazing Heat
-			SpellName(100249),	-- Combustion
+			-- SpellName(100249),	-- Combustion
 			SpellName(99613),	-- Molten Blast
 			-- Trash
 			SpellName(99532),	-- Melt Armor
@@ -212,7 +212,7 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(103687),	-- Crush Armor
 			SpellName(103536),	-- Warning
 			SpellName(103534),	-- Danger
-			SpellName(108570),	-- Black Blood of the Earth
+			-- SpellName(108570),	-- Black Blood of the Earth
 			-- Warlord Zon'ozz
 			SpellName(103434),	-- Disrupting Shadows
 			-- Yor'sahj the Unsleeping
@@ -223,7 +223,7 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(109325),	-- Frostflake
 			SpellName(105289),	-- Shattered Ice
 			SpellName(105285),	-- Target
-			SpellName(107061),	-- Ice Lance
+			-- SpellName(107061),	-- Ice Lance
 			-- Ultraxion
 			SpellName(105925),	-- Fading Light
 			-- Warmaster Blackhorn
@@ -231,7 +231,7 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(108046),	-- Shockwave
 			SpellName(107567),	-- Brutal Strike
 			SpellName(107558),	-- Degeneration
-			SpellName(110214),	-- Consuming Shroud
+			-- SpellName(110214),	-- Consuming Shroud
 			-- Spine of Deathwing
 			SpellName(105563),	-- Grasping Tendrils
 			SpellName(105479),	-- Searing Plasma
@@ -241,8 +241,8 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(106444),	-- Impale
 			SpellName(105841),	-- Degenerative bite
 			SpellName(105445),	-- Blistering heat
-			SpellName(109603),	-- Tetanus
-			SpellName(110141),	-- Shrapnel
+			-- SpellName(109603),	-- Tetanus
+			-- SpellName(110141),	-- 
 			SpellName(108649),	-- Corrupting Parasite]]
 		}
 
