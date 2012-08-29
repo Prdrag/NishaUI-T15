@@ -1,5 +1,5 @@
 local T, C, L, G = unpack(Tukui)
-if C.announcements.spells == true then
+if C.announcements.spells ~= true then return end
 	-- Chat channel to announce to
 	local AnnounceTo = SAY
 
@@ -110,4 +110,3 @@ if C.announcements.spells == true then
 
 	SLASH_AUTOANNOUNCE1 = "/Announce"
 	SlashCmdList["AUTOANNOUNCE"] = SetAnnounceTo
-end

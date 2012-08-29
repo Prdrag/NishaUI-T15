@@ -1,4 +1,6 @@
-local T, C, L, G = unpack( Tukui )
+local T, C, L, G = unpack(Tukui)
+
+if C.bags.enable ~= true then return end
 
 T.InfoLeftRightWidth = 370
 

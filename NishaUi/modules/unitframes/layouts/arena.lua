@@ -21,19 +21,15 @@ do
 			G.UnitFrames["Arena" .. i].Health:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Arena" .. i].Health:SetFrameLevel( 5 )
 			G.UnitFrames["Arena" .. i].Health:CreateBackdrop("Default")
-			G.UnitFrames["Arena" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+			G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 
 			if( C["unitframes"].unicolor == true ) then
 				G.UnitFrames["Arena" .. i].Health.colorTapping = false
 				G.UnitFrames["Arena" .. i].Health.colorDisconnected = false
 				G.UnitFrames["Arena" .. i].Health.colorClass = false
 				G.UnitFrames["Arena" .. i].Health:SetStatusBarColor(.3, .3, .3, 1)
+				G.UnitFrames["Arena" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 				G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
-			else
-				G.UnitFrames["Arena" .. i].Health.colorDisconnected = true
-				G.UnitFrames["Arena" .. i].Health.colorTapping = true
-				G.UnitFrames["Arena" .. i].Health.colorClass = true
-				G.UnitFrames["Arena" .. i].Health.colorReaction = true
 			end
 
 			G.UnitFrames["Arena" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))

@@ -18,23 +18,19 @@ do
 -- health
 --------------------------------------------------------------
 		do
-			G.UnitFrames["Boss" .. i].Health:Size( 200, 26 )
+			G.UnitFrames["Boss" .. i].Health:Size( 200, 30 )
 			G.UnitFrames["Boss" .. i].Health:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Boss" .. i].Health:SetFrameLevel( 5 )
 			G.UnitFrames["Boss" .. i].Health:CreateBackdrop("Default")
-			G.UnitFrames["Boss" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+			G.UnitFrames["Boss" .. i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 
 			if( C["unitframes"].unicolor == true ) then
 				G.UnitFrames["Boss" .. i].Health.colorTapping = false
 				G.UnitFrames["Boss" .. i].Health.colorDisconnected = false
 				G.UnitFrames["Boss" .. i].Health.colorClass = false
 				G.UnitFrames["Boss" .. i].Health:SetStatusBarColor(.3, .3, .3, 1)
+				G.UnitFrames["Boss" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 				G.UnitFrames["Boss" .. i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
-			else
-				G.UnitFrames["Boss" .. i].Health.colorDisconnected = true
-				G.UnitFrames["Boss" .. i].Health.colorTapping = true
-				G.UnitFrames["Boss" .. i].Health.colorClass = true
-				G.UnitFrames["Boss" .. i].Health.colorReaction = true
 			end
 
 			G.UnitFrames["Boss" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))
@@ -102,7 +98,7 @@ do
 -- buffs, debuffs
 --------------------------------------------------------------
 		do
-			G.UnitFrames["Boss" .. i].Debuffs:SetHeight( 28 )
+			G.UnitFrames["Boss" .. i].Debuffs:SetHeight( 30 )
 			G.UnitFrames["Boss" .. i].Debuffs:SetWidth( 200 )
 			G.UnitFrames["Boss" .. i].Debuffs.size = 30
 			G.UnitFrames["Boss" .. i].Debuffs.num = 4
@@ -113,9 +109,9 @@ do
 			G.UnitFrames["Boss" .. i].Debuffs.ClearAllPoints = T.dummy
 			G.UnitFrames["Boss" .. i].Debuffs.SetPoint = T.dummy
 
-			G.UnitFrames["Boss" .. i].Buffs:SetHeight( 28 )
+			G.UnitFrames["Boss" .. i].Buffs:SetHeight(30)
 			G.UnitFrames["Boss" .. i].Buffs:SetWidth( 200 )
-			G.UnitFrames["Boss" .. i].Buffs.size = 28
+			G.UnitFrames["Boss" .. i].Buffs.size = 30
 			G.UnitFrames["Boss" .. i].Buffs.num = 4
 			G.UnitFrames["Boss" .. i].Buffs.spacing = 3
 
@@ -137,8 +133,8 @@ do
 				for _, frames in pairs( { G.UnitFrames["Boss" .. i].Debuffs, G.UnitFrames["Boss" .. i].Buffs } ) do
 					if( not frames ) then return end
 
-					frames:Size( 200, 28)
-					frames.size = 28
+					frames:Size( 200, 32)
+					frames.size = 32
 					frames.num = 4
 					
 					hooksecurefunc( frames, "PostCreateIcon", T.SkinAura )
@@ -157,7 +153,7 @@ do
 		-- size
 		------------------------------
 		do
-			G.UnitFrames["Boss" .. i]:Size( 200, 26 )
+			G.UnitFrames["Boss" .. i]:Size( 200, 30 )
 		end
 	end
 end

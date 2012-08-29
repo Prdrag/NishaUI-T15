@@ -20,13 +20,14 @@ do
 		G.UnitFrames.Player.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Player.Health:SetFrameLevel( 5 )
 		G.UnitFrames.Player.Health:CreateBackdrop("Default")
-		G.UnitFrames.Player.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Player.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.Player.Health.colorTapping = false
 			G.UnitFrames.Player.Health.colorDisconnected = false
 			G.UnitFrames.Player.Health.colorClass = false
 			G.UnitFrames.Player.Health:SetStatusBarColor(.3, .3, .3, 1)
+			G.UnitFrames.Player.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 			G.UnitFrames.Player.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.Player.Health.colorDisconnected = true

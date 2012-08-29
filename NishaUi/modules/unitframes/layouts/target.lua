@@ -22,13 +22,14 @@ do
 		G.UnitFrames.Target.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Target.Health:SetFrameLevel( 5 )
 		G.UnitFrames.Target.Health:CreateBackdrop("Default")
-		G.UnitFrames.Target.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Target.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.Target.Health.colorTapping = false
 			G.UnitFrames.Target.Health.colorDisconnected = false
 			G.UnitFrames.Target.Health.colorClass = false
 			G.UnitFrames.Target.Health:SetStatusBarColor(.3, .3, .3, 1)
+			G.UnitFrames.Target.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 			G.UnitFrames.Target.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.Target.Health.colorDisconnected = true

@@ -106,28 +106,17 @@ T.PostUpdateRaidUnit = function( self )
 --------------------------------------------------------------
 		self.Health:ClearAllPoints()
 		self.Health:SetAllPoints( self )
-		self.Health:SetStatusBarTexture(C["media"].normTex)
 		self.Health:CreateBackdrop("Default")
 		self.Health:SetFrameLevel(1)
 		
-		self.Health.colorDisconnected = false
-		self.Health.colorClass = false
-		self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
-		self.Health.PostUpdate = T.PostUpdateHealthRaid
 		self.Health.value:Point( "CENTER", self.Health, 1, -8 )
 		self.Health.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
 		self.Health.PostUpdate = T.PostUpdateHealthRaid
-		self.Health.frequentUpdates = true
-
+		self.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 		if( C["raidframes"].unicolor == true ) then
-			self.Health.colorDisconnected = false
-			self.Health.colorClass = false
 			self.Health:SetStatusBarColor(.3, .3, .3, 1)
-			self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
-		else
-			self.Health.colorDisconnected = true
-			self.Health.colorClass = true
-			self.Health.colorReaction = true
+			self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+			self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))	
 		end
 		
 	if( C["unitframes"].gradienthealth == true and C["unitframes"].unicolor == true ) then
@@ -276,7 +265,7 @@ RaidPosition:SetScript( "OnEvent", function( self, event )
 	local raid = G.UnitFrames.RaidUnits
 	local pets = G.UnitFrames.RaidPets
 	raid:ClearAllPoints()
-	raid:SetPoint("TOP", G.ActionBars.Bar1, "TOP", 0, 80)
+	raid:SetPoint("BOTTOM", G.ActionBars.Bar1, "TOP", 0, 33)
 end )
 --------------------------------------------------------------
 -- only show 5 groups in raid (25 mans raid)

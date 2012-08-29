@@ -20,13 +20,14 @@ do
 		G.UnitFrames.Focus.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Focus.Health:SetFrameLevel( 5 )
 		G.UnitFrames.Focus.Health:CreateBackdrop("Default")
-		G.UnitFrames.Focus.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Focus.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.Focus.Health.colorTapping = false
 			G.UnitFrames.Focus.Health.colorDisconnected = false
 			G.UnitFrames.Focus.Health.colorClass = false
 			G.UnitFrames.Focus.Health:SetStatusBarColor(.3, .3, .3, 1)
+			G.UnitFrames.Focus.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
 			G.UnitFrames.Focus.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.Focus.Health.colorDisconnected = true
