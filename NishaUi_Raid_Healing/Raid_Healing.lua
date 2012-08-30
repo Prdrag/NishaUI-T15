@@ -215,12 +215,10 @@ T.PostUpdateRaidUnit = function( self )
 		ResurrectIcon:SetDrawLayer( "OVERLAY", 7 )
 		self.ResurrectIcon = ResurrectIcon
 		
-		if C["unitframes"].aggro == true then
-			table.insert(self.__elements, T.UpdateThreat)
-			self:RegisterEvent('PLAYER_TARGET_CHANGED', T.UpdateThreat)
-			self:RegisterEvent('UNIT_THREAT_LIST_UPDATE', T.UpdateThreat)
-			self:RegisterEvent('UNIT_THREAT_SITUATION_UPDATE', T.UpdateThreat)
-		end
+		table.insert(self.__elements, T.UpdateThreat)
+		self:RegisterEvent('PLAYER_TARGET_CHANGED', T.UpdateThreat)
+		self:RegisterEvent('UNIT_THREAT_LIST_UPDATE', T.UpdateThreat)
+		self:RegisterEvent('UNIT_THREAT_SITUATION_UPDATE', T.UpdateThreat)
 		
 	if C["raidframes"].healcomm then
 		local mhpb = CreateFrame('StatusBar', nil, self.Health)
@@ -263,7 +261,10 @@ local RaidPosition = CreateFrame( "Frame" )
 RaidPosition:RegisterEvent( "PLAYER_LOGIN" )
 RaidPosition:SetScript( "OnEvent", function( self, event )
 	local raid = G.UnitFrames.RaidUnits
-	local pets = G.UnitFrames.RaidPets
+	if( C["unitframes"].showraidpets == true ) then
+		local pets = G.UnitFrames.RaidPets
+		pets:ClearAllPoints()
+	end
 	raid:ClearAllPoints()
 	raid:SetPoint("BOTTOM", G.ActionBars.Bar1, "TOP", 0, 33)
 end )

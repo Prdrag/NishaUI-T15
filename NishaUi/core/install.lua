@@ -2,6 +2,14 @@ local T, C, L, G = unpack( Tukui )
 local color = RAID_CLASS_COLORS[T.myclass]
 local cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
 
+-------------------------------------------
+-- move anchors
+-------------------------------------------
+if C.loot.lootframe == true then
+	TukuiRollAnchor:ClearAllPoints()
+	TukuiRollAnchor:Point("CENTER", UIParent, "CENTER", 0, 50)
+end
+
 local function NishaUICVars()
 	SetCVar( "Maxfps", 999 )
 	SetCVar( "autoDismountFlying", 0 )
@@ -26,6 +34,7 @@ local function NishaUICVars()
 	SetCVar("nameplateShowEnemyPets", 0)
 	SetCVar("nameplateShowEnemyGuardians", 0)
 	SetCVar("nameplateShowEnemyTotems", 0)
+	SetCVar("lootUnderMouse", 1)
 end
 
 G.Install.Frame:SetTemplate("Transparent")
