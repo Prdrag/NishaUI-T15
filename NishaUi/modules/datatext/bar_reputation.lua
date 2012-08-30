@@ -1,6 +1,8 @@
 local T, C, L, G = unpack(Tukui) 
 if not C["datatext"].exprepbars == true then return end
-
+if T.level == MAX_PLAYER_LEVEL then
+	TukuiPlayer_Reputation:Kill()
+end
 local dtext = C["datatext"].expreptext
 
 if not dtext then
@@ -12,15 +14,18 @@ end
 local rep = CreateFrame("Frame", "TukuiReputation", UIParent)
 if T.level ~= MAX_PLAYER_LEVEL then
 	rep:SetTemplate("Default")
+	rep:CreateShadow("Default")
 	rep:Size(TukuiBar1:GetWidth(), height)
-	rep:Point("TOPLEFT", TukuiExperience, "BOTTOMLEFT", 0, -3)
+	rep:Point("TOPLEFT", TukuiBar1, "BOTTOMLEFT", 0, -26)
 else
 	if C["datatext"].exprepbars then
 		rep:SetTemplate("Default")
+		rep:CreateShadow("Default")
 		rep:Size(TukuiBar1:GetWidth(), height)
 		rep:Point("TOPLEFT", TukuiBar1, "BOTTOMLEFT", 0, -3)
 	else
 		rep:SetTemplate("Default")
+		rep:CreateShadow("Default")
 		rep:Size(TukuiBar1:GetWidth(), height)
 		rep:Point("TOPLEFT", TukuiBar1, "TOPLEFT", 8, -3)
 	end
