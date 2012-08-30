@@ -5,7 +5,6 @@ if( C["unitframes"].enable ~= true ) then return end
 --------------------------------------------------------------
 -- Target
 --------------------------------------------------------------
-
 do
 	do
 		G.UnitFrames.Target:SetBackdrop( nil )
@@ -13,14 +12,13 @@ do
 		G.UnitFrames.Target.shadow:Kill()
 		G.UnitFrames.Target.panel:Kill()
 	end
-
 --------------------------------------------------------------
 -- health
 --------------------------------------------------------------
 	do
 		G.UnitFrames.Target.Health:Size( 233, 30 )
 		G.UnitFrames.Target.Health:SetStatusBarTexture(C["media"].normTex)
-		G.UnitFrames.Target.Health:SetFrameLevel( 5 )
+		G.UnitFrames.Target.Health:SetFrameLevel(4)
 		G.UnitFrames.Target.Health:CreateBackdrop("Default")
 		G.UnitFrames.Target.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
 
@@ -68,19 +66,27 @@ do
 			G.UnitFrames.Target.Power.colorPower = true
 		end
 	end
+	
 --------------------------------------------------------------
 -- portraits
 --------------------------------------------------------------
-	do
-		if( C["unitframes"].charportrait == true ) then
+	do	
+		if C["unitframes"].charportrait == true and C["unitframes"].classicons == true then
 			G.UnitFrames.Target.Portrait:ClearAllPoints()
 			G.UnitFrames.Target.Portrait:SetAllPoints( G.UnitFrames.Target.Health )
 			G.UnitFrames.Target.Portrait:SetAlpha( 0.2 )
 			G.UnitFrames.Target.Portrait.SetAlpha = T.dummy
-			G.UnitFrames.Target.Health:ClearAllPoints()
-			G.UnitFrames.Target.Health:SetPoint( "TOPLEFT", 0, 0 )
-			G.UnitFrames.Target.Health:SetPoint( "TOPRIGHT" )
 			G.UnitFrames.Target.Portrait:SetFrameLevel( G.UnitFrames.Target.Health:GetFrameLevel() )
+			G.UnitFrames.Target.Health:ClearAllPoints()
+			G.UnitFrames.Target.Health:SetPoint("TOPLEFT", 0, 0)
+			G.UnitFrames.Target.Health:SetPoint("TOPRIGHT")
+		elseif C["unitframes"].charportrait == true and C["unitframes"].classicons ~= true then
+			G.UnitFrames.Target.Portrait:ClearAllPoints()
+			G.UnitFrames.Target.Portrait:CreateBackdrop("Default")
+			G.UnitFrames.Target.Portrait:Size(40, 40)
+			G.UnitFrames.Target.Portrait:Point("TOPLEFT", G.UnitFrames.Target.Health, "TOPRIGHT", 7, 0)
+			G.UnitFrames.Target.Health:SetPoint("TOPLEFT", 0, 0)
+			G.UnitFrames.Target.Health:SetPoint("TOPRIGHT")
 		end
 	end
 --------------------------------------------------------------

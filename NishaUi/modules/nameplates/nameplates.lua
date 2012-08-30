@@ -26,42 +26,18 @@ end
 
 local NamePlates = CreateFrame("Frame", "TukuiNameplates", UIParent)
 NamePlates:SetScript("OnEvent", function(self, event, ...) self[event](self, ...) end)
-if C["nameplate"].debuffs == true then
+if C.nameplate.debuffs == true then
 	NamePlates:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 end
 
-SetCVar("bloatthreat", 0)
-SetCVar("bloattest", 0)
-SetCVar("bloatnameplates", 0)
+-- SetCVar("bloatthreat", 0)
+-- SetCVar("bloattest", 0)
+-- SetCVar("bloatnameplates", 0)
 
 if T.eyefinity then
 	SetCVar("nameplateMotion", "0")
 	InterfaceOptionsNamesPanelUnitNameplatesMotionDropDown:Kill()
 end
-
---Nameplates we do NOT want to see
-local PlateBlacklist = {
-	--Shaman Totems (Ones that don't matter)
-	["Earth Elemental Totem"] = true,
-	["Fire Elemental Totem"] = true,
-	["Fire Resistance Totem"] = true,
-	["Flametongue Totem"] = true,
-	["Frost Resistance Totem"] = true,
-	["Healing Stream Totem"] = true,
-	["Magma Totem"] = true,
-	["Mana Spring Totem"] = true,
-	["Nature Resistance Totem"] = true,
-	["Searing Totem"] = true,
-	["Stoneclaw Totem"] = true,
-	["Stoneskin Totem"] = true,
-	["Strength of Earth Totem"] = true,
-	["Windfury Totem"] = true,
-	["Totem of Wrath"] = true,
-	["Wrath of Air Totem"] = true,
-
-	--Army of the Dead
-	["Army of the Dead Ghoul"] = true,
-}
 
 -- Check Player's Role
 local RoleUpdater = CreateFrame("Frame")
@@ -204,14 +180,13 @@ local function OnAura(frame, unit)
 	for index = 1,40 do
 		if i > 5 then return end
 		local match
-		local name,_,_,_,_,duration,_,caster,_,_,spellid = UnitAura(frame.unit,index,"HARMFUL")
+		local name, _, _, _, _, duration, _, caster, _, _, spellid = UnitAura(frame.unit, index, "HARMFUL")
 		
 		if C["nameplate"].debuffs == true then
-			if caster == "player" then match = true end
-			
+			if T.DebuffWhiteList[name] and caster == "player" then match = true end	
 		end
 		
-		if duration and match == true then
+		if duration and match == true and UnitExists("target") and UnitName("target") then
 			if not frame.icons[i] then frame.icons[i] = CreateAuraIcon(frame) end
 			local icon = frame.icons[i]
 			if i == 1 then icon:SetPoint("RIGHT",frame.icons,"RIGHT") end
@@ -559,9 +534,9 @@ local function UpdateThreat(frame, elapsed)
 	end
 end
 
---Create our blacklist for nameplates, so prevent a certain nameplate from ever showing
+-- Create our blacklist for nameplates
 local function CheckBlacklist(frame, ...)
-	if PlateBlacklist[frame.hp.name:GetText()] then
+	if T.PlateBlacklist[frame.hp.name:GetText()] then
 		frame:SetScript("OnUpdate", function() end)
 		frame.hp:Hide()
 		frame.cb:Hide()
