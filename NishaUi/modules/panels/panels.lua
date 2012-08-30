@@ -236,7 +236,7 @@ if C["skin"].combattoggle == true then
 end
 
 EmbedRightBackground:SetScript( "OnEvent", function( self, event )
-	if( C["chat"].background == true or C["addonskins"]["combattoggle"] == true ) then
+	if( C["chat"].background == true or C["skin"].combattoggle == true ) then
 		if( event == "PLAYER_LOGIN" ) then
 			EmbedRightBackground:Hide()
 			if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end

@@ -81,27 +81,3 @@ T.DebuffWhiteList = {
 	[SpellName(20549)] = true,	-- War Stomp
 	[SpellName(107079)] = true,	-- Quaking Palm
 }
-
---Nameplates we do NOT want to see
-T.PlateBlacklist = {
-	--Shaman Totems (Ones that don't matter)
-	["Earth Elemental Totem"] = true,
-	["Fire Elemental Totem"] = true,
-	["Fire Resistance Totem"] = true,
-	["Flametongue Totem"] = true,
-	["Frost Resistance Totem"] = true,
-	["Healing Stream Totem"] = true,
-	["Magma Totem"] = true,
-	["Mana Spring Totem"] = true,
-	["Nature Resistance Totem"] = true,
-	["Searing Totem"] = true,
-	["Stoneclaw Totem"] = true,
-	["Stoneskin Totem"] = true,
-	["Strength of Earth Totem"] = true,
-	["Windfury Totem"] = true,
-	["Totem of Wrath"] = true,
-	["Wrath of Air Totem"] = true,
-
-	--Army of the Dead
-	["Army of the Dead Ghoul"] = true,
-}
