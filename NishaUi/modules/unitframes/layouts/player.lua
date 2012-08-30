@@ -93,6 +93,24 @@ do
 		end
 	end
 --------------------------------------------------------------
+-- combopoints
+--------------------------------------------------------------	
+		TukuiCombo:ClearAllPoints()
+		TukuiCombo:SetPoint("CENTER", cbMover, "CENTER", 0, 0)
+		TukuiCombo:Size( 233, 11)
+		TukuiCombo:SetFrameStrata("LOW")
+		TukuiCombo:CreateBackdrop("Default")
+		for i = 1, 5  do
+			
+			if i == 1 then
+				TukuiCombo[i]:Point("TOPLEFT", TukuiCombo, "BOTTOMLEFT", 1, 11)
+				TukuiCombo[i]:Size(220/5, 11)
+			else
+				TukuiCombo[i]:Point("LEFT", TukuiCombo[i-1], "RIGHT", 3, 0)
+				TukuiCombo[i]:Size(220/5, 11)
+			end
+		end
+--------------------------------------------------------------
 -- combat icon
 --------------------------------------------------------------
 	do
