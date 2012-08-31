@@ -1,7 +1,7 @@
 ## Interface: 50001
 ## Title: |cffC495DDNishaUI Raid|r
 ## Notes: Raid layout for party and raid.
-## Version: 1.4.7
+## Version: 1.4.8
 ## Author: Nisha
 ## RequiredDeps: NishaUi
 

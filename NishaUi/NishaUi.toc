@@ -2,7 +2,7 @@
 ## Title: |cffC495DDNishaUi|r
 ## Notes: Edited version of Tukui.
 ## Author: Tukz, Nisha
-## Version: 1.4.7
+## Version: 1.4.8
 ## SavedVariables: TukuiData
 ## SavedVariablesPerCharacter: TukuiSaved, ClickCast
 ## RequiredDeps: NishaUiConfig, Tukui
