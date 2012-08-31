@@ -21,6 +21,9 @@ FramePositions:SetScript( "OnEvent", function( self, event, addon )
 		elseif IsAddOnLoaded("NishaUi_Raid_Healing") then
 			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
 			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
+		else
+			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
+			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
 		end
 
 		G.UnitFrames.TargetTarget:SetPoint( "TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -49 )
@@ -34,6 +37,9 @@ FramePositions:SetScript( "OnEvent", function( self, event, addon )
 		elseif IsAddOnLoaded("NishaUi_Raid_Healing") then
 			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
 			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
+		else
+			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -130 , 270 )
+			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 130 , 270 )
 		end
 
 		G.UnitFrames.TargetTarget:SetPoint( "TOPRIGHT", G.UnitFrames.Target, "BOTTOMRIGHT", 0, -49 )
