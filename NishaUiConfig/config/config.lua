@@ -162,9 +162,9 @@ C["skin"] = {
 	["skadareskin"] = true,                             -- reskin skada
 	["recountreskin"] = true,                           -- reskin skada
 	["dbmreskin"] = true,								-- reskin dbm
-	["embedright"] = "none",
-		["embedrighttoggle"] = false,
-		["combattoggle"] = false,
+	-- ["embedright"] = "none",
+		-- ["embedrighttoggle"] = false,
+		-- ["combattoggle"] = false,
 }
 
 C["datatext"] = {

@@ -62,7 +62,7 @@ barmod.ApplySettings = function(self, win)
 		skada.TitleBackGround:SetPoint("LEFT")
 		skada.TitleBackGround:SetPoint("RIGHT")
 		skada.TitleBackGround:SetPoint("BOTTOM", 0, 1)
-		skada.TitleBackGround:SetTemplate( "Default" )
+		skada.TitleBackGround:SetTemplate( "Transparent" )
 		skada.TitleBackGround:SetFrameLevel(skada.button:GetFrameLevel() -1)
 	end
 	
@@ -75,7 +75,7 @@ barmod.ApplySettings = function(self, win)
 
 	skada:SetBackdrop(nil)
 	if not skada.backdrop then
-		skada:CreateBackdrop("Default")
+		skada:CreateBackdrop("Transparent")
 	end
 	skada.backdrop:ClearAllPoints()
 	if(win.db.enabletitle) then
@@ -85,19 +85,4 @@ barmod.ApplySettings = function(self, win)
 	end
 	skada.backdrop:Point("BOTTOMRIGHT", skada, "BOTTOMRIGHT", 2, -2)
 
-end
-
-local function EmbedWindow(window, width, barheight, height, point, relativeFrame, relativePoint, ofsx, ofsy)
-	window.db.barwidth = width
-	window.db.barheight = barheight
-	if( window.db.enabletitle ) then 
-		height = height - barheight
-	end
-	window.db.background.height = height
-	window.db.spark = false
-	window.db.barslocked = true
-	window.bargroup:ClearAllPoints()
-	window.bargroup:SetPoint(point, relativeFrame, relativePoint, ofsx, ofsy)
-	
-	barmod.ApplySettings(barmod,window)
 end
