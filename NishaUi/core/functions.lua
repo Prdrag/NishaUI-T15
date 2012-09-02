@@ -277,42 +277,43 @@ local function MoveUI()
 			ali:Hide()
 			Grid()
 			Ali = true
-			print( "Ali: ON" )
 		else
 			ali:Hide()
-			print( "Ali: OFF" )
 			Ali = false
 		end
 	else
 		ox = x
 		Grid()
 		Ali = true
-		print( "Ali: ON" )
 	end
 	if T.myclass == "MONK" or T.myclass == "DRUID" or T.myclass == "WARLOCK" or T.myclass == "DEATHKNIGHT" or T.myclass == "PALADIN" or T.myclass == "PRIEST" or T.myclass == "SHAMAN" or T.myclass == "ROGUE" then
-	local panelstomove = {cbMover, FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, FilgerTargetDebuffs, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs }
+	local panelstomove = {cbMover, FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, FilgerTargetDebuffs, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs}
 		if cbMover or FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover or FilgerPetbuffs then
 			if MOVE_UI then
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
+					BNtoastframemover:Show()
 				end
 					
 			else
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
+					BNtoastframemover:Hide()
 				end
 			end
 		end
 	else
-		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs }
+		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs}
 		if FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover or FilgerPetbuffs then
 			if MOVE_UI then
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
+					BNtoastframemover:Show()
 				end
 			else
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
+					BNtoastframemover:Hide()
 				end
 			end
 		end

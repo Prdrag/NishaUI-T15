@@ -275,6 +275,7 @@ local CLASS_FILTERS = {
 				CreateSpellEntry( 31482 ), -- Divine Favor
 				CreateSpellEntry( 6940 ), -- Hand of Sacrifice
 				CreateSpellEntry( 84963 ), -- Inquisition
+				CreateSpellEntry( 20925 ), -- Inquisition
 			},
 			procs = {
 				CreateSpellEntry( 59578 ), -- The Art of War
@@ -1085,19 +1086,32 @@ local playerFrame = CreateAuraBarFrame( playerDataSource, TukuiPlayer );
 playerFrame:SetHiddenHeight( -yOffset );
 
 
+if C.classbar.origposi then
+	if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID") then
+		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 35 )
+	else
+		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 25 )
+	end
+	playerFrame:Point( "BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset )
 
-if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID") then
-	playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 18 )
+	local trinketFrame = CreateAuraBarFrame( trinketDataSource, TukuiPlayer )
+	trinketFrame:SetHiddenHeight( -yOffset )
+	trinketFrame:Point( "BOTTOMLEFT", playerFrame, "TOPLEFT", 0, yOffset )
+	trinketFrame:Point( "BOTTOMRIGHT", playerFrame, "TOPRIGHT", 0, yOffset )
 else
-	playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 7 )
+	if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID") then
+		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 18 )
+	else
+		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 7 )
+	end
+	playerFrame:Point( "BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset )
+
+	local trinketFrame = CreateAuraBarFrame( trinketDataSource, TukuiPlayer )
+	trinketFrame:SetHiddenHeight( -yOffset )
+	trinketFrame:Point( "BOTTOMLEFT", playerFrame, "TOPLEFT", 0, yOffset )
+	trinketFrame:Point( "BOTTOMRIGHT", playerFrame, "TOPRIGHT", 0, yOffset )
 end
-playerFrame:Point( "BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset )
-
-local trinketFrame = CreateAuraBarFrame( trinketDataSource, TukuiPlayer )
-trinketFrame:SetHiddenHeight( -yOffset )
-trinketFrame:Point( "BOTTOMLEFT", playerFrame, "TOPLEFT", 0, yOffset )
-trinketFrame:Point( "BOTTOMRIGHT", playerFrame, "TOPRIGHT", 0, yOffset )
-
+	
 if not targetdebuffs then
 	local targetFrame = CreateAuraBarFrame( targetDataSource, TukuiPlayer )
 	targetFrame:SetHiddenHeight( -yOffset )

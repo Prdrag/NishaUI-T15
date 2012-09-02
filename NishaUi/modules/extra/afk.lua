@@ -2,7 +2,7 @@
 -- Big Thanks to Sinaris
 ---------------------------------------------------------------------------------------------
 local T, C, L, G = unpack( Tukui )
-
+if C.nisha.afkscreen ~= true then return end
 local color = RAID_CLASS_COLORS[T.myclass]
 local cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
 

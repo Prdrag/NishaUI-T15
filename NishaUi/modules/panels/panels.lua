@@ -220,6 +220,19 @@ Petbuffs.text:SetText("Move PvE Debuffs")
 Petbuffs:Hide()
 tinsert(T.AllowFrameMoving, Petbuffs)
 
+local toastframemover = CreateFrame("Frame","BNtoastframemover", UIParent, "SecureHandlerStateTemplate")
+toastframemover:SetTemplate("Default")
+toastframemover:Size(BNToastFrame:GetWidth(), BNToastFrame:GetHeight())
+toastframemover:Point( "BOTTOMLEFT", G.Panels.LeftChatBackground, "BOTTOMRIGHT", 3, 0)
+toastframemover:SetMovable(true)
+toastframemover:SetFrameLevel(10)
+toastframemover:SetBackdropBorderColor(1,0,0)
+toastframemover.text = T.SetFontString(toastframemover, unpack(T.Fonts.movers.setfont))
+toastframemover.text:SetPoint("CENTER")
+toastframemover.text:SetText("Move BNToastframe")
+toastframemover:Hide()
+tinsert(T.AllowFrameMoving, toastframemover)
+
 local EmbedRightBackground = CreateFrame( "Frame", "EmbedRightBackground", UIParent )
 EmbedRightBackground:Size( C["chat"].width, C["chat"].height - 10)
 EmbedRightBackground:Point( "BOTTOMRIGHT", G.Panels.RightChatBackground, "BOTTOMRIGHT", -2, -5 )
@@ -235,7 +248,7 @@ if C["skin"].combattoggle == true then
 	EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_DISABLED" )
 end
 
-EmbedRightBackground:SetScript( "OnEvent", function( self, event )
+EmbedRightBackground:SetScript("OnEvent", function(self, event)
 	if( C["chat"].background == true or C["skin"].combattoggle == true ) then
 		if( event == "PLAYER_LOGIN" ) then
 			EmbedRightBackground:Hide()
@@ -251,20 +264,4 @@ EmbedRightBackground:SetScript( "OnEvent", function( self, event )
 			if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
 		end
 	end
-
-	if C["skin"].combattoggle == true then
-		if( event == "PLAYER_REGEN_ENABLED" ) then
-			EmbedRightBackground:Hide()
-			if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
-			if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
-			if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
-			if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
-		elseif( event == "PLAYER_REGEN_DISABLED" ) then
-			EmbedRightBackground:Show()
-			if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Show() end
-			if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Show() end
-			if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( true ) end
-			if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Show() end
-		end
-	end
-end )
+end)

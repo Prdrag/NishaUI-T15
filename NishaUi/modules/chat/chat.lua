@@ -33,5 +33,41 @@ end )
 
 BNToastFrame:HookScript( "OnShow", function( TukuiTooltipAnchor )
 	TukuiTooltipAnchor:ClearAllPoints()
-	TukuiTooltipAnchor:Point( "BOTTOMLEFT", G.Panels.LeftChatBackground, "BOTTOMRIGHT", 3, 0 )
+	TukuiTooltipAnchor:Point( "CENTER", BNtoastframemover, "CENTER", 0, 0 )
 end )
+
+T.SetDefaultChatPosition = function( frame )
+	if( frame ) then
+		local id = frame:GetID()
+		local name = FCF_GetChatWindowInfo( id )
+		local fontSize = select( 2, frame:GetFont() )
+
+		if( fontSize < 12 ) then
+			FCF_SetChatWindowFontSize( nil, frame, 12 )
+		else
+			FCF_SetChatWindowFontSize( nil, frame, fontSize )
+		end
+
+		if( id == 1 ) then
+			frame:ClearAllPoints()
+			frame:Point( "TOPLEFT", G.Panels.LeftChatTabsBackground, "BOTTOMLEFT", 0, -2 )
+			frame:Point( "BOTTOMRIGHT", G.Panels.DataTextLeft, "TOPRIGHT", 0, 2 )
+		elseif( id == 4 and name == LOOT ) then
+			if( not frame.isDocked ) then
+				frame:ClearAllPoints()
+				frame:Point( "TOPLEFT", G.Panels.RightChatTabsBackground, "BOTTOMLEFT", 0, -2 )
+				frame:Point( "BOTTOMRIGHT", G.Panels.DataTextRight, "TOPRIGHT", 0, 2 )
+				if( C["chat"].justifyRight == true ) then
+					frame:SetJustifyH( "RIGHT" )
+				else
+					frame:SetJustifyH( "LEFT" )
+				end
+			end
+		end
+
+		if( not frame.isLocked ) then
+			FCF_SetLocked( frame, 1 )
+		end
+	end
+end
+hooksecurefunc( "FCF_RestorePositionAndDimensions", T.SetDefaultChatPosition )

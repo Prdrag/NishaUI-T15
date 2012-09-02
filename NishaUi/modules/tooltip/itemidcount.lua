@@ -14,7 +14,7 @@ hooksecurefunc( GameTooltip, "SetUnitAura", function( self, ... )
 	self:AddDoubleLine( " ", " " )
 	self:AddDoubleLine( left, right )
 	self:Show()
-	if IsControlKeyDown() then
+	if IsControlKeyDown() and IsShiftKeyDown()then
 		print("|cff5065e4Aura: |cff71d5ff|Hspell:"..id.."|h["..name.."]|h|r - " .. id)
 	end
 end )
@@ -24,7 +24,7 @@ hooksecurefunc(GameTooltip, "SetUnitBuff", function(self,...)
 	if id then
 		self:AddLine("|cFFCA3C3C"..ID.."|r".." "..id)
 		self:Show()
-		if IsControlKeyDown() then
+		if IsControlKeyDown() and IsShiftKeyDown()then
 		 print("|cff50e468Buff: |cff71d5ff|Hspell:"..id.."|h["..name.."]|h|r - " .. id)
 		end
 	end
@@ -35,7 +35,7 @@ hooksecurefunc(GameTooltip, "SetUnitDebuff", function(self,...)
 	if id then
 		self:AddLine("|cFFCA3C3C"..ID.."|r".." "..id)
 		self:Show()
-		if IsControlKeyDown() then
+		if IsControlKeyDown() and IsShiftKeyDown()then
 		print("|cffe45050Debuff: |cff71d5ff|Hspell:"..id.."|h["..name.."]|h|r - " .. id)
 		end
 	end

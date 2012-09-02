@@ -35,6 +35,7 @@ C["nisha"] = {
 	["markbar"] = false,
 	["raidcd"] = false,
 	["threatbar"] = true,
+	["afkscreen"] = true,
 }
 C["nameplate"] = {
 	["enable"] = false,                                  -- enable nice skinned nameplates that fit into tukui
@@ -57,6 +58,7 @@ C["classbar"] = {
 	["paladin"] = true,
 	["rogue"] = true,
 	["mage"] = true,
+	["origposi"] = true,
 }
 
 C["raidframes"] = {
@@ -206,6 +208,7 @@ C["chat"] = {
 	["background"] = true,
 	["width"] = 378,
 	["height"] = 175,
+	["justifyRight"] = true,
 }
 
 C["media"] = {
