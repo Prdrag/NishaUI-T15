@@ -233,35 +233,35 @@ toastframemover.text:SetText("Move BNToastframe")
 toastframemover:Hide()
 tinsert(T.AllowFrameMoving, toastframemover)
 
-local EmbedRightBackground = CreateFrame( "Frame", "EmbedRightBackground", UIParent )
-EmbedRightBackground:Size( C["chat"].width, C["chat"].height - 10)
-EmbedRightBackground:Point( "BOTTOMRIGHT", G.Panels.RightChatBackground, "BOTTOMRIGHT", -2, -5 )
-EmbedRightBackground:SetTemplate( "Transparent" )
-EmbedRightBackground:SetFrameStrata( "MEDIUM" )
-EmbedRightBackground:SetFrameLevel( 3 )
-EmbedRightBackground:Hide()
+-- local EmbedRightBackground = CreateFrame( "Frame", "EmbedRightBackground", UIParent )
+-- EmbedRightBackground:Size( C["chat"].width, C["chat"].height - 10)
+-- EmbedRightBackground:Point( "BOTTOMRIGHT", G.Panels.RightChatBackground, "BOTTOMRIGHT", -2, -5 )
+-- EmbedRightBackground:SetTemplate( "Transparent" )
+-- EmbedRightBackground:SetFrameStrata( "MEDIUM" )
+-- EmbedRightBackground:SetFrameLevel( 3 )
+-- EmbedRightBackground:Hide()
 
-EmbedRightBackground:RegisterEvent("PLAYER_ENTERING_WORLD")
-EmbedRightBackground:RegisterEvent("PLAYER_LOGIN")
-if C["skin"].combattoggle == true then
-	EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_ENABLED" )
-	EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_DISABLED" )
-end
+-- EmbedRightBackground:RegisterEvent("PLAYER_ENTERING_WORLD")
+-- EmbedRightBackground:RegisterEvent("PLAYER_LOGIN")
+-- if C["skin"].combattoggle == true then
+	-- EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_ENABLED" )
+	-- EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_DISABLED" )
+-- end
 
-EmbedRightBackground:SetScript("OnEvent", function(self, event)
-	if( C["chat"].background == true or C["skin"].combattoggle == true ) then
-		if( event == "PLAYER_LOGIN" ) then
-			EmbedRightBackground:Hide()
-			if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
-			if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
-			if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
-			if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
-		elseif( event == "PLAYER_ENTERING_WORLD" ) then
-			EmbedRightBackground:Hide()
-			if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
-			if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
-			if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
-			if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
-		end
-	end
-end)
+-- EmbedRightBackground:SetScript("OnEvent", function(self, event)
+	-- if( C["chat"].background == true or C["skin"].combattoggle == true ) then
+		-- if( event == "PLAYER_LOGIN" ) then
+			-- EmbedRightBackground:Hide()
+			-- if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
+			-- if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
+			-- if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
+			-- if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
+		-- elseif( event == "PLAYER_ENTERING_WORLD" ) then
+			-- EmbedRightBackground:Hide()
+			-- if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
+			-- if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
+			-- if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
+			-- if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
+		-- end
+	-- end
+-- end)
