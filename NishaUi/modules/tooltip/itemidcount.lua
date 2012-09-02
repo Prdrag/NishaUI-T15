@@ -46,7 +46,7 @@ GameTooltip:HookScript("OnTooltipSetSpell", function(self)
 	if id then
 		self:AddLine("|cFFCA3C3C"..ID.."|r".." "..id)
 		self:Show()
-		if IsControlKeyDown() then
+		if IsControlKeyDown() and IsShiftKeyDown()then
 			print("|cFFCA3C3C"..ID.."|r".." "..id)
 		end
 	end

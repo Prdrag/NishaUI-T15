@@ -1,7 +1,7 @@
 ## Interface: 50001
 ## Title: |cffC495DDNishaUI Raid for healers|r
 ## Notes: Raid layout for party and raid, Healer mode.
-## Version: 1.4.8
+## Version: 1.4.9
 ## Author: Nisha
 ## RequiredDeps: NishaUi
 
