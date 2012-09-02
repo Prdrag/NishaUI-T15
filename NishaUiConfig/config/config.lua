@@ -39,7 +39,7 @@ C["nisha"] = {
 }
 C["nameplate"] = {
 	["enable"] = false,                                  -- enable nice skinned nameplates that fit into tukui
-	["debuffs"] = true,
+	["debuffs"] = false,
 	["nishastyle"] = true,
 }
 
