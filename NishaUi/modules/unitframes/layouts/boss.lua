@@ -35,10 +35,9 @@ do
 
 			G.UnitFrames["Boss" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))
 			G.UnitFrames["Boss" .. i].Name:SetShadowOffset( 1.25, -1.25 )
-			G.UnitFrames["Boss" .. i].Name:Point( "CENTER", G.UnitFrames["Boss" .. i].Health, "CENTER", 0, 1 )
-
 			G.UnitFrames["Boss" .. i].Health.value = T.SetFontString( G.UnitFrames["Boss" .. i].Health,unpack(T.Fonts.uGeneral.setfont))
 			G.UnitFrames["Boss" .. i].Health.value:Point( "RIGHT", G.UnitFrames["Boss" .. i].Health, "RIGHT", -4, 1 )
+			
 		end
 --------------------------------------------------------------
 -- power
@@ -142,16 +141,9 @@ do
 			end
 		end
 
---------------------------------------------------------------
--- altpowerbar
---------------------------------------------------------------
-		do
-			G.UnitFrames["Boss" .. i].AltPowerBar:SetStatusBarTexture(C["media"].normTex)
-		end
-
-		------------------------------
-		-- size
-		------------------------------
+------------------------------
+-- size
+------------------------------
 		do
 			G.UnitFrames["Boss" .. i]:Size( 200, 30 )
 		end

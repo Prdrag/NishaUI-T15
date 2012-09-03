@@ -113,10 +113,15 @@ T.PostUpdateRaidUnit = function( self )
 		self.Health.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
 		self.Health.PostUpdate = T.PostUpdateHealthRaid
 		self.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+		
 		if( C["raidframes"].unicolor == true ) then
 			self.Health:SetStatusBarColor(.3, .3, .3, 1)
 			self.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-			self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))	
+			if C["unitframes"].gradienthealth ~= true then
+				self.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))	
+			else
+				self.Health.bg:SetVertexColor(T.cStart)
+			end
 		end
 		
 	if( C["unitframes"].gradienthealth == true and C["unitframes"].unicolor == true ) then

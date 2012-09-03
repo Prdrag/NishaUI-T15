@@ -18,7 +18,6 @@ do
 --------------------------------------------------------------
 		do
 			G.UnitFrames["Arena" .. i].Health:Size( 200, 30 )
-			G.UnitFrames["Arena" .. i].Health:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Arena" .. i].Health:SetFrameLevel( 5 )
 			G.UnitFrames["Arena" .. i].Health:CreateBackdrop("Default")
 			G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
@@ -34,7 +33,6 @@ do
 
 			G.UnitFrames["Arena" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))
 			G.UnitFrames["Arena" .. i].Name:SetShadowOffset( 1.25, -1.25 )
-			G.UnitFrames["Arena" .. i].Name:Point( "CENTER", G.UnitFrames["Arena" .. i].Health, "CENTER", 0, 1 )
 		end
 
 --------------------------------------------------------------
@@ -42,7 +40,6 @@ do
 --------------------------------------------------------------
 		do
 			G.UnitFrames["Arena" .. i].Power:Size( 200, 2 )
-			G.UnitFrames["Arena" .. i].Power:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Arena" .. i].Power:ClearAllPoints()
 			G.UnitFrames["Arena" .. i].Power:Point( "TOPRIGHT", G.UnitFrames["Arena" .. i].Health, "BOTTOMRIGHT", 0, -7 )
 			G.UnitFrames["Arena" .. i].Power:SetFrameLevel( G.UnitFrames["Arena" .. i].Health:GetFrameLevel() + 2 )

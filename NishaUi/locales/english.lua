@@ -151,6 +151,11 @@ if T.client ~= "deDE" then
 		--------------------------------------------------------------------------
 		TukuiConfigUILocalization.nameplatenishastyle = "Enable Nishastyle"
 		TukuiConfigUILocalization.nameplatedebuffs = "Show Debuffs on the Nameplates(Turn Nameplates off)"
+		TukuiConfigUILocalization.nameplateshowcastbarname = "Show castbar name"
+		TukuiConfigUILocalization.nameplatewidth = "Nameplates width"
+		TukuiConfigUILocalization.nameplateheight = "Nameplates height"
+		TukuiConfigUILocalization.nameplateaurassize = "Debuffs size"
+		TukuiConfigUILocalization.nameplatenameabbrev = "Display abbreviated names"
 		--------------------------------------------------------------------------
 		--classbar
 		--------------------------------------------------------------------------

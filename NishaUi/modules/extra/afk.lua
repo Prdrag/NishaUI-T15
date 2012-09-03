@@ -3,8 +3,6 @@
 ---------------------------------------------------------------------------------------------
 local T, C, L, G = unpack( Tukui )
 if C.nisha.afkscreen ~= true then return end
-local color = RAID_CLASS_COLORS[T.myclass]
-local cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
 
 T.AFK_LIST = {
 	"Nearby questgivers that are awaiting your return are shown as a question mark on your mini-map.",
@@ -134,12 +132,12 @@ NishaAFKPanelTop:Hide()
 NishaAFKPanelTop.AsphyxiaUIText = NishaAFKPanelTop:CreateFontString( nil, "OVERLAY" )
 NishaAFKPanelTop.AsphyxiaUIText:SetPoint( "TOPLEFT", NishaAFKPanelTop, "TOPLEFT", 15, -13 )
 NishaAFKPanelTop.AsphyxiaUIText:SetFont( C["media"]["font"], 30, "OUTLINE" )
-NishaAFKPanelTop.AsphyxiaUIText:SetText( "Nisha"..cStart.."UI|r - "..GetAddOnMetadata( "NishaUi", "Version" ) )
+NishaAFKPanelTop.AsphyxiaUIText:SetText( "Nisha"..T.cStart.."UI|r - "..GetAddOnMetadata( "NishaUi", "Version" ) )
 
 NishaAFKPanelTop.AsphyxiaUIText2 = NishaAFKPanelTop:CreateFontString( nil, "OVERLAY" )
 NishaAFKPanelTop.AsphyxiaUIText2:SetPoint( "TOPLEFT", NishaAFKPanelTop, "TOPLEFT", 15, -35 )
 NishaAFKPanelTop.AsphyxiaUIText2:SetFont( C["media"]["font"], 15, "OUTLINE" )
-NishaAFKPanelTop.AsphyxiaUIText2:SetText( cStart..T.level.."|r".." "..T.myname.." - "..cStart..UnitClass("player") )
+NishaAFKPanelTop.AsphyxiaUIText2:SetText( T.cStart..T.level.."|r".." "..T.myname.." - "..T.cStart..UnitClass("player") )
 
 NishaAFKPanelTop.ClockText = NishaAFKPanelTop:CreateFontString( nil, "OVERLAY" )
 NishaAFKPanelTop.ClockText:SetPoint( "TOPRIGHT", NishaAFKPanelTop, "TOPRIGHT", -15, -13 )
@@ -164,7 +162,7 @@ NishaAFKPanelTop:SetScript( "OnUpdate", function( self, elapsed )
 	interval = interval - elapsed
 	if( interval <= 0 ) then
 		NishaAFKPanelTop.ClockText:SetText( format("%s", date( "%H:%M:%S" ) ) )
-		NishaAFKPanelTop.DateText:SetText( format("%s", date( cStart.."%a|r".." %d. %B" ) ) )
+		NishaAFKPanelTop.DateText:SetText( format("%s", date( T.cStart.."%a|r".." %d. %B" ) ) )
 		interval = .5
 	end
 end )

@@ -151,6 +151,11 @@ if T.client == "deDE" then
 		--------------------------------------------------------------------------
 		TukuiConfigUILocalization.nameplatenishastyle = "Aktivere Nishastyle"
 		TukuiConfigUILocalization.nameplatedebuffs = "Zeige Schwächungszauber auf den Namensplaketen(Dafür muss Nishastyle aktiv sein)"
+		TukuiConfigUILocalization.nameplateshowcastbarname = "Zeige den Namen in der Zauberleiste"
+		TukuiConfigUILocalization.nameplatewidth = "Breite der Namensplakette"
+		TukuiConfigUILocalization.nameplateheight = "Höhe der Namensplakette"
+		TukuiConfigUILocalization.nameplateaurassize = "Größe der Debuffs"
+		TukuiConfigUILocalization.nameplatenameabbrev = "Namen abgekürzt anzeigen"
 		--------------------------------------------------------------------------
 		--classbar
 		--------------------------------------------------------------------------		

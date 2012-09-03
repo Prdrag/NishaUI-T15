@@ -1,6 +1,4 @@
 local T, C, L, G = unpack( Tukui )
-local color = RAID_CLASS_COLORS[T.myclass]
-local cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
 
 -------------------------------------------
 -- move anchors
@@ -19,21 +17,13 @@ local function NishaUICVars()
 	SetCVar( "cameraDistanceMax", 50 )
 	SetCVar( "cameraDistanceMaxFactor", 3.4 )
 	SetCVar("profanityFilter", 0)
-	SetCVar("taintLog", 1)
+	SetCVar("taintLog", 0)
 	-- SetAutoDeclineGuildInvites(1)
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
 	SetCVar("ConversationMode", "inline")
 	SetCVar("WhisperMode", "inline")
 	SetCVar("BnWhisperMode", "inline")
-	SetCVar("nameplateShowFriends", 0)
-	SetCVar("nameplateShowFriendlyPets", 0)
-	SetCVar("nameplateShowFriendlyGuardians", 0)
-	SetCVar("nameplateShowFriendlyTotems", 0)
-	SetCVar("nameplateShowEnemies", 1)
-	SetCVar("nameplateShowEnemyPets", 0)
-	SetCVar("nameplateShowEnemyGuardians", 0)
-	SetCVar("nameplateShowEnemyTotems", 0)
 	SetCVar("lootUnderMouse", 1)
 end
 
@@ -80,7 +70,7 @@ local UIOnLogon = CreateFrame( "Frame" )
 UIOnLogon:RegisterEvent( "PLAYER_ENTERING_WORLD" )
 UIOnLogon:SetScript( "OnEvent", function( self, event )
 	self:UnregisterEvent( "PLAYER_ENTERING_WORLD" )
-	print(L.hello ..cStart .. T.myname.. L.hello2 ..cStart .. L.hello3 ..cStart .. L.hello4)
+	print(L.hello ..T.cStart .. T.myname.. L.hello2 ..T.cStart .. L.hello3 ..T.cStart .. L.hello4)
 	if( TukuiSaved == nil ) then
 		TukuiSaved = {}
 		TukuiSaved = {
@@ -91,7 +81,7 @@ UIOnLogon:SetScript( "OnEvent", function( self, event )
 		}
 		NishaUICVars()
 	end
-	
+	NishaUICVars()
 	if (IsAddOnLoaded("NishaUi_Raid") and IsAddOnLoaded("NishaUi_Raid_Healing")) then
 		StaticPopup_Show("NISHAUIDISABLE_RAID")
 	end

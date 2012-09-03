@@ -5,7 +5,6 @@ local function SetTabStyle( frame )
 	local chat = frame:GetName()
 	local tab = _G[chat .. "Tab"]
 	local color = RAID_CLASS_COLORS[T.myclass]
-	local cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
 	_G[chat .. "TabText"]:Show()
 
 	tab:HookScript("OnEnter", function() _G[chat .. "TabText"]:Show() end )

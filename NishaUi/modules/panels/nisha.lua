@@ -1,8 +1,5 @@
 local T, C, L, G = unpack( Tukui )
 
-local color = RAID_CLASS_COLORS[T.myclass]
-local cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
-
 -- main frame
 local NishaUIMainFrame = CreateFrame("Frame", "NishaUIMainFrame", UIParent)
 NishaUIMainFrame:SetSize(650, 350)
@@ -313,7 +310,7 @@ local pulse = CreateFrame("Frame", "pulse", UIParent)
 -------------------------------------------------------
 local function AMEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_addon, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_addon, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_addon2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -325,7 +322,7 @@ end
 
 local function MoveEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_move, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_move, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_move2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -337,7 +334,7 @@ end
 
 local function ConfigEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_config, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_config, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_config2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -349,7 +346,7 @@ end
 
 local function hbEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_bind, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_bind, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_bind2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -361,7 +358,7 @@ end
 
 local function RLEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_reload, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_reload, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_reload2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -372,7 +369,7 @@ local function RLLeave(self)
 end
 local function helpEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_help, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_help, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_help2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -384,7 +381,7 @@ end
 
 local function abEnter(self)
   GameTooltip:SetOwner(TukuiTooltipAnchor, "ANCHOR_NONE", T.Scale(5), T.Scale(5))
-  GameTooltip:SetText(cStart..L.nisha_ab, 1, 1, 1)  -- This sets the top line of text, in gold.
+  GameTooltip:SetText(T.cStart..L.nisha_ab, 1, 1, 1)  -- This sets the top line of text, in gold.
   GameTooltip:AddLine(L.nisha_ab2, 1, 1, 1)
   GameTooltip:AddTexture(C.media.pulse)
   GameTooltip:Show()
@@ -456,7 +453,7 @@ for i = 1, 7 do
 		pulse[i]:SetScript("OnLeave", AMLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart..L.nisha_addon3)
+		pulse[i].Text:SetText(T.cStart..L.nisha_addon3)
 		pulse[i]:SetScript("OnMouseDown", function()
 		 if addonBG:IsShown() then
 			addonBG:Hide()
@@ -472,7 +469,7 @@ for i = 1, 7 do
 		pulse[i]:SetScript("OnLeave", MoveLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart..L.nisha_move3)
+		pulse[i].Text:SetText(T.cStart..L.nisha_move3)
 	elseif i == 3 then
 		pulse[i]:SetAttribute("type", "macro")
 		pulse[i]:SetAttribute("macrotext", "/kb")
@@ -481,7 +478,7 @@ for i = 1, 7 do
 		pulse[i]:SetScript("OnLeave", hbLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart..L.nisha_bind3)
+		pulse[i].Text:SetText(T.cStart..L.nisha_bind3)
 	elseif i == 4 then
 		pulse[i]:SetAttribute("type", "macro")
 		pulse[i]:SetAttribute("macrotext", "/tc")
@@ -490,7 +487,7 @@ for i = 1, 7 do
 		pulse[i]:SetScript("OnLeave", ConfigLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart..L.nisha_config3 )
+		pulse[i].Text:SetText(T.cStart..L.nisha_config3 )
 	elseif i == 5 then
 		pulse[i]:SetAttribute("type", "macro")
 		pulse[i]:SetAttribute("macrotext", "/rl")
@@ -499,7 +496,7 @@ for i = 1, 7 do
 		pulse[i]:SetScript("OnLeave", RLLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart..L.nisha_reload3)		
+		pulse[i].Text:SetText(T.cStart..L.nisha_reload3)		
 	elseif i == 6 then
 		pulse[i]:SetAttribute("type", "macro")
 		pulse[i]:SetAttribute("macrotext", "/nhelp")
@@ -508,7 +505,7 @@ for i = 1, 7 do
 		pulse[i]:SetScript("OnLeave", helpLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart..L.nisha_help3)		
+		pulse[i].Text:SetText(T.cStart..L.nisha_help3)		
 	elseif i == 7 then
 		pulse[i]:SetAttribute("type", "macro")
 		pulse[i]:SetAttribute("macrotext", "/debuffs")
@@ -517,7 +514,7 @@ for i = 1, 7 do
 		-- pulse[i]:SetScript("OnLeave", helpLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
-		pulse[i].Text:SetText(cStart.."Raid Debuffs")
+		pulse[i].Text:SetText(T.cStart.."Raid Debuffs")
 	end
 end
 

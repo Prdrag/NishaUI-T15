@@ -59,7 +59,7 @@ local CreateDebuffsConfig = function()
 	
 	caption.Text = T.SetFontString(caption, unpack(T.Fonts.uGeneral.setfont))
 	caption.Text:Point("CENTER", caption, "CENTER", 0, 0)
-	caption.Text:SetText(cStart.."Raid Debuffs")
+	caption.Text:SetText(T.cStart.."Raid Debuffs")
 	
 	-- Scroll
 	local ScrollArea = CreateFrame("Frame", nil, Backdrop)

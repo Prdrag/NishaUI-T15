@@ -38,9 +38,16 @@ C["nisha"] = {
 	["afkscreen"] = true,
 }
 C["nameplate"] = {
-	["enable"] = false,                                  -- enable nice skinned nameplates that fit into tukui
+	["enable"] = false,                         -- enable nice skinned nameplates that fit into tukui
 	["debuffs"] = false,
 	["nishastyle"] = true,
+	["height"] = 9,								-- Nameplate height
+	["width"] = 130,							-- Nameplate width
+	["combat"] = false,							-- Automatically show nameplate in combat
+	["showhealth"] = false,						-- Numeral health value
+	["showcastbarname"] = false,				-- Show castbar name
+	["nameabbrev"] = false,						-- Display the abbreviated names
+	["aurassize"] = 20,							-- Debuffs size
 }
 
 C["announcements"] = {

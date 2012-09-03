@@ -1,8 +1,5 @@
 local T, C, L = unpack(Tukui)
 
-local color = RAID_CLASS_COLORS[T.myclass]
-cStart = ("|cff%.2x%.2x%.2x"):format(color.r * 255, color.g * 255, color.b * 255)
-
 -- Slash commands
 SLASH_ALOAD1 = "/am"
 SlashCmdList.ALOAD = function (msg)
@@ -41,7 +38,7 @@ addonHeader:Size(addonBG:GetWidth(), 23)
 addonHeader:Point("BOTTOM", addonBG, "TOP", 0, 3, true)
 addonHeader.Text = T.SetFontString(addonHeader, unpack(T.Fonts.uGeneral.setfont))
 addonHeader.Text:SetPoint("LEFT", 5, 1)
-addonHeader.Text:SetText(cStart.."AddOns List"..": "..cStart..T.myname)
+addonHeader.Text:SetText(T.cStart.."AddOns List"..": "..T.cStart..T.myname)
 
 -- Create scroll frame
 local scrollFrame = CreateFrame("ScrollFrame", "scrollFrame", addonBG, "UIPanelScrollFrameTemplate")
@@ -69,7 +66,7 @@ saveButton:HookScript("OnLeave", OriginalBackdrop)
 
 saveButton.Text = T.SetFontString(saveButton, unpack(T.Fonts.uGeneral.setfont))
 saveButton.Text:Point("CENTER", saveButton, "CENTER", 1, 1)
-saveButton.Text:SetText(cStart.."Save Changes")
+saveButton.Text:SetText(T.cStart.."Save Changes")
 
 
 local closeButton = CreateFrame("Button", "closeButton", addonBG)
@@ -84,7 +81,7 @@ closeButton:HookScript("OnLeave", OriginalBackdrop)
 
 closeButton.Text = T.SetFontString(closeButton, unpack(T.Fonts.uGeneral.setfont))
 closeButton.Text:Point("CENTER", closeButton, "CENTER", 1, 1)
-closeButton.Text:SetText(cStart.."Cancel")
+closeButton.Text:SetText(T.cStart.."Cancel")
 
 local function UpdateAddons()
 local addons = {}
