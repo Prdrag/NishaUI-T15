@@ -9,16 +9,15 @@ if C.loot.lootframe == true then
 end
 
 local function NishaUICVars()
-	SetCVar( "Maxfps", 999 )
-	SetCVar( "autoDismountFlying", 0 )
-	SetCVar( "guildMemberNotify", 1 )
-	SetCVar( "chatBubblesParty", 1 )
-	SetCVar( "chatBubbles", 1 )
-	SetCVar( "cameraDistanceMax", 50 )
-	SetCVar( "cameraDistanceMaxFactor", 3.4 )
+	SetCVar("Maxfps", 999 )
+	SetCVar("autoDismountFlying", 0 )
+	SetCVar("guildMemberNotify", 1 )
+	SetCVar("chatBubblesParty", 1 )
+	SetCVar("chatBubbles", 1 )
+	SetCVar("cameraDistanceMax", 50 )
+	SetCVar("cameraDistanceMaxFactor", 3.4 )
 	SetCVar("profanityFilter", 0)
 	SetCVar("taintLog", 0)
-	-- SetAutoDeclineGuildInvites(1)
 	SetCVar("showTutorials", 0)
 	SetCVar("gameTip", "0")
 	SetCVar("ConversationMode", "inline")
@@ -81,7 +80,11 @@ UIOnLogon:SetScript( "OnEvent", function( self, event )
 		}
 		NishaUICVars()
 	end
-	NishaUICVars()
+	
+	if GetCVar("taintLog") == "1" then
+		SetCVar("taintLog", 0)
+	end
+	
 	if (IsAddOnLoaded("NishaUi_Raid") and IsAddOnLoaded("NishaUi_Raid_Healing")) then
 		StaticPopup_Show("NISHAUIDISABLE_RAID")
 	end
