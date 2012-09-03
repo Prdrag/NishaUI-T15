@@ -1,32 +1,71 @@
 ﻿local T, C, L, G = unpack(Tukui)
-T.AnnounceSpells = {
-	--Combat ress
-	[20707] = true, 	-- Soulstone Resurrection
-	[20484] = true,  	-- Rebirth
-	[61999] = true, 	-- Raise Ally
-	-- Warrior
-	[2565] = true,          -- Shield Block
-	[871] = true,           -- Shield Wall
-	[12975] = true,         -- Last Stand
-	[114207] = true,	-- Skull Banner
-	-- Priest
-	[47788] = true,         -- Guardian Spirit
-	[33206] = true, 	-- Pain Suppression
-	-- Hunter
-	[34477] = "player",		-- Misdirection
-	-- Monk
-	[115176] = true, 	-- Zen Meditation
-	[115203] = true, 	-- Fortifying Brew
-	[115213] = true, 	-- Avert Harm
-	-- Deathknight
-	[48707] = true, 	-- Anti-Magic Shell
-	[55233] = true, 	-- Vampiric Blood
-	[48792] = true,		-- Icebound Fortitude
-	-- Paladin
-	[31850] = true, 	-- Ardent Defender
-	[498] = true,		-- Divine Protection
-	[642] = true,           -- Divine Shield
-	--Druid:
-	[106922] = true,	-- Might of Ursoc
-	[61336] = true, 	-- Survival Instincts
-}
+if T.client ~= "deDE" then
+	T.AnnounceSpells = {
+		["Misdirection"] = "player",
+		["Rebirth"] = "player",
+		["Soulstone Resurrection"] = "player",
+		
+		-- Monk
+		["Zen Meditation"] = "player", 
+		["Fortifying Brew"] = "player",
+		["Avert Harm"] = "player", 
+		
+		-- Deathknight
+		["Anti-Magic Shell"] = "player", 
+		["Vampiric Blood"] = "player",
+		["Raise Ally"] = "player",
+		["Icebound Fortitude"] = "player", 
+		
+		-- Paladin
+		["Ardent Defender"] = "player",
+		["Divine Protection"] = "player", 
+		
+		-- Warrior
+		["Last Stand"] = "player",
+		["Shield Wall"] = "player",
+		["Rallying Cry"] = "player",
+		["Skull Banner"] = "player",
+		["Demoralizing Banner"] = "player",
+		
+		--Druid:
+		["Might of Ursoc"] = "player",
+		["Survival Instincts"] = "player",
+		
+		--["Power Infusion"] = "mouseover",
+		--["Pain Suppression"] = "mouseover",
+	}
+else
+	T.AnnounceSpells = {
+		["Irreführung"] = "player",
+		["Wiedergeburt"] = "player",
+		["Seelensteinauferstehung"] = "player",
+		
+		-- Monk
+		["Zenmeditation"] = "player", 
+		["Stärkendes Gebräu"] = "player",
+		["Schaden abwenden"] = "player", 
+		
+		-- Deathknight
+		["Antimagische Hülle"] = "player", 
+		["Vampirblut"] = "player",
+		["Verbündeten erwecken"] = "player",
+		["Eisige Gegenwehr"] = "player", 
+		
+		-- Paladin
+		["Unermüdlicher Verteidiger"] = "player",
+		["Göttlicher Schutz"] = "player", 
+		
+		-- Warrior
+		["Letztes Gefecht"] = "player",
+		["Schildwall"] = "player",
+		["Schädelbanner"] = "player",
+		["Anspornender Schrei"] = "player",
+		
+		--Druid:
+		["Might of Ursoc"] = "player",
+		["Überlebensinstinkte"] = "player",
+		
+		--["Power Infusion"] = "mouseover",
+		--["Pain Suppression"] = "mouseover",
+	}
+end
