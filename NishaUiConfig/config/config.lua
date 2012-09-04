@@ -17,8 +17,7 @@ C["unitframes"] = {
 	["combatfeedback"] = false,
 	["raidunitdebuffwatch"] = true,
 	["auratimer"] = true,
-	["totdebuffs"] = true,
-	["showraidpets"] = false,                            -- show pets in raid unit frames
+	["totdebuffs"] = true,                        
 	["raid"] = true,
 	["showtotalhpmp"] = false,
 	["gradienthealth"] = true,
@@ -27,7 +26,10 @@ C["unitframes"] = {
 		0.6, 0.3, 0.3,
 		0.2, 0.2, 0.2,
 	},
-	["healcomm"] = false, 
+	["healcomm"] = false,
+	["maxraidplayers"] = true,
+	["showraidpets"] = false,
+	["raidalphaoor"] = 0.4,
 }
 
 C["nisha"] = {

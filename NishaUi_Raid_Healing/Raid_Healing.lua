@@ -4,17 +4,18 @@ local T, C, L, G = unpack( Tukui )
 --------------------------------------------------------------
 local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, columnSpacing, columnAnchorPoint
 
-if C.raidframes.verticalgrid == true then
+	if C.unitframes.gridvertical then
+		point = "TOP"
+		columnAnchorPoint = "LEFT"
+		pa1, pa2, px, py = "TOPLEFT", "TOPRIGHT", 3, 0
+	else
+		point = "LEFT"
+		columnAnchorPoint = "TOP"
+		pa1, pa2, px, py = "TOPLEFT", "BOTTOMLEFT", 0, -3
+	end
+	
 	width = T.Scale( C.raidframes.width * T.raidscale )
-	height = T.Scale( C.raidframes.height * T.raidscale )
-	showParty = true
-	showRaid = true
-	showPlayer = true
-	xOffset = T.Scale( 7 )
-	yOffset = T.Scale( -5 )
-	point = "TOP"
-	columnSpacing = T.Scale( 6 )
-	columnAnchorPoint = "LEFT"
+	height = T.Scale( C.raidframes.height * T.raidscale )	
 
 	T.RaidFrameAttributes = function()
 		return
@@ -32,58 +33,17 @@ if C.raidframes.verticalgrid == true then
 		"showRaid", true,
 		"showPlayer", true,
 		"showSolo", true,
-		"xoffset", T.Scale( 8 ),
-		"yOffset", T.Scale( -6 ),
+		"xoffset", T.Scale(7),
+		"yOffset", T.Scale(-7),
 		"point", point,
 		"groupFilter", "1,2,3,4,5,6,7,8",
 		"groupingOrder", "1,2,3,4,5,6,7,8",
 		"groupBy", "GROUP",
 		"maxColumns", 8,
 		"unitsPerColumn", 5,
-		"columnSpacing", T.Scale( columnSpacing ),
+		"columnSpacing", T.Scale(3),
 		"columnAnchorPoint", columnAnchorPoint
 	end
-else
-	width = T.Scale((C.raidframes.width - 4) * T.raidscale )
-	height = T.Scale((C.raidframes.height - 4) * T.raidscale )
-	showParty = true
-	showRaid = true
-	showPlayer = true
-	xOffset = T.Scale( 7 )
-	yOffset = T.Scale( -5 )
-	point = "LEFT"
-	columnSpacing = T.Scale( 4 )
-	columnAnchorPoint = "TOP"
-
-	T.RaidFrameAttributes = function()
-		return
-		"TukuiRaid",
-		nil,
-		"solo,raid,party",
-		"oUF-initialConfigFunction", [[
-			local header = self:GetParent()
-			self:SetWidth( header:GetAttribute( "initial-width" ) )
-			self:SetHeight( header:GetAttribute( "initial-height" ) )
-		]],
-		"initial-width", T.Scale( width * C["raidframes"].gridscale * T.raidscale ),
-		"initial-height", T.Scale( height * C["raidframes"].gridscale * T.raidscale ),
-		"showParty", true,
-		"showRaid", true,
-		"showPlayer", true,
-		"showSolo", true,
-		"xoffset", T.Scale( 6 ),
-		"yOffset", T.Scale( -6 ),
-		"point", point,
-		"groupFilter", "1,2,3,4,5,6,7,8",
-		"groupingOrder", "1,2,3,4,5,6,7,8",
-		"groupBy", "GROUP",
-		"maxColumns", 8,
-		"unitsPerColumn", 5,
-		"columnSpacing", T.Scale( columnSpacing ),
-		"columnAnchorPoint", columnAnchorPoint
-	end
-
-end
 
 T.PostUpdateRaidUnit = function( self )
 		self.panel:Kill()
@@ -108,7 +68,7 @@ T.PostUpdateRaidUnit = function( self )
 		if C.raidframes.powerbars then
 			self.Health:SetPoint("TOPLEFT")
 			self.Health:SetPoint("TOPRIGHT")
-			self.Health:Height(C.raidframes.height - 11)
+			self.Health:Height(C.raidframes.height-8)
 		else
 			self.Health:SetAllPoints( self )
 			self.Health:CreateBackdrop("Default")
@@ -288,18 +248,3 @@ RaidPosition:SetScript( "OnEvent", function( self, event )
 	raid:ClearAllPoints()
 	raid:SetPoint("BOTTOM", G.ActionBars.Bar1, "TOP", 0, 33)
 end )
---------------------------------------------------------------
--- only show 5 groups in raid (25 mans raid)
---------------------------------------------------------------
-local MaxGroup = CreateFrame("Frame")
-MaxGroup:RegisterEvent("PLAYER_ENTERING_WORLD")
-MaxGroup:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-MaxGroup:SetScript("OnEvent", function(self)
-	local inInstance, instanceType = IsInInstance()
-	local _, _, _, _, maxPlayers, _, _ = GetInstanceInfo()
-	if inInstance and instanceType == "raid" and maxPlayers ~= 40 then
-		G.UnitFrames.RaidUnits:SetAttribute("groupFilter", "1,2,3,4,5")
-	else
-		G.UnitFrames.RaidUnits:SetAttribute("groupFilter", "1,2,3,4,5,6,7,8")
-	end
-end)

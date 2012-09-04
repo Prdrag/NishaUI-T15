@@ -6,7 +6,7 @@
 ## SavedVariables: TukuiData
 ## SavedVariablesPerCharacter: TukuiSaved, ClickCast
 ## RequiredDeps: NishaUiConfig, Tukui
-## OptionalDeps: Blizzard_CombatText, !ClassColors, Clique, DBM-Core, Omen, Recount, Skada, TinyDPS, ReforgeLite, DocsDebugRunes, Ingela's Rapture, MonkEC
+## OptionalDeps: Blizzard_CombatText, Clique, DBM-Core, Omen, Recount, Skada, TinyDPS
 ## X-oUF: oUFTukui
 
 nishaui.xml

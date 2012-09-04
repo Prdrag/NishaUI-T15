@@ -196,18 +196,3 @@ RaidPosition:SetScript( "OnEvent", function( self, event )
 		raid:SetPoint("BOTTOMLEFT", G.Panels.DataTextLeft, "TOPLEFT", 2, 150)
 	end
 end )
---------------------------------------------------------------
--- only show 5 groups in raid (25 mans raid)
---------------------------------------------------------------
-local MaxGroup = CreateFrame("Frame")
-MaxGroup:RegisterEvent("PLAYER_ENTERING_WORLD")
-MaxGroup:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-MaxGroup:SetScript("OnEvent", function(self)
-	local inInstance, instanceType = IsInInstance()
-	local _, _, _, _, maxPlayers, _, _ = GetInstanceInfo()
-	if inInstance and instanceType == "raid" and maxPlayers ~= 40 then
-		G.UnitFrames.RaidUnits:SetAttribute("groupFilter", "1,2,3,4,5")
-	else
-		G.UnitFrames.RaidUnits:SetAttribute("groupFilter", "1,2,3,4,5,6,7,8")
-	end
-end)

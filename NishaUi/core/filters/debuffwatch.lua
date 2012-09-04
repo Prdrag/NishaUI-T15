@@ -247,7 +247,7 @@ if C["unitframes"].raidunitdebuffwatch == true then
 		}
 
 		T.ReverseTimer = {
-			[92956] = true, -- Sinestra (Wrack)
+			[89421] = true, -- Sinestra (Wrack)
 		},
 		
 		ORD:RegisterDebuffs(T.debuffids)
