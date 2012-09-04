@@ -72,35 +72,32 @@ local CLASS_FILTERS = {
 		},
 		DEATHKNIGHT = { 
 			target = {
-				CreateSpellEntry( 55095 ), -- Frost Fever
-				CreateSpellEntry( 55078 ), -- Blood Plague
-				CreateSpellEntry( 81130 ), -- Scarlet Fever
-				CreateSpellEntry( 50536 ), -- Unholy Blight
-				CreateSpellEntry( 65142 ), -- Ebon Plague
-				CreateSpellEntry( 51714 ), -- Razorice
-				CreateSpellEntry( 98957 ), -- Burning Blood Tank T12
+				CreateSpellEntry( 55095 ), -- Frost Fever +
+				CreateSpellEntry( 55078 ), -- Blood Plague  +
+				CreateSpellEntry( 81130 ), -- Scarlet Fever 
+				CreateSpellEntry( 130736 ), -- Soul Reaper +
 			},
 			player = {
-				CreateSpellEntry( 59052 ), -- Freezing Fog
-				CreateSpellEntry( 51124 ), -- Killing Machine
-				CreateSpellEntry( 49016 ), -- Unholy Frenzy
-				CreateSpellEntry( 57330 ), -- Horn of Winter
-				CreateSpellEntry( 70654 ), -- Blood Armor
-				CreateSpellEntry( 77535 ), -- Blood Shield
-				CreateSpellEntry( 55233 ), -- Vampiric Blood
-				CreateSpellEntry( 81141 ), -- Blood Swarm
-				CreateSpellEntry( 45529 ), -- Blood Tap
-				CreateSpellEntry( 49222 ), -- Bone sheild
-				CreateSpellEntry( 48792 ), -- Ice Bound Fortitude
+				CreateSpellEntry( 59052 ), -- Freezing Fog +
+				CreateSpellEntry( 51124 ), -- Killing Machine +
+				CreateSpellEntry( 49016 ), -- Unholy Frenzy +
+				CreateSpellEntry( 57330 ), -- Horn of Winter +
+				CreateSpellEntry( 55233 ), -- Vampiric Blood +
+				CreateSpellEntry( 114851 ), -- Blood Charge +
+				CreateSpellEntry( 91342 ), -- Shadow Infusion +
+				CreateSpellEntry( 49222 ), -- Bone sheild +
+				CreateSpellEntry( 48792 ), -- Ice Bound Fortitude +
 				CreateSpellEntry( 49028 ), -- Dancing Rune Weapon
-				CreateSpellEntry( 51271 ), -- Pillar of Frost
-				CreateSpellEntry( 48707 ), -- Anti-Magic Shell
+				CreateSpellEntry( 51271 ), -- Pillar of Frost +
+				CreateSpellEntry( 48707 ), -- Anti-Magic Shell +
+				CreateSpellEntry( 115989 ), -- Unholy Blight +
+				CreateSpellEntry( 108200 ), -- Remorseless Winter +
 			},
 			procs = {
-				CreateSpellEntry( 53365 ), -- Unholy Strength
-				CreateSpellEntry( 64856 ), -- Blade barrier
-				CreateSpellEntry( 70657 ), -- Advantage
-				CreateSpellEntry( 81340 ), -- Sudden Doom
+				CreateSpellEntry( 53365 ), -- Unholy Strength +
+				CreateSpellEntry( 77535 ), -- Blood Shield +
+				CreateSpellEntry( 81340 ), -- Sudden Doom +
+				CreateSpellEntry( 50421 ), -- Scent of Blood+
 			}		
 		},
 		DRUID = { 
@@ -173,20 +170,19 @@ local CLASS_FILTERS = {
 			},
 		},
 		HUNTER = { 
-			target = {
-				CreateSpellEntry( 49050 ), -- Aimed Shot
-				CreateSpellEntry( 1978 ), -- Serpent Sting
-				CreateSpellEntry( 53238 ), -- Piercing Shots
-				CreateSpellEntry( 3674 ), -- Black Arrow
-				CreateSpellEntry( 82654 ), -- Widow Venom
-				CreateSpellEntry( 34490 ), -- Silencing Shot
-				CreateSpellEntry( 37506 ), -- Scatter Shot
+			target = { 
+				CreateSpellEntry( 118253 ), -- Serpent Sting +
+				CreateSpellEntry( 63468 ), -- Piercing Shots +
+				CreateSpellEntry( 3674 ), -- Black Arrow +
+				CreateSpellEntry( 82654 ), -- Widow Venom +
+				CreateSpellEntry( 34490 ), -- Silencing Shot +
+				CreateSpellEntry( 19503 ), -- Scatter Shot +
 				CreateSpellEntry( 88691 ), -- Marker for death
 				CreateSpellEntry( 1130, true ), -- Hunters mark
 			},
 			player = {
 				CreateSpellEntry( 82749 ), -- killing streak
-				CreateSpellEntry( 3045 ), -- Rapid Fire
+				CreateSpellEntry( 3045 ), -- Rapid Fire +
 				CreateSpellEntry( 34471 ), --The beast within
 				CreateSpellEntry( 53434 ), --call of the wild
 				CreateSpellEntry( 64418 ), CreateSpellEntry( 64419 ), CreateSpellEntry( 64420 ), -- Sniper Training Rank 1/2/3
@@ -197,11 +193,11 @@ local CLASS_FILTERS = {
 				CreateSpellEntry( 56453 ), -- Lock and Load
 				CreateSpellEntry( 82692 ), --Focus Fire
 				CreateSpellEntry( 35099 ), --Rapid Killing Rank 2
-				CreateSpellEntry( 53220 ), -- Improved Steadyshot
+				CreateSpellEntry( 53220 ), -- Improved Steadyshot +
 				CreateSpellEntry( 89388 ), -- sic'em
 				CreateSpellEntry( 94007 ), -- Killing Streak
 				CreateSpellEntry( 70893 ), -- Culling the herd
-				CreateSpellEntry( 82925 ), --Ready, Set, Aim
+				CreateSpellEntry( 82925 ), --Ready, Set, Aim +
 				CreateSpellEntry( 82926 ), --Fire
 			},
 		},

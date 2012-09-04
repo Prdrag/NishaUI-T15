@@ -10,9 +10,9 @@ if C["unitframes"].raidunitdebuffwatch == true then
 				{33076, "BOTTOMRIGHT", {0.2, 0.7, 0.2}},		-- Prayer of Mending
 				{139, "BOTTOMLEFT", {0.4, 0.7, 0.2}}, 			-- Renew
 				{17, "TOPLEFT", {0.81, 0.85, 0.1}, true},		-- Power Word: Shield
-				{10060, "RIGHT", {0.89, 0.1, 0.1}},				-- Power Infusion
-				{33206, "LEFT", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
-				{47788, "LEFT", {0.86, 0.52, 0}, true},			-- Guardian Spirit
+				{10060, "TOP", {0.89, 0.1, 0.1}},				-- Power Infusion
+				{33206, "BOTTOM", {0.89, 0.1, 0.1}, true},		-- Pain Suppress
+				{47788, "BOTTOM", {0.86, 0.52, 0}, true},			-- Guardian Spirit
 			},
 			DRUID = {
 				{774, "TOPRIGHT", {0.8, 0.4, 0.8}},				-- Rejuvenation
@@ -39,7 +39,7 @@ if C["unitframes"].raidunitdebuffwatch == true then
 				{119611, "TOPLEFT", {0.8, 0.4, 0.8}},	--Erneuernder Nebel
 				{116849, "TOPRIGHT", {0.2, 0.8, 0.2}},	-- Lebenskokon 
 				{124682, "BOTTOMLEFT", {0.4, 0.8, 0.2}}, -- Erneuernder Nebel
-				{115176, "RIGHT", {0.81, 0.85, 0.1}, true}, -- Zenmeditation
+				{115176, "TOP", {0.81, 0.85, 0.1}, true}, -- Zenmeditation
 				{124081, "BOTTOMRIGHT", {0.7, 0.4, 0}}, -- Zensphäre
 			},
 			DEATHKNIGHT = {
@@ -62,8 +62,8 @@ if C["unitframes"].raidunitdebuffwatch == true then
 				{3411, "TOPRIGHT", {0.89, 0.1, 0.1}},			-- Intervene
 			},
 			ALL = {
-				{14253, "RIGHT", {0, 1, 0}}, -- Abolish Poison
-				{23333, "LEFT", {1, 0, 0}}, -- Warsong flag xD
+				{14253, "TOP", {0, 1, 0}}, -- Abolish Poison
+				{23333, "BOTTOM", {1, 0, 0}}, -- Warsong flag xD
 			},
 		}
 	end

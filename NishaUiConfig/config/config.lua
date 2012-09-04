@@ -74,6 +74,9 @@ C["raidframes"] = {
 	["mouseoverhighlight"]= true,
 	["gridscale"] = 1,
 	["healcomm"] = true,
+	["powerbars"] = false,
+	["height"] = 42,
+	["width"] = 72,
 }
 
 C["combattext"] = {

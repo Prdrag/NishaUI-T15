@@ -5,8 +5,8 @@ local T, C, L, G = unpack( Tukui )
 local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, columnSpacing, columnAnchorPoint
 
 if C.raidframes.verticalgrid == true then
-	width = T.Scale( 72 * C["raidframes"].gridscale * T.raidscale )
-	height = T.Scale( 42 * C["raidframes"].gridscale * T.raidscale )
+	width = T.Scale( C.raidframes.width * T.raidscale )
+	height = T.Scale( C.raidframes.height * T.raidscale )
 	showParty = true
 	showRaid = true
 	showPlayer = true
@@ -44,8 +44,8 @@ if C.raidframes.verticalgrid == true then
 		"columnAnchorPoint", columnAnchorPoint
 	end
 else
-	width = T.Scale( 75 * C["raidframes"].gridscale * T.raidscale )
-	height = T.Scale( 45 * C["raidframes"].gridscale * T.raidscale )
+	width = T.Scale((C.raidframes.width - 4) * T.raidscale )
+	height = T.Scale((C.raidframes.height - 4) * T.raidscale )
 	showParty = true
 	showRaid = true
 	showPlayer = true
@@ -96,7 +96,7 @@ T.PostUpdateRaidUnit = function( self )
 		self.panel = panel
 		
 		self:SetBackdropColor( 0.0, 0.0, 0.0, 0.0 )
-		self.Power:Kill()
+		
 		self:SetFrameLevel(1)
 		local color = RAID_CLASS_COLORS[T.myclass]
 		self:HighlightUnit(color.r,color.g,color.b,1)
@@ -105,9 +105,24 @@ T.PostUpdateRaidUnit = function( self )
 -- health
 --------------------------------------------------------------
 		self.Health:ClearAllPoints()
-		self.Health:SetAllPoints( self )
-		self.Health:CreateBackdrop("Default")
+		if C.raidframes.powerbars then
+			self.Health:SetPoint("TOPLEFT")
+			self.Health:SetPoint("TOPRIGHT")
+			self.Health:Height(C.raidframes.height - 11)
+		else
+			self.Health:SetAllPoints( self )
+			self.Health:CreateBackdrop("Default")
+		end
 		self.Health:SetFrameLevel(1)
+		if C.raidframes.powerbars then
+			self.Power:ClearAllPoints()
+			self.Power:Point("TOPLEFT", self.Health, "BOTTOMLEFT", 1, -3)
+			self.Power:Point("TOPRIGHT", self.Health, "BOTTOMRIGHT", -1, -3)
+			self.Power:SetFrameLevel(2)
+			self.Power:CreateBackdrop("Default")
+		else
+			self.Power:Kill()
+		end
 		
 		self.Health.value:Point( "CENTER", self.Health, 1, -8 )
 		self.Health.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
@@ -230,12 +245,12 @@ T.PostUpdateRaidUnit = function( self )
 		if C["unitframes"].gridhealthvertical then
 			mhpb:SetOrientation("VERTICAL")
 			mhpb:SetPoint('BOTTOM', self.Health:GetStatusBarTexture(), 'TOP', 0, 0)
-			mhpb:Width(72*C["unitframes"].gridscale*T.raidscale)
-			mhpb:Height(42*C["unitframes"].gridscale*T.raidscale)		
+			mhpb:Width(C.raidframes.width*T.raidscale)
+			mhpb:Height(C.raidframes.height*T.raidscale)		
 		else
 			mhpb:SetPoint('TOPLEFT', self.Health:GetStatusBarTexture(), 'TOPRIGHT', 0, 0)
 			mhpb:SetPoint('BOTTOMLEFT', self.Health:GetStatusBarTexture(), 'BOTTOMRIGHT', 0, 0)
-			mhpb:Width(75*C["unitframes"].gridscale*T.raidscale)
+			mhpb:Width(C.raidframes.width*T.raidscale)
 		end				
 		mhpb:SetStatusBarTexture(C.media.normTex)
 		mhpb:SetStatusBarColor(0, 1, 0.5, 0.25)
@@ -244,12 +259,12 @@ T.PostUpdateRaidUnit = function( self )
 		if C["unitframes"].gridhealthvertical then
 			ohpb:SetOrientation("VERTICAL")
 			ohpb:SetPoint('BOTTOM', mhpb:GetStatusBarTexture(), 'TOP', 0, 0)
-			ohpb:Width(72*C["unitframes"].gridscale*T.raidscale)
-			ohpb:Height(42*C["unitframes"].gridscale*T.raidscale)
+			ohpb:Width(C.raidframes.width*T.raidscale)
+			ohpb:Height(C.raidframes.height*T.raidscale)
 		else
 			ohpb:SetPoint('TOPLEFT', mhpb:GetStatusBarTexture(), 'TOPRIGHT', 0, 0)
 			ohpb:SetPoint('BOTTOMLEFT', mhpb:GetStatusBarTexture(), 'BOTTOMRIGHT', 0, 0)
-			ohpb:Width(75*C["unitframes"].gridscale*T.raidscale)
+			ohpb:Width(C.raidframes.width*T.raidscale)
 		end
 		ohpb:SetStatusBarTexture(C.media.normTex)
 		ohpb:SetStatusBarColor(0, 1, 0, 0.25)
