@@ -57,14 +57,6 @@ do
 
 		G.UnitFrames.Target.Power.value = T.SetFontString( G.UnitFrames.Target.Health,unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Target.Power.value:Point( "LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1 )
-
-		if( C["unitframes"].unicolor == true ) then
-			G.UnitFrames.Target.Power.colorTapping = true
-			G.UnitFrames.Target.Power.colorClass = true
-			G.UnitFrames.Target.Power.bg.multiplier = 0.1
-		else
-			G.UnitFrames.Target.Power.colorPower = true
-		end
 	end
 	
 --------------------------------------------------------------
