@@ -14,7 +14,6 @@
 	<Script file="layouts\target.lua" />
 	<Script file="layouts\targettarget.lua" />
 	<Script file="layouts\raidframes.lua" />
-	<Script file="functions\functions.lua" />
 	<Script file="tags\tags.lua" />
 	<Include file="layouts\classbar\uf_classbar.xml" />
 </Ui>

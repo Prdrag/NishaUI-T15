@@ -43,6 +43,7 @@ do
 
 		G.UnitFrames.Target.Health.value = T.SetFontString( G.UnitFrames.Target.Health,unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Target.Health.value:Point( "RIGHT", G.UnitFrames.Target.Health, "RIGHT", -4, 1 )
+		G.UnitFrames.Player.Health.PostUpdate = T.PostUpdateHealth
 	end
 --------------------------------------------------------------
 -- power
@@ -57,6 +58,8 @@ do
 
 		G.UnitFrames.Target.Power.value = T.SetFontString( G.UnitFrames.Target.Health,unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Target.Power.value:Point( "LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1 )
+		G.UnitFrames.Player.Power.PreUpdate = T.PreUpdatePower
+		G.UnitFrames.Player.Power.PostUpdate = T.PostUpdatePower
 	end
 	
 --------------------------------------------------------------

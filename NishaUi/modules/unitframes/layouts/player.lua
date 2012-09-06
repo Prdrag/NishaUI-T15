@@ -36,8 +36,9 @@ do
 			G.UnitFrames.Player.Health.colorReaction = true
 		end
 
-		G.UnitFrames.Player.Health.value = T.SetFontString( G.UnitFrames.Player.Health,unpack(T.Fonts.uGeneral.setfont))
-		G.UnitFrames.Player.Health.value:Point( "RIGHT", G.UnitFrames.Player.Health, "RIGHT", -4, 1 )
+			G.UnitFrames.Player.Health.value = T.SetFontString( G.UnitFrames.Player.Health,unpack(T.Fonts.uGeneral.setfont))
+			G.UnitFrames.Player.Health.value:Point( "RIGHT", G.UnitFrames.Player.Health, "RIGHT", -4, 1 )
+			G.UnitFrames.Player.Health.PostUpdate = T.PostUpdateHealth
 	end
 --------------------------------------------------------------
 -- power
@@ -52,6 +53,8 @@ do
 
 		G.UnitFrames.Player.Power.value = T.SetFontString( G.UnitFrames.Player.Health,unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Player.Power.value:Point( "LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1 )
+		G.UnitFrames.Player.Power.PreUpdate = T.PreUpdatePower
+		G.UnitFrames.Player.Power.PostUpdate = T.PostUpdatePower
 	end
 --------------------------------------------------------------
 -- portraits

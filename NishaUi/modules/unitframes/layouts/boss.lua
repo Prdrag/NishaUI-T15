@@ -35,8 +35,8 @@ do
 
 			G.UnitFrames["Boss" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))
 			G.UnitFrames["Boss" .. i].Name:SetShadowOffset( 1.25, -1.25 )
-			G.UnitFrames["Boss" .. i].Health.value = T.SetFontString( G.UnitFrames["Boss" .. i].Health,unpack(T.Fonts.uGeneral.setfont))
-			G.UnitFrames["Boss" .. i].Health.value:Point( "RIGHT", G.UnitFrames["Boss" .. i].Health, "RIGHT", -4, 1 )
+			G.UnitFrames["Boss" .. i].Health.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
+			G.UnitFrames["Boss" .. i].Health.PostUpdate = T.PostUpdateHealth
 			
 		end
 --------------------------------------------------------------
@@ -50,8 +50,9 @@ do
 			G.UnitFrames["Boss" .. i].Power:SetFrameLevel( G.UnitFrames["Boss" .. i].Health:GetFrameLevel() + 2 )
 			G.UnitFrames["Boss" .. i].Power:CreateBackdrop("Default")
 
-			G.UnitFrames["Boss" .. i].Power.value = T.SetFontString( G.UnitFrames["Boss" .. i].Health,unpack(T.Fonts.uGeneral.setfont))
-			G.UnitFrames["Boss" .. i].Power.value:Point( "LEFT", G.UnitFrames["Boss" .. i].Health, "LEFT", 4, 1 )
+			G.UnitFrames["Boss" .. i].Power.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
+			G.UnitFrames["Boss" .. i].Power.PreUpdate = T.PreUpdatePower
+			G.UnitFrames["Boss" .. i].Power.PostUpdate = T.PostUpdatePower
 		end
 --------------------------------------------------------------
 -- castbar
