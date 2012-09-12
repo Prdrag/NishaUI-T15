@@ -216,7 +216,7 @@ Petbuffs:SetFrameLevel(10)
 Petbuffs:SetBackdropBorderColor(1,0,0)
 Petbuffs.text = T.SetFontString(Petbuffs, unpack(T.Fonts.movers.setfont))
 Petbuffs.text:SetPoint("CENTER")
-Petbuffs.text:SetText("Move PvE Debuffs")
+Petbuffs.text:SetText("Move Pet Buffs")
 Petbuffs:Hide()
 tinsert(T.AllowFrameMoving, Petbuffs)
 

@@ -338,7 +338,7 @@ local function MoveUI()
 			end
 		end
 	else
-		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs}
+		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerTargetDebuffs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs}
 		if FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover or FilgerPetbuffs then
 			if MOVE_UI then
 				for _, panels in pairs( panelstomove ) do
