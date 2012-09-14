@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+local color = RAID_CLASS_COLORS[T.myclass]
 -- main frame
 local NishaUIMainFrame = CreateFrame("Frame", "NishaUIMainFrame", UIParent)
 NishaUIMainFrame:SetSize(650, 350)

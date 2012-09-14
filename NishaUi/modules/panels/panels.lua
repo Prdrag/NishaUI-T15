@@ -124,7 +124,7 @@ G.Panels.DataTextMinimapLeft:SetFrameLevel(5)
 --------------------------------------------------------------
 local anchor = CreateFrame("Frame", "cbMover", UIParent)
 anchor:Size(233, 11)
-if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID") then
+if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID" or T.myclass == "DEATHKNIGHT") then
 	anchor:Point("BOTTOM", TukuiPlayer, "TOP", 0, 18)
 else
 	anchor:Point("BOTTOM", TukuiPlayer, "TOP", 0, 7)
@@ -139,6 +139,7 @@ anchor.text = T.SetFontString(anchor, C.media.uffont, 12)
 anchor.text:SetPoint("CENTER")
 anchor.text:SetText("Move Classbar")
 tinsert(T.AllowFrameMoving, anchor)
+
 ------------------------------
 -- Filger
 ------------------------------

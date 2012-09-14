@@ -328,12 +328,18 @@ local function MoveUI()
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
 					BNtoastframemover:Show()
+					if C["classtimer"].enable then
+						Classtimermover:Show()
+					end
 				end
 					
 			else
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
 					BNtoastframemover:Hide()
+					if C["classtimer"].enable then
+						Classtimermover:Hide()
+					end
 				end
 			end
 		end
@@ -344,11 +350,17 @@ local function MoveUI()
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
 					BNtoastframemover:Show()
+					if C["classtimer"].enable then
+						Classtimermover:Show()
+					end
 				end
 			else
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
 					BNtoastframemover:Hide()
+					if C["classtimer"].enable then
+						Classtimermover:Hide()
+					end
 				end
 			end
 		end

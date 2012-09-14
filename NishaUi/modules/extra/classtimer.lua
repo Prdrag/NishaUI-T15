@@ -1,4 +1,4 @@
-local T, C, L = unpack(Tukui)
+local T, C, L, G = unpack(Tukui)
 if C["unitframes"].enable == false or C["classtimer"].enable == false then return end
 --[[ Configuration functions - DO NOT TOUCH
 	id - spell id
@@ -141,6 +141,7 @@ local CLASS_FILTERS = {
 				CreateSpellEntry( 8936, false, nil, nil, 8936 ), -- Regrowth
 				CreateSpellEntry( 33763 ), -- Lifebloom
 				CreateSpellEntry( 16870 ), -- Clearcasting
+				CreateSpellEntry( 127538 ), -- Savage Roar
 			},
 			procs = {
 				CreateSpellEntry( 48518 ), -- Eclipse Lunar
@@ -292,9 +293,6 @@ local CLASS_FILTERS = {
 				CreateSpellEntry( 703 ), -- Garrote
 				CreateSpellEntry( 79140 ), -- vendetta
 				CreateSpellEntry( 16511 ), -- Hemorrhage
-				CreateSpellEntry( 84745 ), -- Shallow Insight
-				CreateSpellEntry( 84746 ), -- Moderate Insight
-				CreateSpellEntry( 84747 ), -- Deep Insight
 			},
 			player = {
 				CreateSpellEntry( 32645 ), -- Envenom
@@ -305,6 +303,9 @@ local CLASS_FILTERS = {
 				CreateSpellEntry( 1966 ), -- Feint
 				CreateSpellEntry( 73651 ), -- Recuperate
 				CreateSpellEntry( 5171 ), -- Slice and Dice
+				CreateSpellEntry( 84745 ), -- Shallow Insight 
+				CreateSpellEntry( 84746 ), -- Moderate Insight 
+				CreateSpellEntry( 84747 ), -- Deep Insight 
 				
 				CreateSpellEntry( 74001 ), -- Combat Readiness
 			},
@@ -1004,37 +1005,36 @@ trinketDataSource:AddFilter( TRINKET_FILTER, TRINKET_BAR_COLOR )
 
 local yOffset = 7
 local xOffset = 0
-if C["unitframes"].charportrait == true then xOffset = -44 end
+
+local cltimermover = CreateFrame("Frame", "Classtimermover", UIParent)
+cltimermover:Height(C["classtimer"].barheight	);
+if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID" or T.myclass == "DEATHKNIGHT") then
+	cltimermover:Point("BOTTOMLEFT", G.UnitFrames.Player, "TOPLEFT", xOffset, 32)
+else
+	cltimermover:Point("BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 25)
+end
+cltimermover:Point( "BOTTOMRIGHT", G.UnitFrames.Player, "TOPRIGHT", 0, yOffset )
+cltimermover:SetTemplate("Default")
+cltimermover:SetBackdropBorderColor(1, 0, 0, 1)
+cltimermover:SetFrameStrata("HIGH")
+cltimermover:SetClampedToScreen(true)
+cltimermover:SetMovable(true)
+cltimermover:Hide()
+cltimermover.text = T.SetFontString(cltimermover, C.media.uffont, 12)
+cltimermover.text:SetPoint("CENTER")
+cltimermover.text:SetText("Move Classtimer Player")
+tinsert(T.AllowFrameMoving, cltimermover)
 
 local playerFrame = CreateAuraBarFrame( playerDataSource, TukuiPlayer );
 playerFrame:SetHiddenHeight( -yOffset );
+playerFrame:Point( "BOTTOMLEFT", cltimermover, "TOPLEFT", xOffset, -yOffset*2)
+playerFrame:Point( "BOTTOMRIGHT", cltimermover, "TOPRIGHT", 0, -yOffset*2 )
 
-
-if C.classbar.origposi then
-	if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID") then
-		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 35 )
-	else
-		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 25 )
-	end
-	playerFrame:Point( "BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset )
-
-	local trinketFrame = CreateAuraBarFrame( trinketDataSource, TukuiPlayer )
-	trinketFrame:SetHiddenHeight( -yOffset )
-	trinketFrame:Point( "BOTTOMLEFT", playerFrame, "TOPLEFT", 0, yOffset )
-	trinketFrame:Point( "BOTTOMRIGHT", playerFrame, "TOPRIGHT", 0, yOffset )
-else
-	if (T.myclass == "PRIEST" or T.myclass == "MONK" or T.myclass == "WARRIOR" or T.myclass == "DRUID") then
-		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 18 )
-	else
-		playerFrame:Point( "BOTTOMLEFT", TukuiPlayer, "TOPLEFT", xOffset, 7 )
-	end
-	playerFrame:Point( "BOTTOMRIGHT", TukuiPlayer, "TOPRIGHT", 0, yOffset )
-
-	local trinketFrame = CreateAuraBarFrame( trinketDataSource, TukuiPlayer )
-	trinketFrame:SetHiddenHeight( -yOffset )
-	trinketFrame:Point( "BOTTOMLEFT", playerFrame, "TOPLEFT", 0, yOffset )
-	trinketFrame:Point( "BOTTOMRIGHT", playerFrame, "TOPRIGHT", 0, yOffset )
-end
+local trinketFrame = CreateAuraBarFrame( trinketDataSource, TukuiPlayer )
+trinketFrame:SetHiddenHeight( -yOffset )
+trinketFrame:Point( "BOTTOMLEFT", playerFrame, "TOPLEFT", 0, yOffset )
+trinketFrame:Point( "BOTTOMRIGHT", playerFrame, "TOPRIGHT", 0, yOffset )
+	
 	
 if not targetdebuffs then
 	local targetFrame = CreateAuraBarFrame( targetDataSource, TukuiPlayer )

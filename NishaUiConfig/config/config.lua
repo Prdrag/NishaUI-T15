@@ -67,7 +67,6 @@ C["classbar"] = {
 	["paladin"] = true,
 	["rogue"] = true,
 	["mage"] = true,
-	["origposi"] = true,
 }
 
 C["raidframes"] = {

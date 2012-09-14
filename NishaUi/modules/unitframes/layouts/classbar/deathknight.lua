@@ -6,7 +6,11 @@ if( T.myclass == "DEATHKNIGHT" ) then
 		for i = 1, 6 do
 			G.UnitFrames.Player.Runes[i]:Kill()
 		end
-	else	
+	else
+		TukuiStatueBar:ClearAllPoints()
+		TukuiStatueBar:SetPoint("BOTTOM", G.UnitFrames.Player, "TOP", 0, 7)
+		TukuiStatueBar:CreateBackdrop("Default")
+		TukuiStatueBar:Size(233, 3)
 		G.UnitFrames.Player.Runes:ClearAllPoints()
 		G.UnitFrames.Player.Runes:SetPoint("CENTER", cbMover, "CENTER", 0, 0)
 		G.UnitFrames.Player.Runes:Size( 233, 11 )
