@@ -75,6 +75,29 @@ local function BagsUpdateBankPosition( self, value )
 		else
 			bag:SetPoint( "BOTTOMLEFT", G.Panels.LeftChatBackground, "TOPLEFT", 0, 3 )
 		end
+		local cnt, full = GetNumBankSlots()
+		purchaseBagButton = CreateFrame("Button", nil, bag)
+		purchaseBagButton:Size(150, 15)
+		purchaseBagButton:Point('TOP', bag, 'TOP', 0, -4)
+		purchaseBagButton:SetTemplate('Default')
+		purchaseBagButton.Text = T.SetFontString(purchaseBagButton, unpack(T.Fonts.uGeneral.setfont))
+		purchaseBagButton.Text:Point("CENTER", purchaseBagButton, "CENTER", 0, 0)
+		if full then
+			purchaseBagButton.Text:SetText("No Slots available")
+		else
+			purchaseBagButton.Text:SetText(L.bags_buyslot)
+		end
+		purchaseBagButton:SetScript("OnEnter", T.SetModifiedBackdrop)
+		purchaseBagButton:SetScript("OnLeave", T.SetOriginalBackdrop)
+		purchaseBagButton:SetScript("OnClick", function()
+			local cnt, full = GetNumBankSlots()
+			if full then
+				print("No Slots")
+				return
+			end
+			PurchaseSlot()
+			print(string.format(L.bags_costs, GetBankSlotCost() / 10000))
+		end)
 	end
 end
 hooksecurefunc( Stuffing, "CreateBagFrame", BagsUpdateBankPosition )

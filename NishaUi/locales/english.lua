@@ -14,7 +14,7 @@ if T.client ~= "deDE" then
 	L.hello4 = " http://www.pulse-guild.de|r."
 	L.actionbars_locked = "Actionbars |cffe45050Locked|r"
 	L.actionbars_unlocked = "Actionbars |cff50e468Unlocked|r"
-	
+	L.bags_buyslot = "Buy Bankslot"
 	L.nisha_addon = "NishaUI Addonmanager"
 	L.nisha_move = "Move NishaUI"
 	L.nisha_config = "NishaUI Ingame Config"

@@ -29,7 +29,7 @@ end
 G.Install.Frame:SetTemplate("Transparent")
 G.Install.StatusBar:SetStatusBarTexture(C["media"].normTex)
 
-local viconl = CreateFrame("Frame", "NinjaPullVersion", G.Install.Frame)
+local viconl = CreateFrame("Frame", "NishaVersion", G.Install.Frame)
 viconl:SetTemplate("Transparent")
 viconl:Size(64, 64)
 viconl:Point("BOTTOMRIGHT", G.Install.Frame, "TOPRIGHT", 0, 2)
@@ -41,7 +41,7 @@ viconl.bg:Point("TOPLEFT", 2, -2)
 viconl.bg:Point("BOTTOMRIGHT", -2, 2)
 viconl.bg:SetTexture(C["media"].pulse)
 
-local viconr = CreateFrame("Frame", "NinjaPullVersion", G.Install.Frame)
+local viconr = CreateFrame("Frame", "NishaVersion", G.Install.Frame)
 viconr:SetTemplate("Transparent")
 viconr:Size(64, 64)
 viconr:Point("BOTTOMLEFT", G.Install.Frame, "TOPLEFT", 0, 2)

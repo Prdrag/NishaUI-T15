@@ -14,7 +14,7 @@ if T.client == "deDE" then
 	L.hello4 = " http://www.pulse-guild.de|r."
 	L.actionbars_locked = "Aktionsleisten |cffe45050gesperrt|r"
 	L.actionbars_unlocked = "Aktionsleisten |cff50e468entsperrt|r"
-	
+	L.bags_buyslot = "Kaufe Bankfach"
 	L.nisha_addon = "NishaUI Addonmanager"
 	L.nisha_move = "Move NishaUI"
 	L.nisha_config = "NishaUI Ingame Config"
