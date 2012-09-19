@@ -85,6 +85,10 @@ UIOnLogon:SetScript( "OnEvent", function( self, event )
 		SetCVar("taintLog", 0)
 	end
 	
+	if C["nameplate"].enable == true or C["nameplate"].nishastyle ~= true then
+		T.ShowPopup("DISABLED_TUKUI_NAMEPLATES")
+	end
+	
 	if (IsAddOnLoaded("NishaUi_Raid") and IsAddOnLoaded("NishaUi_Raid_Healing")) then
 		StaticPopup_Show("NISHAUIDISABLE_RAID")
 	end

@@ -10,3 +10,19 @@ StaticPopupDialogs["NISHAUIDISABLE_RAID"] = {
 	whileDead = 1,
 	preferredIndex = 3,	
 }
+
+T.CreatePopup["DISABLED_TUKUI_NAMEPLATES"] = {
+	question = L.Popups_disable_tukui_nameplates,
+	answer1 = ACCEPT,
+	answer2 = CANCEL,
+	function1 = function()
+		if( IsAddOnLoaded( "Tukui_ConfigUI" ) ) then
+			if( not ( TukuiConfigPublic["nameplate"] ) ) then
+				TukuiConfigPublic["nameplate"] = {}
+			end
+			TukuiConfigPublic["nameplate"]["enable"] = false
+			TukuiConfigPublic["nameplate"]["nishastyle"] = true
+		end
+		ReloadUI()
+	end,
+}

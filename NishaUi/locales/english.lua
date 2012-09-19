@@ -22,6 +22,8 @@ if T.client ~= "deDE" then
 	L.nisha_reload = "Reload NishaUI"
 	L.nisha_help = "NishaUI Help"
 	L.nisha_ab = "Pulse Actionbars"
+	
+	L.Popups_disable_tukui_nameplates = "Tukui nameplates are active. They will be disabled and the NishaUi nameplates will be enabled."
 
 	L.nisha_addon2 = "Enable/disable addons ingame"
 	L.nisha_move2 = "Move the elements of NishaUI"
