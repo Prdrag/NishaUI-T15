@@ -7,7 +7,7 @@ if( T.myclass == "PALADIN" ) then
 			G.UnitFrames.Player.HolyPower[i]:Kill()
 		end
 	else
-		if T.level == MAX_PLAYER_LEVEL then
+		if T.level >= 85 then
 			G.UnitFrames.Player.HolyPower:ClearAllPoints()
 			G.UnitFrames.Player.HolyPower:SetPoint("CENTER", cbMover, "CENTER", 0, 0)
 			G.UnitFrames.Player.HolyPower:Size( 233, 11)
