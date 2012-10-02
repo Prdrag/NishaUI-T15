@@ -1,5 +1,4 @@
 local T, C, L, G = unpack( Tukui )
-if C.general.nisha ~= true then return end
 local maxChi = UnitPowerMax("player", SPELL_POWER_LIGHT_FORCE)
 
 if T.myclass == "MONK" then
@@ -7,7 +6,6 @@ if T.myclass == "MONK" then
 		G.UnitFrames.Player.HarmonyBar:Kill()
 		TukuiStatueBar:Kill()
 	else
-		
 		G.UnitFrames.Player.HarmonyBar:ClearAllPoints()
 		G.UnitFrames.Player.HarmonyBar:SetPoint("CENTER", cbMover, "CENTER", 0, 0)
 		G.UnitFrames.Player.HarmonyBar:Size(233, 11)
