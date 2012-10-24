@@ -1,7 +1,7 @@
 ## Interface: 50001
 ## Title: |cff1784d1NishaUI: Options|r
 ## Notes:
-## Version: 1.5.2
+## Version: 1.5.6
 ## Author: Nisha
 
 config\config.lua
