@@ -47,27 +47,34 @@ local TRINKET_FILTER = {
 	
 local CLASS_FILTERS = {
 		MONK = { 
-			target = {
-				CreateSpellEntry( 107428 ), -- Risin Sun Kick
-				CreateSpellEntry( 123727 ), -- Dizzying Haze
-				CreateSpellEntry( 123725 ), -- Breath of Fire
-				CreateSpellEntry( 115804 ), -- Mortal Wounds
-			},
-			player = {
-				CreateSpellEntry( 124081 ), -- Zensphere
-				CreateSpellEntry( 125195 ), -- Tigereye Brew
-				CreateSpellEntry( 125359 ), -- Tiger Power
-				CreateSpellEntry( 115307 ), -- Shuffle
+			target = { 
+				CreateSpellEntry( 130320 ), -- Rising Sun Kick 
+				CreateSpellEntry( 123727 ), -- Dizzying Haze 
+				CreateSpellEntry( 123725 ), -- Breath of Fire 
+				CreateSpellEntry( 115804 ), -- Mortal Wounds 
+				CreateSpellEntry( 128531 ), -- Blackout Kick 
+			}, 
+			player = { 
+				CreateSpellEntry( 124081 ), -- Zensphere 
+				CreateSpellEntry( 116740 ), -- Tigereye Brew 
+				CreateSpellEntry( 125359 ), -- Tiger Power 
+				CreateSpellEntry( 115307 ), -- Shuffle 
 				CreateSpellEntry( 118636 ), -- Power Guard 
 				CreateSpellEntry( 115295 ), -- Guard 
-				CreateSpellEntry( 128939 ), -- Elusive Brew
-			},
-			procs = {
-				CreateSpellEntry( 116768 ), -- Combobreaker: Blackout-Kick
-				CreateSpellEntry( 120273 ), -- Tiger Strikes
-				CreateSpellEntry( 118864 ), -- Combobreaker: Tigerpalm
-				 CreateSpellEntry( 104993 ), -- Jade Spirit
-				CreateSpellEntry( 128985 ), -- Relic of Yu'lon
+				CreateSpellEntry( 128939 ), -- Elusive Brew 
+				CreateSpellEntry( 125174 ), -- Touch of Karma 
+				CreateSpellEntry( 120954 ), -- Fortifying Brew 
+				CreateSpellEntry( 115288 ), -- Energizing Brew 
+				CreateSpellEntry( 115867 ), -- Mana Tea 
+				CreateSpellEntry( 118674 ), -- Vital Mists 
+			}, 
+			procs = { 
+				CreateSpellEntry( 116768 ), -- Combobreaker: Blackout-Kick 
+				CreateSpellEntry( 120273 ), -- Tiger Strikes 
+				CreateSpellEntry( 118864 ), -- Combobreaker: Tigerpalm 
+				CreateSpellEntry( 104993 ), -- Jade Spirit 
+				CreateSpellEntry( 128985 ), -- Relic of Yu'lon 
+				CreateSpellEntry( 96228 ), -- Synapse Springs
 			}
 		},
 		DEATHKNIGHT = { 

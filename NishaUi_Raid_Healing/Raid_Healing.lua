@@ -184,6 +184,12 @@ T.PostUpdateRaidUnit = function( self )
 		self.MasterLooter = MasterLooter
 		self:RegisterEvent( "PARTY_LEADER_CHANGED", T.MLAnchorUpdate )
 		self:RegisterEvent( "PARTY_MEMBERS_CHANGED", T.MLAnchorUpdate )
+		
+		local ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
+		ReadyCheck:Height(12*T.raidscale)
+		ReadyCheck:Width(12*T.raidscale)
+		ReadyCheck:SetPoint("BOTTOM")
+		self.ReadyCheck = ReadyCheck
 
 		local Resurrect = CreateFrame( "Frame", nil, self.Health )
 		Resurrect:SetFrameLevel( self.Health:GetFrameLevel() + 1 )
