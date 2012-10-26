@@ -24,8 +24,6 @@ if T.client ~= "deDE" then
 		["Last Stand"] = "player",
 		["Shield Wall"] = "player",
 		["Rallying Cry"] = "player",
-		["Skull Banner"] = "player",
-		["Demoralizing Banner"] = "player",
 		
 		--Druid:
 		["Might of Ursoc"] = "player",
@@ -58,14 +56,10 @@ else
 		-- Warrior
 		["Letztes Gefecht"] = "player",
 		["Schildwall"] = "player",
-		["Schädelbanner"] = "player",
 		["Anspornender Schrei"] = "player",
 		
 		--Druid:
 		["Might of Ursoc"] = "player",
 		["Überlebensinstinkte"] = "player",
-		
-		--["Power Infusion"] = "mouseover",
-		--["Pain Suppression"] = "mouseover",
 	}
 end

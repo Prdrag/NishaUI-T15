@@ -34,7 +34,7 @@ local function SkinButton( frame )
 				region:SetTexCoord( 0.1, 0.9, 0.1, 0.9 )
 				region:SetDrawLayer( "ARTWORK" )
 				if( frame:GetName() == "PS_MinimapButton" ) then
-					region.SetPoint = S.dummy
+					region.SetPoint = T.dummy
 				end
 			end
 		end
