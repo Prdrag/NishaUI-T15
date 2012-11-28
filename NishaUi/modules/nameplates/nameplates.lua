@@ -215,7 +215,7 @@ end
 
 -- Determine whether or not the cast is Channelled or a Regular cast so we can grab the proper Cast Name
 local function UpdateCastText(frame, curValue)
-	local minValue, maxValue = frame:GetMinMaxValues()
+	local _, maxValue = frame:GetMinMaxValues()
 
 	if UnitChannelInfo("target") then
 		frame.time:SetFormattedText("%.1f ", curValue)
@@ -249,6 +249,7 @@ end
 -- We need to reset everything when a nameplate it hidden
 local function OnHide(frame)
 	frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
+	--frame.hp:SetScale(1)
 	frame.overlay:Hide()
 	frame.cb:Hide()
 	frame.unit = nil
@@ -270,7 +271,7 @@ end
 
 -- Color Nameplate
 local function Colorize(frame)
-	local r,g,b = frame.healthOriginal:GetStatusBarColor()
+	local r, g, b = frame.healthOriginal:GetStatusBarColor()
 
 	for class, color in pairs(RAID_CLASS_COLORS) do
 		local r, g, b = floor(r * 100 + 0.5) / 100, floor(g * 100 + 0.5) / 100, floor(b * 100 + 0.5) / 100
@@ -282,13 +283,15 @@ local function Colorize(frame)
 		end
 	end
 
-	if (r + b + b) > 2 then
-		r,g,b = 0.55, 0.57, 0.61
-	elseif g+b == 0 then -- hostile
+	if (r + b + b) > 2 then -- Tapped
+		r, g, b = 0.6, 0.6, 0.6
+		frame.isFriendly = false
+		-- r,g,b = 0.55, 0.57, 0.61
+	elseif g+b == 0 then -- hostileif g+b == 0 then -- hostile
 		r,g,b = 222/255, 95/255,  95/255
 		frame.isFriendly = false
 	elseif r+b == 0 then -- friendly npc
-		r,g,b = 0.31, 0.45, 0.63
+		r,g,b = 0.29, 0.69, 0.29
 		frame.isFriendly = true
 	elseif r+g > 1.95 then -- neutral
 		r,g,b = 218/255, 197/255, 92/255
@@ -303,12 +306,15 @@ local function Colorize(frame)
 
 	frame.hp:SetStatusBarColor(r, g, b)
 end
-
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	local frame = frame:GetParent()
-
 	local r, g, b = frame.hp:GetStatusBarColor()
+	
+	-- Set scale
+	--while frame.hp:GetEffectiveScale() < 1 do
+	--	frame.hp:SetScale(frame.hp:GetScale() + 0.01)
+	--end
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
@@ -325,24 +331,18 @@ local function UpdateObjects(frame)
 	frame.hp:SetValue(frame.healthOriginal:GetValue() - 1) -- Blizzard bug fix
 	frame.hp:SetValue(frame.healthOriginal:GetValue())
 
-	--Colorize(frame)
-	--frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor = frame.hp:GetStatusBarColor()
-	--frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.25)
+	-- Colorize Plate
+	Colorize(frame)
+	frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor = frame.hp:GetStatusBarColor()
+	frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.25)
 	SetVirtualBorder(frame.hp, unpack(C.media.bordercolor))
-	if C.nameplate.enhancethreat == true then
-		frame.hp.name:SetTextColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-	end
+	frame.hp.name:SetTextColor(1, 1, 1)
 
 	-- Set the name text
 	if C.nameplate.nameabbrev == true and C.nameplate.debuffs ~= true then
 		frame.hp.name:SetText(Abbrev(frame.hp.oldname:GetText()))
 	else
 		frame.hp.name:SetText(frame.hp.oldname:GetText())
-	end
-	
-	-- why the fuck does blizzard rescale "useless" npc nameplate to 0.4, its really hard to read ...
-	while frame.hp:GetEffectiveScale() < 1 do
-		frame.hp:SetScale(frame.hp:GetScale() + 0.01)
 	end
 
 	-- Setup level text
@@ -432,7 +432,7 @@ local function SkinObjects(frame, nameFrame)
 
 	hp.hpbg = hp:CreateTexture(nil, "BORDER")
 	hp.hpbg:SetAllPoints(hp)
-	hp.hpbg:SetTexture(unpack(C.media.backdropcolor))
+	hp.hpbg:SetTexture(1, 1, 1, 0.25)
 
 	hp:HookScript("OnShow", UpdateObjects)
 	frame.hp = hp
@@ -440,7 +440,6 @@ local function SkinObjects(frame, nameFrame)
 	if not frame.threat then
 		frame.threat = threat
 	end
-
 
 	-- Create Cast Bar
 	cb:SetStatusBarTexture(C.media.normTex)
@@ -512,15 +511,58 @@ local function SkinObjects(frame, nameFrame)
 	frames[frame] = true
 end
 
+local goodR, goodG, goodB = unpack(C.nameplate.goodcolor)
+local badR, badG, badB = unpack(C.nameplate.badcolor)
+local transitionR, transitionG, transitionB = unpack(C.nameplate.transitioncolor)
 local function UpdateThreat(frame, elapsed)
-	if frame.threat:IsShown() then
-		if Role == "TANK" then
-			frame.hp.name:SetTextColor(0, 1, 0)
+	frame.hp:Show()
+	if frame.hasClass == true then return end
+
+	if C.nameplate.enhancethreat ~= true then
+		if frame.threat:IsShown() then
+			local _, val = frame.threat:GetVertexColor()
+			if val > 0.7 then
+				SetVirtualBorder(frame.hp, transitionR, transitionG, transitionB)
+			else
+				SetVirtualBorder(frame.hp, badR, badG, badB)
+			end
 		else
-			frame.hp.name:SetTextColor(1, 0, 0)
+			SetVirtualBorder(frame.hp, unpack(C.media.bordercolor))
 		end
 	else
-		frame.hp.name:SetTextColor(1, 1, 1)
+		if frame.threat:IsShown() then
+			if InCombatLockdown() and frame.isFriendly ~= true then
+				-- No Threat
+				if T.Role == "Tank" then
+					frame.hp:SetStatusBarColor(badR, badG, badB)
+					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.25)
+				else
+					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
+					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.25)
+				end
+			else
+				-- Set colors to their original, not in combat
+				frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
+				frame.hp.hpbg:SetTexture(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor, 0.25)
+			end
+		else
+			-- Ok we either have threat or we're losing/gaining it
+			local r, g, b = frame.threat:GetVertexColor()
+			if g + b == 0 then
+				-- Have Threat
+				if T.Role == "Tank" then
+					frame.hp:SetStatusBarColor(goodR, goodG, goodB)
+					frame.hp.hpbg:SetTexture(goodR, goodG, goodB, 0.25)
+				else
+					frame.hp:SetStatusBarColor(badR, badG, badB)
+					frame.hp.hpbg:SetTexture(badR, badG, badB, 0.25)
+				end
+			else
+				-- Losing/Gaining Threat
+				frame.hp:SetStatusBarColor(transitionR, transitionG, transitionB)
+				frame.hp.hpbg:SetTexture(transitionR, transitionG, transitionB, 0.25)
+			end
+		end
 	end
 end
 
@@ -583,7 +625,7 @@ end
 
 -- Scan all visible nameplate for a known unit
 local function CheckUnit_Guid(frame, ...)
-	if UnitExists("target") and frame:GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
+	if UnitExists("target") and frame:GetParent():GetAlpha() == 1 and UnitName("target") == frame.hp.name:GetText() then
 		frame.guid = UnitGUID("target")
 		frame.unit = "target"
 		OnAura(frame, "target")
@@ -615,20 +657,20 @@ end
 -- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid, and to hide drunken text
 local function ForEachPlate(functionToRun, ...)
 	for frame in pairs(frames) do
-		if frame and frame:IsShown() then
+		if frame:IsShown() then
 			functionToRun(frame, ...)
 		end
 	end
 end
 
---Check if the frames default overlay texture matches blizzards nameplates default overlay texture
+-- Check if the frames default overlay texture matches blizzards nameplates default overlay texture
 local select = select
 local function HookFrames(...)
-	for index = 1, select('#', ...) do
+	for index = 1, select("#", ...) do
 		local frame = select(index, ...)
 		local region = frame:GetRegions()
-		
-		if(not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d"))) then
+
+		if not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d")) then
 			SkinObjects(frame:GetChildren())
 			frame.isSkinned = true
 		end
@@ -643,9 +685,7 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	end
 
 	if self.elapsed and self.elapsed > 0.2 then
-		if C.nameplate.enhancethreat then
-			ForEachPlate(UpdateThreat, self.elapsed)
-		end
+		ForEachPlate(UpdateThreat, self.elapsed)
 		ForEachPlate(AdjustNameLevel)
 		self.elapsed = 0
 	else
@@ -656,7 +696,6 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	ForEachPlate(CheckBlacklist)
 	ForEachPlate(HideDrunkenText)
 	ForEachPlate(CheckUnit_Guid)
-	ForEachPlate(Colorize)
 end)
 
 function NamePlates:COMBAT_LOG_EVENT_UNFILTERED(_, event, ...)
@@ -691,5 +730,8 @@ function NamePlates:PLAYER_ENTERING_WORLD()
 		else
 			SetCVar("nameplateShowEnemies", 0)
 		end
+	end
+	if C.nameplate.enhancethreat == true then
+		SetCVar("threatWarning", 3)
 	end
 end
