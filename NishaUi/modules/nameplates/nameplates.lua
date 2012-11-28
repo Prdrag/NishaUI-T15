@@ -1,6 +1,5 @@
 ﻿local T, C, L = unpack(Tukui)
 if not C["nameplate"].nishastyle == true and C["nameplate"].enable ~= true then return end
-
 ----------------------------------------------------------------------------------------
 --	Based on dNameplates(by Dawn, editor Elv22)
 ----------------------------------------------------------------------------------------
@@ -249,13 +248,14 @@ end
 -- We need to reset everything when a nameplate it hidden
 local function OnHide(frame)
 	frame.hp:SetStatusBarColor(frame.hp.rcolor, frame.hp.gcolor, frame.hp.bcolor)
-	--frame.hp:SetScale(1)
+	frame.hp:SetScale(1)
 	frame.overlay:Hide()
 	frame.cb:Hide()
 	frame.unit = nil
 	frame.guid = nil
 	frame.hasClass = nil
 	frame.isFriendly = nil
+	frame.isTagged = nil
 	frame.hp.rcolor = nil
 	frame.hp.gcolor = nil
 	frame.hp.bcolor = nil
@@ -282,10 +282,13 @@ local function Colorize(frame)
 			return
 		end
 	end
-
+	
+	frame.isTagged = nil
+	
 	if (r + b + b) > 2 then -- Tapped
 		r, g, b = 0.6, 0.6, 0.6
 		frame.isFriendly = false
+		frame.isTagged = true
 		-- r,g,b = 0.55, 0.57, 0.61
 	elseif g+b == 0 then -- hostileif g+b == 0 then -- hostile
 		r,g,b = 222/255, 95/255,  95/255
@@ -312,9 +315,9 @@ local function UpdateObjects(frame)
 	local r, g, b = frame.hp:GetStatusBarColor()
 	
 	-- Set scale
-	--while frame.hp:GetEffectiveScale() < 1 do
-	--	frame.hp:SetScale(frame.hp:GetScale() + 0.01)
-	--end
+	while frame.hp:GetEffectiveScale() < 1 do
+		frame.hp:SetScale(frame.hp:GetScale() + 0.01)
+	end
 
 	-- Have to reposition this here so it doesnt resize after being hidden
 	frame.hp:ClearAllPoints()
@@ -516,7 +519,7 @@ local badR, badG, badB = unpack(C.nameplate.badcolor)
 local transitionR, transitionG, transitionB = unpack(C.nameplate.transitioncolor)
 local function UpdateThreat(frame, elapsed)
 	frame.hp:Show()
-	if frame.hasClass == true then return end
+	if frame.hasClass or frame.isTagged then return end
 
 	if C.nameplate.enhancethreat ~= true then
 		if frame.threat:IsShown() then
