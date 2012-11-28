@@ -85,11 +85,25 @@ UIOnLogon:SetScript( "OnEvent", function( self, event )
 		SetCVar("taintLog", 0)
 	end
 	
-	if C["nameplate"].enable == true or C["nameplate"].nishastyle ~= true then
-		T.ShowPopup("DISABLED_TUKUI_NAMEPLATES")
-	end
-	
 	if (IsAddOnLoaded("NishaUi_Raid") and IsAddOnLoaded("NishaUi_Raid_Healing")) then
-		StaticPopup_Show("NISHAUIDISABLE_RAID")
+		T.ShowPopup("NISHAUIDISABLE_RAID")
 	end
 end )
+
+T.CreatePopup["NISHAUIDISABLE_RAID"] = {
+	question = L.popup_2raidactive,
+	answer1 = "DPS, Tank Layout",
+	answer2 = "Healing Layout",
+	function1 = function()
+		DisableAddOn( "NishaUi_Raid_Healing" )
+		EnableAddOn( "NishaUi_Raid" )
+
+		ReloadUI()
+	end,
+	function2 = function()
+		EnableAddOn( "NishaUi_Raid_Healing" )
+		DisableAddOn( "NishaUi_Raid" )
+
+		ReloadUI()
+	end,
+}

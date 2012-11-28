@@ -1,32 +1,31 @@
 local T, C, L = unpack(Tukui)
+
 if C.tooltip.enable ~= true then return end
 if C.tooltip.ilvl then
-----------------------------------------------------------------------------------------
---	Equipped average item level(EquippedItemLevel by Villiv)
-----------------------------------------------------------------------------------------
--- Additional strings
+local DECIMAL_PLACES = 0
+
+-- additional strings. if you don't like it just assign 'nil'. but do not delete these variables themselves.
 local UPDATED = CANNOT_COOPERATE_LABEL -- '*'
 local WAITING = CONTINUED -- '...'
 local PENDING = CONTINUED .. CONTINUED -- '......'
 
--- Output prefix
-local PREFIX = STAT_FORMAT:format(STAT_AVERAGE_ITEM_LEVEL).."|Heqppditmlvl|h |h"..HIGHLIGHT_FONT_COLOR_CODE
+-- output prefix. has to have unique strings to update the tooltip correctly
+local PREFIX = STAT_FORMAT:format(STAT_AVERAGE_ITEM_LEVEL) .. '|Heqppditmlvl|h |h' .. HIGHLIGHT_FONT_COLOR_CODE
 
-local f = CreateFrame("Frame")
-f:SetScript("OnEvent", function(self, event, ...)
-	return self[event](self, event, ...)
-end)
+
+local f = CreateFrame('Frame')
+f:SetScript('OnEvent', function(self, event, ...) return self[event](self, event, ...) end)
 f:Hide()
 
 local playerGUID, inCombat, updateTimer
 local currentUnit, currentGUID
 local isDelayed, isForced, isNotified, isReady
 
-local function GetTipUnit()
+local function GetTipUnit ()
 	local _, unit = GameTooltip:GetUnit()
 	if not unit then
 		local mouseFocus = GetMouseFocus()
-		unit = mouseFocus and (mouseFocus.unit or mouseFocus:GetAttribute("unit"))
+		unit = mouseFocus and (mouseFocus.unit or mouseFocus:GetAttribute('unit'))
 	end
 
 	return unit and UnitIsPlayer(unit) and unit
@@ -34,38 +33,36 @@ end
 
 local SetTipText
 do
-	local function search(line, numLines)
+	local function search (line, numLines)
 		if line > numLines then return end
 
-		local fontString = _G["GameTooltipTextLeft"..line]
+		local fontString = _G['GameTooltipTextLeft' .. line]
 		local stringText = fontString and fontString:GetText()
-		if stringText and stringText:match(PREFIX) then
-			return fontString
-		end
+		if stringText and stringText:match(PREFIX) then return fontString end
 
 		return search(line + 1, numLines)
 	end
 
-	function SetTipText(text)
+	function SetTipText (text)
 		if not text then return end
 
 		local fontString = search(1, GameTooltip:NumLines())
 		if fontString then
-			fontString:SetText(PREFIX..text)
+			fontString:SetText(PREFIX .. text)
 		else
-			GameTooltip:AddLine(PREFIX..text)
+			GameTooltip:AddLine(PREFIX .. text)
 		end
 
 		return GameTooltip:Show()
 	end
 end
 
-local CanSafeInspect
+local CanSafeInspect -- 6 times per 10 secs
 do
 	local limit, period = 6, 11
 	local count, startTime = 0, 0
 
-	hooksecurefunc("NotifyInspect", function()
+	hooksecurefunc('NotifyInspect', function ()
 		local currentTime = GetTime()
 		if currentTime - startTime > period then
 			count, startTime = 1, currentTime
@@ -75,7 +72,7 @@ do
 		count = count + 1
 	end)
 
-	function CanSafeInspect(unit)
+	function CanSafeInspect (unit)
 		if not CanInspect(unit) or InspectFrame and InspectFrame:IsShown() or Examiner and Examiner:IsShown() then return end
 
 		local pending = count > limit and period - (GetTime() - startTime)
@@ -85,16 +82,12 @@ end
 
 local UnitItemLevel
 do
-	local formatString = "%.0f"
+	local formatString = '%.' .. DECIMAL_PLACES .. 'f'
 
-	local function scan(unit, slot, total, count, twoHanded, incomplete)
-		if slot > INVSLOT_LAST_EQUIPPED then
-			return formatString:format(total / (twoHanded and count - 1 or count)), incomplete
-		end
+	local function scan (unit, slot, total, count, twoHanded, incomplete)
+		if slot > INVSLOT_LAST_EQUIPPED then return formatString:format(total / (twoHanded and count - 1 or count)), incomplete end
 
-		if slot == INVSLOT_BODY or slot == INVSLOT_TABARD then
-			return scan(unit, slot + 1, total, count, twoHanded, incomplete)
-		end
+		if slot == INVSLOT_BODY or slot == INVSLOT_RANGED or slot == INVSLOT_TABARD then return scan(unit, slot + 1, total, count, twoHanded, incomplete) end
 
 		local hasItem = GetInventoryItemTexture(unit, slot) and true
 		local _, level, equipLoc
@@ -108,19 +101,19 @@ do
 			total = total + level
 		end
 
-		-- Two-handed weapon and Titan's Grip
+		-- two-handed weapon and Titan's Grip
 		if slot == INVSLOT_MAINHAND then
-			twoHanded = equipLoc == "INVTYPE_2HWEAPON" and 1 or not hasItem and 0
+			twoHanded = equipLoc == 'INVTYPE_2HWEAPON' and 1 or not hasItem and 0
 		elseif slot == INVSLOT_OFFHAND then
-			twoHanded = twoHanded == 1 and not hasItem or twoHanded == 0 and equipLoc == "INVTYPE_2HWEAPON"
+			twoHanded = twoHanded == 1 and not hasItem or twoHanded == 0 and equipLoc == 'INVTYPE_2HWEAPON'
 		end
 
 		local failed = hasItem and not link
 		return scan(unit, slot + 1, total, failed and count or count + 1, twoHanded, incomplete or failed)
 	end
 
-	function UnitItemLevel(unit)
-		if unit == "player" or UnitIsUnit(unit, "player") then
+	function UnitItemLevel (unit)
+		if unit == 'player' or UnitIsUnit(unit, 'player') then
 			local _, level = GetAverageItemLevel()
 			return formatString:format(level)
 		end
@@ -134,63 +127,54 @@ do
 	local cache = {}
 	local cachedLevel
 
-	local function update(unit, guid)
+	local function update (unit, guid)
 		local level, incomplete = UnitItemLevel(unit)
-		local myLevel = level - UnitItemLevel("player")
 
 		if incomplete then
 			updateTimer = TOOLTIP_UPDATE_TIME
 			f:Show()
 			level = cachedLevel or level
-			return SetTipText(WAITING and level..WAITING or level)
+			return SetTipText(WAITING and level .. WAITING or level)
 		end
 
 		if isReady then
 			cache[guid] = level
-			return SetTipText(level.." ("..((myLevel > 0) and "|cff00ff00+" or "|cffff0000")..myLevel.."|r|cffffffff)|r")
+			return SetTipText(UPDATED and level .. UPDATED or level)
 		end
 
 		level = cachedLevel or level
-		return SetTipText(WAITING and level..WAITING or level)
+		return SetTipText(WAITING and level .. WAITING or level)
 	end
 
-	function UpdateItemLevel()
+	function UpdateItemLevel ()
 		cachedLevel = cache[currentGUID]
 
-		if inCombat then
-			return SetTipText(cachedLevel)
-		end
+		if inCombat then return SetTipText(cachedLevel) end
 
-		if isReady then
-			return update(currentUnit, currentGUID)
-		end
+		if isReady then return update(currentUnit, currentGUID) end
 
-		if not isForced and cachedLevel then
-			return SetTipText(cachedLevel)
-		end
+		if not isForced and cachedLevel then return SetTipText(cachedLevel) end
 
 		if currentGUID == playerGUID then
-			local level = UnitItemLevel("player")
+			local level = UnitItemLevel('player')
 			cache[playerGUID] = level
 			return SetTipText(level)
 		end
 
 		local canInspect, pending = CanSafeInspect(currentUnit)
-		if not canInspect then
-			return SetTipText(cachedLevel)
-		end
+		if not canInspect then return SetTipText(cachedLevel) end
 
 		if pending then
 			updateTimer = pending
 			f:Show()
-			return SetTipText(cachedLevel and cachedLevel..PENDING or PENDING)
+			return SetTipText(cachedLevel and cachedLevel .. PENDING or PENDING)
 		end
 
 		if not isDelayed then
 			isDelayed = true
 			updateTimer = TOOLTIP_UPDATE_TIME
 			f:Show()
-			return SetTipText(cachedLevel and (WAITING and cachedLevel..WAITING or cachedLevel) or PENDING)
+			return SetTipText(cachedLevel and (WAITING and cachedLevel .. WAITING or cachedLevel) or PENDING)
 		end
 
 		if not isNotified then
@@ -202,17 +186,17 @@ do
 	end
 end
 
-local function OnTooltipSetUnit()
+local function OnTooltipSetUnit ()
 	currentUnit, currentGUID, isDelayed, isForced, isNotified, isReady = GetTipUnit(), nil, nil, nil, nil, nil
 	if not currentUnit then return end
 
-	currentGUID, isForced = UnitGUID(currentUnit), UnitIsUnit(currentUnit, "target")
+	currentGUID, isForced = UnitGUID(currentUnit), UnitIsUnit(currentUnit, 'target')
 
 	return UpdateItemLevel()
 end
-GameTooltip:HookScript("OnTooltipSetUnit", OnTooltipSetUnit)
+GameTooltip:HookScript('OnTooltipSetUnit', OnTooltipSetUnit)
 
-f:SetScript("OnUpdate", function(self, elapsed)
+f:SetScript('OnUpdate', function (self, elapsed)
 	updateTimer = updateTimer - elapsed
 	if updateTimer > 0 then return end
 	self:Hide()
@@ -225,7 +209,7 @@ f:SetScript("OnUpdate", function(self, elapsed)
 	return UpdateItemLevel()
 end)
 
-function f:INSPECT_READY(_, guid)
+function f:INSPECT_READY (_, guid)
 	if not currentGUID or guid ~= currentGUID then return end
 
 	local tipUnit = GetTipUnit()
@@ -235,9 +219,9 @@ function f:INSPECT_READY(_, guid)
 
 	return UpdateItemLevel()
 end
-f:RegisterEvent("INSPECT_READY")
+f:RegisterEvent('INSPECT_READY')
 
-function f:UNIT_INVENTORY_CHANGED(_, unit)
+function f:UNIT_INVENTORY_CHANGED (_, unit)
 	if not currentGUID or UnitGUID(unit) ~= currentGUID then return end
 
 	local tipUnit = GetTipUnit()
@@ -247,35 +231,35 @@ function f:UNIT_INVENTORY_CHANGED(_, unit)
 
 	return UpdateItemLevel()
 end
-f:RegisterEvent("UNIT_INVENTORY_CHANGED")
+f:RegisterEvent('UNIT_INVENTORY_CHANGED')
 
-function f:PLAYER_TARGET_CHANGED()
-	return self:UNIT_INVENTORY_CHANGED(nil, "target")
+function f:PLAYER_TARGET_CHANGED ()
+	return self:UNIT_INVENTORY_CHANGED (nil, 'target')
 end
-f:RegisterEvent("PLAYER_TARGET_CHANGED")
+f:RegisterEvent('PLAYER_TARGET_CHANGED')
 
-function f:PLAYER_REGEN_DISABLED()
+function f:PLAYER_REGEN_DISABLED ()
 	inCombat = true
 end
-f:RegisterEvent("PLAYER_REGEN_DISABLED")
+f:RegisterEvent('PLAYER_REGEN_DISABLED')
 
-function f:PLAYER_REGEN_ENABLED()
+function f:PLAYER_REGEN_ENABLED ()
 	inCombat = nil
 end
-f:RegisterEvent("PLAYER_REGEN_ENABLED")
+f:RegisterEvent('PLAYER_REGEN_ENABLED')
 
-function f:PLAYER_LOGIN()
-	self:UnregisterEvent("PLAYER_LOGIN")
+function f:PLAYER_LOGIN ()
+	self:UnregisterEvent('PLAYER_LOGIN')
 	self.PLAYER_LOGIN = nil
 
-	playerGUID = UnitGUID("player")
+	playerGUID = UnitGUID('player')
 end
 
-if IsLoggedIn() then
+if IsLoggedIn then
 	f:PLAYER_LOGIN()
 	inCombat = InCombatLockdown()
 	return OnTooltipSetUnit()
 end
 
-return f:RegisterEvent("PLAYER_LOGIN")
+return f:RegisterEvent('PLAYER_LOGIN')
 end

@@ -1,4 +1,5 @@
 local T, C, L, G = unpack( Tukui )
+if C.unitframes.raid ~= true then return end
 --------------------------------------------------------------
 --Header
 --------------------------------------------------------------
@@ -156,20 +157,18 @@ T.PostUpdateRaidUnit = function( self )
 		LFDRole.Override = T.RoleIconUpdate
 		self:RegisterEvent("UNIT_CONNECTION", T.RoleIconUpdate)
 		self.LFDRole = LFDRole
-
-		local MasterLooter = self.Health:CreateTexture( nil, "OVERLAY" )
-		MasterLooter:Height( 12 * T.raidscale )
-		MasterLooter:Width( 12 * T.raidscale )
-		self.MasterLooter = MasterLooter
-		self:RegisterEvent( "PARTY_LEADER_CHANGED", T.MLAnchorUpdate )
-		self:RegisterEvent( "PARTY_MEMBERS_CHANGED", T.MLAnchorUpdate )
 		
 		local ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		ReadyCheck:Height(12*T.raidscale)
-		ReadyCheck:Width(12*T.raidscale)
-		ReadyCheck:SetPoint("BOTTOM")
+		ReadyCheck:Height(12*C["unitframes"].gridscale*T.raidscale)
+		ReadyCheck:Width(12*C["unitframes"].gridscale*T.raidscale)
+		ReadyCheck:SetPoint("CENTER", 0, -8) 	
 		self.ReadyCheck = ReadyCheck
 
+		-- Master looter
+		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
+		self.MasterLooter:SetSize(12, 12)
+		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
+		
 		local Resurrect = CreateFrame( "Frame", nil, self.Health )
 		Resurrect:SetFrameLevel( self.Health:GetFrameLevel() + 1 )
 		Resurrect:Size( 20 )

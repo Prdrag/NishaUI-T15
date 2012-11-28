@@ -1,4 +1,5 @@
 local C = {}
+local class = RAID_CLASS_COLORS[select(2,UnitClass("player"))] -- Do not remove this line, it is what is required to add class color for the datatext.^
 
 C["general"] = {
 	["font"] = false,
@@ -38,7 +39,14 @@ C["nisha"] = {
 	["raidcd"] = false,
 	["threatbar"] = true,
 	["afkscreen"] = true,
+	["sesenable"] = true,										-- enable specswitcher
+	["sesenablegear"] = true,									-- enable gearslots
+	["sesgearswap"] = true,										-- enable automatic geearswap
+	["sesset1"] = 1,											-- set 1st set (1 - 10)
+	["sesset2"] = 2,											-- set 2nd set (1 - 10)
+	["ilvlr"] = true,
 }
+
 C["nameplate"] = {
 	["enable"] = false,                         -- enable nice skinned nameplates that fit into tukui
 	["debuffs"] = false,
@@ -237,7 +245,7 @@ C["media"] = {
 	["pulse"] = [[Interface\AddOns\nishaui\medias\textures\pulse]],
 	["combattextfont"] = [[Interface\Addons\Tukui\medias\fonts\normal_font.ttf]],
 	["wowlogo"] = [[Interface\Glues\Common\Glues-WoW-MPLogo.blp]],
-	["datatextcolor1"] = {1, 1, 1},
+	["datatextcolor1"] = {class.r, class.g, class.b},
 	["datatextcolor2"] = {1, 1, 1},
 	["combattextfontsize"] = 20,
 	["combattextfontstyle"] = "OUTLINE",

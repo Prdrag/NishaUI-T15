@@ -1,4 +1,5 @@
 local T, C, L, G = unpack( Tukui )
+if C.unitframes.raid ~= true then return end
 --------------------------------------------------------------
 --Header
 --------------------------------------------------------------
@@ -15,7 +16,8 @@ local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, c
 	end
 	
 	width = T.Scale( C.raidframes.width * T.raidscale )
-	height = T.Scale( C.raidframes.height * T.raidscale )	
+	height = T.Scale( C.raidframes.height * T.raidscale )
+	columnSpacing = T.Scale(3)
 
 	T.RaidFrameAttributes = function()
 		return
@@ -32,7 +34,7 @@ local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, c
 		"showParty", true,
 		"showRaid", true,
 		"showPlayer", true,
-		"showSolo", true,
+		"showSolo", false,
 		"xoffset", T.Scale(7),
 		"yOffset", T.Scale(-7),
 		"point", point,
@@ -41,7 +43,7 @@ local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, c
 		"groupBy", "GROUP",
 		"maxColumns", 8,
 		"unitsPerColumn", 5,
-		"columnSpacing", T.Scale(3),
+		"columnSpacing", T.Scale( columnSpacing ),
 		"columnAnchorPoint", columnAnchorPoint
 	end
 
@@ -178,17 +180,15 @@ T.PostUpdateRaidUnit = function( self )
 		self:RegisterEvent("UNIT_CONNECTION", T.RoleIconUpdate)
 		self.LFDRole = LFDRole
 
-		local MasterLooter = self.Health:CreateTexture( nil, "OVERLAY" )
-		MasterLooter:Height( 12 * T.raidscale )
-		MasterLooter:Width( 12 * T.raidscale )
-		self.MasterLooter = MasterLooter
-		self:RegisterEvent( "PARTY_LEADER_CHANGED", T.MLAnchorUpdate )
-		self:RegisterEvent( "PARTY_MEMBERS_CHANGED", T.MLAnchorUpdate )
+		-- Master looter
+		self.MasterLooter = self.Health:CreateTexture(nil, "OVERLAY")
+		self.MasterLooter:SetSize(12, 12)
+		self.MasterLooter:SetPoint("TOPRIGHT", self.Health, 3, 8)
 		
 		local ReadyCheck = self.Health:CreateTexture(nil, "OVERLAY")
-		ReadyCheck:Height(12*T.raidscale)
-		ReadyCheck:Width(12*T.raidscale)
-		ReadyCheck:SetPoint("BOTTOM")
+		ReadyCheck:Height(12*C["unitframes"].gridscale*T.raidscale)
+		ReadyCheck:Width(12*C["unitframes"].gridscale*T.raidscale)
+		ReadyCheck:SetPoint("CENTER", 0, -8) 	
 		self.ReadyCheck = ReadyCheck
 
 		local Resurrect = CreateFrame( "Frame", nil, self.Health )

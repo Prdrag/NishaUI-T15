@@ -13,4 +13,6 @@
 	<Script file="threatbar.lua"/>
 	<Script file="afk.lua"/>
 	<Script file="click2cast.lua"/>
+	<Script file="ilvlr.lua"/>
+	<Script file="specswitcher.lua"/>
 </Ui>

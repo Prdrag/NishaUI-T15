@@ -22,7 +22,6 @@ if( T.myclass == "PALADIN" ) then
 					G.UnitFrames.Player.HolyPower[i]:Point("LEFT", G.UnitFrames.Player.HolyPower[i-1], "RIGHT", 1, 0)
 					G.UnitFrames.Player.HolyPower[i]:Size(228/5, 11)
 				end
-				G.UnitFrames.Player.HolyPower[i].width = G.UnitFrames.Player.HolyPower[i]:GetWidth()
 			end
 		else
 			G.UnitFrames.Player.HolyPower:ClearAllPoints()
@@ -39,7 +38,6 @@ if( T.myclass == "PALADIN" ) then
 					G.UnitFrames.Player.HolyPower[i]:Point("LEFT", G.UnitFrames.Player.HolyPower[i-1], "RIGHT", 1, 0)
 					G.UnitFrames.Player.HolyPower[i]:Size(230/3, 11)
 				end
-				G.UnitFrames.Player.HolyPower[i].width = G.UnitFrames.Player.HolyPower[i]:GetWidth()
 			end
 		end
 	end

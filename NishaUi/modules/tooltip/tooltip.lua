@@ -1,5 +1,7 @@
 local T, C, L, G = unpack(Tukui)
 
+if C["tooltip"].enable ~= true then return end
+
 local function TooltipUpdateTooltip(self)
 	local owner = self:GetOwner()
 	if not owner then return end	
@@ -84,7 +86,7 @@ end
 
 local function SetTooltipDefaultAnchor(self, parent)
 	if C["tooltip"].cursor == true then
-		if IsAddOnLoaded("NishaUi_Raid_Healing") and parent ~= UIParent then
+		if IsAddOnLoaded("PulseUI_Raid_Healing") and parent ~= UIParent then
 			self:SetOwner(parent, "ANCHOR_NONE")
 		else
 			self:SetOwner(parent, "ANCHOR_CURSOR")
@@ -100,3 +102,36 @@ hooksecurefunc("GameTooltip_SetDefaultAnchor", SetTooltipDefaultAnchor)
 GameTooltip:HookScript( "OnUpdate", function( self, ... )
 	TooltipUpdateTooltip( self )
 end )
+
+--------------------------------------------------------
+-- icon on tooltip
+--------------------------------------------------------
+local function AddTooltipIcon(self, icon)
+	if icon then
+		local title = _G[self:GetName() .. "TextLeft1"]
+		if title and not title:GetText():find("|T" .. icon) then
+			title:SetFormattedText("|T%s:20:20:0:0:64:64:5:59:5:59:%d|t %s", icon, 18, title:GetText())
+		end
+	end
+end
+
+local function hookItem(tip)
+	tip:HookScript("OnTooltipSetItem", function(self, ...)
+		local name, link = self:GetItem()
+		local icon = link and GetItemIcon(link)
+		AddTooltipIcon(self, icon)
+	end)
+end
+hookItem(_G["GameTooltip"])
+hookItem(_G["ItemRefTooltip"])
+
+local function hookSpell(tip)
+	tip:HookScript("OnTooltipSetSpell", function(self, ...)
+		if self:GetSpell() then
+			local name, rank, icon = GetSpellInfo(self:GetSpell())
+			AddTooltipIcon(self, icon)
+		end
+	end)
+end
+hookSpell(_G["GameTooltip"])
+hookSpell(_G["ItemRefTooltip"])
