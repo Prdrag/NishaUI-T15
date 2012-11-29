@@ -75,8 +75,8 @@ if T.client ~= "deDE" then
 	L.helpcontent7_text4 = "Sinaris, Elv, nightcracker, Eclipse, Hydra, Asphyxia, Jasje, Epicgrimm, JerichoHM and all others who help Tukz and the Editors for the awesome Tukui"
 
 	L.helpcontent6_text1 = "Bug Reports & Suggestions"
-	L.helpcontent6_text2 = "Bug Reports can be made on two boards. The first one is the Tukui-Forum in the thread Bug Reports and Errors. Please read first the post about, how to create a bug report. The other board is on Pulse.com in the forums."
-	L.helpcontent6_text3 = "Suggestions can be in Pulse.com in the forum."
+	L.helpcontent6_text2 = "Bug Reports can be made on two boards. The first one is the Tukui-Forum in the thread Bug Reports and Errors. Please read first the post about, how to create a bug report. The other board is on nisha.com in the forums."
+	L.helpcontent6_text3 = "Suggestions can be in http://pulse-guild.de in the forum."
 	L.helpcontent6_text4 = "PMs or ingame whisper are not observed, because the other users should also see your suggestions."
 
 	L.helpcontent5_text1 = "Actionbars"
@@ -131,6 +131,12 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.nishamarkbar = "Enable the markbar"
 		TukuiConfigUILocalization.nisharaidcd = "Enable the timer for raidcds"
 		TukuiConfigUILocalization.nishathreatbar = "Enable the Nishastyle threatbar"
+		TukuiConfigUILocalization.nishailvlr = "Enable durability and ilvl in charpanel"
+		TukuiConfigUILocalization.nishasesenable = "Enable Specswitcherplugin"
+		TukuiConfigUILocalization.nishasesenablegear = "Enable Equipmentsetbuttons"
+		TukuiConfigUILocalization.nishasesgearswap = "Enable automatic setswap on respec"
+		TukuiConfigUILocalization.nishasesset1 = "Set set for first spec (must be an value between 1 - 10)"
+		TukuiConfigUILocalization.nishasesset2 = "Set set for second spec (must be an value between 1 - 10)"
 		--------------------------------------------------------------------------
 		--classtimer
 		--------------------------------------------------------------------------
@@ -186,6 +192,10 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.raidframesverticalgrid = "Sort the Raidframe vertical"
 		TukuiConfigUILocalization.raidframesgridscale = "Grid Scale"
 		TukuiConfigUILocalization.raidframesmouseoverhighlight = "Enable mouseover highlight on raid frames (heal layout only)"
+		TukuiConfigUILocalization.raidframesheight = "Height of Raidframes"
+		TukuiConfigUILocalization.raidframeswidth = "Width of Raidframes"
+		TukuiConfigUILocalization.raidframespowerbars = "Enable Powerbars in Raidframe"
+		TukuiConfigUILocalization.raidframeshealcomm = "Enable Healcomm in Raidframe"
 		--------------------------------------------------------------------------
 		--auras
 		--------------------------------------------------------------------------
@@ -234,6 +244,9 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.actionbarmainswap = "Swap bottom actionbars (main bar on top)"
 		TukuiConfigUILocalization.actionbarmicromenu = "Enable the micromenubar"
 		TukuiConfigUILocalization.actionbarmicromenumouseover = "Only show the micromenu when mouseover"
+		TukuiConfigUILocalization.actionbarhpetbar = "Enable horizontal perbar"
+		TukuiConfigUILocalization.actionbarsidebar1mouseover = "Enable rightbar on mouseover"
+		TukuiConfigUILocalization.actionbarvertical_shapeshift = "Enable vertical Shapeshiftbar"
 		--------------------------------------------------------------------------
 		--unitframes
 		--------------------------------------------------------------------------
@@ -242,6 +255,12 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.unitframesshowraidpets = "Show Pets in raid"
 		TukuiConfigUILocalization.unitframesgradienthealth = "Enable gradient for Health"
 		TukuiConfigUILocalization.unitframesgradient = "Color auf the gradient health"
+		TukuiConfigUILocalization.unitframespetshow = "Enable pet"
+		TukuiConfigUILocalization.unitframestotshow = "Enable target of target"
+		TukuiConfigUILocalization.unitframesstyle = "Choose between 1 and 2"
+		TukuiConfigUILocalization.unitframesshowhp = "Enable hp/mp on Unitframes"
+		TukuiConfigUILocalization.unitframesperconly = "Show only percentage on the unitframes |cFFFF0000*New*|r"
+		TukuiConfigUILocalization.unitframeshealthcolor = "Color of the healthbar|cFFFF0000*New*|r"
 		--------------------------------------------------------------------------
 		--threatbar
 		--------------------------------------------------------------------------		

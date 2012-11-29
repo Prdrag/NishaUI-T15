@@ -81,7 +81,7 @@ T.Fonts = {
 		cGeneral = Font(caith, 11, nil, nil, nil, nil), -- chat window
 		
 		-- datatext
-		dFont = Font(pixel, 13, "MONOCHROMEOUTLINE", nil, nil, nil),
+		dFont = Font(pixel, C["datatext"].fontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
 		-- loot
 		lGeneral = Font(caith, 11, "OUTLINE", nil, nil, nil),
 		
@@ -134,7 +134,7 @@ T.Fonts = {
 		cGeneral = Font(caith, 11, nil, nil, nil, nil), -- chat window
 		
 		-- datatext
-		dFont = Font(font, nil, "OUTLINE", nil, nil, nil), 
+		dFont = Font(font, C["datatext"].fontsize, "OUTLINE", nil, nil, nil), 
 		
 		-- loot
 		lGeneral = Font(caith, 11, "OUTLINE", nil, nil, nil),

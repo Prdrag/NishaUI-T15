@@ -7,7 +7,8 @@ C["general"] = {
 
 C["unitframes"] = {
 	["enable"] = true,
-	["healthBgColor"] = { .5, 0.1, 0.1 },
+	["healthBgColor"] = {.6, .6, .6, 1},
+	["healthcolor"] = {0.2, 0.2, 0.2},						-- Default is {.3, .3, .3, 1},	
 	["classbar"] = true,
 	["classicons"] = true,
 	["charportrait"] = false,
@@ -31,7 +32,9 @@ C["unitframes"] = {
 	["maxraidplayers"] = true,
 	["showraidpets"] = false,
 	["raidalphaoor"] = 0.4,
+	["perconly"] = false,
 }
+
 
 C["nisha"] = {
 	["click2cast"] = false,
@@ -209,7 +212,7 @@ C["datatext"] = {
 	["battleground"] = false,
 	["time24"] = false,
 	["localtime"] = true,
-	["fontsize"] = 10,
+	["fontsize"] = 12,
 	["exprepbars"] = true,								-- enable experience and reputation bar
 	["expreptext"] = true,								-- enable text on experience and reputation bars
 }

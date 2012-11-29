@@ -24,16 +24,15 @@ do
 		G.UnitFrames.Pet.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Pet.Health:SetFrameLevel( 5 )
 		G.UnitFrames.Pet.Health:CreateBackdrop("Default")
-		G.UnitFrames.Pet.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Pet.Health.bg:SetVertexColor(.5, .5, .5)
 		
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.Pet.Health.colorTapping = false
 			G.UnitFrames.Pet.Health.colorDisconnected = false
 			G.UnitFrames.Pet.Health.colorClass = false
-			G.UnitFrames.Pet.Health:SetStatusBarColor(.3, .3, .3, 1)
-			G.UnitFrames.Pet.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-			G.UnitFrames.Pet.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+			G.UnitFrames.Pet.Health:SetStatusBarColor(unpack(C["unitframes"].healthcolor))
+			G.UnitFrames.Pet.Health.bg:SetTexture(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.Pet.Health.colorDisconnected = true
 			G.UnitFrames.Pet.Health.colorTapping = true

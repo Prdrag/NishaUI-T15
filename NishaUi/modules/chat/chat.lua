@@ -12,7 +12,7 @@ local function SetTabStyle( frame )
 
 	local c = RAID_CLASS_COLORS[select(2, UnitClass("player"))]
 	_G[chat .. "TabText"]:SetTextColor(c.r, c.g, c.b)
-	_G[chat .. "TabText"]:SetFont(unpack(T.Fonts.cTab.setfont))
+	_G[chat .. "TabText"]:SetFont(unpack(T.Fonts.dFont.setfont))
 	_G[chat .. "TabText"].SetTextColor = T.dummy
 end
 

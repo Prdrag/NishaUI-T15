@@ -421,17 +421,41 @@ local function PostUpdateHealth( health, unit, min, max)
 				local r, g, b
 				r, g, b = oUFTukui.ColorGradient(min, max, 0.69, 0.31, 0.31, 0.65, 0.63, 0.35, 0.33, 0.59, 0.33)
 				if unit == "player" then
-					if C["unitframes"].showtotalhpmp == true then
+					if C["unitframes"].showtotalhpmp == true and C["unitframes"].perconly~= true then
 						health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5|||r |cff559655%s|r", ShortValue(min), ShortValue(max))
-					else
+					elseif C["unitframes"].perconly ~= true and C["unitframes"].showtotalhpmp ~= true then	
 						health.value:SetFormattedText("|cffAF5050%s|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", ShortValue(min), r * 255, g * 255, b * 255, floor(min / max * 100))
+					elseif C["unitframes"].perconly == true and C["unitframes"].showtotalhpmp ~= true then				
+						health.value:SetText("|cff559655"..floor(min / max * 100).."%|r")
 					end				
+				elseif unit == "target" then
+					if C["unitframes"].showtotalhpmp == true and C["unitframes"].perconly~= true then
+						health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5|||r |cff559655%s|r", ShortValue(min), ShortValue(max))
+					elseif C["unitframes"].perconly == true and C["unitframes"].showtotalhpmp ~= true then				
+						health.value:SetText("|cff559655"..floor(min / max * 100).."%|r")
+					elseif C["unitframes"].perconly ~= true and C["unitframes"].showtotalhpmp ~= true then	
+						health.value:SetFormattedText("|cffAF5050%s|r |cffD7BEA5-|r |cff%02x%02x%02x%d%%|r", ShortValue(min), r * 255, g * 255, b * 255, floor(min / max * 100))
+					end
 				else
 					health.value:SetText("|cff559655"..floor(min / max * 100).."%|r")
 				end
 			else
 				if unit == "player" then
-					health.value:SetText("|cff559655"..ShortValue(max).."|r")
+					if C["unitframes"].showtotalhpmp == true and C["unitframes"].perconly~= true then
+						health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5|||r |cff559655%s|r", ShortValue(min), ShortValue(max))
+					elseif C["unitframes"].perconly ~= true and C["unitframes"].showtotalhpmp ~= true then	
+						health.value:SetText("|cff559655"..ShortValue(max).."|r")
+					elseif C["unitframes"].perconly == true and C["unitframes"].showtotalhpmp ~= true then				
+						health.value:SetText("|cff559655"..floor(min / max * 100).."%|r")
+					end				
+				elseif unit == "target" then
+					if C["unitframes"].showtotalhpmp == true and C["unitframes"].perconly~= true then
+						health.value:SetFormattedText("|cff559655%s|r |cffD7BEA5|||r |cff559655%s|r", ShortValue(min), ShortValue(max))
+					elseif C["unitframes"].perconly == true and C["unitframes"].showtotalhpmp ~= true then				
+						health.value:SetText("|cff559655"..floor(min / max * 100).."%|r")
+					elseif C["unitframes"].perconly ~= true and C["unitframes"].showtotalhpmp ~= true then	
+						health.value:SetText("|cff559655"..ShortValue(max).."|r")
+					end
 				else
 					health.value:SetText("|cff559655"..floor(min / max * 100).."%|r")
 				end
@@ -492,13 +516,9 @@ local function PostUpdatePower(power, unit, min, max)
 		power.value:SetText()
 	else
 		if min ~= max then
-				-- if unit == "target" then
-					-- if C["unitframes"].showtotalhpmp == true then
-						-- power.value:SetFormattedText("%s |cffD7BEA5|||r %s", ShortValue(max - (max - min)), ShortValue(max))
-					-- else
-						-- power.value:SetFormattedText("%d%% |cffD7BEA5-|r %s", floor(min / max * 100), ShortValue(max - (max - min)))
-					-- end
-				if unit == "player" and self:GetAttribute("normalUnit") == "pet" or unit == "pet" then
+				if unit == "target" then
+					power.value:SetText(" ")
+				elseif unit == "player" then
 					if C["unitframes"].showtotalhpmp == true then
 						power.value:SetFormattedText("%s |cffD7BEA5|||r %s", ShortValue(max - (max - min)), ShortValue(max))
 					else
@@ -510,7 +530,7 @@ local function PostUpdatePower(power, unit, min, max)
 					power.value:SetText(" ")
 				end
 		else
-			if unit == "pet" or unit == "focus" or unit == "focustarget" or (unit and unit:find("arena%d")) then
+			if unit == "player" or unit == "pet" or unit == "focus" or unit == "focustarget" or (unit and unit:find("arena%d")) then
 				power.value:SetText(ShortValue(min))
 			else
 				power.value:SetText(" ")

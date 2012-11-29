@@ -73,7 +73,7 @@ if T.client == "deDE" then
 
 	L.helpcontent6_text1 = "Bug Reports & Anregungen"
 	L.helpcontent6_text2 = "Bug Reports können auf zwei Seiten gemacht werden. Die erste ist das TukUI Forum im Thread Bug Reports and Errors. Bitte lest euch erst durch wie man einen korrekten Bug-Report erstellt. Die andere Seite ist das Pulse Forum."
-	L.helpcontent6_text3 = "Anregungen könnt ihr unter Pulse.com im Forum loswerden."
+	L.helpcontent6_text3 = "Anregungen könnt ihr unter http://pulse-guild.de im Forum loswerden."
 	L.helpcontent6_text4 = "PMs or ingame whisper werden nicht bearbeitet, da alle Benutzer die Möglichkeit haben sollen, die Entwicklung zu vervolgen."
 
 	L.helpcontent5_text1 = "Aktionsleisten"
@@ -131,6 +131,12 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.nishamarkbar = "Aktiviert die Markbar"
 		TukuiConfigUILocalization.nisharaidcd = "Aktiviert die Balken für die Schlachtzugsfähigkeiten"
 		TukuiConfigUILocalization.nishathreatbar = "Aktiviert die Bedrohungsleiste im Nishastyle"
+		TukuiConfigUILocalization.nishailvlr = "Aktiviere Haltbarkeit und ilvl im Charakterfenster"
+		TukuiConfigUILocalization.nishasesenable = "Enable Specswitcherplugin"
+		TukuiConfigUILocalization.nishasesenablegear = "Enable Equipmentsetbuttons"
+		TukuiConfigUILocalization.nishasesgearswap = "Enable automatic setswap on respec"
+		TukuiConfigUILocalization.nishasesset1 = "Set set for first spec (must be an value between 1 - 10)"
+		TukuiConfigUILocalization.nishasesset2 = "Set set for second spec (must be an value between 1 - 10)"
 		--------------------------------------------------------------------------
 		--classtimer
 		--------------------------------------------------------------------------
@@ -186,6 +192,10 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.raidframes = "Raidframes"
 		TukuiConfigUILocalization.raidframesunicolor = "Aktivere die einheitliche Farbe der Einheitenfenster"
 		TukuiConfigUILocalization.raidframesverticalgrid = "Sortiere den Schlachtzug/Gruppe vertikal"
+		TukuiConfigUILocalization.raidframesheight = "Höhe der Raidframes"
+		TukuiConfigUILocalization.raidframeswidth = "Breite der Raidframes"
+		TukuiConfigUILocalization.raidframespowerbars = "Aktiviere die Powerbars im Raid"
+		TukuiConfigUILocalization.raidframeshealcomm = "Aktiviere Healcomm in den Raidframes"
 		--------------------------------------------------------------------------
 		--auras
 		--------------------------------------------------------------------------		
@@ -236,6 +246,9 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.actionbarmainswap = "Wechselt die unteren Aktionsleiste"
 		TukuiConfigUILocalization.actionbarmicromenu = "Aktiviert das Mikromenü"
 		TukuiConfigUILocalization.actionbarmicromenumouseover = "Zeigt das Mirkomenü nur wenn man mit der Maus drüber fährt"
+		TukuiConfigUILocalization.actionbarhpetbar = "Aktiviere horizontale Begleiterleiste"
+		TukuiConfigUILocalization.actionbarsidebar1mouseover = "Aktiviere die rechte Leiste per Mouseover"
+		TukuiConfigUILocalization.actionbarvertical_shapeshift = "Aktiviere vertikale Shapeshitleiste"
 		--------------------------------------------------------------------------
 		--unitframes
 		--------------------------------------------------------------------------
@@ -244,6 +257,12 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.unitframesshowraidpets = "Zeige Begleiter im raid"
 		TukuiConfigUILocalization.unitframesgradienthealth = "Aktiviere den farblichen Anstieg der Lebenspunkte"
 		TukuiConfigUILocalization.unitframesgradient = "Farbe der ansteigenden Lebenspunkte"
+		TukuiConfigUILocalization.unitframespetshow = "Aktiviere die Begleiteranzeige"
+		TukuiConfigUILocalization.unitframestotshow = "Aktiviere Ziel des Ziels"
+		TukuiConfigUILocalization.unitframesstyle = "Wähle zwischen Style 1 und 2"
+		TukuiConfigUILocalization.unitframesshowhp = "Aktiviere hp/mp Anzeige auf dem Unitframes"
+		TukuiConfigUILocalization.unitframesperconly = "Zeige ausschließlich Prozente in den Einheitenfenstern |cFFFF0000*Neu*|r"
+		TukuiConfigUILocalization.unitframeshealthcolor = "Farbe des Lebensbalkens |cFFFF0000*Neu*|r"
 		--------------------------------------------------------------------------
 		--threatbar
 		--------------------------------------------------------------------------		

@@ -31,7 +31,7 @@ local width, height, showParty, showRaid, showPlayer, xOffset, yOffset, point, c
 		"showParty", true,
 		"showRaid", true,
 		"showPlayer", true,
-		"showSolo", true,
+		"showSolo", false,
 		"xoffset", T.Scale( 6 ),
 		"yOffset", T.Scale( -6 ),
 		"point", point,

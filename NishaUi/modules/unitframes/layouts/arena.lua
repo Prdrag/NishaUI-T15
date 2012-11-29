@@ -20,15 +20,14 @@ do
 			G.UnitFrames["Arena" .. i].Health:Size( 200, 30 )
 			G.UnitFrames["Arena" .. i].Health:SetFrameLevel( 5 )
 			G.UnitFrames["Arena" .. i].Health:CreateBackdrop("Default")
-			G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+			G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor(.5, .5, .5)
 
 			if( C["unitframes"].unicolor == true ) then
 				G.UnitFrames["Arena" .. i].Health.colorTapping = false
 				G.UnitFrames["Arena" .. i].Health.colorDisconnected = false
 				G.UnitFrames["Arena" .. i].Health.colorClass = false
-				G.UnitFrames["Arena" .. i].Health:SetStatusBarColor(.3, .3, .3, 1)
-				G.UnitFrames["Arena" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-				G.UnitFrames["Arena" .. i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+				G.UnitFrames["Arena" .. i].Health:SetStatusBarColor(unpack(C["unitframes"].healthcolor))
+				G.UnitFrames["Arena" .. i].Health.bg:SetTexture(unpack(C["unitframes"].healthBgColor))
 			end
 
 			G.UnitFrames["Arena" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))

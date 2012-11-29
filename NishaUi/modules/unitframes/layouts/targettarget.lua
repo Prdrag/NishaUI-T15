@@ -24,15 +24,14 @@ do
 		G.UnitFrames.TargetTarget.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.TargetTarget.Health:SetFrameLevel( 5 )
 		G.UnitFrames.TargetTarget.Health:CreateBackdrop("Default")
-		G.UnitFrames.TargetTarget.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+		G.UnitFrames.TargetTarget.Health.bg:SetVertexColor(.5, .5, .5)
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.TargetTarget.Health.colorTapping = false
 			G.UnitFrames.TargetTarget.Health.colorDisconnected = false
 			G.UnitFrames.TargetTarget.Health.colorClass = false
-			G.UnitFrames.TargetTarget.Health:SetStatusBarColor(.3, .3, .3, 1)
-			G.UnitFrames.TargetTarget.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-			G.UnitFrames.TargetTarget.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+			G.UnitFrames.TargetTarget.Health:SetStatusBarColor(unpack(C["unitframes"].healthcolor))
+			G.UnitFrames.TargetTarget.Health.bg:SetTexture(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.TargetTarget.Health.colorDisconnected = true
 			G.UnitFrames.TargetTarget.Health.colorTapping = true
@@ -56,7 +55,7 @@ do
 
 		local powerBG = power:CreateTexture(nil, 'BORDER')
 		powerBG:SetAllPoints(power)
-		powerBG:SetTexture(C.media.normTex)
+		powerBG:SetTexture(C["media"].normTex)
 		powerBG.multiplier = 0.3
 		
 		power:CreateBackdrop("Default")

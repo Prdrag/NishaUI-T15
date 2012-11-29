@@ -22,20 +22,22 @@ do
 			G.UnitFrames["Boss" .. i].Health:SetStatusBarTexture(C["media"].normTex)
 			G.UnitFrames["Boss" .. i].Health:SetFrameLevel( 5 )
 			G.UnitFrames["Boss" .. i].Health:CreateBackdrop("Default")
-			G.UnitFrames["Boss" .. i].Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+			G.UnitFrames["Boss" .. i].Health.bg:SetVertexColor(.5, .5, .5)
 
 			if( C["unitframes"].unicolor == true ) then
 				G.UnitFrames["Boss" .. i].Health.colorTapping = false
 				G.UnitFrames["Boss" .. i].Health.colorDisconnected = false
 				G.UnitFrames["Boss" .. i].Health.colorClass = false
-				G.UnitFrames["Boss" .. i].Health:SetStatusBarColor(.3, .3, .3, 1)
-				G.UnitFrames["Boss" .. i].Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-				G.UnitFrames["Boss" .. i].Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+				G.UnitFrames["Boss" .. i].Health:SetStatusBarColor(unpack(C["unitframes"].healthcolor))
+				G.UnitFrames["Boss" .. i].Health.bg:SetTexture(unpack(C["unitframes"].healthBgColor))
 			end
 
 			G.UnitFrames["Boss" .. i].Name:SetFont(unpack(T.Fonts.uGeneral.setfont))
 			G.UnitFrames["Boss" .. i].Name:SetShadowOffset( 1.25, -1.25 )
 			G.UnitFrames["Boss" .. i].Health.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
+			G.UnitFrames["Boss" .. i].Health.PostUpdate = T.PostUpdateHealth
+			G.UnitFrames["Boss" .. i].Health.value = T.SetFontString( G.UnitFrames["Boss" .. i].Health,unpack(T.Fonts.uGeneral.setfont))
+			G.UnitFrames["Boss" .. i].Health.value:Point( "LEFT", G.UnitFrames["Boss" .. i].Health, "LEFT", 4, 1 )
 			G.UnitFrames["Boss" .. i].Health.PostUpdate = T.PostUpdateHealth
 			
 		end
@@ -49,8 +51,13 @@ do
 			G.UnitFrames["Boss" .. i].Power:Point( "TOPRIGHT", G.UnitFrames["Boss" .. i].Health, "BOTTOMRIGHT", 0, -7 )
 			G.UnitFrames["Boss" .. i].Power:SetFrameLevel( G.UnitFrames["Boss" .. i].Health:GetFrameLevel() + 2 )
 			G.UnitFrames["Boss" .. i].Power:CreateBackdrop("Default")
+			
+			G.UnitFrames["Boss" .. i].Power.bg:SetAllPoints(G.UnitFrames["Boss" .. i].Power)
+			G.UnitFrames["Boss" .. i].Power.bg:SetTexture(normTex)
+			G.UnitFrames["Boss" .. i].Power.bg.multiplier = 0.3
 
 			G.UnitFrames["Boss" .. i].Power.value:SetFont(unpack(T.Fonts.uGeneral.setfont))
+			
 			G.UnitFrames["Boss" .. i].Power.PreUpdate = T.PreUpdatePower
 			G.UnitFrames["Boss" .. i].Power.PostUpdate = T.PostUpdatePower
 		end

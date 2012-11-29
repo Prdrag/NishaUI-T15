@@ -20,15 +20,14 @@ do
 		G.UnitFrames.Target.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Target.Health:SetFrameLevel(4)
 		G.UnitFrames.Target.Health:CreateBackdrop("Default")
-		G.UnitFrames.Target.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Target.Health.bg:SetVertexColor(.5, .5, .5)
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.Target.Health.colorTapping = false
 			G.UnitFrames.Target.Health.colorDisconnected = false
 			G.UnitFrames.Target.Health.colorClass = false
-			G.UnitFrames.Target.Health:SetStatusBarColor(.3, .3, .3, 1)
-			G.UnitFrames.Target.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-			G.UnitFrames.Target.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+			G.UnitFrames.Target.Health:SetStatusBarColor(unpack(C["unitframes"].healthcolor))
+			G.UnitFrames.Target.Health.bg:SetTexture(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.Target.Health.colorDisconnected = true
 			G.UnitFrames.Target.Health.colorTapping = true
@@ -38,12 +37,12 @@ do
 
 		G.UnitFrames.Target.Name:SetFont(unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Target.Name:ClearAllPoints()
-		G.UnitFrames.Target.Name:SetPoint("LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1)
+		G.UnitFrames.Target.Name:SetPoint("CENTER", G.UnitFrames.Target.Health, "CENTER", -10, 1)
 		G.UnitFrames.Target.Name:SetShadowOffset( 1.25, -1.25 )
 
 		G.UnitFrames.Target.Health.value = T.SetFontString( G.UnitFrames.Target.Health,unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Target.Health.value:Point( "RIGHT", G.UnitFrames.Target.Health, "RIGHT", -4, 1 )
-		G.UnitFrames.Player.Health.PostUpdate = T.PostUpdateHealth
+		G.UnitFrames.Target.Health.PostUpdate = T.PostUpdateHealth
 	end
 --------------------------------------------------------------
 -- power
@@ -52,14 +51,18 @@ do
 		G.UnitFrames.Target.Power:Size( 233, 5 )
 		G.UnitFrames.Target.Power:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Target.Power:ClearAllPoints()
-		G.UnitFrames.Target.Power:Point( "TOPRIGHT", G.UnitFrames.Target.Health, "BOTTOMRIGHT", 0, -5 )
+		G.UnitFrames.Target.Power:Point( "TOPRIGHT", G.UnitFrames.Target.Health, "BOTTOMRIGHT", 0, -6 )
 		G.UnitFrames.Target.Power:SetFrameLevel( G.UnitFrames.Target.Health:GetFrameLevel() + 2 )
 		G.UnitFrames.Target.Power:CreateBackdrop("Default")
+		
+		G.UnitFrames.Target.Power.bg:SetAllPoints(G.UnitFrames.Target.Power)
+		G.UnitFrames.Target.Power.bg:SetTexture(normTex)
+		G.UnitFrames.Target.Power.bg.multiplier = 0.3
 
 		G.UnitFrames.Target.Power.value = T.SetFontString( G.UnitFrames.Target.Health,unpack(T.Fonts.uGeneral.setfont))
-		G.UnitFrames.Target.Power.value:Point( "LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1 )
-		G.UnitFrames.Player.Power.PreUpdate = T.PreUpdatePower
-		G.UnitFrames.Player.Power.PostUpdate = T.PostUpdatePower
+		G.UnitFrames.Target.Power.value:Point( "LEFT", G.UnitFrames.Target.Health, "LEFT", 4, 1 )
+		G.UnitFrames.Target.Power.PreUpdate = T.PreUpdatePower
+		G.UnitFrames.Target.Power.PostUpdate = T.PostUpdatePower
 	end
 	
 --------------------------------------------------------------

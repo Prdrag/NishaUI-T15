@@ -20,15 +20,14 @@ do
 		G.UnitFrames.Player.Health:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Player.Health:SetFrameLevel( 5 )
 		G.UnitFrames.Player.Health:CreateBackdrop("Default")
-		G.UnitFrames.Player.Health.bg:SetVertexColor( 0.6, 0.6, 0.6 )
+		G.UnitFrames.Player.Health.bg:SetVertexColor(.5, .5, .5)
 
 		if( C["unitframes"].unicolor == true ) then
 			G.UnitFrames.Player.Health.colorTapping = false
 			G.UnitFrames.Player.Health.colorDisconnected = false
 			G.UnitFrames.Player.Health.colorClass = false
-			G.UnitFrames.Player.Health:SetStatusBarColor(.3, .3, .3, 1)
-			G.UnitFrames.Player.Health.bg:SetTexture( 0.6, 0.6, 0.6 )
-			G.UnitFrames.Player.Health.bg:SetVertexColor(unpack(C["unitframes"].healthBgColor))
+			G.UnitFrames.Player.Health:SetStatusBarColor(unpack(C["unitframes"].healthcolor))
+			G.UnitFrames.Player.Health.bg:SetTexture(unpack(C["unitframes"].healthBgColor))
 		else
 			G.UnitFrames.Player.Health.colorDisconnected = true
 			G.UnitFrames.Player.Health.colorTapping = true
@@ -47,9 +46,13 @@ do
 		G.UnitFrames.Player.Power:Size( 233, 5 )
 		G.UnitFrames.Player.Power:SetStatusBarTexture(C["media"].normTex)
 		G.UnitFrames.Player.Power:ClearAllPoints()
-		G.UnitFrames.Player.Power:Point( "TOPRIGHT", G.UnitFrames.Player.Health, "BOTTOMRIGHT", 0, -5 )
+		G.UnitFrames.Player.Power:Point( "TOPRIGHT", G.UnitFrames.Player.Health, "BOTTOMRIGHT", 0, -6 )
 		G.UnitFrames.Player.Power:SetFrameLevel( G.UnitFrames.Player.Health:GetFrameLevel() + 2 )
 		G.UnitFrames.Player.Power:CreateBackdrop("Default")
+		
+		G.UnitFrames.Player.Power.bg:SetAllPoints(power)
+		G.UnitFrames.Player.Power.bg:SetTexture(normTex)
+		G.UnitFrames.Player.Power.bg.multiplier = 0.3
 
 		G.UnitFrames.Player.Power.value = T.SetFontString( G.UnitFrames.Player.Health,unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Player.Power.value:Point( "LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1 )
@@ -79,6 +82,30 @@ do
 		end
 	end
 --------------------------------------------------------------
+-- Vengeance bar
+--------------------------------------------------------------
+		if C.classbar.vengeance == true and T.Role == "Tank" then		
+			G.UnitFrames.Player.VengeanceBar = CreateFrame("Frame", G.UnitFrames.Player:GetName().."_VengeanceBar", G.UnitFrames.Player)
+			G.UnitFrames.Player.VengeanceBar:CreateBackdrop("Default")
+			G.UnitFrames.Player.VengeanceBar:SetPoint("BOTTOMLEFT", G.UnitFrames.Player, "TOPLEFT", 0, 7)
+			G.UnitFrames.Player.VengeanceBar:SetSize(233, 10)
+
+			G.UnitFrames.Player.VengeanceBar.Bar = CreateFrame("StatusBar", nil, G.UnitFrames.Player.VengeanceBar)
+			G.UnitFrames.Player.VengeanceBar.Bar:SetPoint("LEFT", G.UnitFrames.Player.VengeanceBar, "LEFT", 0, 0)
+			G.UnitFrames.Player.VengeanceBar.Bar:SetSize(233, 10)
+			G.UnitFrames.Player.VengeanceBar.Bar:SetStatusBarTexture(C.media.normTex)
+			G.UnitFrames.Player.VengeanceBar.Bar:SetStatusBarColor(T.color.r, T.color.g, T.color.b)
+
+			G.UnitFrames.Player.VengeanceBar.bg = G.UnitFrames.Player.VengeanceBar.Bar:CreateTexture(nil, "BORDER")
+			G.UnitFrames.Player.VengeanceBar.bg:SetAllPoints()
+			G.UnitFrames.Player.VengeanceBar.bg:SetTexture(C.media.normTex)
+			G.UnitFrames.Player.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
+
+			G.UnitFrames.Player.VengeanceBar.Text = T.SetFontString(G.UnitFrames.Player.VengeanceBar.Bar, C.media.font, 12, "OUTLINE")
+			G.UnitFrames.Player.VengeanceBar.Text:SetPoint("CENTER", G.UnitFrames.Player.VengeanceBar.Bar, "CENTER", 0, 0)
+			G.UnitFrames.Player:EnableElement("VengeanceBar")
+		end
+--------------------------------------------------------------
 -- classicons
 --------------------------------------------------------------
 	do
@@ -94,6 +121,33 @@ do
 
 			G.UnitFrames.Player:EnableElement( "ClassIcon" )
 		end
+	end
+	
+	do
+		local RaidDebuffs = CreateFrame('Frame', nil, G.UnitFrames.Player)
+		RaidDebuffs:Height(44)
+		RaidDebuffs:Width(44)
+		RaidDebuffs:Point("TOPRIGHT", G.UnitFrames.Player.Health, "TOPLEFT", -5, 2)
+		RaidDebuffs:SetFrameStrata(G.UnitFrames.Player.Health:GetFrameStrata())
+		RaidDebuffs:SetFrameLevel(G.UnitFrames.Player.Health:GetFrameLevel() + 2)
+		
+		RaidDebuffs:SetTemplate("Default")
+		
+		RaidDebuffs.icon = RaidDebuffs:CreateTexture(nil, 'OVERLAY')
+		RaidDebuffs.icon:SetTexCoord(.1,.9,.1,.9)
+		RaidDebuffs.icon:Point("TOPLEFT", 2, -2)
+		RaidDebuffs.icon:Point("BOTTOMRIGHT", -2, 2)
+		
+		RaidDebuffs.count = RaidDebuffs:CreateFontString(nil, 'OVERLAY')
+		RaidDebuffs.count:SetFont(C["media"].uffont, 14, "THINOUTLINE")
+		RaidDebuffs.count:SetPoint('BOTTOMRIGHT', RaidDebuffs, 'BOTTOMRIGHT', 0, 2)
+		RaidDebuffs.count:SetTextColor(1, .9, 0)
+		
+		RaidDebuffs:FontString('time', C["media"].uffont, 16, "THINOUTLINE")
+		RaidDebuffs.time:SetPoint('CENTER')
+		RaidDebuffs.time:SetTextColor(1, .9, 0)			
+		G.UnitFrames.Player.RaidDebuffs = RaidDebuffs
+		G.UnitFrames.Player:EnableElement("RaidDebuffs")
 	end
 --------------------------------------------------------------
 -- combopoints
