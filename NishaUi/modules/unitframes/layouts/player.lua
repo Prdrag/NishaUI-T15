@@ -64,14 +64,15 @@ do
 --------------------------------------------------------------
 	do
 		if C["unitframes"].charportrait == true and C["unitframes"].classicons == true then
-			G.UnitFrames.Player.Portrait:ClearAllPoints()
 			G.UnitFrames.Player.Portrait:SetAllPoints( G.UnitFrames.Player.Health )
 			G.UnitFrames.Player.Portrait:SetAlpha( 0.2 )
 			G.UnitFrames.Player.Portrait.SetAlpha = T.dummy
+			G.UnitFrames.Player.Portrait:SetFrameLevel( G.UnitFrames.Player.Health:GetFrameLevel() )
+			G.UnitFrames.Player.Portrait.SetFrameLevel = T.dummy
+
 			G.UnitFrames.Player.Health:ClearAllPoints()
 			G.UnitFrames.Player.Health:SetPoint( "TOPLEFT", 0, 0 )
 			G.UnitFrames.Player.Health:SetPoint( "TOPRIGHT" )
-			G.UnitFrames.Player.Portrait:SetFrameLevel( G.UnitFrames.Player.Health:GetFrameLevel()+1)
 		elseif C["unitframes"].charportrait == true and C["unitframes"].classicons ~= true then
 			G.UnitFrames.Player.Portrait:ClearAllPoints()
 			G.UnitFrames.Player.Portrait:CreateBackdrop("Default")

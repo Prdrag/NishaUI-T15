@@ -75,9 +75,11 @@ do
 			G.UnitFrames.Target.Portrait:SetAlpha( 0.2 )
 			G.UnitFrames.Target.Portrait.SetAlpha = T.dummy
 			G.UnitFrames.Target.Portrait:SetFrameLevel( G.UnitFrames.Target.Health:GetFrameLevel() )
+			G.UnitFrames.Target.Portrait.SetFrameLevel = T.dummy
+
 			G.UnitFrames.Target.Health:ClearAllPoints()
-			G.UnitFrames.Target.Health:SetPoint("TOPLEFT", 0, 0)
-			G.UnitFrames.Target.Health:SetPoint("TOPRIGHT")
+			G.UnitFrames.Target.Health:SetPoint( "TOPLEFT", 0, 0 )
+			G.UnitFrames.Target.Health:SetPoint( "TOPRIGHT" )
 		elseif C["unitframes"].charportrait == true and C["unitframes"].classicons ~= true then
 			G.UnitFrames.Target.Portrait:ClearAllPoints()
 			G.UnitFrames.Target.Portrait:CreateBackdrop("Default")
