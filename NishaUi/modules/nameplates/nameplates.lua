@@ -46,23 +46,14 @@ local PlateBlacklist = {
 	--Army of the Dead
 	["Army of the Dead Ghoul"] = true,
 }
-
 local function HideObjects(parent)
 	for object in pairs(parent.queue) do
 		if object:GetObjectType() == "Texture" then
 			object:SetTexture(nil)
-			object.SetTexture = T.dummy
 		elseif object:GetObjectType() == "FontString" then
-			object.ClearAllPoints = T.dummy
-			object.SetFont = T.dummy
-			object.SetPoint = T.dummy
-			object:Hide()
-			object.Show = T.dummy
-			object.SetText = T.dummy
-			object.SetShadowOffset = T.dummy
+			object:SetWidth(0.001)
 		else
 			object:Hide()
-			object.Show = T.dummy
 		end
 	end
 end
@@ -170,8 +161,7 @@ local function UpdateAuraIcon(button, unit, index, filter)
 			self:SetScript("OnUpdate", nil)
 			return
 		end
-		button.cd.timer.text:SetFont(C.media.font, 12 * noscalemult, "OUTLINE")
-		button.cd.timer.text:SetShadowOffset(1.25, -1.25)
+		button.cd.timer.text:SetFont(unpack(T.Fonts.nGeneral.setfont))
 	end)
 	button:Show()
 end
@@ -284,31 +274,38 @@ local function Colorize(frame)
 	end
 	
 	frame.isTagged = nil
-	
-	if (r + b + b) > 2 then -- Tapped
+
+	if r + b + b > 2 then	-- Tapped
 		r, g, b = 0.6, 0.6, 0.6
 		frame.isFriendly = false
 		frame.isTagged = true
-		-- r,g,b = 0.55, 0.57, 0.61
-	elseif g+b == 0 then -- hostileif g+b == 0 then -- hostile
-		r,g,b = 222/255, 95/255,  95/255
+		texcoord = {0, 0, 0, 0}
+	elseif g + b == 0 then	-- Hostile
+		r, g, b = unpack(oUFTukui.colors.reaction[1])
 		frame.isFriendly = false
-	elseif r+b == 0 then -- friendly npc
-		r,g,b = 0.29, 0.69, 0.29
+		texcoord = {0, 0, 0, 0}
+	elseif r + b == 0 then	-- Friendly npc
+		r, g, b = unpack(oUFTukui.colors.power["MANA"])
 		frame.isFriendly = true
-	elseif r+g > 1.95 then -- neutral
-		r,g,b = 218/255, 197/255, 92/255
+		texcoord = {0, 0, 0, 0}
+	elseif r + g > 1.95 then	-- Neutral
+		r, g, b = unpack(oUFTukui.colors.reaction[4])
 		frame.isFriendly = false
-	elseif r+g == 0 then -- friendly player
-		r,g,b = 75/255,  175/255, 76/255
+		texcoord = {0, 0, 0, 0}
+	elseif r + g == 0 then	-- Friendly player
+		r, g, b = unpack(oUFTukui.colors.reaction[5])
 		frame.isFriendly = true
-	else -- enemy player
+		texcoord = {0, 0, 0, 0}
+	else	-- Enemy player
 		frame.isFriendly = false
+		texcoord = {0, 0, 0, 0}
 	end
 	frame.hasClass = false
 
 	frame.hp:SetStatusBarColor(r, g, b)
+	frame.hp.hpbg:SetTexture(r, g, b, 0.25)
 end
+
 -- HealthBar OnShow, use this to set variables for the nameplate
 local function UpdateObjects(frame)
 	local frame = frame:GetParent()
@@ -533,7 +530,7 @@ local function UpdateThreat(frame, elapsed)
 			SetVirtualBorder(frame.hp, unpack(C.media.bordercolor))
 		end
 	else
-		if frame.threat:IsShown() then
+		if not frame.threat:IsShown() then
 			if InCombatLockdown() and frame.isFriendly ~= true then
 				-- No Threat
 				if T.Role == "Tank" then
@@ -660,7 +657,7 @@ end
 -- Run a function for all visible nameplates, we use this for the blacklist, to check unitguid, and to hide drunken text
 local function ForEachPlate(functionToRun, ...)
 	for frame in pairs(frames) do
-		if frame:IsShown() then
+		if frame and frame:IsShown() then
 			functionToRun(frame, ...)
 		end
 	end
@@ -671,7 +668,6 @@ local select = select
 local function HookFrames(...)
 	for index = 1, select("#", ...) do
 		local frame = select(index, ...)
-		local region = frame:GetRegions()
 
 		if not frames[frame] and (frame:GetName() and not frame.isSkinned and frame:GetName():find("NamePlate%d")) then
 			SkinObjects(frame:GetChildren())
@@ -688,7 +684,9 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 	end
 
 	if self.elapsed and self.elapsed > 0.2 then
-		ForEachPlate(UpdateThreat, self.elapsed)
+		if C.nameplate.enhancethreat == true then
+			ForEachPlate(UpdateThreat, self.elapsed)
+		end
 		ForEachPlate(AdjustNameLevel)
 		self.elapsed = 0
 	else
@@ -697,15 +695,15 @@ NamePlates:SetScript("OnUpdate", function(self, elapsed)
 
 	ForEachPlate(ShowHealth)
 	ForEachPlate(CheckBlacklist)
-	ForEachPlate(HideDrunkenText)
 	ForEachPlate(CheckUnit_Guid)
+	--ForEachPlate(Colorize)
 end)
 
 function NamePlates:COMBAT_LOG_EVENT_UNFILTERED(_, event, ...)
 	if event == "SPELL_AURA_REMOVED" then
 		local _, sourceGUID, _, _, _, destGUID, _, _, _, spellID = ...
 
-		if sourceGUID == UnitGUID("player") then
+		if sourceGUID == UnitGUID("player") or arg4 == UnitGUID("pet") then
 			ForEachPlate(MatchGUID, destGUID, spellID)
 		end
 	end
