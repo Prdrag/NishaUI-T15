@@ -110,13 +110,13 @@ local applystyle = function(bar)
 	end
 
 	-- setup timer and bar name fonts and positions
-	bar.candyBarLabel:SetFont(C.media.font, 12, "OUTLINE")
+	bar.candyBarLabel:SetFont(unpack(T.Fonts.skin.setfont))
 	bar.candyBarLabel:SetShadowColor(0, 0, 0, 0)
 	bar.candyBarLabel:SetJustifyH("LEFT")
 	bar.candyBarLabel:ClearAllPoints()
 	bar.candyBarLabel:Point("LEFT", bar, "LEFT", 4, 0)
 	
-	bar.candyBarDuration:SetFont(C.media.font, 12, "OUTLINE")
+	bar.candyBarDuration:SetFont(unpack(T.Fonts.skin.setfont))
 	bar.candyBarDuration:SetShadowColor(0, 0, 0, 0)
 	bar.candyBarDuration:SetJustifyH("RIGHT")
 	bar.candyBarDuration:ClearAllPoints()

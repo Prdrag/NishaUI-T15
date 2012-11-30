@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+
 if( T.myclass == "MAGE" ) then
 	if( C["classbar"].mage ~= true ) then
 		G.UnitFrames.Player.ArcaneChargeBar:Kill()

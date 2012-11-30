@@ -594,6 +594,38 @@ T.PostCreateAura = function(self, button)
 	button.Animation = Animation
 end
 
+
+T.UpdatePvPStatus = function(self, elapsed)
+	if self.elapsed and self.elapsed > 0.2 then
+		local unit = self.unit
+		local time = GetPVPTimer()
+
+		local min = format("%01.f", floor((time / 1000) / 60))
+		local sec = format("%02.f", floor((time / 1000) - min * 60))
+		if self.Status then
+			local factionGroup = UnitFactionGroup(unit)
+			if UnitIsPVPFreeForAll(unit) then
+				if time ~= 301000 and time ~= -1 then
+					self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
+				else
+					self.Status:SetText(PVP)
+				end
+			elseif factionGroup and UnitIsPVP(unit) then
+				if time ~= 301000 and time ~= -1 then
+					self.Status:SetText(PVP.." ".."["..min..":"..sec.."]")
+				else
+					self.Status:SetText(PVP)
+				end
+			else
+				self.Status:SetText("")
+			end
+		end
+		self.elapsed = 0
+	else
+		self.elapsed = (self.elapsed or 0) + elapsed
+	end
+end
+
 -- update cd, border color, etc on buffs / debuffs
 T.PostUpdateAura = function(self, unit, icon, index, offset, filter, isDebuff, duration, timeLeft)
 	local _, _, _, _, dtype, duration, expirationTime, unitCaster, isStealable = UnitAura(unit, index, icon.filter)

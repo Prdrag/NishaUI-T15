@@ -55,6 +55,15 @@ do
 		G.UnitFrames.Target.Power:SetFrameLevel( G.UnitFrames.Target.Health:GetFrameLevel() + 2 )
 		G.UnitFrames.Target.Power:CreateBackdrop("Default")
 		
+		G.UnitFrames.Target.Power.frequentUpdates = true
+		G.UnitFrames.Target.Power.colorDisconnected = true
+		G.UnitFrames.Target.Power.colorTapping = true
+		if( C["unitframes"].unicolor == true ) then
+			G.UnitFrames.Target.Power.colorClass = true
+		else
+			G.UnitFrames.Target.Power.colorPower = true
+		end
+		
 		G.UnitFrames.Target.Power.bg:SetAllPoints(G.UnitFrames.Target.Power)
 		G.UnitFrames.Target.Power.bg:SetTexture(normTex)
 		G.UnitFrames.Target.Power.bg.multiplier = 0.3

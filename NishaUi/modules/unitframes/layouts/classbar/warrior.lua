@@ -1,6 +1,7 @@
 local T, C, L, G = unpack( Tukui )
 
-if T.myclass == "WARRIOR" then
+
+if T.myclass == "WARRIOR" and C.unitframes.showstatuebar then
 	TukuiStatueBar:ClearAllPoints()
 	TukuiStatueBar:SetPoint("BOTTOM", G.UnitFrames.Player, "TOP", 0, 7)
 	TukuiStatueBar:CreateBackdrop("Default")

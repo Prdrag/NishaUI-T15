@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+
 if( T.myclass == "DRUID" ) then
 	if( C["classbar"].druid ~= true ) then
 		G.UnitFrames.Player.EclipseBar:Kill()

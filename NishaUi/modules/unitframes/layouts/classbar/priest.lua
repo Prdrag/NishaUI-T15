@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+
 if( T.myclass == "PRIEST" ) then
 	if( C["classbar"].priest ~= true ) then
 		G.UnitFrames.Player.ShadowOrbsBar:Kill()
@@ -9,10 +10,12 @@ if( T.myclass == "PRIEST" ) then
 		G.UnitFrames.Player.ShadowOrbsBar:Size( 233, 11)
 		G.UnitFrames.Player.ShadowOrbsBar:SetFrameStrata("LOW")
 		G.UnitFrames.Player.ShadowOrbsBar:CreateBackdrop("Default")
-		TukuiStatueBar:ClearAllPoints()
-		TukuiStatueBar:SetPoint("BOTTOM", G.UnitFrames.Player, "TOP", 0, 7)
-		TukuiStatueBar:CreateBackdrop("Default")
-		TukuiStatueBar:Size(233, 3)
+		if C.unitframes.showstatuebar then
+			TukuiStatueBar:ClearAllPoints()
+			TukuiStatueBar:SetPoint("BOTTOM", G.UnitFrames.Player, "TOP", 0, 7)
+			TukuiStatueBar:CreateBackdrop("Default")
+			TukuiStatueBar:Size(233, 3)
+		end
 		for i = 1, 3  do
 			
 			if i == 1 then

@@ -110,7 +110,14 @@ if T.client ~= "deDE" then
 		--------------------------------------------------------------------------
 		--general
 		--------------------------------------------------------------------------
-		TukuiConfigUILocalization.generalfont = "Change UI Font(true is pixel)"
+		TukuiConfigUILocalization.font = "Font"
+		TukuiConfigUILocalization.fontfont = "Change UI Font(true is pixel)"
+		TukuiConfigUILocalization.fontdatatextfontsize = "Fontsize of the datatext"
+		TukuiConfigUILocalization.fontunitframefontsize = "Fontsize of the unitframes"
+		TukuiConfigUILocalization.fontnameplatefontsize = "Fontsize of the nameplates"
+		TukuiConfigUILocalization.fontchattabfontsize = "Fontsize of the chattab"
+		TukuiConfigUILocalization.fontactionbuttonfontsize = "Fontsize of the actionbars"
+		TukuiConfigUILocalization.fontskinfontsize = "Fontsize of the addonskins"
 		--------------------------------------------------------------------------
 		--filger
 		--------------------------------------------------------------------------

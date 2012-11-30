@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+
 if( T.myclass == "ROGUE") then
 	if( C["classbar"].rogue ~= true ) then
 		G.UnitFrames.Player.ComboPointsBar:Kill()

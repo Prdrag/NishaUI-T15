@@ -110,7 +110,14 @@ if T.client == "deDE" then
 		--------------------------------------------------------------------------
 		--general
 		--------------------------------------------------------------------------
-		TukuiConfigUILocalization.generalfont = "Ändere die Ui Schriftart(An is pixel)"
+		TukuiConfigUILocalization.font = "Schrift"
+		TukuiConfigUILocalization.fontfont = "Ändere die Ui Schriftart(An is pixel)"
+		TukuiConfigUILocalization.fontdatatextfontsize = "Schriftgröße des Datatextes"
+		TukuiConfigUILocalization.fontunitframefontsize = "Schriftgröße der Einheitenfenster"
+		TukuiConfigUILocalization.fontnameplatefontsize = "Schriftgröße der Namensplaketten"
+		TukuiConfigUILocalization.fontchattabfontsize = "Schriftgröße der Chattabs"
+		TukuiConfigUILocalization.fontactionbuttonfontsize = "Schriftgröße der Aktionsleisten"
+		TukuiConfigUILocalization.fontskinfontsize = "Schriftgröße der Addonskins"
 		--------------------------------------------------------------------------
 		--filger
 		--------------------------------------------------------------------------

@@ -38,7 +38,7 @@ local function Texture(texture)
 	return result;
 end
 
-if C["general"].font then
+if C["font"].font then
 T.Fonts = {
 	--[[ how to use:
 		 
@@ -62,8 +62,8 @@ T.Fonts = {
 	
 	-- actionbars
 	
-		aHotkey = Font(pixel, 13, "MONOCHROMEOUTLINE", "TOPRIGHT", nil, -1), -- hotkey
-		aCount = Font(pixel, 13, "MONOCHROMEOUTLINE", "BOTTOMRIGHT", -1, 1), -- count
+		aHotkey = Font(pixel, C.font.actionbuttonfontsize, "MONOCHROMEOUTLINE", "TOPRIGHT", nil, -1), -- hotkey
+		aCount = Font(pixel, C.font.actionbuttonfontsize, "MONOCHROMEOUTLINE", "BOTTOMRIGHT", -1, 1), -- count
 		
 		-- bags
 		baCount = Font(pixel, 13, "MONOCHROMEOUTLINE", "BOTTOMRIGHT", -1, 1), -- count
@@ -73,7 +73,7 @@ T.Fonts = {
 		miGeneral = Font(pixel, nil, "MONOCHROMEOUTLINE", nil, nil, nil),
 		
 		-- buffs
-		bDuration = Font(pixel, nil, "MONOCHROMEOUTLINE", "BOTTOM", 1, -14), -- duration
+		bDuration = Font(pixel, C.font.chattabfontsize, "MONOCHROMEOUTLINE", "BOTTOM", 1, -14), -- duration
 		bCount = Font(pixel, nil, "MONOCHROMEOUTLINE", "TOPLEFT", 3, 1), -- count
 		
 		-- chat
@@ -81,7 +81,7 @@ T.Fonts = {
 		cGeneral = Font(caith, 11, nil, nil, nil, nil), -- chat window
 		
 		-- datatext
-		dFont = Font(pixel, C["datatext"].fontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
+		dFont = Font(pixel, C.font.datatextfontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
 		-- loot
 		lGeneral = Font(caith, 11, "OUTLINE", nil, nil, nil),
 		
@@ -91,32 +91,33 @@ T.Fonts = {
 		mArea = Font(caith, 22*3, "OUTLINE", nil, nil, nil), -- hover over
 		
 		-- nameplates
-		nGeneral = Font(pixel, nil, "OUTLINE", nil, nil, nil),
+		nGeneral = Font(pixel, C.font.nameplatefontsize, "OUTLINE", nil, nil, nil),
 		
 		-- tooltip
 		tGeneral = Font(caith, 11, nil, nil, nil, nil),
 		
 		-- unitframes - don't try and anchor these yet
-		uHealth = Font(pixel, 13, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit health
-		uPower = Font(pixel, 13, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit power
-		uName = Font(pixel, 13, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit name
+		uHealth = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit health
+		uPower = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit power
+		uName = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit name
 		
-		uGeneral = Font(pixel, 13, "MONOCHROMEOUTLINE", nil, nil, nil), -- castbar, pvp, etc
-		uCombat = Font(caith, 14, nil, nil, nil, nil), -- combat feedback
-		uAuras = Font(pixel, 13, "MONOCHROMEOUTLINE", nil, nil, nil),
+		uGeneral = Font(pixel, C.font.unitframefontsize "MONOCHROMEOUTLINE", nil, nil, nil), -- castbar, pvp, etc
+		uCombat = Font(caith, C.font.unitframefontsize, nil, nil, nil, nil), -- combat feedback
+		uAuras = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
 		
 		-- miscellaneous
 		altPowerBar = Font(pixel, nil, "MONOCHROMEOUTLINE", nil, 0, 1),
 		lootRollFrame = Font(pixel, nil, "MONOCHROMEOUTLINE", nil, nil, nil),
 		cooldown = Font(pixel, nil, "MONOCHROMEOUTLINE", nil, nil, nil), -- actionbar / bag / etc.
 		movers = Font(pixel, nil, "MONOCHROMEOUTLINE", nil, nil, nil), -- /moveui text + vehicle
+		skin = Font(pixel, C["font"].skinfontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- /moveui text + vehicle
 }
 else
 
 T.Fonts = {
 
-		aHotkey = Font(font, nil, "OUTLINE", "TOPRIGHT", nil, -1), -- hotkey
-		aCount = Font(font, nil, "OUTLINE", "BOTTOMRIGHT", -1, 1), -- count
+		aHotkey = Font(font, C.font.actionbuttonfontsize, "OUTLINE", "TOPRIGHT", nil, -1), -- hotkey
+		aCount = Font(font, C.font.actionbuttonfontsize, "OUTLINE", "BOTTOMRIGHT", -1, 1), -- count
 		
 		-- bags
 		baCount = Font(font, nil, "OUTLINE", "BOTTOMRIGHT", -1, 1), -- count
@@ -130,11 +131,11 @@ T.Fonts = {
 		bCount = Font(font, nil, "OUTLINE", "TOPLEFT", 3, 1), -- count
 		
 		-- chat
-		cTab = Font(font, nil, "OUTLINE", nil, nil, nil), -- chat tab
+		cTab = Font(font, C.font.chattabfontsize, "OUTLINE", nil, nil, nil), -- chat tab
 		cGeneral = Font(caith, 11, nil, nil, nil, nil), -- chat window
 		
 		-- datatext
-		dFont = Font(font, C["datatext"].fontsize, "OUTLINE", nil, nil, nil), 
+		dFont = Font(font, C.font.datatextfontsize, "OUTLINE", nil, nil, nil), 
 		
 		-- loot
 		lGeneral = Font(caith, 11, "OUTLINE", nil, nil, nil),
@@ -145,25 +146,26 @@ T.Fonts = {
 		mArea = Font(caith, 22*3, "OUTLINE", nil, nil, nil), -- hover over
 		
 		-- nameplates
-		nGeneral = Font(font, nil, "OUTLINE", nil, nil, nil),
+		nGeneral = Font(font, C.font.nameplatefontsize, "OUTLINE", nil, nil, nil),
 		
 		-- tooltip
 		tGeneral = Font(caith, 11, nil, nil, nil, nil),
 		
 		-- unitframes - don't try and anchor these yet
-		uHealth = Font(font, nil, "OUTLINE", nil, nil, nil), -- unit health
-		uPower = Font(font, nil, "OUTLINE", nil, nil, nil), -- unit power
-		uName = Font(font, nil, "OUTLINE", nil, nil, nil), -- unit name
+		uHealth = Font(font, C.font.unitframefontsize, "OUTLINE", nil, nil, nil), -- unit health
+		uPower = Font(font, C.font.unitframefontsize, "OUTLINE", nil, nil, nil), -- unit power
+		uName = Font(font, C.font.unitframefontsize, "OUTLINE", nil, nil, nil), -- unit name
 		
-		uGeneral = Font(font, nil, "OUTLINE", nil, nil, nil), -- castbar, pvp, etc
-		uCombat = Font(caith, 14, nil, nil, nil, nil), -- combat feedback
-		uAuras = Font(font, nil, "OUTLINE", nil, nil, nil),
+		uGeneral = Font(font, C.font.unitframefontsize, "OUTLINE", nil, nil, nil), -- castbar, pvp, etc
+		uCombat = Font(caith, C.font.unitframefontsize, nil, nil, nil, nil), -- combat feedback
+		uAuras = Font(font, C.font.unitframefontsize, "OUTLINE", nil, nil, nil),
 		
 		-- miscellaneous
 		altPowerBar = Font(font, nil, "OUTLINE", nil, 0, 1),
 		lootRollFrame = Font(font, nil, "OUTLINE", nil, nil, nil),
 		cooldown = Font(font, nil, "MONOCHROMEOUTLINE", nil, nil, nil), -- actionbar / bag / etc.
 		movers = Font(font, nil, "OUTLINE", nil, nil, nil), -- /moveui text + vehicle
+		skin = Font(font, C["font"].skinfontsize, "OUTLINE", nil, nil, nil), -- /moveui text + vehicle
 }
 end
 T.Textures = {

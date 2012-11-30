@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+
 if( T.myclass == "WARLOCK" ) then
 	if( C["classbar"].warlock ~= true ) then
 		G.UnitFrames.Player.WarlockSpecBars:Kill()

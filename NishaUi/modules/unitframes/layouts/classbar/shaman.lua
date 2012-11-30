@@ -1,5 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
+
 if( T.myclass == "SHAMAN" ) then
 	if( C["classbar"].shaman ~= true ) then
 		for i = 1, 4  do

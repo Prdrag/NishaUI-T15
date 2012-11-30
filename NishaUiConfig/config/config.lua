@@ -1,10 +1,6 @@
 local C = {}
 local class = RAID_CLASS_COLORS[select(2,UnitClass("player"))] -- Do not remove this line, it is what is required to add class color for the datatext.^
 
-C["general"] = {
-	["font"] = false,
-}
-
 C["unitframes"] = {
 	["enable"] = true,
 	["healthBgColor"] = {.6, .6, .6, 1},
@@ -33,6 +29,7 @@ C["unitframes"] = {
 	["showraidpets"] = false,
 	["raidalphaoor"] = 0.4,
 	["perconly"] = false,
+	["iconspvp"] = true, 
 }
 
 
@@ -51,22 +48,25 @@ C["nisha"] = {
 }
 
 C["nameplate"] = {
-	["enable"] = false,                         -- enable nice skinned nameplates that fit into tukui
+	["enable"] = false,                        	 -- enable nice skinned nameplates that fit into tukui
 	["debuffs"] = false,
 	["nishastyle"] = true,
-	["height"] = 9,								-- Nameplate height
-	["width"] = 130,							-- Nameplate width
-	["combat"] = false,							-- Automatically show nameplate in combat
-	["showhealth"] = false,						-- Numeral health value
-	["showcastbarname"] = false,				-- Show castbar name
-	["nameabbrev"] = false,						-- Display the abbreviated names
-	["aurassize"] = 20,							-- Debuffs size
+	["height"] = 9,									-- Nameplate height
+	["width"] = 130,								-- Nameplate width
+	["combat"] = false,								-- Automatically show nameplate in combat
+	["showhealth"] = false,							-- Numeral health value
+	["showcastbarname"] = false,					-- Show castbar name
+	["nameabbrev"] = false,							-- Display the abbreviated names
+	["aurassize"] = 20,								-- Debuffs size
 	["goodcolor"] = {75/255,  175/255, 76/255},	        -- good threat color (tank shows this with threat, everyone else without)
 	["badcolor"] = {0.78, 0.25, 0.25},			        -- bad threat color (opposite of above)
 	["transitioncolor"] = {218/255, 197/255, 92/255},	-- threat color when gaining threat
-	["healericon"] = false,						-- Show icon above enemy healers nameplate in battlegrounds
+	["healericon"] = false,							-- Show icon above enemy healers nameplate in battlegrounds
 	["showcastbarname"] = false,
 	["enhancethreat"] = true,			                -- threat features based on if your a tank or not
+	["adwidth"] = 3,
+	["adheight"] = 3,
+	["classicons"] = true,
 }
 
 C["announcements"] = {
@@ -84,6 +84,16 @@ C["classbar"] = {
 	["paladin"] = true,
 	["rogue"] = true,
 	["mage"] = true,
+}
+
+C["font"] = {
+	["font"] = false,
+	["datatextfontsize"] = 12,
+	["unitframefontsize"] = 12,
+	["nameplatefontsize"] = 12,
+	["skinfontsize"] = 12,
+	["chattabfontsize"] = 12,
+	["actionbuttonfontsize"] = 12,
 }
 
 C["raidframes"] = {

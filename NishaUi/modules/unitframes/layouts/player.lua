@@ -50,11 +50,20 @@ do
 		G.UnitFrames.Player.Power:SetFrameLevel( G.UnitFrames.Player.Health:GetFrameLevel() + 2 )
 		G.UnitFrames.Player.Power:CreateBackdrop("Default")
 		
+		G.UnitFrames.Player.Power.frequentUpdates = true
+		G.UnitFrames.Player.Power.colorDisconnected = true
+		G.UnitFrames.Player.Power.colorTapping = true
+		if( C["unitframes"].unicolor == true ) then
+			G.UnitFrames.Player.Power.colorClass = true
+		else
+			G.UnitFrames.Player.Power.colorPower = true
+		end
+		
 		G.UnitFrames.Player.Power.bg:SetAllPoints(power)
 		G.UnitFrames.Player.Power.bg:SetTexture(normTex)
 		G.UnitFrames.Player.Power.bg.multiplier = 0.3
 
-		G.UnitFrames.Player.Power.value = T.SetFontString( G.UnitFrames.Player.Health,unpack(T.Fonts.uGeneral.setfont))
+		G.UnitFrames.Player.Power.value = T.SetFontString( G.UnitFrames.Player.Health, unpack(T.Fonts.uGeneral.setfont))
 		G.UnitFrames.Player.Power.value:Point( "LEFT", G.UnitFrames.Player.Health, "LEFT", 4, 1 )
 		G.UnitFrames.Player.Power.PreUpdate = T.PreUpdatePower
 		G.UnitFrames.Player.Power.PostUpdate = T.PostUpdatePower
@@ -102,7 +111,7 @@ do
 			G.UnitFrames.Player.VengeanceBar.bg:SetTexture(C.media.normTex)
 			G.UnitFrames.Player.VengeanceBar.bg:SetVertexColor(T.color.r, T.color.g, T.color.b, 0.2)
 
-			G.UnitFrames.Player.VengeanceBar.Text = T.SetFontString(G.UnitFrames.Player.VengeanceBar.Bar, C.media.font, 12, "OUTLINE")
+			G.UnitFrames.Player.VengeanceBar.Text = T.SetFontString(G.UnitFrames.Player.VengeanceBar.Bar, unpack(T.Fonts.uGeneral.setfont))
 			G.UnitFrames.Player.VengeanceBar.Text:SetPoint("CENTER", G.UnitFrames.Player.VengeanceBar.Bar, "CENTER", 0, 0)
 			G.UnitFrames.Player:EnableElement("VengeanceBar")
 		end
@@ -150,6 +159,20 @@ do
 		G.UnitFrames.Player.RaidDebuffs = RaidDebuffs
 		G.UnitFrames.Player:EnableElement("RaidDebuffs")
 	end
+	
+		if C.unitframes.iconspvp == true then
+			G.UnitFrames.Player.Status = T.SetFontString(G.UnitFrames.Player.Health, unpack(T.Fonts.uGeneral.setfont))
+			G.UnitFrames.Player.Status:SetPoint("CENTER", G.UnitFrames.Player.Health, "CENTER", 0, 0)
+			G.UnitFrames.Player.Status:SetTextColor(0.69, 0.31, 0.31)
+			G.UnitFrames.Player.Status:Hide()
+			G.UnitFrames.Player.Status.Override = T.dummy
+
+			G.UnitFrames.Player.Status.Update = CreateFrame("Frame", nil, G.UnitFrames.Player)
+			G.UnitFrames.Player.Status.Update:SetScript("OnUpdate", function(self, elapsed) T.UpdatePvPStatus(self:GetParent(), elapsed) end)
+
+			G.UnitFrames.Player:SetScript("OnEnter", function(self) FlashInfo.ManaLevel:Hide() self.Status:Show() UnitFrame_OnEnter(self) end)
+			G.UnitFrames.Player:SetScript("OnLeave", function(self) FlashInfo.ManaLevel:Show() self.Status:Hide() UnitFrame_OnLeave(self) end)
+		end
 --------------------------------------------------------------
 -- combopoints
 --------------------------------------------------------------	
