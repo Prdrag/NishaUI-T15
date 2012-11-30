@@ -98,7 +98,7 @@ C["font"] = {
 
 C["raidframes"] = {
 	["unicolor"] = true,
-	["verticalgrid"] = false,
+	-- ["verticalgrid"] = false,
 	["mouseoverhighlight"]= true,
 	["gridscale"] = 1,
 	["healcomm"] = true,
