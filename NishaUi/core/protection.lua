@@ -9,11 +9,11 @@ if IsAddOnLoaded("DocsDebugRunes") then
 end
 
 if IsAddOnLoaded("Omen") or IsAddOnLoaded("sThreatMeter2") or IsAddOnLoaded("SkadaThreat") or IsAddOnLoaded("RecountThreat") then
-	C.pulse.threatbar = false
+	C.nisha.threatbar = false
 end
 
 if IsAddOnLoaded("DBM-SpellTimers") or IsAddOnLoaded("alRaidCD") then
-	C.pulse.raidcd = false
+	C.nisha.raidcd = false
 end
 
 if IsAddOnLoaded("MikScrollingBattleText") or IsAddOnLoaded("Parrot") or IsAddOnLoaded("xCT") or IsAddOnLoaded("sct") then
@@ -21,5 +21,5 @@ if IsAddOnLoaded("MikScrollingBattleText") or IsAddOnLoaded("Parrot") or IsAddOn
 end
 
 if IsAddOnLoaded("Clique") or IsAddOnLoaded("sBinder") then
-	C.pulse.click2cast = false
+	C.nisha.click2cast = false
 end

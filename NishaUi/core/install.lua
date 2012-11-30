@@ -63,7 +63,7 @@ title:CreateShadow("Default")
 local name = title:CreateFontString(nil, "OVERLAY")
 name:SetFont(C.media.font, 12, "OUTLINE")
 name:SetPoint("CENTER", title, 0, 0)
-name:SetText("|cffc41f3bPulse|rUI")
+name:SetText("|cffc41f3bNisha|rUI")
 
 local UIOnLogon = CreateFrame( "Frame" )
 UIOnLogon:RegisterEvent( "PLAYER_ENTERING_WORLD" )

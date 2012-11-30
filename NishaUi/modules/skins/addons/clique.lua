@@ -64,4 +64,4 @@ if not IsAddOnLoaded("Clique") and C.skin.cliquereskin ~= true then return end
 	end)
 -- end
 
--- tinsert(T.SkinFuncs["PulseUI"], LoadSkin)
+-- tinsert(T.SkinFuncs["NishaUI"], LoadSkin)

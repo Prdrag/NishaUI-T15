@@ -195,14 +195,13 @@ C["castbar"] = {
 }
 
 C["skin"] = {
-	["bigwigsreskin"] = true,                           -- reskin bigwigs
-	["omenreskin"] = true,                              -- reskin omen
-	["skadareskin"] = true,                             -- reskin skada
-	["recountreskin"] = true,                           -- reskin skada
-	["dbmreskin"] = true,								-- reskin dbm
-	-- ["embedright"] = "none",
-		-- ["embedrighttoggle"] = false,
-		-- ["combattoggle"] = false,
+	["bigwigsreskin"] = true,
+	["dbmreskin"] = true,
+	["omenreskin"] = true,
+	["recountreskin"] = true,
+	["skadareskin"] = true,
+	["weakaurasreskin"] = true,
+	["cliquereskin"] = true,
 }
 
 C["datatext"] = {

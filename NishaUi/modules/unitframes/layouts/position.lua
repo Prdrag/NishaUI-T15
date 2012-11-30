@@ -15,10 +15,10 @@ FramePositions:SetScript( "OnEvent", function( self, event, addon )
 	G.UnitFrames.Focus:ClearAllPoints()
 	G.UnitFrames.FocusTarget:ClearAllPoints()
 	if not T.lowversion then
-		if IsAddOnLoaded("PulseUI_Raid") then
+		if IsAddOnLoaded("NishaUI_Raid") then
 			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -250 , 250 )
 			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 250 , 250 )
-		elseif IsAddOnLoaded("PulseUI_Raid_Healing") then
+		elseif IsAddOnLoaded("NishaUI_Raid_Healing") then
 			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
 			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
 		else
@@ -31,10 +31,10 @@ FramePositions:SetScript( "OnEvent", function( self, event, addon )
 		G.UnitFrames.Focus:SetPoint( "TOP", UIParent, "BOTTOM", -450, 600 )
 		G.UnitFrames.FocusTarget:SetPoint( "TOP", G.UnitFrames.Focus, "BOTTOM", 0 , -43 )
 	else
-		if IsAddOnLoaded("PulseUI_Raid") then
+		if IsAddOnLoaded("NishaUI_Raid") then
 			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -130 , 270 )
 			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 130 , 270 )
-		elseif IsAddOnLoaded("PulseUI_Raid_Healing") then
+		elseif IsAddOnLoaded("NishaUI_Raid_Healing") then
 			G.UnitFrames.Player:SetPoint( "TOP", UIParent, "BOTTOM", -359 , 350 )
 			G.UnitFrames.Target:SetPoint( "TOP", UIParent, "BOTTOM", 359 , 350 )
 		else

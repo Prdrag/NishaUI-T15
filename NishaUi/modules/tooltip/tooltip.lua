@@ -86,7 +86,7 @@ end
 
 local function SetTooltipDefaultAnchor(self, parent)
 	if C["tooltip"].cursor == true then
-		if IsAddOnLoaded("PulseUI_Raid_Healing") and parent ~= UIParent then
+		if IsAddOnLoaded("NishaUI_Raid_Healing") and parent ~= UIParent then
 			self:SetOwner(parent, "ANCHOR_NONE")
 		else
 			self:SetOwner(parent, "ANCHOR_CURSOR")
