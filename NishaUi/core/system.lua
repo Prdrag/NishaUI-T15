@@ -101,7 +101,7 @@ T.Fonts = {
 		uPower = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit power
 		uName = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- unit name
 		
-		uGeneral = Font(pixel, C.font.unitframefontsize "MONOCHROMEOUTLINE", nil, nil, nil), -- castbar, pvp, etc
+		uGeneral = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil), -- castbar, pvp, etc
 		uCombat = Font(caith, C.font.unitframefontsize, nil, nil, nil, nil), -- combat feedback
 		uAuras = Font(pixel, C.font.unitframefontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
 		

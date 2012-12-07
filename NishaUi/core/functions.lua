@@ -8,7 +8,13 @@ T.buttonsize = T.Scale(C.actionbar.buttonsize)
 T.buttonspacing = T.Scale(C.actionbar.buttonspacing)
 T.petbuttonsize = T.Scale(C.actionbar.petbuttonsize)
 T.petbuttonspacing = T.Scale(C.actionbar.buttonspacing)
-
+if C.font.font == true then
+	T.SetDefaultActionButtonCooldownFont = C.media.pixelfont
+	T.SetDefaultActionButtonCooldownFontSize = 25
+else
+	T.SetDefaultActionButtonCooldownFont = C.media.font
+	T.SetDefaultActionButtonCooldownFontSize = 20
+end
 T.panelcolor = T.RGBToHex( unpack( C["media"].datatextcolor1 ) )
 
 local color = RAID_CLASS_COLORS[T.myclass]

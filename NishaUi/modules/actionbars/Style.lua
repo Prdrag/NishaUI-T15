@@ -14,9 +14,11 @@ local function style(self)
 	local HotKey = _G[name.."HotKey"]
 	local Border = _G[name.."Panel"]
 	local Icon = _G[name.."Icon"]
+	local Btname = _G[name.."Name"]
 
 	Count:SetFont(unpack(T.Fonts.aHotkey.setfont))
 	HotKey:SetFont(unpack(T.Fonts.aHotkey.setfont))
+	Btname:SetFont(unpack(T.Fonts.aHotkey.setfont))
 	
 	--Border:SetBackdropColor(0,0,0,0.5)
 end
