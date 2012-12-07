@@ -1,7 +1,7 @@
 ## Interface: 50100
 ## Title: |cff1784d1NishaUI Raid|r
 ## Notes: Raid layout for party and raid.
-## Version: 1.6.2
+## Version: 1.6.3
 ## Author: Nisha
 ## RequiredDeps: NishaUi
 
