@@ -69,6 +69,27 @@ if not C["chat"].background then
 	end
 end
 
+if C.nisha.naga == true then
+	local nagaFrameanchor = CreateFrame("Frame","NagaFrameanchor",UIParent, "SecureHandlerStateTemplate")
+	nagaFrameanchor:SetTemplate("Default")
+	nagaFrameanchor:Size((T.buttonsize * 3) + (T.buttonspacing * 4), 20)
+	nagaFrameanchor:Point("CENTER", UIParent, "CENTER", 0, 0)
+	nagaFrameanchor:SetMovable(true)
+	nagaFrameanchor:SetFrameLevel(10)
+	nagaFrameanchor:SetBackdropBorderColor(1,0,0)
+	nagaFrameanchor.text = T.SetFontString(nagaFrameanchor, unpack(T.Fonts.movers.setfont))
+	nagaFrameanchor.text:SetPoint("CENTER")
+	nagaFrameanchor.text:SetText("Move Naga")
+	nagaFrameanchor:Hide()
+	tinsert(T.AllowFrameMoving, nagaFrameanchor )
+
+	local nagaFrame = CreateFrame("Frame", "NagaBar", UIParent)
+	nagaFrame:SetPoint("TOP", nagaFrameanchor, "BOTTOM", 0, -3)
+	nagaFrame:SetTemplate("Default")
+	nagaFrame:SetWidth((T.buttonsize * 3) + (T.buttonspacing * 4))
+	nagaFrame:SetHeight((T.buttonsize * 4) + (T.buttonspacing * 5))
+end
+
 G.ActionBars.Pet:ClearAllPoints()
 if( C["actionbar"].vertical_rightbars == true ) then
 	G.ActionBars.Pet:Width( ( T.petbuttonsize + T.buttonspacing * 2 ) + 2 )
@@ -114,17 +135,17 @@ if C.nisha.chatbg == true then
 	-- TukuiChatBackgroundLeft.bg:SetTemplate("Transperant")
 	TukuiChatBackgroundLeft.bg:SetInside()
 end
-	if (select(2, UnitClass("player")) == "DEATHKNIGHT") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\dk.tga") end
-	if (select(2, UnitClass("player")) == "DRUID") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\druid.tga") end
-	if (select(2, UnitClass("player")) == "HUNTER") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\hunter.tga") end
-	if (select(2, UnitClass("player")) == "MAGE") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\mage.tga") end
-	-- if (select(2, UnitClass("player")) == "MONK") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\alliance.tga") end
-	if (select(2, UnitClass("player")) == "PALADIN") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\paladin.tga") end
-	if (select(2, UnitClass("player")) == "PRIEST") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\priest.tga") end
-	if (select(2, UnitClass("player")) == "ROGUE") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\rogue.tga") end
-	if (select(2, UnitClass("player")) == "SHAMAN") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\shaman.tga") end
-	if (select(2, UnitClass("player")) == "WARLOCK") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\warlock.tga") end
-	if (select(2, UnitClass("player")) == "WARRIOR") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\warrior.tga") end
+	if (select(2, UnitClass("player")) == "DEATHKNIGHT") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\dk.tga") end
+	if (select(2, UnitClass("player")) == "DRUID") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\druid.tga") end
+	if (select(2, UnitClass("player")) == "HUNTER") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\hunter.tga") end
+	if (select(2, UnitClass("player")) == "MAGE") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\mage.tga") end
+	-- if (select(2, UnitClass("player")) == "MONK") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\alliance.tga") end
+	if (select(2, UnitClass("player")) == "PALADIN") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\paladin.tga") end
+	if (select(2, UnitClass("player")) == "PRIEST") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\priest.tga") end
+	if (select(2, UnitClass("player")) == "ROGUE") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\rogue.tga") end
+	if (select(2, UnitClass("player")) == "SHAMAN") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\shaman.tga") end
+	if (select(2, UnitClass("player")) == "WARLOCK") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\warlock.tga") end
+	if (select(2, UnitClass("player")) == "WARRIOR") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\warrior.tga") end
 	TukuiChatBackgroundLeft.bg:SetAlpha(0.5)
 
 	if not TukuiChatBackgroundRight.bg then
@@ -134,9 +155,9 @@ end
 	end
 
 	if UnitFactionGroup("player") == "Horde" then
-		TukuiChatBackgroundRight.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\horde.tga")
+		TukuiChatBackgroundRight.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\horde.tga")
 	else 
-		TukuiChatBackgroundRight.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\alliance.tga")
+		TukuiChatBackgroundRight.bg:SetTexture("Interface\\Addons\\NishaUI\\medias\\textures\\chat\\alliance.tga")
 	end
 end
 

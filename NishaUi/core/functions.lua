@@ -328,56 +328,57 @@ local function MoveUI()
 		Ali = true
 	end
 	if T.myclass == "MONK" or T.myclass == "DRUID" or T.myclass == "WARLOCK" or T.myclass == "DEATHKNIGHT" or T.myclass == "PALADIN" or T.myclass == "PRIEST" or T.myclass == "SHAMAN" or T.myclass == "ROGUE" then
-	local panelstomove = {cbMover, FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, FilgerTargetDebuffs, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs}
-		if cbMover or FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover or FilgerPetbuffs then
+		local panelstomove = {cbMover, FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, FilgerTargetDebuffs, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, Filgertargetbufficon, TukuiBar1Mover, BNtoastframemover}
+		if cbMover or FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover then
 			if MOVE_UI then
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
-					BNtoastframemover:Show()
-					TukuiBar1Mover:Show()
-					Filgertargetbufficon:Show()
 					Filgerspecialprocicon:Show()
 					if C["classtimer"].enable then
 						Classtimermover:Show()
+					end
+					if C.nisha.naga then
+						NagaFrameanchor:Show()
 					end
 				end
 					
 			else
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
-					BNtoastframemover:Hide()
-					TukuiBar1Mover:Hide()
-					Filgertargetbufficon:Hide()
 					Filgerspecialprocicon:Hide()
 					if C["classtimer"].enable then
 						Classtimermover:Hide()
+					end
+					if C.nisha.naga then
+						NagaFrameanchor:Hide()
 					end
 				end
 			end
 		end
 	else
-		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerTargetDebuffs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, FilgerPetbuffs}
-		if FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover or FilgerPetbuffs then
+		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerTargetDebuffs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, Filgertargetbufficon, TukuiBar1Mover, BNtoastframemover}
+		if FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover then
 			if MOVE_UI then
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
-					BNtoastframemover:Show()
-					TukuiBar1Mover:Show()
-					Filgertargetbufficon:Show()
+
 					Filgerspecialprocicon:Show()
 					if C["classtimer"].enable then
 						Classtimermover:Show()
+					end
+					if C.nisha.naga then
+						NagaFrameanchor:Show()
 					end
 				end
 			else
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
-					BNtoastframemover:Hide()
-					TukuiBar1Mover:Hide()
-					Filgertargetbufficon:Hide()
 					Filgerspecialprocicon:Hide()
 					if C["classtimer"].enable then
 						Classtimermover:Hide()
+					end
+					if C.nisha.naga then
+						NagaFrameanchor:Hide()
 					end
 				end
 			end

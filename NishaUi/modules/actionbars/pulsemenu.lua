@@ -836,6 +836,9 @@ local Bsize = function()
 		end
 		G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
 	end
+	if C.nisha.naga == true then
+		NagaBar:Size((TukuiSaved.buttonsizeright * 3) + (T.buttonspacing * 4), (TukuiSaved.buttonsizeright * 4) + (T.buttonspacing * 5))
+	end
 end
 
 local Bsizeright = function()
@@ -853,6 +856,9 @@ local Bsizeright = function()
 			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
 		else
 			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+		end
+		if C.nisha.naga == true then
+			NagaBar:Size((TukuiSaved.buttonsizeright * 3) + (T.buttonspacing * 4), (TukuiSaved.buttonsizeright * 4) + (T.buttonspacing * 5))
 		end
 	end
 end
@@ -894,6 +900,10 @@ local breset = function()
 			TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * (TukuiSaved.rightbars-1) + (T.buttonspacing * TukuiSaved.rightbars+1) + 2))
 		else
 			TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars +1) + 2))
+		end
+		if C.nisha.naga == true then
+			NagaBar:SetWidth((T.buttonsize * 3) + (T.buttonspacing * 4))
+			NagaBar:SetHeight((T.buttonsize * 4) + (T.buttonspacing * 5))
 		end
 	end
 end
