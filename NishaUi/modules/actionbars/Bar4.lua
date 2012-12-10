@@ -1,10 +1,7 @@
 local T, C, L, G = unpack( Tukui )
-
 if( C["actionbar"].enable ~= true ) then return end
-
 local bar = TukuiRightBar
 MultiBarRight:SetParent( bar )
-
 for i = 1, 12 do
 	local b = _G["MultiBarRightButton" .. i]
 	local b2 = _G["MultiBarRightButton" .. i - 1]

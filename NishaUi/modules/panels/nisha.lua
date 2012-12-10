@@ -439,9 +439,9 @@ logo_tex:SetTexture(C.media.pulse)
 logo_tex:SetPoint("TOPLEFT", logo, "TOPLEFT", 2, -2)
 logo_tex:SetPoint("BOTTOMRIGHT", logo, "BOTTOMRIGHT", -2, 2)
 
-for i = 1, 7 do
+for i = 1, 8 do
 	pulse[i] = CreateFrame("Button", "pulse"..i, main, "SecureActionButtonTemplate")
-	pulse[i]:Height((main:GetHeight()/8)-5)
+	pulse[i]:Height((main:GetHeight()/9)-5)
 	pulse[i]:Width(main:GetWidth()-8)
 	pulse[i]:SetTemplate("Default")
 	pulse[i]:EnableMouse(true)
@@ -511,11 +511,16 @@ for i = 1, 7 do
 		pulse[i]:SetAttribute("type", "macro")
 		pulse[i]:SetAttribute("macrotext", "/debuffs")
 		pulse[i]:Point("TOPRIGHT", pulse6, "BOTTOMRIGHT", 0, -3)
-		-- pulse[i]:SetScript("OnEnter", helpEnter)
-		-- pulse[i]:SetScript("OnLeave", helpLeave)
 		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
 		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
 		pulse[i].Text:SetText(T.cStart.."Raid Debuffs")
+	elseif i == 8 then
+		pulse[i]:SetAttribute("type", "macro")
+		pulse[i]:SetAttribute("macrotext", "/abconfig")
+		pulse[i]:Point("TOPRIGHT", pulse7, "BOTTOMRIGHT", 0, -3)
+		pulse[i]:HookScript("OnEnter", ModifiedBackdrop)
+		pulse[i]:HookScript("OnLeave", OriginalBackdrop)
+		pulse[i].Text:SetText(T.cStart.."Actionbars")
 	end
 end
 

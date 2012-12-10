@@ -1,84 +1,117 @@
 local T, C, L = unpack(Tukui)
 if C.announcements.spells == true then		
--- Set what chat channel we announce to
-local AnnounceTo = "SAY" -- "SAY", "PARTY", "RAID", "YELL"
-
--- Buffs to announce
+local AnnounceTo = "SAY"
 local Announce = T.AnnounceSpells
 
--- Locals
-local Target
-local SpellID
-local Duration
-local SpellString
+local Name = UnitName( "player" )
+local GUID = UnitGUID( "player" )
+local format = string.format
 local tremove = tremove
 local tinsert = tinsert
 local unpack = unpack
 local select = select
 local UnitAura = UnitAura
 local SendChatMessage = SendChatMessage
-
--- Functions
+local LE_PARTY_CATEGORY_HOME = LE_PARTY_CATEGORY_HOME
 local WaitTable = {}
-local WaitFrame
 
-local OnUpdate = function(self, elapsed)
-	local count = #WaitTable
+local OnUpdate = function( self, elapsed )
+	local Count = #WaitTable
 	local i = 1
-	
-	while (i <= count) do
-		local Table = tremove(WaitTable, i)
-		local Delay = tremove(Table, 1)
-		local Func = tremove(Table, 1)
-		local Args = tremove(Table, 1)
-		
-		if (Delay > elapsed) then
-			tinsert(WaitTable, i, {Delay - elapsed, Func, Args})
+
+	while ( i <= Count ) do
+		local Table = tremove( WaitTable, i )
+		local Delay = tremove( Table, 1 )
+		local Func = tremove( Table, 1 )
+		local Args = tremove( Table, 1 )
+
+		if( Delay > elapsed ) then
+			tinsert( WaitTable, i, {
+				Delay - elapsed, Func, Args
+			} )
 			i = i + 1
 		else
-			count = count - 1
-			Func(unpack(Args))
+			Count = Count - 1
+			Func( unpack( Args ) )
 		end
 	end
 end
 
-local Delay = function(delay, func, ...)
-	if (type(delay) ~= "number" or type(func) ~= "function") then
+local Delay = function( delay, func, ... )
+	if( type( delay ) ~= "number" or type( func ) ~= "function" ) then
 		return false
 	end
 
-	if not AutoAnnounceWaitFrame then
-		WaitFrame = CreateFrame("Frame", "AutoAnnounceWaitFrame", UIParent)
-		WaitFrame:SetScript("OnUpdate", OnUpdate)
+	if( not AutoAnnounceWaitFrame ) then
+		local WaitFrame = CreateFrame( "Frame", "AutoAnnounceWaitFrame", UIParent )
+		WaitFrame:SetScript( "OnUpdate", OnUpdate )
 	end
-	
-	tinsert(WaitTable, {delay, func, {...}})
+
+	tinsert( WaitTable, {
+		delay, func, { ... } 
+	} )
 	return true
 end
 
-local OnEvent = function(self, event, unit, spell)
-	if (unit ~= "player") then
+local OnEvent = function( self, event, ... )
+	local Time, Type, HideCaster, SourceGUID, SourceName, SourceFlags, SourceRaidFlags, DestGUID, DestName, DestFlags, DestRaidFlags, SpellID, SpellName = ...
+
+	if( SourceGUID ~= GUID ) then
 		return
 	end
-	
-	if Announce[spell] then
-		Target = Announce[spell]
-		SpellID = select(11, UnitAura(Target, spell))
-		Duration = select(6, UnitAura(Target, spell))
-		SpellString = "\124cff71d5ff\124Hspell:" .. SpellID .. "\124h[" .. spell .. "]\124h\124r"
-		
-		if (Target ~= "player") then
-			SendChatMessage(SpellString .. " is up on " .. UnitName(Target) .. " for " .. Duration .. " seconds!", AnnounceTo)
-		else
-			SendChatMessage(SpellString .. " is up for " .. Duration .. " seconds!", AnnounceTo)
+
+	if( Announce[SpellID] and Type == "SPELL_CAST_SUCCESS" ) then
+		if( not DestName ) then
+			DestName = SourceName
 		end
 
-		Delay(Duration, SendChatMessage, SpellString .. " is down.", AnnounceTo)
+		local Duration = select( 6, UnitAura( DestName, SpellName ) )
+		local SpellString = "\124cff71d5ff\124Hspell:" .. SpellID .. "\124h[" .. SpellName .. "]\124h\124r"
+
+		if( DestName ~= Name ) then
+			if( Duration == nil ) then
+				SendChatMessage( SpellString .. " is up on " .. DestName .. "!", AnnounceTo )
+			else
+				SendChatMessage( SpellString .. " is up on " .. DestName .. " for " .. Duration .. " seconds!", AnnounceTo )
+			end
+		else
+			SendChatMessage( SpellString .. " is up for " .. Duration .. " seconds!", AnnounceTo )
+		end
+
+		Delay( Duration, SendChatMessage, SpellString .. " is down.", AnnounceTo )
 	end
 end
 
-local Frame = CreateFrame("Frame")
-Frame:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
-Frame:SetScript("OnEvent", OnEvent)
+local AnnounceFrame = CreateFrame( "Frame" )
+AnnounceFrame:RegisterEvent( "COMBAT_LOG_EVENT_UNFILTERED" )
+AnnounceFrame:SetScript( "OnEvent", OnEvent )
 
+local ValidTypes = {
+	["SAY"] = true,
+	["YELL"] = true,
+	["RAID"] = true,
+	["PARTY"] = true,
+	["BATTLEGROUND"] = true,
+	["INSTANCE_CHAT"] = true,
+}
+
+local SetAnnounceTo = function( msg )
+	local ChatType = msg:upper()
+	local LE_PARTY_CATEGORY_HOME = LE_PARTY_CATEGORY_HOME
+
+	if( not ValidTypes[ChatType] ) then
+		print( msg .. " |cff00AAFFis not a valid option|r." )
+		print( "|cff00AAFFPlease choose|r SAY/RAID/PARTY/BATTLEGROUND." )
+	else
+		if((not IsInGroup(LE_PARTY_CATEGORY_HOME )) or (not IsInRaid(LE_PARTY_CATEGORY_HOME))) then
+			AnnounceTo = "INSTANCE_CHAT"
+		else
+			AnnounceTo = ChatType
+			print( "|cff00AAFFAutoAnnounce set to|r " .. msg )
+		end
+	end
+end
+
+SLASH_AUTOANNOUNCE1 = "/Announce"
+SlashCmdList["AUTOANNOUNCE"] = SetAnnounceTo
 end

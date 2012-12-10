@@ -334,6 +334,9 @@ local function MoveUI()
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
 					BNtoastframemover:Show()
+					TukuiBar1Mover:Show()
+					Filgertargetbufficon:Show()
+					Filgerspecialprocicon:Show()
 					if C["classtimer"].enable then
 						Classtimermover:Show()
 					end
@@ -343,6 +346,9 @@ local function MoveUI()
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
 					BNtoastframemover:Hide()
+					TukuiBar1Mover:Hide()
+					Filgertargetbufficon:Hide()
+					Filgerspecialprocicon:Hide()
 					if C["classtimer"].enable then
 						Classtimermover:Hide()
 					end
@@ -356,6 +362,9 @@ local function MoveUI()
 				for _, panels in pairs( panelstomove ) do
 					panels:Show()
 					BNtoastframemover:Show()
+					TukuiBar1Mover:Show()
+					Filgertargetbufficon:Show()
+					Filgerspecialprocicon:Show()
 					if C["classtimer"].enable then
 						Classtimermover:Show()
 					end
@@ -364,6 +373,9 @@ local function MoveUI()
 				for _, panels in pairs( panelstomove ) do
 					panels:Hide()
 					BNtoastframemover:Hide()
+					TukuiBar1Mover:Hide()
+					Filgertargetbufficon:Hide()
+					Filgerspecialprocicon:Hide()
 					if C["classtimer"].enable then
 						Classtimermover:Hide()
 					end

@@ -1,7 +1,5 @@
 local T, C, L, G = unpack( Tukui )
-
 if( C["actionbar"].enable ~= true ) then return end
-
 local bar = TukuiBar4
 MultiBarBottomRight:SetParent( bar )
 
@@ -27,5 +25,4 @@ for i = 1, 12 do
 		end
 	end
 end
-
 RegisterStateDriver(bar, "visibility", "[vehicleui][petbattle][overridebar] hide; show")

@@ -1,19 +1,12 @@
 local T, C, L, G = unpack( Tukui )
-
 if( C["actionbar"].enable ~= true ) then return end
-
----------------------------------------------------------------------------
--- Setup Main Action Bar.
--- Now used for stances, Bonus, Vehicle at the same time.
--- Since t12, it's also working for druid cat stealth. (a lot requested)
----------------------------------------------------------------------------
-
+local bar = TukuiBar1
 --This frame puts spells on the damn actionbar, fucking obliterate that shit
 IconIntroTracker:UnregisterAllEvents()
 IconIntroTracker:Hide()
 IconIntroTracker:SetParent(UIHider)
 
-local bar = TukuiBar1
+
 bar:HookScript("OnEvent", function(self, event, unit)
 	if event == "PLAYER_ENTERING_WORLD" then
 		local button

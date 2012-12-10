@@ -45,6 +45,8 @@ C["nisha"] = {
 	["sesset1"] = 1,											-- set 1st set (1 - 10)
 	["sesset2"] = 2,											-- set 2nd set (1 - 10)
 	["ilvlr"] = true,
+	["chatbg"] = false,
+	["naga"] = false,
 }
 
 C["nameplate"] = {
@@ -72,6 +74,7 @@ C["nameplate"] = {
 C["announcements"] = {
 	["interrupts"] = true,						-- Announce in party/raid when you interrupt
 	["spells"] = true,							-- Announce in party/raid when you cast some spell
+	["announcechannel"] = "SAY"					-- set announcechannel
 }
 
 C["classbar"] = {
@@ -171,12 +174,9 @@ C["classtimer"] = {
 C["filger"] = {
 	["enable"] = false,
 	["filgerconfig"] = false,
-	["iconsize"] = 45,
-	["proccs"] = "RIGHT",
-	["buffs"] = "RIGHT",
-	["debuffs"] = "RIGHT",
-	["cd"] = "RIGHT",
-	["pet"] = "RIGHT",
+	["iconsize"] = 37,
+	["maxtesticon"] = 5,
+	["showtooltip"] = false,
 }
 
 C["buffreminder"] = {

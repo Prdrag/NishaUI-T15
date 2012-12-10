@@ -82,6 +82,8 @@ T.Fonts = {
 		
 		-- datatext
 		dFont = Font(pixel, C.font.datatextfontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
+		
+		fFont = Font(pixel, C.font.datatextfontsize, "MONOCHROMEOUTLINE", nil, nil, nil),
 		-- loot
 		lGeneral = Font(caith, 11, "OUTLINE", nil, nil, nil),
 		
@@ -136,6 +138,8 @@ T.Fonts = {
 		
 		-- datatext
 		dFont = Font(font, C.font.datatextfontsize, "OUTLINE", nil, nil, nil), 
+		
+		fFont = Font(font, C.font.datatextfontsize, "OUTLINE", nil, nil, nil), 
 		
 		-- loot
 		lGeneral = Font(caith, 11, "OUTLINE", nil, nil, nil),

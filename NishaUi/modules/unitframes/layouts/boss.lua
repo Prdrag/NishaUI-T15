@@ -51,6 +51,14 @@ do
 			G.UnitFrames["Boss" .. i].Power:Point( "TOPRIGHT", G.UnitFrames["Boss" .. i].Health, "BOTTOMRIGHT", 0, -7 )
 			G.UnitFrames["Boss" .. i].Power:SetFrameLevel( G.UnitFrames["Boss" .. i].Health:GetFrameLevel() + 2 )
 			G.UnitFrames["Boss" .. i].Power:CreateBackdrop("Default")
+			G.UnitFrames["Boss" .. i].Power.frequentUpdates = true
+			G.UnitFrames["Boss" .. i].Power.colorDisconnected = true
+			G.UnitFrames["Boss" .. i].Power.colorTapping = true
+			if( C["unitframes"].unicolor == true ) then
+				G.UnitFrames["Boss" .. i].Power.colorClass = true
+			else
+				G.UnitFrames["Boss" .. i].Power.colorPower = true
+			end
 			
 			G.UnitFrames["Boss" .. i].Power.bg:SetAllPoints(G.UnitFrames["Boss" .. i].Power)
 			G.UnitFrames["Boss" .. i].Power.bg:SetTexture(normTex)

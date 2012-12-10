@@ -14,13 +14,9 @@ local function style(self)
 	local HotKey = _G[name.."HotKey"]
 	local Border = _G[name.."Panel"]
 	local Icon = _G[name.."Icon"]
-	local Btname = _G[name.."Name"]
 
 	Count:SetFont(unpack(T.Fonts.aHotkey.setfont))
 	HotKey:SetFont(unpack(T.Fonts.aHotkey.setfont))
-	Btname:SetFont(unpack(T.Fonts.aHotkey.setfont))
-	
-	--Border:SetBackdropColor(0,0,0,0.5)
 end
 hooksecurefunc("ActionButton_Update", style)
 
@@ -30,9 +26,7 @@ local function StyleActionBarPetAndShiftButton(normal, button, icon, name, pet)
 	
     Icon:Point("TOPLEFT", 1, -1)
 	Icon:Point("BOTTOMRIGHT", -1, 1)
-	
-	--Border:SetBackdropColor(0,0,0,0.5)
-	
+
 end
 
 hooksecurefunc(T, "StyleActionBarPetAndShiftButton", StyleActionBarPetAndShiftButton)
@@ -58,7 +52,7 @@ T.ShowHighlightActionButton = function(self)
         self.shine:SetParent(self);
         self.shine:SetPoint("CENTER", self, "CENTER");
         AutoCastShine_AutoCastStart(self.shine, color.r, color.g, color.b);
-		
+
 	for _, sparkle in next, self.shine.sparkles do
 		sparkle:SetHeight(sparkle:GetHeight() * 2)
 		sparkle:SetWidth(sparkle:GetWidth() * 2)

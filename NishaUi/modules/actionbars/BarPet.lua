@@ -1,9 +1,6 @@
 local T, C, L, G = unpack( Tukui )
-
 if( C["actionbar"].enable ~= true ) then return end
-
 local bar = TukuiPetBar
-
 bar:RegisterEvent( "PLAYER_LOGIN" )
 bar:RegisterEvent( "PLAYER_CONTROL_LOST" )
 bar:RegisterEvent( "PLAYER_CONTROL_GAINED" )

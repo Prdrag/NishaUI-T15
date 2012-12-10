@@ -1,9 +1,5 @@
 local T, C, L, G = unpack( Tukui )
 
-if IsAddOnLoaded("Grid") or IsAddOnLoaded("Grid2") or IsAddOnLoaded("HealBot") or IsAddOnLoaded("VuhDo") or IsAddOnLoaded("oUF_Freebgrid") then
-	C.unitframes.raid = false
-end
-
 if IsAddOnLoaded("DocsDebugRunes") then
 	C.classbar.deathknight = false
 end

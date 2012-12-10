@@ -3,8 +3,22 @@ local T, C, L, G = unpack( Tukui )
 ------------------------------
 -- actionbars
 ------------------------------
+local mover = CreateFrame("Frame", "TukuiBar1Mover", UIParent)
+mover:SetTemplate("Default")
+mover:Size((T.buttonsize * 12 ) + ( T.buttonspacing * 13 ) + 2, ( T.buttonsize * 2 ) + ( T.buttonspacing * 3 ) + 2)
+mover:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 48)
+mover:SetMovable(true)
+mover:SetClampedToScreen(true)
+mover:SetFrameLevel(10)
+mover:SetBackdropBorderColor(1,0,0)
+mover.text = T.SetFontString(mover, unpack(T.Fonts.movers.setfont))
+mover.text:SetPoint("CENTER")
+mover.text:SetText("Move Actionbar")
+mover:Hide()
+tinsert(T.AllowFrameMoving, mover)
+
 G.ActionBars.Bar1:ClearAllPoints()
-G.ActionBars.Bar1:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 48)
+G.ActionBars.Bar1:SetPoint("BOTTOMLEFT", mover, 0, 0)
 G.ActionBars.Bar1:Size((T.buttonsize * 12 ) + ( T.buttonspacing * 13 ) + 2, ( T.buttonsize * 2 ) + ( T.buttonspacing * 3 ) + 2)
 G.ActionBars.Bar1:CreateShadow("Default")
 G.ActionBars.Bar1:SetTemplate("Transparent")
@@ -94,6 +108,38 @@ G.Panels.RightChatTabsBackground:Size( G.Panels.RightChatBackground:GetWidth() -
 G.Panels.RightChatTabsBackground:SetPoint( "TOP", G.Panels.RightChatBackground, "TOP", 0, -5 )
 G.Panels.RightChatTabsBackground:CreateOverlay( G.Panels.RightChatTabsBackground )
 
+if C.nisha.chatbg == true then
+	if not TukuiChatBackgroundLeft.bg then
+	TukuiChatBackgroundLeft.bg = TukuiChatBackgroundLeft:CreateTexture(nil, 'LOW')
+	-- TukuiChatBackgroundLeft.bg:SetTemplate("Transperant")
+	TukuiChatBackgroundLeft.bg:SetInside()
+end
+	if (select(2, UnitClass("player")) == "DEATHKNIGHT") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\dk.tga") end
+	if (select(2, UnitClass("player")) == "DRUID") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\druid.tga") end
+	if (select(2, UnitClass("player")) == "HUNTER") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\hunter.tga") end
+	if (select(2, UnitClass("player")) == "MAGE") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\mage.tga") end
+	-- if (select(2, UnitClass("player")) == "MONK") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\alliance.tga") end
+	if (select(2, UnitClass("player")) == "PALADIN") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\paladin.tga") end
+	if (select(2, UnitClass("player")) == "PRIEST") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\priest.tga") end
+	if (select(2, UnitClass("player")) == "ROGUE") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\rogue.tga") end
+	if (select(2, UnitClass("player")) == "SHAMAN") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\shaman.tga") end
+	if (select(2, UnitClass("player")) == "WARLOCK") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\warlock.tga") end
+	if (select(2, UnitClass("player")) == "WARRIOR") then TukuiChatBackgroundLeft.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\warrior.tga") end
+	TukuiChatBackgroundLeft.bg:SetAlpha(0.5)
+
+	if not TukuiChatBackgroundRight.bg then
+		TukuiChatBackgroundRight.bg = TukuiChatBackgroundRight:CreateTexture(nil, 'LOW')
+		TukuiChatBackgroundRight.bg:SetInside()
+		TukuiChatBackgroundRight.bg:SetAlpha(0.5)
+	end
+
+	if UnitFactionGroup("player") == "Horde" then
+		TukuiChatBackgroundRight.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\horde.tga")
+	else 
+		TukuiChatBackgroundRight.bg:SetTexture("Interface\\Addons\\PulseUI\\medias\\textures\\chat\\alliance.tga")
+	end
+end
+
 ------------------------------
 -- datatext panels
 ------------------------------
@@ -145,7 +191,7 @@ tinsert(T.AllowFrameMoving, anchor)
 ------------------------------
 local PlayerBuffs = CreateFrame("Frame","FilgerPlayerBuffs",UIParent, "SecureHandlerStateTemplate")
 PlayerBuffs:SetTemplate("Default")
-PlayerBuffs:Size(C.filger.iconsize, C.filger.iconsize)
+PlayerBuffs:Size(C.filger.iconsize + 10, C.filger.iconsize + 10)
 PlayerBuffs:Point("CENTER", UIParent, "CENTER", 0, 100)
 PlayerBuffs:SetMovable(true)
 PlayerBuffs:SetFrameLevel(10)
@@ -158,7 +204,7 @@ tinsert(T.AllowFrameMoving, PlayerBuffs)
 
 local PlayerProccs = CreateFrame("Frame","FilgerPlayerProccs",UIParent, "SecureHandlerStateTemplate")
 PlayerProccs:SetTemplate("Default")
-PlayerProccs:Size(C.filger.iconsize, C.filger.iconsize)
+PlayerProccs:Size(C.filger.iconsize + 10, C.filger.iconsize + 10)
 PlayerProccs:Point("CENTER", UIParent, "CENTER", 0, 150)
 PlayerProccs:SetMovable(true)
 PlayerProccs:SetFrameLevel(10)
@@ -171,7 +217,7 @@ tinsert(T.AllowFrameMoving, PlayerProccs )
 
 local PlayerCD = CreateFrame("Frame","FilgerPlayerCD",UIParent, "SecureHandlerStateTemplate")
 PlayerCD:SetTemplate("Default")
-PlayerCD:Size(C.filger.iconsize, C.filger.iconsize)
+PlayerCD:Size(C.filger.iconsize + 10, C.filger.iconsize + 10)
 PlayerCD:Point("CENTER", UIParent, "CENTER", 0, 200)
 PlayerCD:SetMovable(true)
 PlayerCD:SetFrameLevel(10)
@@ -184,7 +230,7 @@ tinsert(T.AllowFrameMoving, PlayerCD)
 
 local TargetDebuffs = CreateFrame("Frame","FilgerTargetDebuffs",UIParent, "SecureHandlerStateTemplate")
 TargetDebuffs:SetTemplate("Default")
-TargetDebuffs:Size(C.filger.iconsize, C.filger.iconsize)
+TargetDebuffs:Size(C.filger.iconsize + 10, C.filger.iconsize + 10)
 TargetDebuffs:Point("CENTER", UIParent, "CENTER", 0, 250)
 TargetDebuffs:SetMovable(true)
 TargetDebuffs:SetFrameLevel(10)
@@ -198,7 +244,7 @@ tinsert(T.AllowFrameMoving, TargetDebuffs)
 local PVEDebuffs = CreateFrame("Frame","FilgerPVEDebuffs",UIParent, "SecureHandlerStateTemplate")
 PVEDebuffs:SetTemplate("Default")
 PVEDebuffs:Size(75, 75)
-PVEDebuffs:Point("CENTER", UIParent, "CENTER",  0, 40)
+PVEDebuffs:Point("CENTER", UIParent, "CENTER",  0, 300)
 PVEDebuffs:SetMovable(true)
 PVEDebuffs:SetFrameLevel(10)
 PVEDebuffs:SetBackdropBorderColor(1,0,0)
@@ -208,18 +254,31 @@ PVEDebuffs.text:SetText("Move PvE Debuffs")
 PVEDebuffs:Hide()
 tinsert(T.AllowFrameMoving, PVEDebuffs)
 
-local Petbuffs = CreateFrame("Frame","FilgerPetbuffs",UIParent, "SecureHandlerStateTemplate")
-Petbuffs:SetTemplate("Default")
-Petbuffs:Size(C.filger.iconsize, C.filger.iconsize)
-Petbuffs:Point("CENTER", UIParent, "CENTER",  0, 300)
-Petbuffs:SetMovable(true)
-Petbuffs:SetFrameLevel(10)
-Petbuffs:SetBackdropBorderColor(1,0,0)
-Petbuffs.text = T.SetFontString(Petbuffs, unpack(T.Fonts.movers.setfont))
-Petbuffs.text:SetPoint("CENTER")
-Petbuffs.text:SetText("Move Pet Buffs")
-Petbuffs:Hide()
-tinsert(T.AllowFrameMoving, Petbuffs)
+local specialprocicon = CreateFrame("Frame","Filgerspecialprocicon",UIParent, "SecureHandlerStateTemplate")
+specialprocicon:SetTemplate("Default")
+specialprocicon:Size(C.filger.iconsize + 10, C.filger.iconsize + 10)
+specialprocicon:Point("CENTER", UIParent, "CENTER",  0, 350)
+specialprocicon:SetMovable(true)
+specialprocicon:SetFrameLevel(10)
+specialprocicon:SetBackdropBorderColor(1,0,0)
+specialprocicon.text = T.SetFontString(specialprocicon, unpack(T.Fonts.movers.setfont))
+specialprocicon.text:SetPoint("CENTER")
+specialprocicon.text:SetText("Move Special Proccs")
+specialprocicon:Hide()
+tinsert(T.AllowFrameMoving, specialprocicon)
+
+local targetbufficon = CreateFrame("Frame","Filgertargetbufficon",UIParent, "SecureHandlerStateTemplate")
+targetbufficon:SetTemplate("Default")
+targetbufficon:Size(C.filger.iconsize + 10, C.filger.iconsize + 10)
+targetbufficon:Point("CENTER", UIParent, "CENTER",  0, 400)
+targetbufficon:SetMovable(true)
+targetbufficon:SetFrameLevel(10)
+targetbufficon:SetBackdropBorderColor(1,0,0)
+targetbufficon.text = T.SetFontString(targetbufficon, unpack(T.Fonts.movers.setfont))
+targetbufficon.text:SetPoint("CENTER")
+targetbufficon.text:SetText("Move Target Buffs")
+targetbufficon:Hide()
+tinsert(T.AllowFrameMoving, targetbufficon)
 
 local toastframemover = CreateFrame("Frame","BNtoastframemover", UIParent, "SecureHandlerStateTemplate")
 toastframemover:SetTemplate("Default")
@@ -233,36 +292,3 @@ toastframemover.text:SetPoint("CENTER")
 toastframemover.text:SetText("Move BNToastframe")
 toastframemover:Hide()
 tinsert(T.AllowFrameMoving, toastframemover)
-
--- local EmbedRightBackground = CreateFrame( "Frame", "EmbedRightBackground", UIParent )
--- EmbedRightBackground:Size( C["chat"].width, C["chat"].height - 10)
--- EmbedRightBackground:Point( "BOTTOMRIGHT", G.Panels.RightChatBackground, "BOTTOMRIGHT", -2, -5 )
--- EmbedRightBackground:SetTemplate( "Transparent" )
--- EmbedRightBackground:SetFrameStrata( "MEDIUM" )
--- EmbedRightBackground:SetFrameLevel( 3 )
--- EmbedRightBackground:Hide()
-
--- EmbedRightBackground:RegisterEvent("PLAYER_ENTERING_WORLD")
--- EmbedRightBackground:RegisterEvent("PLAYER_LOGIN")
--- if C["skin"].combattoggle == true then
-	-- EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_ENABLED" )
-	-- EmbedRightBackground:RegisterEvent( "PLAYER_REGEN_DISABLED" )
--- end
-
--- EmbedRightBackground:SetScript("OnEvent", function(self, event)
-	-- if( C["chat"].background == true or C["skin"].combattoggle == true ) then
-		-- if( event == "PLAYER_LOGIN" ) then
-			-- EmbedRightBackground:Hide()
-			-- if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
-			-- if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
-			-- if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
-			-- if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
-		-- elseif( event == "PLAYER_ENTERING_WORLD" ) then
-			-- EmbedRightBackground:Hide()
-			-- if( IsAddOnLoaded( "Recount" ) ) then Recount_MainWindow:Hide() end
-			-- if( IsAddOnLoaded( "Omen" ) ) then OmenAnchor:Hide() end
-			-- if( IsAddOnLoaded( "Skada" ) ) then Skada:SetActive( false ) end
-			-- if( IsAddOnLoaded( "TinyDPS" ) ) then tdpsFrame:Hide() end
-		-- end
-	-- end
--- end)

@@ -1,6 +1,5 @@
 local T, C, L, G, _ = unpack(Tukui)
 if C.actionbar.enable ~= true then return end
-
 if C.actionbar.micromenu then
 ----------------------------------------------------------------------------------------
 --	Micro menu(by Elv22)

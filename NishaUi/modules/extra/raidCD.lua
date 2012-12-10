@@ -1,4 +1,7 @@
 local T, C, L = unpack(Tukui)
+------------------------------------------
+--alRaidCD by Allez.
+------------------------------------------
 if C.nisha.raidcd ~= true then return end
 -- Config start
 local anchor = "LEFT"
@@ -32,6 +35,8 @@ local spells = {
 	[16190] = 180, -- Mana Tide
 	[98008] = 180, -- Spirit Link
 	[115176] = 180, -- Zen Meditation
+	-- [49576] = 25,
+	-- [108199] = 60,
 }
 
 local filter = COMBATLOG_OBJECT_AFFILIATION_RAID + COMBATLOG_OBJECT_AFFILIATION_PARTY + COMBATLOG_OBJECT_AFFILIATION_MINE
@@ -234,7 +239,7 @@ addon:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 SlashCmdList["RaidCD"] = function(msg) 
 	StartTimer(UnitName("player"), 20484)	-- Rebirth
 	StartTimer(UnitName("player"), 20707)	-- Soulstone
-	StartTimer(UnitName("player"), 29166)	-- Innervate
-	StartTimer(UnitName("player"), 115176)	-- Zen Meditation
+	StartTimer(UnitName("player"), 108199)	-- Innervate
+	StartTimer(UnitName("player"), 49576)	-- Zen Meditation
 end
 SLASH_RaidCD1 = "/raidcd"

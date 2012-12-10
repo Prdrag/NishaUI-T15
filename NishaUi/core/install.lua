@@ -77,6 +77,10 @@ UIOnLogon:SetScript( "OnEvent", function( self, event )
 			["rightbars"] = 1,
 			["splitbars"] = false,
 			["actionbarsLocked"] = false,
+			["buttonsnumber"] = 12,
+			["rightbnumber"] = 12,
+			["buttonsizeright"] = T.buttonsize,
+			["buttonsize"] = T.buttonsize,			
 		}
 		NishaUICVars()
 	end

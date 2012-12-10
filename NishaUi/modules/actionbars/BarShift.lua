@@ -1,7 +1,5 @@
 local T, C, L, G = unpack(Tukui)
-
 if( C["actionbar"].enable ~= true ) then return end
-
 G.ActionBars.Stance:ClearAllPoints()
 G.ActionBars.Stance:Point("BOTTOMLEFT", G.Panels.LeftChatBackground, "TOPRIGHT", 3, 6)
 

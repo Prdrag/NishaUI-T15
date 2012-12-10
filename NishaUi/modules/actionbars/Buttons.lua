@@ -1,5 +1,4 @@
 local T, C, L, G = unpack( Tukui )
-
 -- © 2011 Eclípsé
 
 local TukuiBar1 = TukuiBar1
@@ -170,41 +169,82 @@ local RightBars = function()
 			TukuiBar3:Hide()
 		end
 	elseif TukuiSaved.rightbars == 3 then
-		RegisterStateDriver(TukuiRightBar, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
-		RegisterStateDriver(TukuiBar4, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
-		TukuiRightBar:Show()
-		TukuiBar4:Show()
+		if C.nisha.naga == true then
+			RegisterStateDriver(TukuiRightBar, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+			RegisterStateDriver(TukuiBar4, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+			TukuiRightBar:Show()
+			TukuiBar4:Show()
 
-
-		if C["actionbar"].vertical_rightbars == true then
-			TukuiRightBar:Width((T.buttonsize * 3 + T.buttonspacing * 4) + 2)
+			if C["actionbar"].vertical_rightbars == true then
+				TukuiRightBar:Width((T.buttonsize * 2 + T.buttonspacing * 3) + 2)
+			else
+				TukuiRightBar:Height((T.buttonsize * 2 + T.buttonspacing * 3) + 2)
+			end
+			
+			if TukuiSaved.splitbars ~= true then
+				if C.nisha.naga == true then
+					MultiBarLeft:SetParent(NagaBar)
+					NagaBar:Show()
+					RegisterStateDriver(NagaBar, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+					for i = 1, 12 do
+						local b = _G["MultiBarLeftButton"..i]
+						local b2 = _G["MultiBarLeftButton"..i-1]
+						b:SetSize(T.buttonsize, T.buttonsize)
+						b:ClearAllPoints()
+						if i == 1 then
+							b:ClearAllPoints()
+							b:SetPoint("TOPLEFT", NagaBar, "TOPLEFT", T.Scale(4), T.Scale(-4))
+						elseif i == 4 then
+							b:ClearAllPoints()
+							b:SetPoint("TOP", MultiBarLeftButton1, "BOTTOM", 0, T.Scale(-4))
+						elseif i == 7 then
+							b:ClearAllPoints()
+							b:SetPoint("TOP", MultiBarLeftButton4, "BOTTOM", 0, T.Scale(-4))
+						elseif i == 10 then
+							b:ClearAllPoints()
+							b:SetPoint("TOP", MultiBarLeftButton7, "BOTTOM", 0, T.Scale(-4))
+						else
+							b:ClearAllPoints()
+							b:SetPoint("LEFT", b2, "RIGHT", T.buttonspacing, 0)
+						end
+					end
+				end
+			end
 		else
-			TukuiRightBar:Height((T.buttonsize * 3 + T.buttonspacing * 4) + 2)
-		end
-		
-		if TukuiSaved.splitbars ~= true then
-			MultiBarLeft:SetParent(TukuiBar3)
-			RegisterStateDriver(TukuiBar3, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+			RegisterStateDriver(TukuiRightBar, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+			RegisterStateDriver(TukuiBar4, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+			TukuiRightBar:Show()
+			TukuiBar4:Show()
 
-			TukuiBar3:Show()
-			for i = 1, 12 do
-				local b = _G["MultiBarLeftButton"..i]
-				local b2 = _G["MultiBarLeftButton"..i-1]
-				b:SetSize(T.buttonsize, T.buttonsize)
-				b:ClearAllPoints()
-				
-				if i == 1 then
-					b:Point("TOPLEFT", TukuiRightBar, 5, -5)
-				else
-					if not TukuiSaved.splitbars and C["actionbar"].vertical_rightbars == true then
-						b:Point("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
+			if C["actionbar"].vertical_rightbars == true and C.nisha.naga ~= true then
+				TukuiRightBar:Width((T.buttonsize * 3 + T.buttonspacing * 4) + 2)
+			else
+				TukuiRightBar:Height((T.buttonsize * 3 + T.buttonspacing * 4) + 2)
+			end
+			
+			if TukuiSaved.splitbars ~= true then
+				MultiBarLeft:SetParent(TukuiBar3)
+				RegisterStateDriver(TukuiBar3, "visibility", "[vehicleui][petbattle][overridebar] hide; show" )
+
+				TukuiBar3:Show()
+				for i = 1, 12 do
+					local b = _G["MultiBarLeftButton"..i]
+					local b2 = _G["MultiBarLeftButton"..i-1]
+					b:SetSize(T.buttonsize, T.buttonsize)
+					b:ClearAllPoints()
+					
+					if i == 1 then
+						b:Point("TOPLEFT", TukuiRightBar, 5, -5)
 					else
-						b:Point("LEFT", b2, "RIGHT", T.buttonspacing, 0)
+						if not TukuiSaved.splitbars and C["actionbar"].vertical_rightbars == true then
+							b:Point("TOP", b2, "BOTTOM", 0, -T.buttonspacing)
+						else
+							b:Point("LEFT", b2, "RIGHT", T.buttonspacing, 0)
+						end
 					end
 				end
 			end
 		end
-
 	elseif TukuiSaved.rightbars == 0 then
 		UnregisterStateDriver(TukuiRightBar, "visibility")
 		UnregisterStateDriver(TukuiBar4, "visibility")
@@ -322,7 +362,6 @@ end
 for i = 1, 6 do
 	Toggle[i] = CreateFrame("Frame", "TukuiToggle"..i, Toggle)
 	Toggle[i]:EnableMouse(true)
-	Toggle[i]:SetAlpha(0)
 	-- Toggle[i]:CreateBorder(true, false)
 	
 	Toggle[i].Text = Toggle[i]:CreateFontString(nil, "OVERLAY")
@@ -330,6 +369,7 @@ for i = 1, 6 do
 	Toggle[i].Text:Point("CENTER", 2, 1)
 		
 	if i == 1 then
+		Toggle[i]:SetAlpha(0)
 		Toggle[i]:SetTemplate("Default")
 		Toggle[i]:Size(TukuiBar1:GetWidth(), T.buttonsize / 2)
 		Toggle[i]:Point("BOTTOM", TukuiBar1, "TOP", 0, 3)
@@ -421,10 +461,12 @@ for i = 1, 6 do
 		end)
 		Toggle[i]:SetScript("OnEvent", RightBars)
 	elseif i == 4 then
+		Toggle[i]:SetAlpha(0)
 		Toggle[i]:SetTemplate("Default")
 		Toggle[i]:Size(T.buttonsize / 2, TukuiSplitBarLeft:GetHeight())
 		Toggle[i]:Point("BOTTOMRIGHT", TukuiSplitBarLeft, "BOTTOMLEFT", -3, 0)
 	elseif i == 5 then
+		Toggle[i]:SetAlpha(0)
 		Toggle[i]:SetTemplate("Default")
 		Toggle[i]:Size(T.buttonsize / 2, TukuiSplitBarRight:GetHeight())
 		Toggle[i]:Point("BOTTOMLEFT", TukuiSplitBarRight, "BOTTOMRIGHT", 3, 0)
@@ -468,15 +510,16 @@ for i = 1, 6 do
 	Toggle[i]:RegisterEvent("PLAYER_ENTERING_WORLD")
 	Toggle[i]:RegisterEvent("PLAYER_REGEN_DISABLED")
 	Toggle[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
-	
-	Toggle[i]:SetScript("OnEnter", function()
-		if InCombatLockdown() then return end
-		Toggle[i]:FadeIn()
-	end)
+	if i == 1 or i == 4 or i == 5 then
+		Toggle[i]:SetScript("OnEnter", function()
+			if InCombatLockdown() then return end
+			Toggle[i]:FadeIn()
+		end)
 
-	Toggle[i]:SetScript("OnLeave", function()
-		Toggle[i]:FadeOut()
-	end)
+		Toggle[i]:SetScript("OnLeave", function()
+			Toggle[i]:FadeOut()
+		end)
+	end
 	
 	Toggle[i]:SetScript("OnUpdate", function() 
 		if TukuiSaved.actionbarsLocked == true then

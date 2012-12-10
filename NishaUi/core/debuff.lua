@@ -42,7 +42,7 @@ end
 
 local CreateDebuffsConfig = function()
 	-- Backdrop
-	local Backdrop = CreateFrame("Frame", "NishaDebuffConfigFrame", UIParent)
+	local Backdrop = CreateFrame("Frame", "PulseDebuffConfigFrame", UIParent)
 	Backdrop:Size(190, 225)
 	Backdrop:Point("CENTER", UIParent, "CENTER", 0, 0)
 	Backdrop:SetTemplate("Transparent")
@@ -72,7 +72,7 @@ local CreateDebuffsConfig = function()
 	ScrollArea.Texture:Point("BOTTOMRIGHT", -2, 2)
 	ScrollArea.Texture:SetTexture(unpack(C.media.bordercolor))
 	
-	local ScrollFrame = CreateFrame("ScrollFrame", "NishaDebuffConfigScrollFrame", ScrollArea)
+	local ScrollFrame = CreateFrame("ScrollFrame", "PulseDebuffConfigScrollFrame", ScrollArea)
 	ScrollFrame:SetPoint("TOPLEFT", ScrollArea, "TOPLEFT", 0, -2)
 	ScrollFrame:SetWidth(ScrollArea:GetWidth())
 	ScrollFrame:SetHeight(ScrollArea:GetHeight())
@@ -177,7 +177,7 @@ local CreateDebuffsConfig = function()
 	close:SetPoint("RIGHT", caption, "RIGHT", 0, 0)
 	close:SkinCloseButton()
 	close:SetScript("OnClick", function()
-		NishaDebuffConfigFrame:Hide()
+		PulseDebuffConfigFrame:Hide()
 	end )
 
 	table.sort(T.debuffids, function (a, b)
@@ -204,13 +204,13 @@ local CreateDebuffsConfig = function()
 end
 
 local ToggleAddOn = function()
-	if not NishaDebuffConfigFrame then
+	if not PulseDebuffConfigFrame then
 		CreateDebuffsConfig()
 	else
-		if not NishaDebuffConfigFrame:IsVisible() then
-			NishaDebuffConfigFrame:Show()
+		if not PulseDebuffConfigFrame:IsVisible() then
+			PulseDebuffConfigFrame:Show()
 		else
-			NishaDebuffConfigFrame:Hide()
+			PulseDebuffConfigFrame:Hide()
 		end
 	end
 end
