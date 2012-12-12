@@ -10,7 +10,7 @@ C["positions"] = {
 	target_buff_icon = {"LEFT", Filgertargetbufficon, "LEFT", 0, 0 },
 	pve_debuff = { "CENTER", FilgerPVEDebuffs , "CENTER", 0, 0 },
 	cooldown = { "LEFT", FilgerPlayerCD, "LEFT", 0, 0 },
-	target_bar = {"TOPRIGHT", TukuiTarget, "TOPLEFT", 13, 50},	-- "T_DE/BUFF_BAR"
+	target_bar = {"TOPRIGHT", TukuiTarget, "TOPLEFT", 13, 65},	-- "T_DE/BUFF_BAR"
 }
 
 C["spells"] = {
@@ -115,7 +115,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 15,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 			-- Blood Plague
@@ -414,7 +414,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 			-- Lifebloom
@@ -624,7 +624,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 15,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 			-- Hunter's Mark
@@ -1120,7 +1120,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 15,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 		},]]
@@ -1556,7 +1556,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 15,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 			-- Renew
@@ -2023,7 +2023,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 15,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 			-- Earth Shield
@@ -2232,7 +2232,7 @@ C["spells"] = {
 			Interval = 3,
 			Alpha = 1,
 			IconSize = 15,
-			BarWidth = 186,
+			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
 
 			-- Doom

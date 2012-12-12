@@ -175,6 +175,7 @@ C["filger"] = {
 	["enable"] = false,
 	["filgerconfig"] = false,
 	["iconsize"] = 37,
+	["barwidth"] = 186,
 	["maxtesticon"] = 5,
 	["showtooltip"] = false,
 	["buffdirection"] = "RIGHT",
