@@ -369,7 +369,7 @@ for i = 1, 6 do
 	Toggle[i].Text:Point("CENTER", 2, 1)
 		
 	if i == 1 then
-		Toggle[i]:SetAlpha(0)
+		-- Toggle[i]:SetAlpha(0)
 		Toggle[i]:SetTemplate("Default")
 		Toggle[i]:Size(TukuiBar1:GetWidth(), T.buttonsize / 2)
 		Toggle[i]:Point("BOTTOM", TukuiBar1, "TOP", 0, 3)
@@ -510,7 +510,7 @@ for i = 1, 6 do
 	Toggle[i]:RegisterEvent("PLAYER_ENTERING_WORLD")
 	Toggle[i]:RegisterEvent("PLAYER_REGEN_DISABLED")
 	Toggle[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
-	if i == 1 or i == 4 or i == 5 then
+	if i == 4 or i == 5 then
 		Toggle[i]:SetScript("OnEnter", function()
 			if InCombatLockdown() then return end
 			Toggle[i]:FadeIn()

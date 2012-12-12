@@ -16,8 +16,8 @@ if C["datatext"].exprepbars then
 	xp:SetTemplate("Default")
 	xp:CreateShadow("Default")
 	xp:Size(TukuiBar1:GetWidth(), height)
-	xp:Point("TOPLEFT", TukuiBar1, "BOTTOMLEFT", 0, -3)
-	xp:HookScript("OnUpdate", function(self) xp:SetPoint("TOPLEFT", TukuiBar1, "BOTTOMLEFT", 0, -3) end)
+	xp:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 25)
+	xp:HookScript("OnUpdate", function(self) xp:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 25) end)
 else
 	xp:SetTemplate("Default")
 	xp:CreateShadow("Default")

@@ -177,6 +177,12 @@ C["filger"] = {
 	["iconsize"] = 37,
 	["maxtesticon"] = 5,
 	["showtooltip"] = false,
+	["buffdirection"] = "RIGHT",
+	["proccdirection"] = "RIGHT",
+	["cddirection"] = "RIGHT",
+	["debuffdirection"] = "RIGHT",
+	["pvepvpdirection"] = "RIGHT",
+	["targetbuffdirection"] = "RIGHT",
 }
 
 C["buffreminder"] = {

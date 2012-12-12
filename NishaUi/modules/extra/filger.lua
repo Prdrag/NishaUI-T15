@@ -17,7 +17,7 @@ C["spells"] = {
 	["DEATHKNIGHT"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -45,7 +45,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -125,7 +125,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -231,7 +231,7 @@ C["spells"] = {
 	["DRUID"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -289,7 +289,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -378,7 +378,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -430,7 +430,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -518,7 +518,7 @@ C["spells"] = {
 	["HUNTER"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -540,7 +540,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -594,7 +594,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -638,7 +638,7 @@ C["spells"] = {
 		},]]
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -760,7 +760,7 @@ C["spells"] = {
 	["MAGE"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -800,7 +800,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -846,7 +846,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -882,7 +882,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -996,7 +996,7 @@ C["spells"] = {
 	["MONK"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1024,7 +1024,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1098,7 +1098,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1126,7 +1126,7 @@ C["spells"] = {
 		},]]
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1208,7 +1208,7 @@ C["spells"] = {
 	["PALADIN"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1242,7 +1242,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1326,7 +1326,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1350,7 +1350,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1436,7 +1436,7 @@ C["spells"] = {
 	["PRIEST"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1472,7 +1472,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1536,7 +1536,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1578,7 +1578,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1686,7 +1686,7 @@ C["spells"] = {
 	["ROGUE"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1730,7 +1730,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1778,7 +1778,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1814,7 +1814,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1896,7 +1896,7 @@ C["spells"] = {
 	["SHAMAN"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1930,7 +1930,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -1997,7 +1997,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2035,7 +2035,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2123,7 +2123,7 @@ C["spells"] = {
 	["WARLOCK"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2151,7 +2151,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2197,7 +2197,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2252,7 +2252,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2328,7 +2328,7 @@ C["spells"] = {
 	["WARRIOR"] = {
 		{
 			Name = "P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2364,7 +2364,7 @@ C["spells"] = {
 		},
 		{
 			Name = "P_PROC_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.proccdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2427,7 +2427,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_DEBUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.debuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2447,7 +2447,7 @@ C["spells"] = {
 		},
 		{
 			Name = "COOLDOWN",
-			Direction = "RIGHT",
+			Direction = C.filger.cddirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2539,7 +2539,7 @@ C["spells"] = {
 	["ALL"] = {
 		{
 			Name = "SPECIAL_P_BUFF_ICON",
-			Direction = "RIGHT",
+			Direction = C.filger.buffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2644,7 +2644,7 @@ C["spells"] = {
 		},
 		{
 			Name = "PVE/PVP_DEBUFF",
-			Direction = "RIGHT",
+			Direction = C.filger.pvepvpdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
@@ -2956,7 +2956,7 @@ C["spells"] = {
 		},
 		{
 			Name = "T_BUFF",
-			Direction = "RIGHT",
+			Direction = C.filger.targetbuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,

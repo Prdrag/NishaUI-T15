@@ -4,7 +4,24 @@ local T, C, L, G = unpack( Tukui )
 if( T.myclass == "MAGE" ) then
 	if( C["classbar"].mage ~= true ) then
 		G.UnitFrames.Player.ArcaneChargeBar:Kill()
+		G.UnitFrames.Player.RunePower:Kill()
 	else
+		
+		G.UnitFrames.Player.RunePower:ClearAllPoints()
+		G.UnitFrames.Player.RunePower:SetPoint("BOTTOM", G.UnitFrames.Player.ArcaneChargeBar, "TOP", 0, 7)
+		G.UnitFrames.Player.RunePower:SetBackdrop(nil)
+		G.UnitFrames.Player.RunePower:Size(233, 3)
+		for i = 1, 2 do
+			G.UnitFrames.Player.RunePower[i]:SetFrameLevel(8)
+			G.UnitFrames.Player.RunePower[i]:CreateBackdrop("Default")
+			if( i == 1 ) then
+				G.UnitFrames.Player.RunePower[i]:Point("TOPLEFT", G.UnitFrames.Player.RunePower, "BOTTOMLEFT", 0, 3)
+				G.UnitFrames.Player.RunePower[i]:Size(223/2, 3)
+			else
+				G.UnitFrames.Player.RunePower[i]:Point( "LEFT", G.UnitFrames.Player.RunePower[i - 1], "RIGHT", 5, 0 )
+				G.UnitFrames.Player.RunePower[i]:Size(223/2, 3)
+			end
+		end
 		G.UnitFrames.Player.ArcaneChargeBar:ClearAllPoints()
 		G.UnitFrames.Player.ArcaneChargeBar:SetPoint("CENTER", cbMover, "CENTER", 0, 0)
 		G.UnitFrames.Player.ArcaneChargeBar:Size( 233, 11)

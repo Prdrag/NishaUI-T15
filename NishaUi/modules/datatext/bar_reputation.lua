@@ -16,18 +16,18 @@ if T.level ~= MAX_PLAYER_LEVEL then
 	rep:SetTemplate("Default")
 	rep:CreateShadow("Default")
 	rep:Size(TukuiBar1:GetWidth(), height)
-	rep:Point("TOPLEFT", TukuiBar1, "BOTTOMLEFT", 0, -26)
+	rep:Point("BOTTOM", UIParent, "BOTTOM", 0, 3)
 else
 	if C["datatext"].exprepbars then
 		rep:SetTemplate("Default")
 		rep:CreateShadow("Default")
 		rep:Size(TukuiBar1:GetWidth(), height)
-		rep:Point("TOPLEFT", TukuiBar1, "BOTTOMLEFT", 0, -3)
+		rep:Point("BOTTOM", UIParent, "BOTTOM", 0, 3)
 	else
 		rep:SetTemplate("Default")
 		rep:CreateShadow("Default")
 		rep:Size(TukuiBar1:GetWidth(), height)
-		rep:Point("TOPLEFT", TukuiBar1, "TOPLEFT", 8, -3)
+		rep:Point("BOTTOM", UIParent, "BOTTOM", 0, 3)
 	end
 end
 rep:EnableMouse(true)

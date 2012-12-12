@@ -33,792 +33,523 @@ UIOnLogon:SetScript("OnEvent", function(self, event)
 	end
 end)
 
-local DeleteButton = function()	
-	if TukuiSaved.buttonsnumber == 1 then
-		for i = 2, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 2 then
-		for i = 3, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 3 then
-		for i = 4, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 4 then
-		for i = 5, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 5 then
-		for i = 6, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 6 then
-		for i = 7, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 7 then
-		for i = 8, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
-	elseif TukuiSaved.buttonsnumber == 8 then
-		for i = 9, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
-	elseif TukuiSaved.buttonsnumber == 9 then
-		for i = 10, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
-	elseif TukuiSaved.buttonsnumber == 10 then
-		for i = 11, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
-	elseif TukuiSaved.buttonsnumber == 11 then
-		for i = 12, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber == 12 then
-		for i = 1, 12 do
-			local b = _G["ActionButton" .. i]
-			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end
-	elseif TukuiSaved.buttonsnumber < 1 then
-			ActionButton1:SetAlpha(1)
-			ActionButton1:SetScale(1)
-			MultiBarBottomLeftButton1:SetAlpha(1)
-			MultiBarBottomLeftButton1:SetScale(1)
-			-- G.ActionBars.Bar1:Size((T.buttonsize) + ( T.buttonspacing * 2) + 2, (T.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize) + ( T.buttonspacing * 2) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+local delbutton = function(f, del, add)
+	if del then
+		f:SetAlpha(0)
+		f:SetScale(0.0001)
+	end
+	if add then
+		f:SetAlpha(1)
+		f:SetScale(1)
 	end
 end
 
-local AddButton = function()	
+local Abresize = function(i, o)
+	if i then
+		G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+		TukuiBar1Mover:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+	end
+	if o then
+		G.ActionBars.Bar1:Size((TukuiSaved.buttonsize) + ( T.buttonspacing * 2) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+		TukuiBar1Mover:Size((TukuiSaved.buttonsize) + ( T.buttonspacing * 2) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+	end
+end
+
+local Abrightresize = function(i, o)
+	if C["actionbar"].vertical_rightbars then
+		if i then
+			if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2, (TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2)
+			else
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2, (TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2)
+			end
+		end
+		if o then
+			if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2, (TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2)
+			else
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2, (TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2)
+			end	
+		end
+	else
+		if i then
+			if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
+			else
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+			end
+		end
+		if o then
+			if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
+			else
+				TukuiRightBar:Size((TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+			end	
+		end
+	end
+end
+
+local Absplitresize = function()
+	if TukuiSaved.splitbars == true then
+		TukuiSplitBarRight:Size(( TukuiSaved.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, G.ActionBars.Bar1:GetHeight())
+		TukuiSplitBarLeft:Size(( TukuiSaved.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, G.ActionBars.Bar1:GetHeight())
+	end
+end
+
+
+local DeleteButton = function()	
 	if TukuiSaved.buttonsnumber == 1 then
 		for i = 1, 1 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 		end
+		
+		for i = 2, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 2 then
 		for i = 1, 2 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 		end
+		for i = 3, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 3 then
 		for i = 1, 3 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 		end
+		for i = 4, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 4 then
 		for i = 1, 4 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 		end
+		for i = 5, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 5 then
 		for i = 1, 5 do
 			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+		end
+		for i = 6, 12 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
 		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 6 then
 		for i = 1, 6 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 		end
+		for i = 7, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 7 then
 		for i = 1, 7 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+		end
+		for i = 8, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)	
 	elseif TukuiSaved.buttonsnumber == 8 then
 		for i = 1, 8 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+		end
+		for i = 9, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 9 then
 		for i = 1, 9 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+		end
+		for i = 10, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)	
 	elseif TukuiSaved.buttonsnumber == 10 then
 		for i = 1, 10 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+		end
+		for i = 11, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 11 then
 		for i = 1, 11 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-		end	
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+		end
+		for i = 12, 12 do
+			local b = _G["ActionButton" .. i]
+			local b2 = _G["MultiBarBottomLeftButton" ..i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+		end
+		Abresize(true, false)
 	elseif TukuiSaved.buttonsnumber == 12 then
 		for i = 1, 12 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 		end
-	elseif TukuiSaved.buttonsnumber > 12 then
-			ActionButton1:SetAlpha(1)
-			ActionButton1:SetScale(1)
+		Abresize(true, false)
+	elseif TukuiSaved.buttonsnumber < 1 then
 		for i = 2, 12 do
 			local b = _G["ActionButton" .. i]
 			local b2 = _G["MultiBarBottomLeftButton" ..i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			G.ActionBars.Bar1:Size((TukuiSaved.buttonsize) + ( T.buttonspacing * 2) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-			-- G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
+			ActionButton1:SetAlpha(1)
+			ActionButton1:SetScale(1)
+			MultiBarBottomLeftButton1:SetAlpha(1)
+			MultiBarBottomLeftButton1:SetScale(1)
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
 		end
+		Abresize(false, true)
 	end
 end
 
 local DeleteABButton = function()	
 	if TukuiSaved.rightbnumber == 1 then
+		for i = 1, 1 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, false, true)
+			end
+		end
 		for i = 2, 12 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
+				delbutton(b3, true, false)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 2 then
-		for i = 3, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 3 then
-		for i = 4, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 4 then
-		for i = 5, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 5 then
-		for i = 6, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 6 then
-		for i = 7, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 7 then
-		for i = 8, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 8 then
-		for i = 9, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 9 then
-		for i = 10, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 10 then
-		for i = 11, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 11 then
-		for i = 12, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber == 12 then
-		for i = 1, 12 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber) + (T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2, (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + (T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2))
-		end
-	elseif TukuiSaved.rightbnumber < 1 then
-		MultiBarRightButton1:SetAlpha(1)
-		MultiBarRightButton1:SetScale(1)
-		MultiBarBottomRightButton1:SetAlpha(1)
-		MultiBarBottomRightButton1:SetScale(1)
-		if TukuiSaved.splitbars == false then
-			MultiBarLeftButton1:SetAlpha(1)
-			MultiBarLeftButton1:SetScale(1)
-		end
-		for i = 1, 1 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end	
-	end
-end
-
-local AddABButton = function()	
-	if TukuiSaved.rightbnumber == 1 then
-		for i = 1, 1 do
-			local b = _G["MultiBarRightButton" .. i]
-			local b2 = _G["MultiBarBottomRightButton" .. i]
-			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
-			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
-			end
-		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 2 then
 		for i = 1, 2 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+		for i = 3, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
 		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 3 then
 		for i = 1, 3 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+		for i = 4, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
 		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 4 then
 		for i = 1, 4 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+		for i = 5, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
 		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 5 then
 		for i = 1, 5 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+		for i = 6, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
 		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 6 then
 		for i = 1, 6 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
+		for i = 7, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
 		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 7 then
 		for i = 1, 7 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
 		end
+		for i = 8, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
+		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 8 then
 		for i = 1, 8 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
 		end
+		for i = 9, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
+		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 9 then
 		for i = 1, 9 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
 		end
+		for i = 10, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
+		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 10 then
 		for i = 1, 10 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
 		end
+		for i = 11, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
+		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 11 then
 		for i = 1, 11 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
-		end	
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
 		end
+		for i = 12, 12 do
+			local b = _G["MultiBarRightButton" .. i]
+			local b2 = _G["MultiBarBottomRightButton" .. i]
+			local b3 = _G["MultiBarLeftButton" .. i]
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
+			if TukuiSaved.splitbars == false then
+				delbutton(b3, true, false)
+			end
+		end
+		Abrightresize(true, false)
 	elseif TukuiSaved.rightbnumber == 12 then
 		for i = 1, 12 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(1)
-			b:SetScale(1)
-			b2:SetAlpha(1)
-			b2:SetScale(1)
+			delbutton(b, false, true)
+			delbutton(b2, false, true)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(1)
-				b3:SetScale(1)
+				delbutton(b3, false, true)
 			end
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-	elseif TukuiSaved.rightbnumber > 12 then
-			ActionButton1:SetAlpha(1)
-			ActionButton1:SetScale(1)
-			MultiBarRightButton1:SetAlpha(1)
-			MultiBarRightButton1:SetScale(1)
-			MultiBarBottomRightButton1:SetAlpha(1)
-			MultiBarBottomRightButton1:SetScale(1)
-			MultiBarLeftButton1:SetAlpha(1)
-			MultiBarLeftButton1:SetScale(1)
+		Abrightresize(true, false)
+	elseif TukuiSaved.rightbnumber < 1 then
 		for i = 2, 12 do
 			local b = _G["MultiBarRightButton" .. i]
 			local b2 = _G["MultiBarBottomRightButton" .. i]
 			local b3 = _G["MultiBarLeftButton" .. i]
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
-			b2:SetAlpha(0)
-			b2:SetScale(0.000001)
+			MultiBarRightButton1:SetAlpha(1)
+			MultiBarRightButton1:SetScale(1)
+			MultiBarBottomRightButton1:SetAlpha(1)
+			MultiBarBottomRightButton1:SetScale(1)
+
+			delbutton(b, true, false)
+			delbutton(b2, true, false)
 			if TukuiSaved.splitbars == false then
-				b3:SetAlpha(0)
-				b3:SetScale(0.000001)
+				delbutton(b3, true, false)
+				MultiBarLeftButton1:SetAlpha(1)
+				MultiBarLeftButton1:SetScale(1)
 			end
-			b:SetAlpha(0)
-			b:SetScale(0.000001)
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright + T.buttonspacing*2) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end	
+		Abrightresize(false, true)
 	end
 end
 
@@ -831,13 +562,9 @@ local Bsize = function()
 		if TukuiSaved.splitbars == true then
 			local b3 = _G["MultiBarLeftButton" .. i]
 			b3:SetSize( TukuiSaved.buttonsize, TukuiSaved.buttonsize )
-			TukuiSplitBarRight:Size(( TukuiSaved.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, G.ActionBars.Bar1:GetHeight())
-			TukuiSplitBarLeft:Size(( TukuiSaved.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, G.ActionBars.Bar1:GetHeight())
 		end
-		G.ActionBars.Bar1:Size((TukuiSaved.buttonsize * TukuiSaved.buttonsnumber ) + ( T.buttonspacing * (TukuiSaved.buttonsnumber+1)) + 2, (TukuiSaved.buttonsize * TukuiSaved.bottomrows) + (T.buttonspacing * (TukuiSaved.bottomrows+1) ) + 2)
-	end
-	if C.nisha.naga == true then
-		NagaBar:Size((TukuiSaved.buttonsizeright * 3) + (T.buttonspacing * 4), (TukuiSaved.buttonsizeright * 4) + (T.buttonspacing * 5))
+		Abresize(true, false)
+		Absplitresize()
 	end
 end
 
@@ -852,14 +579,7 @@ local Bsizeright = function()
 		if TukuiSaved.splitbars ~= true then
 			b3:SetSize( TukuiSaved.buttonsizeright, TukuiSaved.buttonsizeright )
 		end
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * (TukuiSaved.rightbars - 1) + T.buttonspacing * (TukuiSaved.rightbars) ) + 2)
-		else
-			TukuiRightBar:Size((TukuiSaved.buttonsizeright * TukuiSaved.rightbnumber + T.buttonspacing * (TukuiSaved.rightbnumber + 1)) + 2,  (TukuiSaved.buttonsizeright * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars + 1) ) + 2)
-		end
-		if C.nisha.naga == true then
-			NagaBar:Size((TukuiSaved.buttonsizeright * 3) + (T.buttonspacing * 4), (TukuiSaved.buttonsizeright * 4) + (T.buttonspacing * 5))
-		end
+		Abrightresize(true, false)
 	end
 end
 
@@ -869,41 +589,66 @@ local breset = function()
 		local b2 = _G["MultiBarBottomLeftButton" ..i]
 		local b3 = _G["MultiBarRightButton" .. i]
 		local b4 = _G["MultiBarBottomRightButton" .. i]
-		local b5 = _G["MultiBarLeftButton" .. i]
+		
 		b:SetSize( T.buttonsize, T.buttonsize )
 		b2:SetSize( T.buttonsize, T.buttonsize )
 		b3:SetSize( T.buttonsize, T.buttonsize )
 		b4:SetSize( T.buttonsize, T.buttonsize )
-		b5:SetSize( T.buttonsize, T.buttonsize )
-		b:SetAlpha(1)
-		b:SetScale(1)
-		b2:SetAlpha(1)
-		b2:SetScale(1)
-		b3:SetAlpha(1)
-		b3:SetScale(1)
-		b4:SetAlpha(1)
-		b4:SetScale(1)
-		b5:SetAlpha(1)
-		b5:SetScale(1)
+		delbutton(b, false, true)
+		delbutton(b2, false, true)
+		delbutton(b3, false, true)
+		delbutton(b4, false, true)
 		TukuiSaved.rightbnumber = 12
 		TukuiSaved.buttonsnumber = 12
 		TukuiSaved.buttonsize = T.buttonsize
 		TukuiSaved.buttonsizeright = T.buttonsize
 		G.ActionBars.Bar1:Size((T.buttonsize * 12 ) + ( T.buttonspacing * 13 ) + 2,(T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
-		if TukuiSaved.splitbars == true and TukuiSaved.rightbars ~= 3 then		
-			TukuiSplitBarLeft:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
-			TukuiSplitBarRight:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
-			TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * (TukuiSaved.rightbars-1) + (T.buttonspacing * TukuiSaved.rightbars+1) + 2))
-		elseif TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
-			TukuiSplitBarLeft:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
-			TukuiSplitBarRight:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
-			TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * (TukuiSaved.rightbars-1) + (T.buttonspacing * TukuiSaved.rightbars+1) + 2))
+		TukuiBar1Mover:Size((T.buttonsize * 12 ) + ( T.buttonspacing * 13 ) + 2,(T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+		if not C["actionbar"].vertical_rightbars then
+			if TukuiSaved.splitbars == true and TukuiSaved.rightbars ~= 3 then		
+				TukuiSplitBarLeft:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiSplitBarRight:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars +1) + 2))
+			elseif TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
+				TukuiSplitBarLeft:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiSplitBarRight:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * (TukuiSaved.rightbars-1) + (T.buttonspacing * TukuiSaved.rightbars+1) + 2))
+			else
+				TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars +1) + 2))
+			end
 		else
-			TukuiRightBar:Size((T.buttonsize * 12 + T.buttonspacing * 13) + 2,  (T.buttonsize * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars +1) + 2))
+			if TukuiSaved.splitbars == true and TukuiSaved.rightbars ~= 3 then		
+				TukuiSplitBarLeft:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiSplitBarRight:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 4 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiRightBar:Size((T.buttonsize * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars +1) + 2), (T.buttonsize * 12 + T.buttonspacing * 13) + 2)
+			elseif TukuiSaved.splitbars == true and TukuiSaved.rightbars == 3 then
+				TukuiSplitBarLeft:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 3 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiSplitBarRight:Size(( T.buttonsize * 3 ) + ( T.buttonspacing * 3 ) + 2, (T.buttonsize * TukuiSaved.bottomrows) + T.buttonspacing * (TukuiSaved.bottomrows + 1) + 2)
+				TukuiRightBar:Size((T.buttonsize * (TukuiSaved.rightbars-1) + (T.buttonspacing * TukuiSaved.rightbars+1) + 2), (T.buttonsize * 12 + T.buttonspacing * 13) + 2)
+			else
+				TukuiRightBar:Size((T.buttonsize * TukuiSaved.rightbars + T.buttonspacing * (TukuiSaved.rightbars +1) + 2), (T.buttonsize * 12 + T.buttonspacing * 13) + 2)
+			end
 		end
-		if C.nisha.naga == true then
-			NagaBar:SetWidth((T.buttonsize * 3) + (T.buttonspacing * 4))
-			NagaBar:SetHeight((T.buttonsize * 4) + (T.buttonspacing * 5))
+	end
+	if TukuiSaved.splitbars == true then
+		if TukuiSaved.bottomrows == 1 then
+			for i = 1, 6 do
+				local b5 = _G["MultiBarLeftButton" .. i]
+				delbutton(b5, false, true)
+				b5:SetSize( T.buttonsize, T.buttonsize )
+			end
+		else
+			for i = 1, 12 do
+				local b5 = _G["MultiBarLeftButton" .. i]
+				delbutton(b5, false, true)
+				b5:SetSize( T.buttonsize, T.buttonsize )
+			end
+		end
+	else
+		for i = 1, 12 do
+			local b5 = _G["MultiBarLeftButton" .. i]
+			delbutton(b5, false, true)
+			b5:SetSize( T.buttonsize, T.buttonsize )
 		end
 	end
 end
@@ -917,9 +662,6 @@ title:SetTemplate("Default")
 title:Size(280, 20)
 title:Hide()
 title:Point("CENTER", UIParent, "CENTER", 0, 0 )
-title:SetMovable(true)
-title:SetScript("OnMouseDown", function() title:ClearAllPoints() title:StartMoving() end)
-title:SetScript("OnMouseUp", function() title:StopMovingOrSizing() end)
 tinsert(UISpecialFrames, "title")
 
 local titletext = title:CreateFontString( nil, "OVERLAY" )
@@ -984,9 +726,9 @@ for i = 1, 9 do
 			else
 				TukuiSaved.buttonsnumber = TukuiSaved.buttonsnumber + 1
 			end
-			AddButton()
+			DeleteButton()
 		end)
-		ABButton[i]:SetScript("OnEvent", AddButton)
+		ABButton[i]:SetScript("OnEvent", DeleteButton)
 	elseif i == 2 then
 		ABButton[i]:Point("TOPRIGHT", ABButton1, "TOPLEFT", -3, 0)
 		ABButton[i].Text:SetTextColor(.9, .3, .3)
@@ -1010,9 +752,9 @@ for i = 1, 9 do
 			else
 				TukuiSaved.rightbnumber = TukuiSaved.rightbnumber + 1
 			end
-			AddABButton()
+			DeleteABButton()
 		end)
-		ABButton[i]:SetScript("OnEvent", AddABButton)
+		ABButton[i]:SetScript("OnEvent", DeleteABButton)
 	elseif i == 4 then
 		ABButton[i]:Point("TOPRIGHT", ABButton3, "TOPLEFT", -3, 0)
 		ABButton[i].Text:SetTextColor(.9, .3, .3)
@@ -1080,11 +822,11 @@ for i = 1, 9 do
 	ABButton[i]:RegisterEvent("PLAYER_REGEN_ENABLED")
 	ABButton[i]:SetScript("OnUpdate", function() 
 		if TukuiSaved.actionbarsLocked == true then
-			for i = 1, 8 do
+			for i = 1, 6 do
 				ABButton[i]:EnableMouse(false)
 			end
 		elseif TukuiSaved.actionbarsLocked == false then
-			for i = 1, 8 do
+			for i = 1, 6 do
 				ABButton[i]:EnableMouse(true)
 			end
 		end
@@ -1110,10 +852,15 @@ for i = 1, 6 do
 	TukuiToggle[i].Text:SetFont(unpack(T.Fonts.aHotkey.setfont))
 	TukuiToggle[i]:HookScript("OnEnter", ModifiedBackdrop)
 	TukuiToggle[i]:HookScript("OnLeave", OriginalBackdrop)
-	if i == 2 then
+	if i == 1 then
+		TukuiToggle[i]:ClearAllPoints()
 		TukuiToggle[i]:Point("TOPRIGHT", Abtitle, -5, -25)
+		TukuiToggle[i]:Size(63, 18)
+	elseif i == 2 then
+		TukuiToggle[i]:Point("TOPRIGHT", Abtitle, -38, -45)
 		TukuiToggle[i]:Size(30, 18)
 	elseif i == 3 then
+		TukuiToggle[i]:Point("TOPRIGHT", Abtitle, -5, -45)
 		TukuiToggle[i]:Size(30, 18)
 	elseif i == 6 then
 		TukuiToggle[i]:ClearAllPoints()
@@ -1143,3 +890,32 @@ end
 
 SLASH_ABCONF1 = "/abconfig"
 SlashCmdList.ABCONF = ABToggle
+
+T.CreatePopup["ResetAB"] = {
+	question = "Do you want to reset your Actionbars?",
+	answer1 = "Yes",
+	answer2 = "No",
+	function1 = function()
+	TukuiSaved = {}
+	TukuiSaved = {
+		["bottomrows"] = 2,
+		["rightbars"] = 1,
+		["splitbars"] = false,
+		["actionbarsLocked"] = false,
+		["buttonsnumber"] = 12,
+		["rightbnumber"] = 12,
+		["buttonsizeright"] = T.buttonsize,
+		["buttonsize"] = T.buttonsize,			
+	}
+	ReloadUI()
+	end,
+	function2 = function()
+	end,
+}
+
+local resetab = function()
+	T.ShowPopup("ResetAB")
+end
+
+SLASH_RESETAB1 = "/resetab"
+SlashCmdList.RESETAB = resetab
