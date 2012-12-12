@@ -1,7 +1,7 @@
 ## Interface: 50100
 ## Title: |cff1784d1NishaUI: Options|r
 ## Notes:
-## Version: 1.6.3
+## Version: 1.6.4
 ## Author: Nisha
 
 config\config.lua
