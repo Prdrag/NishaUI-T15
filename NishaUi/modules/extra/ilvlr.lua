@@ -5,214 +5,165 @@
 local T, C, L, G = unpack(Tukui)
 if C.nisha.ilvlr ~= true then return end
 
-local frame = {
-	CharacterHeadSlot,
-	CharacterNeckSlot,
-	CharacterShoulderSlot,
-	CharacterBackSlot,
-	CharacterChestSlot,
-	CharacterWristSlot,
-	CharacterShirtSlot,
-	CharacterTabardSlot,
-	CharacterMainHandSlot,
-	CharacterSecondaryHandSlot,
-	CharacterHandsSlot,
-	CharacterWaistSlot,
-	CharacterLegsSlot,
-	CharacterFeetSlot,
-	CharacterFinger0Slot,
-	CharacterFinger1Slot,
-	CharacterTrinket0Slot,
-	CharacterTrinket1Slot
+----------------------------------------------------------------------------------------
+--	Item level on slot buttons in Character/InspectFrame(by Tukz)
+----------------------------------------------------------------------------------------
+local time = 3
+local slots = {
+	"HeadSlot", "NeckSlot", "ShoulderSlot", "BackSlot", "ChestSlot", "ShirtSlot", "TabardSlot",
+	"WristSlot", "MainHandSlot", "SecondaryHandSlot", "HandsSlot", "WaistSlot",
+	"LegsSlot", "FeetSlot", "Finger0Slot", "Finger1Slot", "Trinket0Slot", "Trinket1Slot"
 }
 
-local slot = {
-	"HeadSlot",
-	"NeckSlot",
-	"ShoulderSlot",
-	"BackSlot",
-	"ChestSlot",
-	"WristSlot",
-	"ShirtSlot",
-	"TabardSlot",
-	"MainHandSlot",
-	"SecondaryHandSlot",
-	"HandsSlot",
-	"WaistSlot",
-	"LegsSlot",
-	"FeetSlot",
-	"Finger0Slot",
-	"Finger1Slot",
-	"Trinket0Slot",
-	"Trinket1Slot"
+local upgrades = {
+	["0"] = 0, ["1"] = 8, ["373"] = 4, ["374"] = 8, ["375"] = 4, ["376"] = 4,
+	["377"] = 4, ["379"] = 4, ["380"] = 4, ["445"] = 0, ["446"] = 4, ["447"] = 8,
+	["451"] = 0, ["452"] = 8, ["453"] = 0, ["454"] = 4, ["455"] = 8, ["456"] = 0,
+	["457"] = 8, ["458"] = 0, ["459"] = 4, ["460"] = 8, ["461"] = 12, ["462"] = 16
 }
 
-local iLow, iHigh, iEqAvg, iAvg
-
-local iQualityFrames = {}
-local iDuraFrames = {}
-
-function iLvLrMain()
-	iLvLrFrame = CreateFrame("Frame", "iLvLrFrame", UIParent)
-
-	iLvLrFrame:RegisterEvent("ADDON_LOADED")
-	iLvLrFrame:RegisterEvent("UNIT_INVENTORY_CHANGED")
-	iLvLrFrame:RegisterEvent("UPDATE_INVENTORY_DURABILITY")
-	iLvLrFrame:SetScript("OnEvent", iLvLrOnEvent)
-end
-
-function iLvLrOnLoad()
-	iEqAvg, iAvg = GetAverageItemLevel()
-
-	for k ,v in pairs(slot) do
-		local iLevel = fetchIlvl(v)
-		if iLevel then			
-			makeText(frame[k])
-			if v == "ShirtSlot" or v == "TabardSlot" then
-				frame[k].text:SetFormattedText("", iLevel)
-			else
-				if iLevel <= (floor(iEqAvg) - 10) then
-					frame[k].text:SetFormattedText("|cFFFF0000%i", iLevel)
-				elseif iLevel >= (floor(iEqAvg) +10) then
-					frame[k].text:SetFormattedText("|cFF00FF00%i", iLevel)
-				else
-					frame[k].text:SetFormattedText("|cFFFFFFFF%i", iLevel)
-				end
-				makeDurability(frame[k], v)
-			end
-		end
+local function CreateButtonsText(frame)
+	for _, slot in pairs(slots) do
+		local button = _G[frame..slot]
+		button.t = button:CreateFontString(nil, "OVERLAY", "SystemFont_Outline_Small")
+		button.t:SetPoint("TOP", button, "TOP", 0, -2)
+		button.t:SetText("")
 	end
 end
 
-function iLvLrOnUpdate()
-	iEqAvg, iAvg = GetAverageItemLevel()
+local function UpdateButtonsText(frame)
+	if frame == "Inspect" and not InspectFrame:IsShown() then return end
 
-	for k ,v in pairs(slot) do
-		local iLevel = fetchIlvl(v)
-		if iLevel then
-			if not frame[k].text then
-				makeText(frame[k])
-			end
-			if v == "ShirtSlot" or v == "TabardSlot" then
-				frame[k].text:SetFormattedText("", iLevel)
-			else
-				if iLevel <= (floor(iEqAvg) - 10) then
-					frame[k].text:SetFormattedText("|cFFFF0000%i", iLevel)
-				elseif iLevel >= (floor(iEqAvg) + 10) then
-					frame[k].text:SetFormattedText("|cFF00FF00%i", iLevel)
-				else
-					frame[k].text:SetFormattedText("|cFFFFFFFF%i", iLevel)
+	for _, slot in pairs(slots) do
+		local id = GetInventorySlotInfo(slot)
+		local item
+		local text = _G[frame..slot].t
+
+		if frame == "Inspect" then
+			item = GetInventoryItemLink("target", id)
+		else
+			item = GetInventoryItemLink("player", id)
+		end
+
+		if slot == "ShirtSlot" or slot == "TabardSlot" then
+			text:SetText("")
+		elseif item then
+			local oldilevel = text:GetText()
+			local ilevel = select(4, GetItemInfo(item))
+			local heirloom = select(3, GetItemInfo(item))
+			local upgrade = item:match(":(%d+)\124h%[")
+
+			if ilevel then
+				if ilevel ~= oldilevel then
+					if heirloom == 7 then
+						text:SetText("")
+					else
+						text:SetText("|cFFFFFF00"..ilevel + upgrades[upgrade])
+					end
 				end
-				makeDurability(frame[k], v)
+			else
+				text:SetText("")
 			end
 		else
-			if frame[k].text then
-				frame[k].text:SetFormattedText("")
-			end
-			if iDuraFrames[v] then
-				iDuraFrames[v]:Hide()
-			end
+			text:SetText("")
 		end
 	end
 end
 
-function iLvLrOnEvent(self, event, arg1)
-	if event == "ADDON_LOADED" and arg1 == "iLvLr" then
-		iLvLrOnLoad()
-	elseif event == "UNIT_INVENTORY_CHANGED" or event == "UPDATE_INVENTORY_DURABILITY" then
-		iLvLrOnUpdate()
-	end
-end
-
-function fetchIlvl(slotName)
-	local slotId, texture, checkRelic = GetInventorySlotInfo(slotName)
-	local itemId = GetInventoryItemID("player", slotId)
-	if itemId then
-		local name, link, quality, iLevel, reqLevel, class, subclass, maxStack, equipSlot, texture, vendorPrice = GetItemInfo(itemId)
-		return(iLevel)
-	end
-end
-
-function fetchDura(slotName)
-	local slotId, texture, checkRelic = GetInventorySlotInfo(slotName)
-	if slotId then
-		local itemDurability, itemMaxDurability = GetInventoryItemDurability(slotId)
-		if itemDurability then
-			return itemDurability, itemMaxDurability
-		end
-	end
-end
-
-function makeText(frame)
-	local ilvlText = frame:CreateFontString(nil, "ARTWORK")
-	isValid = ilvlText:SetFont(C.media.font, 12, "OUTLINE")
-
-	if frame == CharacterHeadSlot or frame == CharacterNeckSlot or frame == CharacterShoulderSlot or frame == CharacterBackSlot or frame == CharacterChestSlot or frame == CharacterWristSlot or frame == CharacterShirtSlot or frame == CharacterTabardSlot then
-		ilvlText:SetPoint("CENTER", frame, "CENTER", 42, 0)
-	elseif frame == CharacterHandsSlot or frame == CharacterWaistSlot or frame == CharacterLegsSlot or frame == CharacterFeetSlot or frame == CharacterFinger0Slot or frame == CharacterFinger1Slot or frame == CharacterTrinket0Slot or frame == CharacterTrinket1Slot then
-		ilvlText:SetPoint("CENTER", frame, "CENTER", -42, 0)
-	elseif frame == CharacterMainHandSlot or frame == CharacterSecondaryHandSlot or frame == CharacterRangedSlot then
-		ilvlText:SetPoint("CENTER", frame, "CENTER", 0, 42)
-	end
-
-	frame.text = ilvlText
-end
-
-function makeDurability(frame, slot)
-	local iDura = iDuraFrames[slot]
-	if not iDura then
-		iDura = CreateFrame("Frame", nil, frame)
-
-		if frame == CharacterHeadSlot or frame == CharacterNeckSlot or frame == CharacterShoulderSlot or frame == CharacterBackSlot or frame == CharacterChestSlot or frame == CharacterWristSlot or frame == CharacterShirtSlot or frame == CharacterTabardSlot then
-			iDura:SetPoint("BOTTOM", frame, "BOTTOM", 42, 0)
-		elseif frame == CharacterHandsSlot or frame == CharacterWaistSlot or frame == CharacterLegsSlot or frame == CharacterFeetSlot or frame == CharacterFinger0Slot or frame == CharacterFinger1Slot or frame == CharacterTrinket0Slot or frame == CharacterTrinket1Slot then
-			iDura:SetPoint("BOTTOM", frame, "BOTTOM", -42, 0)
-		elseif frame == CharacterMainHandSlot or frame == CharacterSecondaryHandSlot or frame == CharacterRangedSlot then
-			iDura:SetPoint("BOTTOM", frame, "BOTTOM", 0, 42)
-		end
-
-		iDura:SetSize(10,10)
-		iDura:SetBackdrop({bgFile = nil, edgeFile = nil, tile = false, tileSize = 32, edgeSize = 0, insets = {left = 0, right = 0, top = 0, bottom = 0}})
-		iDura:SetBackdropColor(0,0,0,0)
-
-		local iDuraText = iDura:CreateFontString(nil, "ARTWORK")
-		isValid = iDuraText:SetFont(C.media.font, 12, "OUTLINE")
-		iDuraText:SetPoint("CENTER", iDura, "CENTER", 0, 0)
-		iDura.text = iDuraText
-
-		itemDurability, itemMaxDurability = fetchDura(slot)
-		if itemDurability then
-			local itemDurabilityPercentage = (itemDurability / itemMaxDurability) * 100
-			if itemDurabilityPercentage > 25 then
-				iDura.text:SetFormattedText("|cFF00FF00%i%%", itemDurabilityPercentage)
-			elseif itemDurabilityPercentage > 0 and itemDurabilityPercentage <= 25 then
-				iDura.text:SetFormattedText("|cFFFFFF00%i%%", itemDurabilityPercentage)
-			elseif itemDurabilityPercentage == 0 then
-				iDura.text:SetFormattedText("|cFFFF0000%i%%", itemDurabilityPercentage)
-			end
-		else
-			iDura.text:SetFormattedText("")
-		end
-		iDuraFrames[slot] = iDura
+local OnEvent = CreateFrame("Frame")
+OnEvent:RegisterEvent("PLAYER_LOGIN")
+OnEvent:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
+OnEvent:SetScript("OnEvent", function(self, event)
+	if event == "PLAYER_LOGIN" then
+		CreateButtonsText("Character")
+		UpdateButtonsText("Character")
+		self:UnregisterEvent("PLAYER_LOGIN")
+	elseif event == "PLAYER_TARGET_CHANGED" or event == "INSPECT_READY" then
+		UpdateButtonsText("Inspect")
 	else
-		itemDurability, itemMaxDurability = fetchDura(slot)
-		if itemDurability then
-			local itemDurabilityPercentage = (itemDurability / itemMaxDurability) * 100
-			if itemDurabilityPercentage > 25 then
-				iDura.text:SetFormattedText("|cFF00FF00%i%%", itemDurabilityPercentage)
-			elseif itemDurabilityPercentage > 0 and itemDurabilityPercentage <= 25 then
-				iDura.text:SetFormattedText("|cFFFFFF00%i%%", itemDurabilityPercentage)
-			elseif itemDurabilityPercentage == 0 then
-				iDura.text:SetFormattedText("|cFFFF0000%i%%", itemDurabilityPercentage)
-			end
-		else
-			iDura.text:SetFormattedText("")
-		end
-
-		iDuraFrames[slot] = iDura
+		UpdateButtonsText("Character")
 	end
+end)
+OnEvent:SetScript("OnUpdate", function(self, elapsed)
+	time = time + elapsed
+	if time >= 3 then
+		if InspectFrame and InspectFrame:IsShown() then
+			UpdateButtonsText("Inspect")
+		else
+			UpdateButtonsText("Character")
+		end
+	end
+end)
 
-	iDura:Show()
+local OnLoad = CreateFrame("Frame")
+OnLoad:RegisterEvent("ADDON_LOADED")
+OnLoad:SetScript("OnEvent", function(self, event, addon)
+	if addon == "Blizzard_InspectUI" then
+		CreateButtonsText("Inspect")
+		InspectFrame:HookScript("OnShow", function(self) UpdateButtonsText("Inspect") end)
+		OnEvent:RegisterEvent("PLAYER_TARGET_CHANGED")
+		OnEvent:RegisterEvent("INSPECT_READY")
+		self:UnregisterEvent("ADDON_LOADED")
+	end
+end)
+
+----------------------------------------------------------------------------------------
+--	Durability value on slot buttons in CharacterFrame(tekability by Tekkub)
+----------------------------------------------------------------------------------------
+local SLOTIDS = {}
+for _, slot in pairs({"Head", "Shoulder", "Chest", "Waist", "Legs", "Feet", "Wrist", "Hands", "MainHand", "SecondaryHand"}) do
+	SLOTIDS[slot] = GetInventorySlotInfo(slot.."Slot")
+end
+local frame = CreateFrame("Frame", nil, CharacterFrame)
+
+local function RYGColorGradient(perc)
+	local relperc = perc * 2 % 1
+	if perc <= 0 then
+		return 1, 0, 0
+	elseif perc < 0.5 then
+		return 1, relperc, 0
+	elseif perc == 0.5 then
+		return 1, 1, 0
+	elseif perc < 1.0 then
+		return 1 - relperc, 1, 0
+	else
+		return 0, 1, 0
+	end
 end
 
-iLvLrMain()
+local fontstrings = setmetatable({}, {
+	__index = function(t, i)
+		local gslot = _G["Character"..i.."Slot"]
+		local fstr = gslot:CreateFontString(nil, "OVERLAY", "SystemFont_Outline_Small")
+		fstr:SetPoint("BOTTOM", gslot, "BOTTOM", 0, 1)
+		t[i] = fstr
+		return fstr
+	end,
+})
+
+function frame:OnEvent(event, arg1)
+	local min = 1
+	for slot, id in pairs(SLOTIDS) do
+		local v1, v2 = GetInventoryItemDurability(id)
+
+		if v1 and v2 and v2 ~= 0 then
+			min = math.min(v1 / v2, min)
+			local str = fontstrings[slot]
+			str:SetTextColor(RYGColorGradient(v1 / v2))
+			if v1 < v2 then
+				str:SetText(string.format("%d%%", v1 / v2 * 100))
+			else
+				str:SetText(nil)
+			end
+		else
+			local str = rawget(fontstrings, slot)
+			if str then str:SetText(nil) end
+		end
+	end
+
+	local r, g, b = RYGColorGradient(min)
+end
+
+frame:SetScript("OnEvent", frame.OnEvent)
+frame:RegisterEvent("ADDON_LOADED")
+frame:RegisterEvent("UPDATE_INVENTORY_DURABILITY")
