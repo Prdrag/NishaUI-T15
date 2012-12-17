@@ -125,11 +125,25 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.filgerenable = "Enable Filger"
 		TukuiConfigUILocalization.filgerfilgerconfig = "Config-Mod"
 		TukuiConfigUILocalization.filgericonsize = "Size of the Icons"
-		TukuiConfigUILocalization.filgerproccs = "Direction of Procs"
-		TukuiConfigUILocalization.filgerbuffs = "Direction of Buffs"
-		TukuiConfigUILocalization.filgerdebuffs = "Direction of Debuffs"
-		TukuiConfigUILocalization.filgercd = "Direction of CD's"
-		TukuiConfigUILocalization.filgerpet = "Direction of Pet Buffs"
+		TukuiConfigUILocalization.filgershowtooltip = "Show the Toolip"
+		TukuiConfigUILocalization.filgermaxtesticon = "Number auf Icons in Configmode"
+		TukuiConfigUILocalization.filgerbarwidth = "Width of the Bars"
+		
+		TukuiConfigUILocalization.filgerprocs = "Enable Procs"
+		TukuiConfigUILocalization.filgerbuffs = "Enable Buffs"
+		TukuiConfigUILocalization.filgerdebuffbars = "EnableDebuffs"
+		TukuiConfigUILocalization.filgercd = "Enable CD's"
+		TukuiConfigUILocalization.filgerspecialbuff = "Enable SpecialBuffs"
+		TukuiConfigUILocalization.filgerpvepvpdebuffs = "Enable Pve/PvP Debuffs"
+		TukuiConfigUILocalization.filgertargetbuffs = "Enable Target Buffs"
+
+		TukuiConfigUILocalization.filgerproccdirection = "Direction of Procs"
+		TukuiConfigUILocalization.filgerbuffdirection = "Direction of Buffs"
+		TukuiConfigUILocalization.filgerspecialbuffdirection = "Direction of SpecialBuffs"
+		TukuiConfigUILocalization.filgerdebuffdirection = "Direction of Debuffs"
+		TukuiConfigUILocalization.filgercddirection = "Direction of CD's"
+		TukuiConfigUILocalization.filgerpvepvpdirection = "Direction of Pve/PvP Debuffs"
+		TukuiConfigUILocalization.filgertargetbuffdirection = "Direction of Target Buffs"
 		--------------------------------------------------------------------------
 		--nisha
 		--------------------------------------------------------------------------
@@ -144,6 +158,7 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.nishasesgearswap = "Enable automatic setswap on respec"
 		TukuiConfigUILocalization.nishasesset1 = "Set set for first spec (must be an value between 1 - 10)"
 		TukuiConfigUILocalization.nishasesset2 = "Set set for second spec (must be an value between 1 - 10)"
+		TukuiConfigUILocalization.nishanaga = "Enable Nagalayout (all bars have to be on)"
 		--------------------------------------------------------------------------
 		--classtimer
 		--------------------------------------------------------------------------
@@ -171,6 +186,10 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.nameplateheight = "Nameplates height"
 		TukuiConfigUILocalization.nameplateaurassize = "Debuffs size"
 		TukuiConfigUILocalization.nameplatenameabbrev = "Display abbreviated names"
+		TukuiConfigUILocalization.nameplateadwith = "Additional width if nameplate is the target"
+		TukuiConfigUILocalization.nameplateadheight = "Additional height if nameplate is the target"
+		TukuiConfigUILocalization.nameplateclassicons = "Enable Classicons in nameplates"
+		TukuiConfigUILocalization.nameplatehealericon = "Enable Healericon in nameplates"
 		--------------------------------------------------------------------------
 		--classbar
 		--------------------------------------------------------------------------
@@ -184,6 +203,10 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.classbarpriest = "Enable Shadoworbbar(Priest)"
 		TukuiConfigUILocalization.classbarrogue = "Enable Combobar(Rogue)"
 		TukuiConfigUILocalization.classbarmage = "Enable Arcanechargebar(Mage)"
+		TukuiConfigUILocalization.classbarebwidth = "Width of classbar from moonkins and monks"
+		TukuiConfigUILocalization.classbarwidth = "Width of classbars runes/shards/shrooms etc."
+		TukuiConfigUILocalization.classbarheight = "Height of classbars"
+		TukuiConfigUILocalization.classbarvengeance = "Enable the Vengeancebar"
 		--------------------------------------------------------------------------
 		--Announcements
 		--------------------------------------------------------------------------
@@ -231,9 +254,8 @@ if T.client ~= "deDE" then
 		TukuiConfigUILocalization.skinrecountreskin = "Reskin Recount frames to match Tukui"
 		TukuiConfigUILocalization.skinskadareskin = "Reskin Skada frames to match Tukui"		
 		TukuiConfigUILocalization.skindbmreskin = "Reskin Deadly Boss Mods frames to match Tukui"
-		TukuiConfigUILocalization.skinembedright = "Type in, which addon you want to embedded(NONE is default)|cFFFF0000*New*|r"
-		TukuiConfigUILocalization.skinembedrighttoggle = "Enable toggling the embedded addon |cFFFF0000*New*|r"
-		TukuiConfigUILocalization.skincombattoggle = "Enable the automatical toggling, if you enter combat |cFFFF0000*New*|r"
+		TukuiConfigUILocalization.skinweakaurasreskin = "Reskin WeakAuras to match Tukui |cFFFF0000*New*|r"
+		TukuiConfigUILocalization.skincliquereskin = "Reskin Clique to match Tukui |cFFFF0000*New*|r"
 		--------------------------------------------------------------------------
 		--datatext
 		--------------------------------------------------------------------------

@@ -175,7 +175,7 @@ C["filger"] = {
 	["enable"] = false,
 	["filgerconfig"] = false,
 	["iconsize"] = 37,
-	["barwidth"] = 186,
+	["barwidth"] = 181,
 	["maxtesticon"] = 5,
 	["showtooltip"] = false,
 	["buffdirection"] = "RIGHT",
@@ -184,6 +184,14 @@ C["filger"] = {
 	["debuffdirection"] = "RIGHT",
 	["pvepvpdirection"] = "RIGHT",
 	["targetbuffdirection"] = "RIGHT",
+	["specialbuffdirection"] = "RIGHT",
+	["buffs"] = true,
+	["procs"] = true,	
+	["debuffbars"] = true,	
+	["cd"] = true,		
+	["specialbuff"] = true,	
+	["pvepvpdebuffs"] = true,	
+	["targetbuffs"] = true,	
 }
 
 C["buffreminder"] = {

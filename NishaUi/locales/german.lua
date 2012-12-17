@@ -125,11 +125,25 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.filgerenable = "Aktiviere Filger"
 		TukuiConfigUILocalization.filgerfilgerconfig = "Konfig-Modus"
 		TukuiConfigUILocalization.filgericonsize = "Größe der Icons"
-		TukuiConfigUILocalization.filgerproccs = "Richtung der Procs|r"
-		TukuiConfigUILocalization.filgerbuffs = "Richtung der Buffs|r"
-		TukuiConfigUILocalization.filgerdebuffs = "Richtung der Debuffs|r"
-		TukuiConfigUILocalization.filgercd = "Richtung der CDs|r"
-		TukuiConfigUILocalization.filgerpet = "Richtung der Pet Buffs|r"
+		TukuiConfigUILocalization.filgershowtooltip = "Zeige den Toolip"
+		TukuiConfigUILocalization.filgermaxtesticon = "Anzahl der Icons im Konfigmodus"
+		TukuiConfigUILocalization.filgerbarwidth = "Breite der Leisten"
+
+		TukuiConfigUILocalization.filgerprocs = "Aktiviere Procs"
+		TukuiConfigUILocalization.filgerbuffs = "Aktiviere Buffs"
+		TukuiConfigUILocalization.filgerdebuffbars = "Aktiviere Debuffs"
+		TukuiConfigUILocalization.filgercd = "Aktiviere CD's"
+		TukuiConfigUILocalization.filgerspecialbuff = "Aktiviere SpecialBuffs"
+		TukuiConfigUILocalization.filgerpvepvpdebuffs = "Aktiviere Pve/PvP Debuffs"
+		TukuiConfigUILocalization.filgertargetbuffs = "Aktiviere Target Buffs"
+
+		TukuiConfigUILocalization.filgerproccdirection = "Richtung der Procs"
+		TukuiConfigUILocalization.filgerbuffdirection = "Richtung derBuffs"
+		TukuiConfigUILocalization.filgerspecialbuffdirection = "Richtung derSpecialBuffs"
+		TukuiConfigUILocalization.filgerdebuffdirection = "Richtung der Debuffs"
+		TukuiConfigUILocalization.filgercddirection = "Richtung der CD's"
+		TukuiConfigUILocalization.filgerpvepvpdirection = "Richtung der Pve/PvP Debuffs"
+		TukuiConfigUILocalization.filgertargetbuffdirection = "Richtung der Target Buffs"
 		--------------------------------------------------------------------------
 		--nisha
 		--------------------------------------------------------------------------		
@@ -144,6 +158,7 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.nishasesgearswap = "Enable automatic setswap on respec"
 		TukuiConfigUILocalization.nishasesset1 = "Set set for first spec (must be an value between 1 - 10)"
 		TukuiConfigUILocalization.nishasesset2 = "Set set for second spec (must be an value between 1 - 10)"
+		TukuiConfigUILocalization.nishanaga = "Aktiviert das Nagalayout (Alle Aktionsleisten müssen dafür angezeigt werden)"
 		--------------------------------------------------------------------------
 		--classtimer
 		--------------------------------------------------------------------------
@@ -171,6 +186,10 @@ if T.client == "deDE" then
 		TukuiConfigUILocalization.nameplateheight = "Höhe der Namensplakette"
 		TukuiConfigUILocalization.nameplateaurassize = "Größe der Debuffs"
 		TukuiConfigUILocalization.nameplatenameabbrev = "Namen abgekürzt anzeigen"
+		TukuiConfigUILocalization.nameplateadwith = "Zusätzliche Breite der Namensplaketten, wenn die Namensplakette das Ziel ist"
+		TukuiConfigUILocalization.nameplateadheight = "Zusätzliche Höhe der Namensplaketten, wenn die Namensplakette das Ziel ist"
+		TukuiConfigUILocalization.nameplateclassicons = "Aktiviert die Klassenicons"
+		TukuiConfigUILocalization.nameplatehealericon = "Aktiviert das Heilericon"
 		--------------------------------------------------------------------------
 		--classbar
 		--------------------------------------------------------------------------		

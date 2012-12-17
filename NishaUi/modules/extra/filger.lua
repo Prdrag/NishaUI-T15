@@ -23,6 +23,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
+			Enable = C.filger.buffs,
 
 			-- Bone Shield
 			{spellID = 49222, unitID = "player", caster = "player", filter = "BUFF"},
@@ -51,6 +52,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Scent of Blood
@@ -117,6 +119,7 @@ C["spells"] = {
 			IconSize = 15,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
+			Enable = C.filger.debuffbars,
 
 			-- Blood Plague
 			{spellID = 59879, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -131,6 +134,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Mind Freeze
@@ -237,6 +241,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
+			Enable = C.filger.buffs,
 
 			-- Lifebloom
 			{spellID = 33763, unitID = "player", caster = "player", filter = "BUFF"},
@@ -295,6 +300,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Eclipse (Lunar)
@@ -384,6 +390,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Moonfire
 			{spellID = 8921, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -416,7 +423,8 @@ C["spells"] = {
 			IconSize = C["filger"].iconsize,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
-
+			Enable = C.filger.debuffbars,
+			
 			-- Lifebloom
 			{spellID = 33763, unitID = "target", caster = "player", filter = "BUFF"},
 			-- Rejuvenation
@@ -436,7 +444,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
-
+			Enable = C.filger.cd,
+			
 			-- Self
 			-- Nature's Cure
 			{spellID = 88423, filter = "CD"},
@@ -524,7 +533,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
-
+			Enable = C.filger.buffs,
+			
 			-- Deterrence
 			{spellID = 19263, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Rapid Fire
@@ -546,7 +556,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
-
+			Enable = C.filger.procs,
+			
 			-- Buffs
 			-- Ready, Set, Aim...
 			{spellID = 82925, unitID = "player", caster = "player", filter = "BUFF"},
@@ -600,7 +611,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
-
+			Enable = true,
+			
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
@@ -626,7 +638,8 @@ C["spells"] = {
 			IconSize = 15,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
-
+			Enable = C.filger.debuffbars,
+			
 			-- Hunter's Mark
 			{spellID = 1130, unitID = "target", caster = "all", filter = "DEBUFF"},
 			-- Serpent Sting
@@ -644,7 +657,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
-
+			Enable = C.filger.cd,
+			
 			-- Self
 			-- Concussive Shot
 			{spellID = 5116, filter = "CD"},
@@ -766,7 +780,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
-
+			Enable = C.filger.buffs,
+			
 			-- Ice Block
 			{spellID = 45438, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Invisibility
@@ -806,7 +821,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
-
+			Enable = C.filger.procs,
+			
 			-- Buffs
 			-- Fingers of Frost
 			{spellID = 44544, unitID = "player", caster = "player", filter = "BUFF"},
@@ -852,7 +868,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
-
+			Enable = true,
+			
 			-- Arcane Charge
 			{spellID = 36032, unitID = "player", caster = "player", filter = "DEBUFF"},
 			-- Slow
@@ -888,7 +905,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
-
+			Enable = C.filger.cd,
+			
 			-- Self
 			-- Remove Curse
 			{spellID = 475, filter = "CD"},
@@ -1002,7 +1020,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
-
+			Enable = C.filger.buffs,
+			
 			-- Guard
 			{spellID = 115295, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Fortifying Brew
@@ -1030,6 +1049,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Tiger Power
@@ -1104,6 +1124,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = false,
 
 			-- Heavy Stagger
 			{spellID = 124273, unitID = "player", caster = "player", filter = "DEBUFF"},
@@ -1122,6 +1143,7 @@ C["spells"] = {
 			IconSize = 15,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
+			Enable = C.filger.debuffbars,
 
 		},]]
 		{
@@ -1132,6 +1154,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Detox
@@ -1214,6 +1237,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
+			Enable = C.filger.buffs,
 
 			-- Divine Shield
 			{spellID = 642, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1248,6 +1272,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Infusion of Light
@@ -1332,6 +1357,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Forbearance
 			{spellID = 25771, unitID = "player", caster = "all", filter = "DEBUFF"},
@@ -1356,6 +1382,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Cleanse
@@ -1442,7 +1469,8 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
-
+			Enable = C.filger.buffs,
+			
 			-- Dispersion
 			{spellID = 47585, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Power Infusion
@@ -1478,6 +1506,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Divine Insight
@@ -1542,6 +1571,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Void Tendril's Grasp
 			{spellID = 114404, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1558,6 +1588,7 @@ C["spells"] = {
 			IconSize = 15,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
+			Enable = C.filger.debuffbars,
 
 			-- Renew
 			{spellID = 139, unitID = "target", caster = "player", filter = "BUFF"},
@@ -1584,6 +1615,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Purify
@@ -1692,6 +1724,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
+			Enable = C.filger.buffs,
 
 			-- Slice and Dice
 			{spellID = 5171, unitID = "player", caster = "player", filter = "BUFF"},
@@ -1736,6 +1769,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Anticipation
@@ -1784,6 +1818,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Rupture
 			{spellID = 1943, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -1820,6 +1855,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Stealth
@@ -1902,7 +1938,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
-
+			Enable = C.filger.buffs,
 			-- Maelstorm Weapon
 			{spellID = 53817, unitID = "player", caster = "player", filter = "BUFF"},
 			-- Lightning Shield
@@ -1936,6 +1972,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Clearcasting
@@ -2003,6 +2040,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Stormstrike
 			{spellID = 17364, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2025,6 +2063,7 @@ C["spells"] = {
 			IconSize = 15,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
+			Enable = C.filger.debuffbars,
 
 			-- Earth Shield
 			{spellID = 974, unitID = "target", caster = "player", filter = "BUFF"},
@@ -2041,6 +2080,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Cleanse Spirit
@@ -2129,6 +2169,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
+			Enable = C.filger.buffs,
 
 			-- Burning Soul
 			{spellID = 74434, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2157,6 +2198,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Buffs
 			-- Molten Core
@@ -2203,6 +2245,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = 37,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Self
 			-- Curse of the Elements
@@ -2234,6 +2277,7 @@ C["spells"] = {
 			IconSize = 15,
 			BarWidth = C.filger.barwidth,
 			Position = {unpack(C["positions"].target_bar)},
+			Enable = C.filger.debuffbars,
 
 			-- Doom
 			{spellID = 603, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2258,6 +2302,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Devour Magic (Felhunter)
@@ -2334,6 +2379,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_buff_icon)},
+			Enable = C.filger.buffs,
 
 			-- Shield Wall
 			{spellID = 871, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2370,6 +2416,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].player_proc_icon)},
+			Enable = C.filger.procs,
 
 			-- Bloodsurge
 			{spellID = 46916, unitID = "player", caster = "player", filter = "BUFF"},
@@ -2433,6 +2480,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_debuff_icon)},
+			Enable = true,
 
 			-- Colossus Smash
 			{spellID = 86346, unitID = "target", caster = "player", filter = "DEBUFF"},
@@ -2453,6 +2501,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].cooldown)},
+			Enable = C.filger.cd,
 
 			-- Self
 			-- Pummel
@@ -2539,12 +2588,13 @@ C["spells"] = {
 	["ALL"] = {
 		{
 			Name = "SPECIAL_P_BUFF_ICON",
-			Direction = C.filger.buffdirection,
+			Direction = C.filger.specialbuffdirection,
 			Mode = "ICON",
 			Interval = 3,
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].special_proc_icon)},
+			Enable = C.filger.specialbuff,
 
 			-- Potions
 			-- Virmen's Bite
@@ -2650,6 +2700,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = 60,
 			Position = {unpack(C["positions"].pve_debuff)},
+			Enable = C.filger.pvepvpdebuffs,
 
 			-- Death Knight
 			-- Gnaw (Ghoul)
@@ -2962,6 +3013,7 @@ C["spells"] = {
 			Alpha = 1,
 			IconSize = C["filger"].iconsize,
 			Position = {unpack(C["positions"].target_buff_icon)},
+			Enable = C.filger.targetbuffs,
 
 			-- Death knight
 			-- Anti-Magic Shell
@@ -3416,6 +3468,7 @@ end
 
 function Filger:DisplayActives()
 	if not self.actives then return end
+	if not self.Enable then return end
 	if not self.bars then self.bars = {} end
 	local id = self.Id
 	local index = 1
@@ -3800,6 +3853,7 @@ if C["spells"] and C["spells"][T.myclass] then
 		frame.BarWidth = data.BarWidth or 186
 		frame.Position = data.Position or "CENTER"
 		frame:SetPoint(unpack(data.Position))
+		frame.Enable = data.Enable
 
 		if C["filger"].filgerconfig then
 			frame.actives = {}
