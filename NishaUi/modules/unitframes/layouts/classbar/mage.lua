@@ -9,18 +9,18 @@ if( T.myclass == "MAGE" ) then
 	else
 		if T.level == 90 then
 			G.UnitFrames.Player.RunePower:ClearAllPoints()
-			G.UnitFrames.Player.RunePower:SetPoint("BOTTOM", G.UnitFrames.Player.ArcaneChargeBar, "TOP", 0, 7)
+			G.UnitFrames.Player.RunePower:SetPoint("TOPLEFT", G.UnitFrames.Player.ArcaneChargeBar, "BOTTOMLEFT", 0, -7)
 			G.UnitFrames.Player.RunePower:SetBackdrop(nil)
-			G.UnitFrames.Player.RunePower:Size(233, 3)
+			G.UnitFrames.Player.RunePower:Size(239, 3)
 			for i = 1, 2 do
 				G.UnitFrames.Player.RunePower[i]:SetFrameLevel(8)
 				G.UnitFrames.Player.RunePower[i]:CreateBackdrop("Default")
 				if( i == 1 ) then
-					G.UnitFrames.Player.RunePower[i]:Point("TOPLEFT", G.UnitFrames.Player.RunePower, "BOTTOMLEFT", 0, 3)
-					G.UnitFrames.Player.RunePower[i]:Size(223/2, 3)
+					G.UnitFrames.Player.RunePower[i]:Point("TOPLEFT", G.UnitFrames.Player.ArcaneChargeBar, "BOTTOMLEFT", 0, -5)
+					G.UnitFrames.Player.RunePower[i]:Size(227/2, 3)
 				else
 					G.UnitFrames.Player.RunePower[i]:Point( "LEFT", G.UnitFrames.Player.RunePower[i - 1], "RIGHT", 5, 0 )
-					G.UnitFrames.Player.RunePower[i]:Size(223/2, 3)
+					G.UnitFrames.Player.RunePower[i]:Size(227/2, 3)
 				end
 			end
 		end
