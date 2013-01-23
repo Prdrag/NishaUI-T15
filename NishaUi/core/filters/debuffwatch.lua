@@ -91,6 +91,7 @@ if C["unitframes"].raidunitdebuffwatch == true then
 		-----------------------------------------------------------------
 			-- Sha of Anger
 			SpellName(119622),	-- Growing Anger
+			SpellName(6788),	-- Growing Anger
 			SpellName(119626),	-- Aggressive Behavior
 			SpellName(119488),	-- Unleashed Wrath
 			-- Salyis's Warband
@@ -111,11 +112,13 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			-- Gara'jal the Spiritbinder
 			SpellName(116161),	-- Crossed Over
 			SpellName(116000),  -- Voodoo Dolls
+			SpellName(122151),	-- Voodoo Dolls
 			-- The Spirit Kings
 			SpellName(117708),	-- Maddening Shout
 			SpellName(118303),	-- Fixate
 			SpellName(118048),	-- Pillaged
 			SpellName(118135),	-- Pinned Down
+			SpellName(118163),	-- Robbed Blind
 			-- Elegon
 			SpellName(117878),	-- Overcharged
 			SpellName(117949),	-- Closed Circuit
@@ -141,13 +144,19 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			-- Wind Lord Mel'jarak
 			SpellName(122125),	-- Corrosive Resin Pool
 			SpellName(121885), 	-- Amber Prison
-			SpellName(131813),  -- Wind Bomb   
+			SpellName(129078), 	-- Amber Prison
+			SpellName(122055),	-- Residue
+			SpellName(131813),  -- Wind Bomb
+			SpellName(123963),	-- Kor'thik Strike
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
+			SpellName(122370),	-- Reshape Life
 			-- Grand Empress Shek'zeer
 			SpellName(123707),  -- Eyes of the Empress
 			SpellName(123788),	-- Cry of Terror
 			SpellName(124849),	-- Consuming Terror
+			SpellName(124863),	-- Visions of Demise
+			SpellName(123713),	-- Servant of the Empress
 			
 		-----------------------------------------------------------------
 		-- Terrace of Endless Spring
@@ -160,13 +169,16 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(122752),	-- Shadow Breath
 			SpellName(123011),	-- Terrorize
 			SpellName(122777),	-- Nightmares
+			SpellName(123036),	-- Fright
 			-- Lei Shi
 			SpellName(123121),	-- Spray
 			SpellName(123705),  -- Scary Fog  
 			-- Sha of Fear
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
+			SpellName(120669),	-- Naked and Afraid
 			SpellName(119775),	-- Reaching Attack
+			SpellName(120629),	-- Huddle in Terror
 		-----------------------------------------------------------------
 		-- Firelands
 		-----------------------------------------------------------------
