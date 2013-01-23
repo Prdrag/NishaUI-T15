@@ -11,7 +11,7 @@ if T.client ~= "deDE" then
 	L.hello = "Hello "
 	L.hello2 = "!|r Thank you for using"
 	L.hello3 = " Nisha UI|r ".. GetAddOnMetadata( "NishaUi", "Version" ) ..". For detailed Information visit"
-	L.hello4 = " http://www.pulse-guild.de|r."
+	L.hello4 = " http://www.downfall-guild.de|r."
 	L.actionbars_locked = "Actionbars |cffe45050Locked|r"
 	L.actionbars_unlocked = "Actionbars |cff50e468Unlocked|r"
 	L.bags_buyslot = "Buy Bankslot"
@@ -21,7 +21,7 @@ if T.client ~= "deDE" then
 	L.nisha_bind = "NishaUI Bind Hotkeys"
 	L.nisha_reload = "Reload NishaUI"
 	L.nisha_help = "NishaUI Help"
-	L.nisha_ab = "Pulse Actionbars"
+	L.nisha_ab = "Downfall Actionbars"
 	
 	L.Popups_disable_tukui_nameplates = "Tukui nameplates are active. They will be disabled and the NishaUi nameplates will be enabled."
 
@@ -76,7 +76,7 @@ if T.client ~= "deDE" then
 
 	L.helpcontent6_text1 = "Bug Reports & Suggestions"
 	L.helpcontent6_text2 = "Bug Reports can be made on two boards. The first one is the Tukui-Forum in the thread Bug Reports and Errors. Please read first the post about, how to create a bug report. The other board is on nisha.com in the forums."
-	L.helpcontent6_text3 = "Suggestions can be in http://pulse-guild.de in the forum."
+	L.helpcontent6_text3 = "Suggestions can be in http://downfall-guild.de in the forum."
 	L.helpcontent6_text4 = "PMs or ingame whisper are not observed, because the other users should also see your suggestions."
 
 	L.helpcontent5_text1 = "Actionbars"

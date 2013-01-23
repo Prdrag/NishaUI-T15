@@ -10,7 +10,7 @@ if GetLocale() == "frFR" then
 	L.hello = "Hello "
 	L.hello2 = "!|r Thank you for using"
 	L.hello3 = " Nisha UI|r ".. GetAddOnMetadata( "NishaUi", "Version" ) ..". For detailed Information visit"
-	L.hello4 = " http://www.pulse-guild.de|r."
+	L.hello4 = " http://www.downfall-guild.de|r."
 	L.actionbars_locked = "Actionbars |cffe45050Locked|r"
 	L.actionbars_unlocked = "Actionbars |cff50e468Unlocked|r"
 	
@@ -20,7 +20,7 @@ if GetLocale() == "frFR" then
 	L.nisha_bind = "NishaUI Bind Hotkeys"
 	L.nisha_reload = "Reload NishaUI"
 	L.nisha_help = "NishaUI Help"
-	L.nisha_ab = "Pulse Actionbars"
+	L.nisha_ab = "Downfall Actionbars"
 
 	L.nisha_addon2 = "Enable/disable addons ingame"
 	L.nisha_move2 = "Move the elements of NishaUI"
@@ -72,8 +72,8 @@ if GetLocale() == "frFR" then
 	L.helpcontent7_text4 = "Sinaris, Elv, nightcracker, Eclipse, Hydra, Asphyxia, Jasje, Epicgrimm, JerichoHM and all others who help Tukz and the Editors for the awesome Tukui"
 
 	L.helpcontent6_text1 = "Bug Reports & Suggestions"
-	L.helpcontent6_text2 = "Bug Reports can be made on two boards. The first one is the Tukui-Forum in the thread Bug Reports and Errors. Please read first the post about, how to create a bug report. The other board is on Pulse.com in the forums."
-	L.helpcontent6_text3 = "Suggestions can be in Pulse.com in the forum."
+	L.helpcontent6_text2 = "Bug Reports can be made on two boards. The first one is the Tukui-Forum in the thread Bug Reports and Errors. Please read first the post about, how to create a bug report. The other board is on downfall-guild.de in the forums."
+	L.helpcontent6_text3 = "Suggestions can be in downfall-guild.de in the forum."
 	L.helpcontent6_text4 = "PMs or ingame whisper are not observed, because the other users should also see your suggestions."
 
 	L.helpcontent5_text1 = "Actionbars"

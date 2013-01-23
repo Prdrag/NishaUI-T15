@@ -11,7 +11,7 @@ if T.client == "deDE" then
 	L.hello = "Hallo "
 	L.hello2 = "!|r Danke das Du"
 	L.hello3 = " Nisha UI|r ".. GetAddOnMetadata( "NishaUi", "Version" ) .." verwendest. Weitere Information findest du unter"
-	L.hello4 = " http://www.pulse-guild.de|r."
+	L.hello4 = " http://www.downfall-guild.de|r."
 	L.actionbars_locked = "Aktionsleisten |cffe45050gesperrt|r"
 	L.actionbars_unlocked = "Aktionsleisten |cff50e468entsperrt|r"
 	L.bags_buyslot = "Kaufe Bankfach"
@@ -21,7 +21,7 @@ if T.client == "deDE" then
 	L.nisha_bind = "NishaUI Bind Hotkeys"
 	L.nisha_reload = "Reload NishaUI"
 	L.nisha_help = "NishaUI Help"
-	L.nisha_ab = "Pulse Actionbars"
+	L.nisha_ab = "Downfall Actionbars"
 	
 	L.Popups_disable_tukui_nameplates = "Tukui nameplates are active. They will be disabled and the NishaUi nameplates will be enabled."
 
@@ -72,8 +72,8 @@ if T.client == "deDE" then
 	L.helpcontent7_text4 = "Sinaris, Elv, nightcracker, Eclipse, Hydra, Asphyxia, Jasje, Epicgrimm, JerichoHM and all others who help Tukz and the Editors for the awesome Tukui"
 
 	L.helpcontent6_text1 = "Bug Reports & Anregungen"
-	L.helpcontent6_text2 = "Bug Reports können auf zwei Seiten gemacht werden. Die erste ist das TukUI Forum im Thread Bug Reports and Errors. Bitte lest euch erst durch wie man einen korrekten Bug-Report erstellt. Die andere Seite ist das Pulse Forum."
-	L.helpcontent6_text3 = "Anregungen könnt ihr unter http://pulse-guild.de im Forum loswerden."
+	L.helpcontent6_text2 = "Bug Reports können auf zwei Seiten gemacht werden. Die erste ist das TukUI Forum im Thread Bug Reports and Errors. Bitte lest euch erst durch wie man einen korrekten Bug-Report erstellt. Die andere Seite ist das downfall-guild.de Forum."
+	L.helpcontent6_text3 = "Anregungen könnt ihr unter http://downfall-guild.de im Forum loswerden."
 	L.helpcontent6_text4 = "PMs or ingame whisper werden nicht bearbeitet, da alle Benutzer die Möglichkeit haben sollen, die Entwicklung zu vervolgen."
 
 	L.helpcontent5_text1 = "Aktionsleisten"

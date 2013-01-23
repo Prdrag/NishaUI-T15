@@ -56,7 +56,7 @@ local function AutoGear(set1, set2)
 end
 
 -- Spec
-local spec = CreateFrame("Button", "PulseUI_Spechelper", UIParent)
+local spec = CreateFrame("Button", "DownfallUI_Spechelper", UIParent)
 spec:Size(100, 18)
 spec:SetPoint("RIGHT", G.Panels.RightChatTabsBackground, "RIGHT", -80, 0)
 spec:SetTemplate("Default")

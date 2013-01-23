@@ -15,5 +15,5 @@
 	<Script file="BarShift.lua"/>
 	<Script file="Extra.lua"/>
 	<Script file="micromenu.lua"/>
-	<Script file="pulsemenu.lua"/>
+	<Script file="downfallmenu.lua"/>
 </Ui>

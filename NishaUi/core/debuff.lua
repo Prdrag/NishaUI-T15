@@ -42,7 +42,7 @@ end
 
 local CreateDebuffsConfig = function()
 	-- Backdrop
-	local Backdrop = CreateFrame("Frame", "PulseDebuffConfigFrame", UIParent)
+	local Backdrop = CreateFrame("Frame", "DownfallDebuffConfigFrame", UIParent)
 	Backdrop:Size(190, 225)
 	Backdrop:Point("CENTER", UIParent, "CENTER", 0, 0)
 	Backdrop:SetTemplate("Transparent")
@@ -72,7 +72,7 @@ local CreateDebuffsConfig = function()
 	ScrollArea.Texture:Point("BOTTOMRIGHT", -2, 2)
 	ScrollArea.Texture:SetTexture(unpack(C.media.bordercolor))
 	
-	local ScrollFrame = CreateFrame("ScrollFrame", "PulseDebuffConfigScrollFrame", ScrollArea)
+	local ScrollFrame = CreateFrame("ScrollFrame", "DownfallDebuffConfigScrollFrame", ScrollArea)
 	ScrollFrame:SetPoint("TOPLEFT", ScrollArea, "TOPLEFT", 0, -2)
 	ScrollFrame:SetWidth(ScrollArea:GetWidth())
 	ScrollFrame:SetHeight(ScrollArea:GetHeight())
@@ -177,7 +177,7 @@ local CreateDebuffsConfig = function()
 	close:SetPoint("RIGHT", caption, "RIGHT", 0, 0)
 	close:SkinCloseButton()
 	close:SetScript("OnClick", function()
-		PulseDebuffConfigFrame:Hide()
+		DownfallDebuffConfigFrame:Hide()
 	end )
 
 	table.sort(T.debuffids, function (a, b)
@@ -204,13 +204,13 @@ local CreateDebuffsConfig = function()
 end
 
 local ToggleAddOn = function()
-	if not PulseDebuffConfigFrame then
+	if not DownfallDebuffConfigFrame then
 		CreateDebuffsConfig()
 	else
-		if not PulseDebuffConfigFrame:IsVisible() then
-			PulseDebuffConfigFrame:Show()
+		if not DownfallDebuffConfigFrame:IsVisible() then
+			DownfallDebuffConfigFrame:Show()
 		else
-			PulseDebuffConfigFrame:Hide()
+			DownfallDebuffConfigFrame:Hide()
 		end
 	end
 end
