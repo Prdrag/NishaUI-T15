@@ -3000,6 +3000,115 @@ C["spells"] = {
 			{spellID = 116417, unitID = "player", caster = "all", filter = "DEBUFF"},
 			-- Voodoo Doll (Gara'jal the Spiritbinder)
 			{spellID = 122151, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Throne of Thunder
+			--Jin'rokh
+				--Focused Lightning
+				{spellID = 137423, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Fluidity
+				{spellID = 138002, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Static Wound
+				{spellID = 138349, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Horridon
+				--Sand Trap
+				{spellID = 136723, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Triple Puncure
+				{spellID = 136767, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Living Poison
+				{spellID = 136645, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Blazing Sunlight
+				{spellID = 136719, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Venom Bolt Volley
+				{spellID = 136587, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Deadly Plague
+				{spellID = 136710, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Hex of Confusion
+				{spellID = 136513, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Council of Elders
+				--Frostbite
+				{spellID = 136922, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Biting Cold
+				{spellID = 136917, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Quicksand
+				{spellID = 136521, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Frigid Assault
+				{spellID = 136903, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Tortos
+				--Snapping Bite
+				{spellID = 135251, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Megaera
+				--Cinders
+				{spellID = 134390, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Acid Rain
+				{spellID = 134378 , unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Icy Ground
+				{spellID = 134341, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Torrent of Ice
+				{spellID = 139866, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Ignite Flesh
+				{spellID = 137729, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Weakened Defense
+				{spellID = 137683, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Ji-Kun
+				--Daedalian Wings
+				{spellID = 140014, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Lesson of Icarus 
+				{spellID = 140571, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Slimed
+				{spellID = 134256, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Infected Talons
+				{spellID = 140092, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Talon Strike
+				{spellID = 139100, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Durumu the Forgotten
+				--Arterial Cut
+				{spellID = 133768, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Serious Wound
+				{spellID = 133767, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Life Drain
+				{spellID = 133795, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Blue Rays
+				{spellID = 133677, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Bright Light
+				{spellID = 133738, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Infrared Light
+				{spellID = 133732, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Dark Plague
+				{spellID = 133598, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Dark Parasite
+				{spellID = 133597, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Primordius
+				--Thick Bones
+				{spellID = 136184, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Fragile Bones
+				{spellID = 136185, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Clear Mind
+				{spellID = 136186, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Clouded Mind
+				{spellID = 136187, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Improved Synapses
+				{spellID = 136182, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Dulled Synapses
+				{spellID = 136183, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Keen Eyesight
+				{spellID = 136180, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--impaired Eyesight
+				{spellID = 136181, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Dark Animus
+				--Matter Swap
+				{spellID = 136903, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Iron Qon
+				--impale
+				{spellID = 134691, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Scorched
+				{spellID = 134647, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Arcing Lightning
+				{spellID = 139193, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Twin Consorts
+				--Fan of Flames
+				{spellID = 137408, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Icy Shadows
+				{spellID = 137440, unitID = "player", caster = "all", filter = "DEBUFF"},
+			--Lei Shen
 
 			-- Other
 			-- Rocket Fuel Leak

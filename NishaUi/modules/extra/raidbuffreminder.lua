@@ -21,7 +21,7 @@ local function SetCasterOnlyBuffs()
 	}
 	Spell4Buff = { --Total Stamina
 		469, -- Commanding Shout
-		6307, -- Imp. Blood Pact
+		-- 6307, -- Imp. Blood Pact
 		21562, -- Power Word: Fortitude
 	}
 	Spell5Buff = { --Total Mana
@@ -55,7 +55,7 @@ local function SetBuffs()
 	}
 	Spell4Buff = { --Total Stamina
 		469, -- Commanding Shout
-		6307, -- Imp. Blood Pact
+		-- 6307, -- Imp. Blood Pact
 		21562, -- Power Word: Fortitude
 	}
 	Spell5Buff = { --Mastery
@@ -274,7 +274,6 @@ local AllBuffs = {
 	["10s"] = {
 		90364,						-- Qiraji Fortitude
 		21562,						-- Power Word: Fortitude
-		6307,						-- Blood Pact
 		469,						-- Commanding Shout
 	},
 }

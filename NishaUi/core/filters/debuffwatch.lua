@@ -91,7 +91,6 @@ if C["unitframes"].raidunitdebuffwatch == true then
 		-----------------------------------------------------------------
 			-- Sha of Anger
 			SpellName(119622),	-- Growing Anger
-			SpellName(6788),	-- Growing Anger
 			SpellName(119626),	-- Aggressive Behavior
 			SpellName(119488),	-- Unleashed Wrath
 			-- Salyis's Warband
@@ -112,13 +111,11 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			-- Gara'jal the Spiritbinder
 			SpellName(116161),	-- Crossed Over
 			SpellName(116000),  -- Voodoo Dolls
-			SpellName(122151),	-- Voodoo Dolls
 			-- The Spirit Kings
 			SpellName(117708),	-- Maddening Shout
 			SpellName(118303),	-- Fixate
 			SpellName(118048),	-- Pillaged
 			SpellName(118135),	-- Pinned Down
-			SpellName(118163),	-- Robbed Blind
 			-- Elegon
 			SpellName(117878),	-- Overcharged
 			SpellName(117949),	-- Closed Circuit
@@ -144,19 +141,13 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			-- Wind Lord Mel'jarak
 			SpellName(122125),	-- Corrosive Resin Pool
 			SpellName(121885), 	-- Amber Prison
-			SpellName(129078), 	-- Amber Prison
-			SpellName(122055),	-- Residue
-			SpellName(131813),  -- Wind Bomb
-			SpellName(123963),	-- Kor'thik Strike
+			SpellName(131813),  -- Wind Bomb   
 			-- Amber-Shaper Un'sok
 			SpellName(121949),	-- Parasitic Growth
-			SpellName(122370),	-- Reshape Life
 			-- Grand Empress Shek'zeer
 			SpellName(123707),  -- Eyes of the Empress
 			SpellName(123788),	-- Cry of Terror
 			SpellName(124849),	-- Consuming Terror
-			SpellName(124863),	-- Visions of Demise
-			SpellName(123713),	-- Servant of the Empress
 			
 		-----------------------------------------------------------------
 		-- Terrace of Endless Spring
@@ -169,16 +160,13 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(122752),	-- Shadow Breath
 			SpellName(123011),	-- Terrorize
 			SpellName(122777),	-- Nightmares
-			SpellName(123036),	-- Fright
 			-- Lei Shi
 			SpellName(123121),	-- Spray
 			SpellName(123705),  -- Scary Fog  
 			-- Sha of Fear
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
-			SpellName(120669),	-- Naked and Afraid
 			SpellName(119775),	-- Reaching Attack
-			SpellName(120629),	-- Huddle in Terror
 		-----------------------------------------------------------------
 		-- Firelands
 		-----------------------------------------------------------------
@@ -242,7 +230,63 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(105841),	-- Degenerative bite
 			SpellName(105445),	-- Blistering heat
 			SpellName(108649),	-- Corrupting Parasite]]
+			-----------------------------------------------------------------
+			--Throne of Thunder
+			-----------------------------------------------------------------
+			--Jin'rokh
+			SpellName(137423), --Focused Lightning
+			SpellName(138002), --Fluidity
+			SpellName(138349), --Static Wound
+			--Horridon
+			SpellName(136723), --Sand Trap
+			SpellName(136767), --Triple Puncure
+			SpellName(136645), --Living Poison				
+			SpellName(136719), --Blazing Sunlight				
+			SpellName(136587), --Venom Bolt Volley				
+			SpellName(136710), --Deadly Plague				
+			SpellName(136513), --Hex of Confusion
+			--Council of Elders				
+			SpellName(136922), --Frostbite				
+			SpellName(136917), --Biting Cold				
+			SpellName(136521), --Quicksand
+			SpellName(136903), --Frigid Assault
+			--Tortos				
+			SpellName(135251), --Snapping Bite
+			--Megaera				
+			SpellName(134390), --Cinders				
+			SpellName(134378), --Acid Rain
+			SpellName(134341), --Icy Ground				
+			SpellName(139866), --Torrent of Ice				
+			SpellName(137729), --Ignite Flesh				
+			SpellName(137683), --Weakened Defense
+			--Ji-Kun			
+			SpellName(140014), --Daedalian Wings			
+			SpellName(140571), --Lesson of Icarus 
+			SpellName(134256), --Slimed
+			SpellName(140092), --Infected Talons			
+			SpellName(139100), --Talon Strike
+			--Durumu the Forgotten			
+			SpellName(133768), --Arterial Cut			
+			SpellName(133767), --Serious Wound			
+			SpellName(133795), --Life Drain			
+			SpellName(133677), --Blue Rays			
+			SpellName(133738), --Bright Light
+			SpellName(133732), --Infrared Light
+			SpellName(133598), --Dark Plague			
+			SpellName(133597), --Dark Parasite
+			--Primordius
+			--Dark Animus
+			SpellName(136903), --Matter Swap
+			--Iron Qon
+			SpellName(134691), --impale			
+			SpellName(134647), --Scorched			
+			SpellName(139193), --Arcing Lightning
+			--Twin Consorts				
+			SpellName(137408), --Fan of Flames				
+			SpellName(137440), --Icy Shadows
+			--Lei Shen
 		}
+
 
 		T.ReverseTimer = {
 			[89421] = true, -- Sinestra (Wrack)
