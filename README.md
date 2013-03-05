@@ -1,6 +1,6 @@
 # NishaUI
 
-This is modified Version TukUi. I am Nisha from the german WoW-Guild "Pulse". If you have any suggestions you can leave them on www.tukui.org or www.pulse-guild.de. Nisha
+This is modified Version TukUi. I am Nisha from the german WoW-Guild "Downfall". If you have any suggestions you can leave them on www.tukui.org or www.downfall-guild.de. Nisha
 
 ---
 
