@@ -1,6 +1,6 @@
 local T, C, L, G = unpack( Tukui )
 
-if( C["unitframes"].enable ~= true ) then return end
+if(C["unitframes"].enable ~= true) or (C["unitframes"].arena ~= true)then return end
 
 --------------------------------------------------------------
 -- Arena
