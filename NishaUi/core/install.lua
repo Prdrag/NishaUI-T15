@@ -81,7 +81,6 @@ UIOnLogon:SetScript( "OnEvent", function( self, event )
 			["rightbnumber"] = 12,
 			["buttonsizeright"] = T.buttonsize,
 			["buttonsize"] = T.buttonsize,
-			["DebuffList"] = {},
 		}
 		NishaUICVars()
 	end
