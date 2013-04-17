@@ -167,124 +167,79 @@ if C["unitframes"].raidunitdebuffwatch == true then
 			SpellName(119985),	-- Dread Spray
 			SpellName(119086),	-- Penetrating Bolt
 			SpellName(119775),	-- Reaching Attack
-		-----------------------------------------------------------------
-		-- Firelands
-		-----------------------------------------------------------------
-			-- Beth'tilac
-			SpellName(99506),	-- Widows Kiss
-			SpellName(97202),	-- Fiery Web Spin
-			SpellName(49026),	-- Fixate
-			SpellName(97079),	-- Seeping Venom
-			-- Alysrazor
-			SpellName(99389),	-- Imprinted
-			SpellName(100640),	-- Harsh Winds
-			SpellName(100555),	-- Smouldering Roots
-			-- Shannox
-			SpellName(99837),	-- Crystal Prison
-			SpellName(99937),	-- Jagged Tear
-			-- Baleroc
-			SpellName(99256),	-- Torment
-			SpellName(99252),	-- Blaze of Glory
-			SpellName(99516),	-- Countdown
-			-- Majordomo Staghelm
-			SpellName(98450),	-- Searing Seeds
-			-- Ragnaros
-			SpellName(99399),	-- Burning Wound
-			SpellName(98313),	-- Magma Blast
-			SpellName(100675),	-- Dreadflame
-			SpellName(99145),	-- Blazing Heat
-			SpellName(99613),	-- Molten Blast
-			-- Trash
-			SpellName(99532),	-- Melt Armor
-		-----------------------------------------------------------------
-		-- Dragon Soul
-		-----------------------------------------------------------------
-			-- Morchok
-			SpellName(103687),	-- Crush Armor
-			SpellName(103536),	-- Warning
-			SpellName(103534),	-- Danger
-			-- Warlord Zon'ozz
-			SpellName(103434),	-- Disrupting Shadows
-			-- Yor'sahj the Unsleeping
-			SpellName(103628),	-- Deep Corruption
-			-- Hagara the Stormbinder
-			SpellName(104451),	-- Ice Tomb
-			SpellName(105259),	-- Watery Entrenchment
-			SpellName(109325),	-- Frostflake
-			SpellName(105289),	-- Shattered Ice
-			SpellName(105285),	-- Target
-			-- Ultraxion
-			SpellName(105925),	-- Fading Light
-			-- Warmaster Blackhorn
-			SpellName(108043),	-- Sunder Armor
-			SpellName(108046),	-- Shockwave
-			SpellName(107567),	-- Brutal Strike
-			SpellName(107558),	-- Degeneration
-			-- Spine of Deathwing
-			SpellName(105563),	-- Grasping Tendrils
-			SpellName(105479),	-- Searing Plasma
-			SpellName(105490),	-- Fiery Grip
-			SpellName(106199),	-- Blood Corruption: Death
-			-- Madness of Deathwing
-			SpellName(106444),	-- Impale
-			SpellName(105841),	-- Degenerative bite
-			SpellName(105445),	-- Blistering heat
-			SpellName(108649),	-- Corrupting Parasite]]
 			-----------------------------------------------------------------
 			--Throne of Thunder
 			-----------------------------------------------------------------
 			--Jin'rokh
-			SpellName(137423), --Focused Lightning
-			SpellName(138002), --Fluidity
-			SpellName(138349), --Static Wound
+			-- Jin'rokh the Breaker
+			SpellName(137162),	-- Static Burst (Tank switch)
+			SpellName(138349),	-- Static Wound (Tank stacks)
+			SpellName(137371),	-- Thundering Throw (Tank stun)
+			SpellName(138732),	-- Ionization (Heroic - Dispel)
+			SpellName(137422),	-- Focused Lightning (Fixated - Kiting)
+			SpellName(138006),	-- Electrified Waters (Pool)
 			--Horridon
-			SpellName(136723), --Sand Trap
-			SpellName(136767), --Triple Puncure
-			SpellName(136645), --Living Poison				
-			SpellName(136719), --Blazing Sunlight				
-			SpellName(136587), --Venom Bolt Volley				
-			SpellName(136710), --Deadly Plague				
-			SpellName(136513), --Hex of Confusion
+			SpellName(136723),	-- Sand Trap
+			SpellName(136767),	-- Triple Puncure
+			SpellName(136645),	-- Living Poison				
+			SpellName(136719),	-- Blazing Sunlight				
+			SpellName(136587),	-- Venom Bolt Volley				
+			SpellName(136710),	-- Deadly Plague				
+			SpellName(136513),	-- Hex of Confusion
+			SpellName(136708),	-- Stone Gaze (Stun - Dispel)
+			SpellName(136654),	-- Rending Charge (DoT)			
 			--Council of Elders				
-			SpellName(136922), --Frostbite				
-			SpellName(136917), --Biting Cold				
-			SpellName(136521), --Quicksand
-			SpellName(136903), --Frigid Assault
-			--Tortos				
-			SpellName(135251), --Snapping Bite
+			SpellName(136922),	--Frostbite				
+			SpellName(136917),	-- Biting Cold
+			SpellName(136922),	-- Frostbite (DoT)
+			SpellName(136521),	-- Quicksand
+			SpellName(137359),	-- Marked Soul (Fixated - Kiting)
+			SpellName(136903),	-- Frigid Assault
+			SpellName(137641),	-- Soul Fragment (Heroic)
+			--Tortos
+			SpellName(136753),	-- Slashing Talons (Tank DoT)
+			SpellName(135251),	-- Snapping Bite
+			SpellName(140701),	-- Crystal Shell: Full Capacity! (Heroic)
 			--Megaera				
-			SpellName(134390), --Cinders				
-			SpellName(134378), --Acid Rain
-			SpellName(134341), --Icy Ground				
-			SpellName(139866), --Torrent of Ice				
-			SpellName(137729), --Ignite Flesh				
-			SpellName(137683), --Weakened Defense
+			SpellName(137731),	-- Ignite Flesh (Tank stacks)
+			SpellName(139843),	-- Arctic Freeze (Tank stacks)
+			SpellName(139840),	-- Rot Armor (Tank stacks)
+			SpellName(134391),	-- Cinder (DoT - Dispell)
+			SpellName(139857),	-- Torrent of Ice (Fixated - Kiting)
+			SpellName(140179),	-- Suppression (Heroic - Dispell)
 			--Ji-Kun			
-			SpellName(140014), --Daedalian Wings			
-			SpellName(140571), --Lesson of Icarus 
-			SpellName(134256), --Slimed
-			SpellName(140092), --Infected Talons			
-			SpellName(139100), --Talon Strike
+			SpellName(134366),	-- Talon Rake (Tank stacks)
+			SpellName(140092),	-- Infected Talons (Tank DoT)
+			SpellName(134256),	-- Slimed (DoT)
 			--Durumu the Forgotten			
-			SpellName(133768), --Arterial Cut			
-			SpellName(133767), --Serious Wound			
-			SpellName(133795), --Life Drain			
-			SpellName(133677), --Blue Rays			
-			SpellName(133738), --Bright Light
-			SpellName(133732), --Infrared Light
-			SpellName(133598), --Dark Plague			
-			SpellName(133597), --Dark Parasite
+			SpellName(133768),	-- Arterial Cut (Tank DoT)
+			SpellName(133767),	-- Serious Wound (Tank stacks)
+			SpellName(133798),	-- Life Drain (Stun)
+			SpellName(133597),	-- Dark Parasite (Heroic - Dispel)
 			--Primordius
+			SpellName(136050),	-- Malformed Blood (Tank stacks)
+			SpellName(136228),	-- Volatile Pathogen (DoT)
 			--Dark Animus
-			SpellName(136903), --Matter Swap
+			SpellName(136903),	-- Matter Swap
+			SpellName(138569),	-- Explosive Slam (Tank stacks)
+			SpellName(138659),	-- Touch of the Animus (DoT)
 			--Iron Qon
-			SpellName(134691), --impale			
-			SpellName(134647), --Scorched			
-			SpellName(139193), --Arcing Lightning
+			SpellName(134691),	-- Impale			
+			SpellName(134647),	-- Scorched			
+			SpellName(139193),	-- Arcing Lightning
+			SpellName(136192),	-- Lightning Storm (Stun)
 			--Twin Consorts				
-			SpellName(137408), --Fan of Flames				
-			SpellName(137440), --Icy Shadows
+			SpellName(137408),	-- Fan of Flames (Tank stacks)
+			SpellName(136722),	-- Slumber Spores (Dispel)
+			SpellName(137341),	-- Beast of Nightmares (Fixate)
+			SpellName(137360),	-- Corrupted Healing (Healer stacks)
 			--Lei Shen
+			SpellName(135000),	-- Decapitate (Tank only)
+			SpellName(136478),	-- Fusion Slash (Tank only)
+			SpellName(136914),	-- Electrical Shock (Tank staks)
+			SpellName(135695),	-- Static Shock (Damage Split)
+			SpellName(136295),	-- Overcharged
+			SpellName(139011),	-- Helm of Command (Heroic)
 		}
 
 

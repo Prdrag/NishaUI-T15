@@ -15,4 +15,5 @@
 	<Script file="click2cast.lua"/>
 	<Script file="ilvlr.lua"/>
 	<Script file="specswitcher.lua"/>
+	<Script file="fixes.lua"/>
 </Ui>

@@ -51,6 +51,17 @@ local CreateDebuffsConfig = function()
 	Backdrop:SetScript("OnMouseDown", function() Backdrop:ClearAllPoints() Backdrop:StartMoving() end)
 	Backdrop:SetScript("OnMouseUp", function() Backdrop:StopMovingOrSizing() end)
 	
+	-- local resetbutton = CreateFrame("Button", "Debuffreset", Backdrop)
+	-- resetbutton:Size(Backdrop:GetWidth(), 23)
+	-- resetbutton:Point("TOP", Backdrop, "BOTTOM", 0, -3)
+	-- resetbutton:SetTemplate("Transparent")
+	-- resetbutton:EnableMouse(true)
+	
+	-- resetbutton.Text = T.SetFontString(resetbutton, unpack(T.Fonts.uGeneral.setfont))
+	-- resetbutton.Text:Point("CENTER", resetbutton, "CENTER", 0, 0)
+	-- resetbutton.Text:SetText(T.cStart.."reset")
+	
+	
 	--Caption
 	local caption = CreateFrame("Frame", "Debuffcaption", Backdrop)
 	caption:Size(Backdrop:GetWidth(), 23)

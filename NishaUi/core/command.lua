@@ -34,3 +34,8 @@ SlashCmdList.TUKUIDPS = function()
 	EnableAddOn("NishaUi_Raid")
 	ReloadUI()
 end
+SLASH_CLEARCOMBAT1 = "/clc"
+SlashCmdList.CLEARCOMBAT = function() 
+	CombatLogClearEntries() 
+	print ("Combatlog cleared")
+end
