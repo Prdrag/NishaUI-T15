@@ -154,7 +154,7 @@ T.CheckForKnownTalent = function(spellid)
 end
 
 local RoleUpdater = CreateFrame("Frame")
-local function CheckRole(self, event, unit)
+function CheckRole(self, event, unit)
 	local tree = GetSpecialization()
 	local resilience
 	local resilperc = GetCombatRatingBonus(COMBAT_RATING_RESILIENCE_PLAYER_DAMAGE_TAKEN)
@@ -182,12 +182,12 @@ local function CheckRole(self, event, unit)
 		end
 	end
 end
-RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD")
-RoleUpdater:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
-RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE")
-RoleUpdater:RegisterEvent("CHARACTER_POINTS_CHANGED")
-RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED")
-RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR")
+RoleUpdater:RegisterEvent("PLAYER_ENTERING_WORLD", OnEvent)
+RoleUpdater:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED", OnEvent)
+RoleUpdater:RegisterEvent("PLAYER_TALENT_UPDATE", OnEvent)
+RoleUpdater:RegisterEvent("CHARACTER_POINTS_CHANGED", OnEvent)
+RoleUpdater:RegisterEvent("UNIT_INVENTORY_CHANGED", OnEvent)
+RoleUpdater:RegisterEvent("UPDATE_BONUS_ACTIONBAR", OnEvent)
 RoleUpdater:SetScript("OnEvent", CheckRole)
 CheckRole()
 

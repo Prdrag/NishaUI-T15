@@ -11,7 +11,6 @@ C["unitframes"] = {
 	["unicolor"] = true,
 	["cbicons"] = true,
 	["unitcastbar"] = true,
-	["classbar"] = true,
 	["combatfeedback"] = false,
 	["raidunitdebuffwatch"] = true,
 	["auratimer"] = true,
@@ -47,6 +46,7 @@ C["nisha"] = {
 	["ilvlr"] = true,
 	["chatbg"] = false,
 	["naga"] = false,
+	["combatlog"] = true,
 }
 
 C["nameplate"] = {
@@ -87,6 +87,8 @@ C["classbar"] = {
 	["paladin"] = true,
 	["rogue"] = true,
 	["mage"] = true,
+	["stagger"] = true,
+	["vengeance"] = true,
 }
 
 C["font"] = {

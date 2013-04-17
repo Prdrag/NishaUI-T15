@@ -62,7 +62,7 @@ if T.myclass == "MONK" then
 			
 			local sPowerBG = CreateFrame("Frame", "sPowerBG",G.UnitFrames.Player.HarmonyBar)
 			sPowerBG:Size( 237, 17 )
-			sPowerBG:Point("TOPLEFT", G.UnitFrames.Player.HarmonyBar, "BOTTOMLEFT", -2, -5)
+			sPowerBG:Point("TOPLEFT", G.UnitFrames.Player.HarmonyBar, "BOTTOMLEFT", -2, -4)
 			sPowerBG:SetTemplate( "Default" )
 			local sPowerStatus = CreateFrame("StatusBar", "sPowerStatus", sPowerBG)
 			sPowerStatus:SetStatusBarTexture(C["media"].normTex)
@@ -101,7 +101,7 @@ if T.myclass == "MONK" then
 			end)
 			sPowerStatus:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED")
 			sPowerBG:RegisterEvent("PLAYER_ENTERING_WORLD")
-			sPowerBG:RegisterEvent("UNIT_DISPLAYPOWER")
+			sPowerBG:RegisterEvent("UNIT_DISPLAYPOWER")			
 		end
 	end
 end

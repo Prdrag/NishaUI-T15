@@ -115,6 +115,8 @@ do
 			G.UnitFrames.Player.VengeanceBar.Text:SetPoint("CENTER", G.UnitFrames.Player.VengeanceBar.Bar, "CENTER", 0, 0)
 			G.UnitFrames.Player:EnableElement("VengeanceBar")
 		end
+		
+
 --------------------------------------------------------------
 -- classicons
 --------------------------------------------------------------

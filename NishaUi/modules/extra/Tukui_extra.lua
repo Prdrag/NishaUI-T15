@@ -149,3 +149,26 @@ function button:PLAYER_REGEN_ENABLED()
 end
 
 
+if C.nisha.combatlog == true then
+----------------------------------------------------------------------------------------
+--	Auto enables combat log text file in raid instances(EasyLogger by Sildor)
+----------------------------------------------------------------------------------------
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+	frame:SetScript("OnEvent", function()
+		local inInstance, instanceType = IsInInstance()
+		if inInstance and instanceType == "raid" then
+			if not LoggingCombat() then
+				LoggingCombat(1)
+				print("|cffffff00"..COMBATLOGENABLED.."|r")
+			end
+		else
+			if LoggingCombat() then
+				LoggingCombat(0)
+				print("|cffffff00"..COMBATLOGDISABLED.."|r")
+			end
+		end
+	end)
+end
+
+

@@ -3008,6 +3008,8 @@ C["spells"] = {
 				{spellID = 138002, unitID = "player", caster = "all", filter = "DEBUFF"},
 				--Static Wound
 				{spellID = 138349, unitID = "player", caster = "all", filter = "DEBUFF"},
+				--Static Wound
+				{spellID = 138732, unitID = "player", caster = "all", filter = "DEBUFF"},
 			--Horridon
 				--Sand Trap
 				{spellID = 136723, unitID = "player", caster = "all", filter = "DEBUFF"},

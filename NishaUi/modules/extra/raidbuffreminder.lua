@@ -23,6 +23,7 @@ local function SetCasterOnlyBuffs()
 		469, -- Commanding Shout
 		-- 6307, -- Imp. Blood Pact
 		21562, -- Power Word: Fortitude
+		109773, -- Power Word: Fortitude
 	}
 	Spell5Buff = { --Total Mana
 		116956, --Grace of Air
@@ -57,6 +58,7 @@ local function SetBuffs()
 		469, -- Commanding Shout
 		-- 6307, -- Imp. Blood Pact
 		21562, -- Power Word: Fortitude
+		109773, -- Power Word: Fortitude
 	}
 	Spell5Buff = { --Mastery
 		116956, --Grace of Air

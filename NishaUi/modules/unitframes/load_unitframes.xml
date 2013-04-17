@@ -2,7 +2,8 @@
 	<Include file="core\oUF\oUF.xml"/>
 	<Script file="plugins\CastbarTicks.lua" />
 	<Script file="plugins\ClassIcons.lua" />
-	<Script file="plugins\WarlockSpecBars.lua" />
+	<Script file="plugins\stagger.lua" />
+	<Script file="plugins\oUF_Vengeance.lua" />
 	<Script file="layouts\arena.lua" />
 	<Script file="layouts\boss.lua" />
 	<Script file="layouts\focus.lua" />
