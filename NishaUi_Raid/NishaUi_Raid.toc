@@ -6,3 +6,4 @@
 ## RequiredDeps: NishaUi
 
 Raid.lua
+NishaUi_Raid_Grid.lua

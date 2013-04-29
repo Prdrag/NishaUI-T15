@@ -29,6 +29,11 @@ C["unitframes"] = {
 	["raidalphaoor"] = 0.4,
 	["perconly"] = false,
 	["iconspvp"] = true, 
+	["showsmooth"] = true,
+	["hidepower"] = false,
+	["showsymbols"] = true,
+	["showrange"] = true,
+	["grid"] = true,
 }
 
 
