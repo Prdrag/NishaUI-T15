@@ -1,4 +1,7 @@
 local T, C, L = unpack(Tukui)
+local panelstomove1 = {cbMover, FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, FilgerTargetDebuffs, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, Filgertargetbufficon, TukuiBar1Mover, BNtoastframemover}
+local panelstomove2 = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerTargetDebuffs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, Filgertargetbufficon, TukuiBar1Mover, BNtoastframemover}
+
 T.GetNishaUIVersion = GetAddOnMetadata( "NishaUi", "Version" )
 T.StatColor = T.RGBToHex(unpack(C.media.datatextcolor2))
 T.StatColorEnd = "|r"
@@ -328,10 +331,9 @@ local function MoveUI()
 		Ali = true
 	end
 	if T.myclass == "MONK" or T.myclass == "DRUID" or T.myclass == "WARLOCK" or T.myclass == "DEATHKNIGHT" or T.myclass == "PALADIN" or T.myclass == "PRIEST" or T.myclass == "SHAMAN" or T.myclass == "ROGUE" or T.myclass == "MAGE" then
-		local panelstomove = {cbMover, FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerPlayerCD, FilgerTargetDebuffs, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, Filgertargetbufficon, TukuiBar1Mover, BNtoastframemover}
-		if cbMover or FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover then
+		if panelstomove1 then
 			if MOVE_UI then
-				for _, panels in pairs( panelstomove ) do
+				for _, panels in pairs( panelstomove1 ) do
 					panels:Show()
 					Filgerspecialprocicon:Show()
 					if C["classtimer"].enable then
@@ -343,7 +345,7 @@ local function MoveUI()
 				end
 					
 			else
-				for _, panels in pairs( panelstomove ) do
+				for _, panels in pairs( panelstomove1 ) do
 					panels:Hide()
 					Filgerspecialprocicon:Hide()
 					if C["classtimer"].enable then
@@ -356,12 +358,11 @@ local function MoveUI()
 			end
 		end
 	else
-		local panelstomove = {FilgerPlayerBuffs, FilgerPlayerDebuffs, FilgerPlayerProccs, FilgerTargetDebuffs, FilgerPlayerCD, RaidCD, cbarMover, ctbarMover, FilgerPVEDebuffs, MicroAnchormover, Filgertargetbufficon, TukuiBar1Mover, BNtoastframemover}
-		if FilgerPlayerBuffs or FilgerPlayerDebuffs or FilgerPlayerProccs or FilgerPlayerCD or FilgerTargetDebuffs or RaidCD or cbarMover or ctbarMover or FilgerPVEDebuffs or MicroAnchormover then
+		
+		if panelstomove2 then
 			if MOVE_UI then
-				for _, panels in pairs( panelstomove ) do
+				for _, panels in pairs( panelstomove2 ) do
 					panels:Show()
-
 					Filgerspecialprocicon:Show()
 					if C["classtimer"].enable then
 						Classtimermover:Show()
@@ -371,7 +372,7 @@ local function MoveUI()
 					end
 				end
 			else
-				for _, panels in pairs( panelstomove ) do
+				for _, panels in pairs( panelstomove2 ) do
 					panels:Hide()
 					Filgerspecialprocicon:Hide()
 					if C["classtimer"].enable then
@@ -388,7 +389,7 @@ end
 
 hooksecurefunc(_G.SlashCmdList, "MOVING", MoveUI)
 
-local ShortValueNegative = function( v )
+T.ShortValueNegative = function( v )
 	if( v <= 999 ) then return v end
 	if( v >= 1000000 ) then
 		local value = string.format( "%.1fm", v / 1000000 )
@@ -399,7 +400,7 @@ local ShortValueNegative = function( v )
 	end
 end
 
-local ShortValue = function( v )
+T.ShortValue = function( v )
 	if( v >= 1e6 ) then
 		return ( "%.1fm" ):format( v / 1e6 ):gsub( "%.?0+([km])$", "%1" )
 	elseif( v >= 1e3 or v <= -1e3 ) then
