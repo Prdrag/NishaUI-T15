@@ -16,4 +16,5 @@
 	<Script file="ilvlr.lua"/>
 	<Script file="specswitcher.lua"/>
 	<Script file="fixes.lua"/>
+	<Script file="altpower.lua"/>
 </Ui>

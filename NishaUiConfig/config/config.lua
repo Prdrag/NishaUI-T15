@@ -36,6 +36,13 @@ C["unitframes"] = {
 	["grid"] = true,
 }
 
+C["highlight"] = {
+	["OriginalStyle"] = true,         -- Set to true for Blizzards original Proc highlight.
+	["FlashButton"] = false,           -- Set to true to make the entire button to flash.
+	["FlashBorder"] = false,            -- Set to true to make the button border flash.
+	["FlashBorderSize"] = 3,           -- Set the size of the border to flash, if FlashBorder is enabled.
+	["FlashBorderColor"] = {1, 1, 0},  -- Color of flash border
+}
 
 C["nisha"] = {
 	["click2cast"] = false,
