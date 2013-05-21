@@ -11,7 +11,7 @@ if T.client ~= "deDE" then
 	L.hello = "Hello "
 	L.hello2 = "!|r Thank you for using"
 	L.hello3 = " Nisha UI|r ".. GetAddOnMetadata( "NishaUi", "Version" ) ..". For detailed Information visit"
-	L.hello4 = " http://downfall-guild.de|r."
+	L.hello4 = " http://www.hnd-guild.de|r."
 	L.actionbars_locked = "Actionbars |cffe45050Locked|r"
 	L.actionbars_unlocked = "Actionbars |cff50e468Unlocked|r"
 	L.bags_buyslot = "Buy Bankslot"
@@ -21,7 +21,7 @@ if T.client ~= "deDE" then
 	L.nisha_bind = "NishaUI Bind Hotkeys"
 	L.nisha_reload = "Reload NishaUI"
 	L.nisha_help = "NishaUI Help"
-	L.nisha_ab = "Downfall Actionbars"
+	L.nisha_ab = "NishaUI Actionbars"
 	
 	L.Popups_disable_tukui_nameplates = "Tukui nameplates are active. They will be disabled and the NishaUi nameplates will be enabled."
 
@@ -58,53 +58,7 @@ if T.client ~= "deDE" then
 	
 	L.MISCBINDEROPEN = "Mouse Bindings"
 	L.popupsettingsdbm = "Need to change the position of elements DBM."
-	
-	-------------------------------------------------
-	-- Helpframe
-	-------------------------------------------------
-	L.helpcontent_button1 = "Show Anchors"
 
-	L.helpcontent_text1 = "General"
-	L.helpcontent_text2 = "Welcome to the HelpPanel from NishaUI!\nThis Panel will help you to find the importants settings and commands for NishaUI :)"
-	L.helpcontent_text3 = "Please select a category."
-	L.helpcontent_text4 = "Have Fun !"
-
-	L.helpcontent7_text1 = "Credits"
-	L.helpcontent7_text2 = "Special thanks goes to Tukz."
-	L.helpcontent7_text3 = "And the following people:"
-	L.helpcontent7_text4 = "Sinaris, Elv, nightcracker, Eclipse, Hydra, Asphyxia, Jasje, Epicgrimm, JerichoHM and all others who help Tukz and the Editors for the awesome Tukui"
-
-	L.helpcontent6_text1 = "Bug Reports & Suggestions"
-	L.helpcontent6_text2 = "Bug Reports can be made on two boards. The first one is the Tukui-Forum in the thread Bug Reports and Errors. Please read first the post about, how to create a bug report. The other board is on nisha.com in the forums."
-	L.helpcontent6_text3 = "Suggestions can be in http://downfall-guild.de in the forum."
-	L.helpcontent6_text4 = "PMs or ingame whisper are not observed, because the other users should also see your suggestions."
-
-	L.helpcontent5_text1 = "Actionbars"
-	L.helpcontent5_text2 = "The standard Layout is one bottombar and one rightbar. But you find some buttons to toggle more actionbars. These buttons are only shown, when your mouse cursor is over them"
-	L.helpcontent5_text3 = "To lock the actionbars, there is a button above the right side of right infopanel"
-	L.helpcontent5_text4 = "You have the possibility to swap your mainbar with the upper bar. Another option is that you can set your rightbars permanently vertical. If this option is disable your rightbars will be shown over the right chat."
-	L.helpcontent5_text5 = "There is even an option to change the style of the actionbars. The three options are gradient, inverted gradient & gloss."
-
-	L.helpcontent4_text1 = "Skins, Addons"
-	L.helpcontent4_text2 = "The entire UI has skinned frames for all default Blizzardframes. If you want the skinned frames you can disable it in the ingame-Config in the subsection Skins. Uncheck Enable Blizzard-Skin."
-	L.helpcontent4_text3 = "For next the most common Addons, like DBM, DXE, Recount, Skada and so on, are skinned per default. You deactivate every skin seperatly if you do not use the corresponding Addon."
-
-	L.helpcontent3_text1 = "Chat"
-	L.helpcontent3_text5 = ""
-	L.helpcontent3_text2 = "To resize the backgrounds properly you have @ingame-Config in the subsection Chat the possibility to adjust the size of the backgrounds."
-	L.helpcontent3_text3 = "You have as well the options to allign the text of the right chat."
-	L.helpcontent3_text4 = "If you don't want the right chatbackground open the panels.lua @Tukui\modules\panels and search for TukuiChatRight, TukuiTabsRight. Add an Framename:SetAlpha(0)."
-
-	L.helpcontent2_text1 = "Unitframes"
-	L.helpcontent2_text2 = "For first you have Frames for player, pet, target, target of target, boss , focus, focustarget, party, raid and arena."
-	L.helpcontent2_text3 = "You can disable or enable any options in the ingame config at the subsection Unitframes."
-	L.helpcontent2_text4 = "For the Heal-Layout you can adjust Gridonly or not. Use for it the option Enable Grid only for Heal-Layout."
-
-	L.helpcontent1_text1 = "Slashcommands"
-	L.helpcontent1_text2 = "/nhelp => Open this panel\n/resetui => Reset the position of the entire UI\n/install => Reinstall the entire UI"
-	L.helpcontent1_text3 = "/moveui or /mtukui => Enable movers to place the UI-Elements\n/hb => Set keybindings via hoverbind\n/rl => Reloads the UI"
-	L.helpcontent1_text4 = "/heal => Switch to Heal-Layout\n/dps => Switch to DPS-Layout\n/tc => Open ingame-Config"
-	L.helpcontent1_text5 = "/am => Open Addonmanager\n/version => Shows the versionframe\n/ali -> opens a grid over the screen, which allows you adjusting the frames"
 
 	if TukuiConfigUILocalization then
 		--------------------------------------------------------------------------

@@ -11,7 +11,7 @@ if T.client == "deDE" then
 	L.hello = "Hallo "
 	L.hello2 = "!|r Danke das Du"
 	L.hello3 = " Nisha UI|r ".. GetAddOnMetadata( "NishaUi", "Version" ) .." verwendest. Weitere Information findest du unter"
-	L.hello4 = " http://downfall-guild.de|r."
+	L.hello4 = " http://www.hnd-guild.de|r."
 	L.actionbars_locked = "Aktionsleisten |cffe45050gesperrt|r"
 	L.actionbars_unlocked = "Aktionsleisten |cff50e468entsperrt|r"
 	L.bags_buyslot = "Kaufe Bankfach"
@@ -21,7 +21,7 @@ if T.client == "deDE" then
 	L.nisha_bind = "NishaUI Bind Hotkeys"
 	L.nisha_reload = "Reload NishaUI"
 	L.nisha_help = "NishaUI Help"
-	L.nisha_ab = "Downfall Actionbars"
+	L.nisha_ab = "NishaUI Actionbars"
 	
 	L.Popups_disable_tukui_nameplates = "Tukui nameplates are active. They will be disabled and the NishaUi nameplates will be enabled."
 
@@ -58,53 +58,6 @@ if T.client == "deDE" then
 	L.COMBATTEXTUNLOCKED = "Kmpftext freigegeben."
 	
 	L.popupsettingsdbm = "Die Position der Elemente von DBM müssen geändert werden."
-	-------------------------------------------------
-	-- Helpframe
-	-------------------------------------------------
-	L.helpcontent_text1 = "Generell"
-	L.helpcontent_text2 = "Wilkommen im Hilfe Panel vom NishaUI!\nDieser Panel kann dir helfen, einige wichtige Optionen und Kommandos für das NishaUI zu finden"
-	L.helpcontent_text3 = "Bitte wähle eine Kategorie!"
-	L.helpcontent_text4 = "Viel Spaß!"
-
-	L.helpcontent7_text1 = "Credits"
-	L.helpcontent7_text2 = "Viele Dank an Tukz, der sehr viele Mühe und Arbeit."
-	L.helpcontent7_text3 = "und wir wollen natürlich nicht die folgenden Leute vergeßen:"
-	L.helpcontent7_text4 = "Sinaris, Elv, nightcracker, Eclipse, Hydra, Asphyxia, Jasje, Epicgrimm, JerichoHM and all others who help Tukz and the Editors for the awesome Tukui"
-
-	L.helpcontent6_text1 = "Bug Reports & Anregungen"
-	L.helpcontent6_text2 = "Bug Reports können auf zwei Seiten gemacht werden. Die erste ist das TukUI Forum im Thread Bug Reports and Errors. Bitte lest euch erst durch wie man einen korrekten Bug-Report erstellt. Die andere Seite ist das http://downfall-guild.de Forum."
-	L.helpcontent6_text3 = "Anregungen könnt ihr unter http://downfall-guild.de im Forum loswerden."
-	L.helpcontent6_text4 = "PMs or ingame whisper werden nicht bearbeitet, da alle Benutzer die Möglichkeit haben sollen, die Entwicklung zu vervolgen."
-
-	L.helpcontent5_text1 = "Aktionsleisten"
-	L.helpcontent5_text2 = "Das Standardlayout bietet eine Aktionsleiste in der Mitte und eine über den rechten Chat an. Solltet ihr mehrere Leisten benötigen, könnt ihr über den Knopf über der mittleren Aktionsleiste, eine Aktionleiste mehr in der Mitte aktivieren. Zusätzlich habt ihr noch die Splittbars, welches aktionsleisten mit 3x2 Knöfen neben der Hauptaktionsleiste ist. Den Knopf hierfür findet ihr Links & Rechts neben der Hauptaktionsleiste. Ihr habt zusätzlich natürlich noch die Option eine Aktionsleiste über der rechten Aktionsleiste hinzuzufügen indem ihr im rechten Chattab and der rechten Seite auf + und - drückt"
-	L.helpcontent5_text3 = "Alle Knöpfe zum erweitern der Aktionsleisten sind Mouse-Over, dass heißt ihr seht sie erst, wenn ihr mit der Maus drüber fahrt. Um die Aktionsleiste zu sperren findet ihr einen Knopf direkt über der rechten Seite des InfoPanels."
-	L.helpcontent5_text4 = "In der Ingame Konfig. findet ihr zusätzlich eine Option um die Hauptaktionsleiste mit der zweiten Leisten zu wechseln, so dass die erste Leiste oben ist. Zusätzlich könnt ihr dort entscheiden, ob ihr vertikale oder horizontale rechte Aktionsleisten möchtet. Wenn ihr horizontale gewählt habt, werden diese immer bündig über den rechten Chat angezeigt."
-	L.helpcontent5_text5 = "Ihr habt zudem die Möglichkeit die Gestaltung der Aktionsleisten zu wählen. Zur Auswahl stehen die Optionen gradient, inverted gradient & gloss. Danke an Ext!"
-
-	L.helpcontent4_text1 = "Skins, Addons"
-	L.helpcontent4_text2 = "Das ganze Interface hat fertig geskinnte Blizzardframes. Wenn ihr diese nicht wollt, könnt ihr diese in der Ingame Konfig. unter Generell ausschalten."
-	L.helpcontent4_text3 = "Die meisten Addons wie DBM, DXE, Recount, Skada usw. sind standardmäßig bereits von uns geskinned. Diese könnt ihr ebenfalls in der Ingamee Konfig. ausschalten."
-
-	L.helpcontent3_text1 = "Chat"
-	L.helpcontent3_text5 = ""
-	L.helpcontent3_text2 = "In der Ingame Konfig könnt ihr in the SubSektion Chat könnt ihr die Breite und Höhe des Chats anpassen."
-	L.helpcontent3_text3 = "Ebenfalls dort könnt ihr den Text an die rechte Seite des Chats setzen."
-	L.helpcontent3_text4 = "Wenn ihr keinen rechten Chat wollt, öffnet panels.lua in Tukui\modules\panels und sucht nach TukuiChatRight, TukuiTabsRight und fügt dort ein Framename:SetAlpha(0) hinzu."
-
-	L.helpcontent2_text1 = "Unitframes"
-	L.helpcontent2_text2 = "NishaUI bzw TukUi bietet euch Einheitenfenster für Spieler, Begleiter, Ziel, Ziel des Ziels, Fokus, Fokus Ziel, Boss, Arena, Gruppe, Schlachtzug."
-	L.helpcontent2_text3 = "Optionen zu den Einheitenfenstern findet ihr in der Ingame Konf. unter Einheitenfenster."
-	L.helpcontent2_text4 = "Im Heiler Layout könnt ihr die Option Aktiviere Grid einstellen, diese Option ist ausschließlich für das Heiler Layout."
-
-	L.helpcontent1_text1 = "Slashcommands"
-	L.helpcontent1_text2 = "/nhelp => öffnet dieses Fenster\n/resetui => Setz die ganze Positionen das gesamte UI zurück\n/install => Installiert das gesamte UI"
-	L.helpcontent1_text3 = "/moveui or /mtukui => Aktiviert die Mögleichtkeit die Elemente das Uis zu verschieben\n/kb => Setzen der Tastenbelegung\n/rl => Lädt das Ui neu"
-	L.helpcontent1_text4 = "/heal => Wechsel zum Heiler-Layout\n/dps => Wechsel zum DPS-Layout\n/tc => öffnet die Ingame-Konfig"
-	L.helpcontent1_text5 = "/am => öffnet den Addonmanager\n/version => Zeigt das Versionsfenster\n/ali -> legt ein Gitternetz über den gesamten Bildschirm zum besseren justieren der Elemente"
-	
-	L.MISCBINDEROPEN = "Maustasten"
-	L.popupsettingsdbm = "Die Elemente von DBM müssen noch geändert werden."
 	
 	if( TukuiConfigUILocalization ) then
 		--------------------------------------------------------------------------
