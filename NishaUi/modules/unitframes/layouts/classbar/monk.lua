@@ -104,4 +104,104 @@ if T.myclass == "MONK" then
 			sPowerBG:RegisterEvent("UNIT_DISPLAYPOWER")			
 		end
 	end
+	
+	-- shifu
+	local spirit = { [69680] = 'storm', [69791] = 'fire', [69792] = 'earth' }
+	local Shifu = CreateFrame('frame', 'Shifu', UIParent)
+	Shifu.spirits = {}
+
+	Shifu:RegisterEvent('COMBAT_LOG_EVENT_UNFILTERED')
+	Shifu:RegisterEvent('PLAYER_TOTEM_UPDATE')
+	Shifu:RegisterEvent('PLAYER_TARGET_CHANGED')
+	Shifu:SetPoint('TOPRIGHT', G.UnitFrames.Player.HarmonyBar, 'TOPLEFT', -12, -3)
+	Shifu:SetSize(20, 20)
+	
+	Shifu.button = CreateFrame("Button", "Shifubutton", Shifu)
+	Shifu.button:EnableMouse(true)
+	Shifu.button:Height(22)
+	Shifu.button:Width(22)
+	Shifu.button:SetPoint('CENTER', Shifu, 'CENTER', 0, 0)
+	Shifu.button:SetTemplate("Default")
+		-- since 5.1, DestroyTotem is restricted/protected with Blizzard UI only, so, use some kind of hack ...
+		-- local t = TotemFrameTotem1
+		-- t:ClearAllPoints()
+		-- t:SetParent(Shifu.button)
+		-- t:SetAllPoints(Shifu.button)
+		-- t:SetFrameLevel(Shifu.button:GetFrameLevel() + 1)
+		-- t:SetFrameStrata(Shifu.button:GetFrameStrata())
+		-- t:SetAlpha(0)
+		
+		-- Shifu.button:Hide()
+	
+	Shifu.spellType = Shifu.button:CreateTexture(nil, 'OVERLAY')
+	Shifu.spellType:SetSize(20, 20)
+	Shifu.spellType:SetPoint('CENTER', 0, 0)
+	Shifu.spellType:SetTexCoord(.1, .9, .1, .9)
+	Shifu.spellType:SetDrawLayer('OVERLAY', 1)
+	
+	Shifu.button:Hide()
+	Shifu.spellType:Hide()
+
+	local checkTarget = function(self)
+		 local target = UnitGUID("target")
+		 self.spellType:Hide()
+		 self.button:Hide()
+		 if target then
+			  for name, t in pairs(self.spirits) do
+				   if t.target == target then
+						self.spellType:SetTexture(t.icon)
+						self.spellType:Show()
+						self.button:Show()
+						return
+				   end
+			  end
+		 end     
+	end
+
+	Shifu:SetScript('OnEvent', function(self, sevent, ...)
+		 local playerGUID = UnitGUID("player")
+		 if sevent == 'COMBAT_LOG_EVENT_UNFILTERED' then
+			  if select(4, ...) == playerGUID then
+				   local event = select(2, ...)
+				   if event == "SPELL_SUMMON" then
+						local dest, dstName = select(8, ...)
+						if bit.band(tonumber(dest:sub(5,5), 16), 0x7) == 0x3 then
+							 local guid = tonumber(dest:sub(6,10), 16)
+							 if spirit[guid] then
+								  self.spirits[dstName] = {}
+								  self.last = self.spirits[dstName]
+							 end
+						end
+				   elseif event == 'SPELL_CAST_SUCCESS' then
+						local spellid = select(12, ...)
+						if spellid == 137639 then
+							 local dest, dstName = select(8, ...)
+							 if self.last then
+								  self.last.target = dest
+								  self.last = nil
+							 end
+						end
+				   end
+				   checkTarget(self)
+			  end
+		 elseif sevent == 'PLAYER_TARGET_CHANGED' then
+			  checkTarget(self)
+		 elseif sevent == 'PLAYER_TOTEM_UPDATE' then
+			  local foundSpirits = {}
+			  for i = 1, MAX_TOTEMS do
+				   local haveTotem, name, _, _, icon = GetTotemInfo(i)
+				   if haveTotem and name and self.spirits[name] then
+						self.spirits[name].icon = icon
+						foundSpirits[name] = true
+				   end
+			  end
+			  for name, t in pairs(self.spirits) do
+				   if not foundSpirits[name] then
+						self.spirits[name] = nil
+				   end
+			  end
+			  checkTarget(self)
+		 end
+	end)
+	
 end

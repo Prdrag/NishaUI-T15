@@ -171,5 +171,3 @@ if C.nisha.combatlog == true then
 		end
 	end)
 end
-
-

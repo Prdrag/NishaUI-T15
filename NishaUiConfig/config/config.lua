@@ -59,28 +59,25 @@ C["nisha"] = {
 	["chatbg"] = false,
 	["naga"] = false,
 	["combatlog"] = true,
+	["shifu"] = true,
 }
 
 C["nameplate"] = {
 	["enable"] = false,                        	 -- enable nice skinned nameplates that fit into tukui
-	["debuffs"] = false,
-	["nishastyle"] = true,
+	["debuffscount"] = 5,
 	["height"] = 9,									-- Nameplate height
-	["width"] = 130,								-- Nameplate width
+	["width"] = 90,								-- Nameplate width
 	["combat"] = false,								-- Automatically show nameplate in combat
 	["showhealth"] = false,							-- Numeral health value
-	["showcastbarname"] = false,					-- Show castbar name
-	["nameabbrev"] = false,							-- Display the abbreviated names
 	["aurassize"] = 20,								-- Debuffs size
 	["goodcolor"] = {75/255,  175/255, 76/255},	        -- good threat color (tank shows this with threat, everyone else without)
 	["badcolor"] = {0.78, 0.25, 0.25},			        -- bad threat color (opposite of above)
 	["transitioncolor"] = {218/255, 197/255, 92/255},	-- threat color when gaining threat
-	["healericon"] = false,							-- Show icon above enemy healers nameplate in battlegrounds
-	["showcastbarname"] = false,
 	["enhancethreat"] = true,			                -- threat features based on if your a tank or not
-	["adwidth"] = 3,
-	["adheight"] = 3,
-	["classicons"] = true,
+	["castbarheight"] = 11,
+	["show_hp_value"] = true,
+	["show_level"] = true,
+	["show_healer_icon"] = true,
 }
 
 C["announcements"] = {
@@ -297,5 +294,8 @@ C["media"] = {
 	["combattextfontsize"] = 20,
 	["combattextfontstyle"] = "OUTLINE",
 	["combattextfontshadow"] = false,
+	["highlight"] = [[Interface\AddOns\nishaui\medias\textures\highlight]],
+	["texture"] = [[Interface\AddOns\nishaui\medias\textures\texture]],
+	["Shifu"] = [[Interface\AddOns\nishaui\medias\textures\shifu]],
 }
 TukuiEditedDefaultConfig = C
