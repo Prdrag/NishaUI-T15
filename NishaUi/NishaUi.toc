@@ -1,8 +1,8 @@
-## Interface: 50300
+## Interface: 50400
 ## Title: |cff1784d1NishaUi|r
 ## Notes: Edited version of Tukui.
 ## Author: Tukz, Nisha
-## Version: 1.7.0
+## Version: 1.7.2
 ## SavedVariables: TukuiData
 ## SavedVariablesPerCharacter: TukuiSaved, ClickCast
 ## RequiredDeps: NishaUiConfig, Tukui

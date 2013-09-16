@@ -363,6 +363,7 @@ local CLASS_FILTERS = {
 				CreateSpellEntry( 5782 ), -- Fear
 				CreateSpellEntry( 710 ), -- Banish
 				CreateSpellEntry( 5484 ), -- Howl of Terror
+				CreateSpellEntry( 146739 ), -- Corruption
 			},
 				player = {
 				CreateSpellEntry( 17941 ), -- Shadow Trance

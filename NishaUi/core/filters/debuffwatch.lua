@@ -87,6 +87,63 @@ if C["unitframes"].raidunitdebuffwatch == true then
 
 		T.debuffids = {
 		-----------------------------------------------------------------
+		-- Siege of Orgrimmar
+		-----------------------------------------------------------------
+			-- Immerseus
+			SpellName(143436),	-- Corrosive Blast (Tank switch)
+			SpellName(143459),	-- Sha Residue
+			-- The Fallen Protectors
+			SpellName(143198),	-- Garrote (DoT)
+			SpellName(143434),	-- Shadow Word: Bane (Dispel)
+			SpellName(147383),	-- Debilitation (Heroic)
+			-- Norushen
+			SpellName(146124),	-- Self Doubt (Tank switch)
+			SpellName(144514),	-- Lingering Corruption (Dispel)
+			-- Sha of Pride
+			SpellName(144358),	-- Wounded Pride (Tank switch)
+			SpellName(144351),	-- Mark of Arrogance (Dispel)
+			SpellName(146594),	-- Gift of the Titans
+			SpellName(147207),	-- Weakened Resolve (Heroic)
+			-- Galakras
+			SpellName(146765),	-- Flame Arrows (DoT)
+			SpellName(146902),	-- Poison-Tipped Blades (Poison stacks)
+			-- Iron Juggernaut
+			SpellName(144467),	-- Ignite Armor (Tank stacks)
+			SpellName(144459),	-- Laser Burn (DoT)
+			-- Kor'kron Dark Shaman
+			SpellName(144215),	-- Froststorm Strike (Tank stacks)
+			SpellName(144089),	-- Toxic Mist (DoT)
+			SpellName(144330),	-- Iron Prison (Heroic)
+			-- General Nazgrim
+			SpellName(143494),	-- Sundering Blow (Tank stacks)
+			SpellName(143638),	-- Bonecracker (DoT)
+			SpellName(143431),	-- Magistrike (Dispel)
+			-- Malkorok
+			SpellName(142990),	-- Fatal Strike (Tank stacks)
+			SpellName(142913),	-- Displaced Energy (Dispel)
+			-- Spoils of Pandaria
+			SpellName(145218),	-- Harden Flesh (Dispel)
+			SpellName(146235),	-- Breath of Fire (Dispel)
+			-- Thok the Bloodthirsty
+			SpellName(143766),	-- Panic (Tank stacks)
+			SpellName(143780),	-- Acid Breath (Tank stacks)
+			SpellName(143773),	-- Freezing Breath (Tank Stacks)
+			SpellName(143800),	-- Icy Blood (Random Stacks)
+			SpellName(143767),	-- Scorching Breath (Tank Stacks)
+			SpellName(143791),	-- Corrosive Blood (Dispel)
+			-- Siegecrafter Blackfuse
+			SpellName(143385),	-- Electrostatic Charge (Tank stacks)
+			SpellName(144236),	-- Pattern Recognition
+			-- Paragons of the Klaxxi
+			SpellName(142929),	-- Tenderizing Strikes (Tank stacks)
+			SpellName(143275),	-- Hewn (Tank stacks)
+			SpellName(143279),	-- Genetic Alteration (Tank stacks)
+			SpellName(143974),	-- Shield Bash (Tank stun)
+			SpellName(142948),	-- Aim
+			-- Garrosh Hellscream
+			SpellName(145183),	-- Gripping Despair (Tank stacks)
+			SpellName(145195),	-- Empowered Gripping Despair (Tank stacks)
+		-----------------------------------------------------------------
 		-- Kun-Lai Summit
 		-----------------------------------------------------------------
 			-- Sha of Anger
